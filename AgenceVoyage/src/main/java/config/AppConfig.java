@@ -33,10 +33,16 @@ public class AppConfig {
 	@Bean
 	public BasicDataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
-		dataSource.setDriverClassName(env.getProperty("dataSource.driverClassName"));		
+		// dataSource.setDriverClassName("com.mysql.jdbc.Driver"); driver MySql
+		// dataSource.setUrl("jdbc:mysql://localhost:3306/middle_earth?serverTimezone=Europe/Paris");
+		// dataSource.setUsername("root");
+		// dataSource.setPassword("");
+		dataSource.setDriverClassName(env.getProperty("dataSource.driverClassName"));
 		dataSource.setUrl(env.getProperty("dataSource.url"));
 		dataSource.setUsername(env.getProperty("dataSource.username"));
 		dataSource.setPassword(env.getProperty("dataSource.password"));
+		// dataSource.setMaxTotal(10);
+		// dataSource.setInitialSize(3);
 		return dataSource;
 	}
 
@@ -53,10 +59,12 @@ public class AppConfig {
 
 	private Properties hibernateProperties() {
 		Properties properties = new Properties();
-		properties.setProperty("hibernate.hbm2ddl.auto", "update");
+		properties.setProperty("hibernate.hbm2ddl.auto", "validate");
+		// properties.setProperty("hibernate.dialect",
+		// "org.hibernate.dialect.MySQL5InnoDBDialect");
 		properties.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
 		properties.setProperty("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
-		properties.setProperty("hibernate.format_sql", env.getProperty("hibernate.format_sql"));
+		properties.setProperty("hibernate.format_sql", "true");
 		return properties;
 	}
 
