@@ -19,7 +19,7 @@ public class AppVoyage {
 		VaisseauRepository vaisseauRepo = ctx.getBean(VaisseauRepository.class);
 		
 		vaisseauRepo.findAll();
-		PlaneteRepo.findAll();
+		planeteRepo.findAll();
 		System.out.println(vaisseauRepo);
 	}
 
