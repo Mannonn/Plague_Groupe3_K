@@ -12,7 +12,7 @@ public class Admin extends Compte {
 	}
 	
 	
-	public Admin(int id,String login, String password) {
+	public Admin(long id,String login, String password) {
 		super(id, login, password);
 	}
 	

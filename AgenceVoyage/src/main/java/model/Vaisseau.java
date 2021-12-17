@@ -13,37 +13,44 @@ public class Vaisseau implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	private double vitesse;
+	private long id;
 	private int capacite;
-	private double distance;
 	private String nom;
+	private String equipage;
 
 	public Vaisseau() {
 	}
-	public Vaisseau(String nom,double vitesse, int capacite, double distance) {
-		this.nom=nom;
-		this.vitesse = vitesse;
-		this.capacite = capacite;
-		this.distance = distance;
-	}
-
-	public Vaisseau(int id, String nom,double vitesse, int capacite, double distance) {
+	
+	public Vaisseau(long id, int capacite, String nom, String equipage) {
+		super();
 		this.id = id;
-		this.nom=nom;
-		this.vitesse = vitesse;
 		this.capacite = capacite;
-		this.distance = distance;
+		this.nom = nom;
+		this.equipage = equipage;
+	}
+
+	public Vaisseau(int capacite, String nom, String equipage) {
+		super();
+		this.capacite = capacite;
+		this.nom = nom;
+		this.equipage = equipage;
 	}
 
 
-	public double getVitesse() {
-		return vitesse;
+	public long getId() {
+		return id;
 	}
 
+	public void setId(long id) {
+		this.id = id;
+	}
 
-	public void setVitesse(double vitesse) {
-		this.vitesse = vitesse;
+	public String getEquipage() {
+		return equipage;
+	}
+
+	public void setEquipage(String equipage) {
+		this.equipage = equipage;
 	}
 
 
@@ -51,27 +58,8 @@ public class Vaisseau implements Serializable {
 		return capacite;
 	}
 
-
 	public void setCapacite(int capacite) {
 		this.capacite = capacite;
-	}
-
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public double getDistance() {
-		return distance;
-	}
-
-
-	public void setDistance(double distance) {
-		this.distance = distance;
 	}
 
 	public String getNom() {
@@ -84,10 +72,10 @@ public class Vaisseau implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Vaisseau [id=" + id + ", vitesse=" + vitesse + ", capacite=" + capacite + ", distance=" + distance
-				+ ", nom=" + nom + "]";
+		return "Vaisseau [id=" + id + ", capacite=" + capacite + ", nom=" + nom + ", equipage=" + equipage + "]";
 	}
 
+	
 	
 
 
