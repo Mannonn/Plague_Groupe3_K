@@ -21,15 +21,13 @@ public class Planete implements Serializable {
 	
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 	private String nom;
 	
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="type_planete",columnDefinition = "ENUM{Gazeuse,Tellurique}") 
+	@Column(name="type_planete",columnDefinition = "ENUM{Glaciaire, Desertique, Urbaine, Montagneuse, Tropicale}") 
 	private TypePlanete type;
-	private String description;
-	private String img;
 	
 	
 	
@@ -64,29 +62,12 @@ public class Planete implements Serializable {
 		this.type = type;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getImg() {
-		return img;
-	}
-
-	public void setImg(String img) {
-		this.img = img;
 	}
 
 	@Override
