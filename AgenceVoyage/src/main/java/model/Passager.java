@@ -17,7 +17,7 @@ public class Passager implements Serializable {
 	
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 	private String nom;
 	private String prenom;
 	
@@ -31,7 +31,7 @@ public class Passager implements Serializable {
 		this.client=client;
 	}
 	
-	public Passager(int id,String nom, String prenom,Client client) {
+	public Passager(long id,String nom, String prenom,Client client) {
 		this.id=id;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -54,11 +54,11 @@ public class Passager implements Serializable {
 		this.prenom = prenom;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
