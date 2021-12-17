@@ -31,21 +31,17 @@ public class Planete implements Serializable {
 	private String description;
 	private String img;
 	
-	@Embedded
-	private Coordonnees coordonnees;
 	
 	
-	public Planete(String nom, TypePlanete type, Coordonnees coordonnees) {
+	public Planete(String nom, TypePlanete type) {
 		this.nom = nom;
 		this.type = type;
-		this.coordonnees = coordonnees;
 	}
 	
-	public Planete(int id,String nom, TypePlanete type, Coordonnees coordonnees) {
+	public Planete(int id,String nom, TypePlanete type) {
 		this.id=id;
 		this.nom = nom;
 		this.type = type;
-		this.coordonnees = coordonnees;
 	}
 	
 	public Planete() {
@@ -66,14 +62,6 @@ public class Planete implements Serializable {
 
 	public void setType(TypePlanete type) {
 		this.type = type;
-	}
-
-	public Coordonnees getCoordonnees() {
-		return coordonnees;
-	}
-
-	public void setCoordonnees(Coordonnees coordonnees) {
-		this.coordonnees = coordonnees;
 	}
 
 	public int getId() {
@@ -103,7 +91,7 @@ public class Planete implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Planete [id=" + id + ", nom=" + nom + ", type=" + type + ", coordonnees=" + coordonnees + "]";
+		return "Planete [id=" + id + ", nom=" + nom + ", type=" + type + "]";
 	}
 
 	

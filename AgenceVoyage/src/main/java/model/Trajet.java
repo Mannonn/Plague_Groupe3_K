@@ -113,18 +113,6 @@ public class Trajet implements Serializable {
 		this.id = id;
 	}
 
-	public double calculDistance() 
-	{
-		int x1=depart.getCoordonnees().getX();
-		int x2=arrivee.getCoordonnees().getX();
-		int y1=depart.getCoordonnees().getY();
-		int y2=arrivee.getCoordonnees().getY();
-		int z1=depart.getCoordonnees().getZ();
-		int z2=arrivee.getCoordonnees().getZ();
-		
-		return Math.sqrt(Math.pow(x2-x1, 2)+Math.pow(y2-y1, 2)+Math.pow(z2-z1, 2));
-		
-	}
 
 	@Override
 	public String toString() {
