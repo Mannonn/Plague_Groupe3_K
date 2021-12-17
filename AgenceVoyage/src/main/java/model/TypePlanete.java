@@ -2,5 +2,5 @@ package model;
 
 public enum TypePlanete {
 
-	Gazeuse,Tellurique;
+	Glaciaire, Desertique, Urbaine, Montagneuse, Tropicale;
 }

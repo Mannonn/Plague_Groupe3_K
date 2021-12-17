@@ -21,31 +21,25 @@ public class Planete implements Serializable {
 	
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 	private String nom;
 	
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="type_planete",columnDefinition = "ENUM{Gazeuse,Tellurique}") 
+	@Column(name="type_planete",columnDefinition = "ENUM{Glaciaire, Desertique, Urbaine, Montagneuse, Tropicale}") 
 	private TypePlanete type;
-	private String description;
-	private String img;
-	
-	@Embedded
-	private Coordonnees coordonnees;
 	
 	
-	public Planete(String nom, TypePlanete type, Coordonnees coordonnees) {
+	
+	public Planete(String nom, TypePlanete type) {
 		this.nom = nom;
 		this.type = type;
-		this.coordonnees = coordonnees;
 	}
 	
-	public Planete(int id,String nom, TypePlanete type, Coordonnees coordonnees) {
+	public Planete(int id,String nom, TypePlanete type) {
 		this.id=id;
 		this.nom = nom;
 		this.type = type;
-		this.coordonnees = coordonnees;
 	}
 	
 	public Planete() {
@@ -68,15 +62,7 @@ public class Planete implements Serializable {
 		this.type = type;
 	}
 
-	public Coordonnees getCoordonnees() {
-		return coordonnees;
-	}
-
-	public void setCoordonnees(Coordonnees coordonnees) {
-		this.coordonnees = coordonnees;
-	}
-
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -84,26 +70,9 @@ public class Planete implements Serializable {
 		this.id = id;
 	}
 
-	
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getImg() {
-		return img;
-	}
-
-	public void setImg(String img) {
-		this.img = img;
-	}
-
 	@Override
 	public String toString() {
-		return "Planete [id=" + id + ", nom=" + nom + ", type=" + type + ", coordonnees=" + coordonnees + "]";
+		return "Planete [id=" + id + ", nom=" + nom + ", type=" + type + "]";
 	}
 
 	
