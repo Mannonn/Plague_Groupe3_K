@@ -18,12 +18,20 @@ public class Trajet implements Serializable {
 
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Obligatoire*
-	private int id;
+	private long id;
 	
 	@Column(name="date_depart",columnDefinition = "DATE")
 	private LocalDate dateDepart;
+	
 	@Column(name="heure_depart",columnDefinition = "TIME")
 	private LocalTime heureDepart;
+	
+	@Column(name="date_arrivee",columnDefinition = "DATE")
+	private LocalDate dateArriveet;
+	
+	@Column(name="heure_arrivee",columnDefinition = "TIME")
+	private LocalTime heureArrivee;
+	
 	@JoinColumn(name="depart")
 	@ManyToOne
 	private Planete depart;
@@ -35,6 +43,8 @@ public class Trajet implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="vaisseau")
 	private Vaisseau vaisseau;
+	
+	private double prix;
 	
 	public Trajet () {
 		
@@ -57,69 +67,68 @@ public class Trajet implements Serializable {
 	}
 
 
-	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public LocalDate getDateDepart() {
 		return dateDepart;
 	}
-
 	public void setDateDepart(LocalDate dateDepart) {
 		this.dateDepart = dateDepart;
 	}
-
 	public LocalTime getHeureDepart() {
 		return heureDepart;
 	}
-
 	public void setHeureDepart(LocalTime heureDepart) {
 		this.heureDepart = heureDepart;
 	}
-
+	public LocalDate getDateArriveet() {
+		return dateArriveet;
+	}
+	public void setDateArriveet(LocalDate dateArriveet) {
+		this.dateArriveet = dateArriveet;
+	}
+	public LocalTime getHeureArrivee() {
+		return heureArrivee;
+	}
+	public void setHeureArrivee(LocalTime heureArrivee) {
+		this.heureArrivee = heureArrivee;
+	}
 	public Planete getDepart() {
 		return depart;
 	}
-
-
 	public void setDepart(Planete depart) {
 		this.depart = depart;
 	}
-
-
 	public Planete getArrivee() {
 		return arrivee;
 	}
-
-
 	public void setArrivee(Planete arrivee) {
 		this.arrivee = arrivee;
 	}
-
-
 	public Vaisseau getVaisseau() {
 		return vaisseau;
 	}
-
-
 	public void setVaisseau(Vaisseau vaisseau) {
 		this.vaisseau = vaisseau;
 	}
-	
-	
-
-	public int getId() {
-		return id;
+	public double getPrix() {
+		return prix;
 	}
-
-	public void setId(int id) {
-		this.id = id;
+	public void setPrix(double prix) {
+		this.prix = prix;
 	}
-
-
 	@Override
 	public String toString() {
-		return "Trajet [id=" + id + ", dateDepart=" + dateDepart + ", heureDepart=" + heureDepart + ", depart=" + depart
-				+ ", arrivee=" + arrivee + ", vaisseau=" + vaisseau + "]";
+		return "Trajet [id=" + id + ", dateDepart=" + dateDepart + ", heureDepart=" + heureDepart + ", dateArriveet="
+				+ dateArriveet + ", heureArrivee=" + heureArrivee + ", depart=" + depart + ", arrivee=" + arrivee
+				+ ", vaisseau=" + vaisseau + ", prix=" + prix + "]";
 	}
-
+	
+	
 	
 	
 	

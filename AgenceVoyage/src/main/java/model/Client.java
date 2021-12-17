@@ -24,17 +24,26 @@ public class Client extends Compte {
 	}
 	
 	
-	public Client(int id,String login, String password, String nom, String prenom) {
+	public Client(long id,String login, String password, String nom, String prenom) {
 		super(id, login, password);
 		this.nom = nom;
 		this.prenom = prenom;
 	}
+	
+	
 
-	public Client(String login, String password, String nom, String prenom/*, List<Reservation> reservations*/) {
+	public Client(String login, String password, String nom, String prenom) {
 		super(login, password);
 		this.nom = nom;
 		this.prenom = prenom;
-		/*this.reservations = reservations;*/
+	}
+
+
+	public Client(String login, String password, String nom, String prenom, List<Reservation> reservations) {
+		super(login, password);
+		this.nom = nom;
+		this.prenom = prenom;
+		this.reservations = reservations;
 	}
 	
 	
@@ -62,11 +71,11 @@ public class Client extends Compte {
 		this.reservations = reservations;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
