@@ -26,7 +26,7 @@ public class Planete implements Serializable {
 	
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="type_planete",columnDefinition = "ENUM{Glaciaire, Desertique, Urbaine, Montagneuse, Tropicale}") 
+	@Column(name="type_planete",columnDefinition = "enum('Glaciaire','Desertique','Urbaine','Montagneuse','Tropicale')") 
 	private TypePlanete type;
 	
 	
