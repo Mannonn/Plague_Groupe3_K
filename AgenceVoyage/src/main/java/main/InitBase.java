@@ -51,8 +51,7 @@ public class InitBase {
 	
 	
 
-	//public void run(String... args)
-	public void main(String[] args)
+	public void run(String... args)
 	{
 		initDataBase();
 	}
