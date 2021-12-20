@@ -102,6 +102,15 @@ public class InitBase {
 		activiteRepo.save(buggycratere);
 		activiteRepo.save(siteHisto);
 		
+		Set<Activite> activites1 = new HashSet();
+		Set<Activite> activites2 = new HashSet();
+		
+		activites1.add(chameau);
+		activites1.add(escalade);
+		
+		activites2.add(siteHisto);
+		activites2.add(buggycratere);
+		
 		// Vaisseau;
 		 Vaisseau jaxxSparrow  = new Vaisseau(100, "JaxxSaprrow", "Jordan");
 		 Vaisseau fauconMill  = new Vaisseau(5, "Faucon Millenium", "Chewbaca");
@@ -152,8 +161,8 @@ public class InitBase {
 		passagers1.add(tintin);
 		passagers2.add(potter);
 		passagers2.add(zemmour);
-		Reservation resa1 = new Reservation(terreMars, client1, passagers1);
-		Reservation resa2 = new Reservation(saturneLune, client2, passagers2);
+		Reservation resa1 = new Reservation(client1,terreMars, passagers1, activites1);
+		Reservation resa2 = new Reservation(client2,saturneLune, passagers2, activites2);
 		 
 		reservationRepo.save(resa1);
 		reservationRepo.save(resa2); 

@@ -18,4 +18,5 @@ public interface ActiviteRepository extends JpaRepository<Activite, Long>{
 	
 	List<Activite> findByPrixLessThanEqual(double prix);
 
+>>>>>>> developp
 }
