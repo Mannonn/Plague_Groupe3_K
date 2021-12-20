@@ -11,6 +11,10 @@ public class Admin extends Compte {
 	public Admin() {
 	}
 	
+	public Admin(String login, String password) {
+		super(login, password);
+	}
+	
 	
 	public Admin(Long id,String login, String password) {
 		super(id, login, password);
