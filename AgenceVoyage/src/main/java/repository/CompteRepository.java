@@ -13,5 +13,5 @@ public interface CompteRepository extends JpaRepository<Compte, Long>{
 
 	List<Compte> findByNomContaining(String nom);
 	
-	Optional<Compte> findById(String nom);
+	Optional<Compte> findById(Long id);
 }

@@ -14,7 +14,7 @@ public class Activite {
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Obligatoire*
 	@Column(name="id_activite")
-	private long id;
+	private Long id;
 	
 	@Column(name="nom_activite")
 	private String nom;
