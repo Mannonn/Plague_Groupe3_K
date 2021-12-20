@@ -50,30 +50,25 @@ public class Trajet implements Serializable {
 		
 	}
 	
-
-	public Trajet(LocalDate dateDepart, LocalTime heureDepart, LocalDate dateArriveet, LocalTime heureArrivee,
+	public Trajet(Long id, LocalDate dateDepart, LocalTime heureDepart, LocalDate dateArrivee, LocalTime heureArrivee,
 			Planete depart, Planete arrivee, Vaisseau vaisseau, double prix) {
 		super();
+		this.id = id;
 		this.dateDepart = dateDepart;
 		this.heureDepart = heureDepart;
-		this.dateArriveet = dateArriveet;
+		this.dateArrivee = dateArrivee;
 		this.heureArrivee = heureArrivee;
 		this.depart = depart;
 		this.arrivee = arrivee;
 		this.vaisseau = vaisseau;
 		this.prix = prix;
 	}
-
-
-	
-
-	public Trajet(Long id, LocalDate dateDepart, LocalTime heureDepart, LocalDate dateArriveet, LocalTime heureArrivee,
+	public Trajet(LocalDate dateDepart, LocalTime heureDepart, LocalDate dateArrivee, LocalTime heureArrivee,
 			Planete depart, Planete arrivee, Vaisseau vaisseau, double prix) {
 		super();
-		this.id = id;
 		this.dateDepart = dateDepart;
 		this.heureDepart = heureDepart;
-		this.dateArriveet = dateArriveet;
+		this.dateArrivee = dateArrivee;
 		this.heureArrivee = heureArrivee;
 		this.depart = depart;
 		this.arrivee = arrivee;
@@ -84,36 +79,6 @@ public class Trajet implements Serializable {
 
 
 	public Long getId() {
-	
-	
-	
-	public Trajet(long id, LocalDate dateDepart, LocalTime heureDepart, LocalDate dateArriveet, LocalTime heureArrivee,
-			Planete depart, Planete arrivee, Vaisseau vaisseau, double prix) {
-		this.id = id;
-		this.dateDepart = dateDepart;
-		this.heureDepart = heureDepart;
-		this.dateArriveet = dateArriveet;
-		this.heureArrivee = heureArrivee;
-		this.depart = depart;
-		this.arrivee = arrivee;
-		this.vaisseau = vaisseau;
-		this.prix = prix;
-	}
-	
-	public Trajet(LocalDate dateDepart, LocalTime heureDepart, LocalDate dateArriveet, LocalTime heureArrivee,
-			Planete depart, Planete arrivee, Vaisseau vaisseau, double prix) {
-		this.dateDepart = dateDepart;
-		this.heureDepart = heureDepart;
-		this.dateArriveet = dateArriveet;
-		this.heureArrivee = heureArrivee;
-		this.depart = depart;
-		this.arrivee = arrivee;
-		this.vaisseau = vaisseau;
-		this.prix = prix;
-	}
-	
-	
-	public long getId() {
 		return id;
 	}
 
