@@ -43,7 +43,7 @@ public class Reservation implements Serializable{
 			joinColumns = @JoinColumn(name = "id_reservation"), 
 			inverseJoinColumns = @JoinColumn(name = "id_activit�") 
 	)
-	private List<Activite> activites;
+	private Set<Activite> activites;
 	
 	@JoinColumn(name = "client")
 	@ManyToOne
