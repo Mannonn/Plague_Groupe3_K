@@ -2,6 +2,7 @@ package model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -10,8 +11,10 @@ import javax.persistence.OneToMany;
 @DiscriminatorValue("client")
 public class Client extends Compte {
 
-	
+	@Column(name="nom")
 	private String nom;
+	
+	@Column(name="prenom")
 	private String prenom;
 	
 	

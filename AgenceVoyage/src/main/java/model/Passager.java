@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,11 @@ public class Passager implements Serializable {
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
+	@Column(name="nom")
 	private String nom;
+	
+	@Column(name="prenom")
 	private String prenom;
 	
 	@ManyToOne

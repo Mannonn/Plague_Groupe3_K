@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,26 +15,32 @@ public class Vaisseau implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
+	@Column(name="capacite_vaisseau")
 	private int capacite;
+	
+	@Column(name="nom_vaisseau")
 	private String nom;
-	private String equipage;
+	
+	@Column(name="capitaine_vaisseau")
+	private String capitaine;
 
 	public Vaisseau() {
 	}
 	
-	public Vaisseau(long id, int capacite, String nom, String equipage) {
+	public Vaisseau(long id, int capacite, String nom, String capitaine) {
 		super();
 		this.id = id;
 		this.capacite = capacite;
 		this.nom = nom;
-		this.equipage = equipage;
+		this.capitaine = capitaine;
 	}
 
-	public Vaisseau(int capacite, String nom, String equipage) {
+	public Vaisseau(int capacite, String nom, String capitaine) {
 		super();
 		this.capacite = capacite;
 		this.nom = nom;
-		this.equipage = equipage;
+		this.capitaine = capitaine;
 	}
 
 
@@ -45,12 +52,12 @@ public class Vaisseau implements Serializable {
 		this.id = id;
 	}
 
-	public String getEquipage() {
-		return equipage;
+	public String getcapitaine() {
+		return capitaine;
 	}
 
-	public void setEquipage(String equipage) {
-		this.equipage = equipage;
+	public void setcapitaine(String capitaine) {
+		this.capitaine = capitaine;
 	}
 
 
@@ -72,7 +79,7 @@ public class Vaisseau implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Vaisseau [id=" + id + ", capacite=" + capacite + ", nom=" + nom + ", equipage=" + equipage + "]";
+		return "Vaisseau [id=" + id + ", capacite=" + capacite + ", nom=" + nom + ", capitaine=" + capitaine + "]";
 	}
 
 	

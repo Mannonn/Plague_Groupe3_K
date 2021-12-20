@@ -24,6 +24,8 @@ public class Reservation implements Serializable{
 	@Column(name = "date_reservation")
 	private LocalDate dateReservation;
 	
+	@JoinColumn(name="reservation_passager")
+	@OneToMany
 	private List<Passager> passagers;
 	
 	@JoinColumn(name="trajet_aller")
@@ -34,6 +36,8 @@ public class Reservation implements Serializable{
 	@ManyToOne
 	private Trajet retour;
 	
+	@JoinColumn(name="reservation_activite")
+	@OneToMany
 	private List<Activite> activites;
 	
 	@JoinColumn(name = "client")

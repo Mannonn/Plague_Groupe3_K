@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 import javax.persistence.Column;
@@ -44,6 +43,7 @@ public class Trajet implements Serializable {
 	@JoinColumn(name="vaisseau")
 	private Vaisseau vaisseau;
 	
+	@Column(name="prix_trajet")
 	private double prix;
 	
 	public Trajet () {
