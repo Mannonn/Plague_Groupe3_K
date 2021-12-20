@@ -13,18 +13,15 @@ import javax.persistence.ManyToOne;
 
 public class Equipage implements Serializable {
 
-		@Id//Obligatoire
-		@GeneratedValue(strategy = GenerationType.IDENTITY) //Obligatoire*
+	
 		private long id;
 		
-		@Column(name="nom",columnDefinition = "DATE")
+		
 		private String nom;
 		
-		@Column(name="prenom",columnDefinition = "TIME")
+		
 		private String prenom;
 		
-		@JoinColumn(name="depart")
-		@ManyToOne
 		private Grade grade;
 		
 		public Equipage () {}
