@@ -26,8 +26,11 @@ public class Reservation implements Serializable{
 	@Column(name = "date_reservation")
 	private LocalDate dateReservation;
 	
-	@JoinColumn(name="reservation_passager")
-	@OneToMany
+	@ManyToMany
+	@JoinTable(name = "reservation_passager", 
+			joinColumns = @JoinColumn(name = "id_reservation"), 
+			inverseJoinColumns = @JoinColumn(name = "id_passager") 
+	)
 	private Set<Passager> passagers;
 	
 	@JoinColumn(name="trajet_aller")
@@ -41,7 +44,7 @@ public class Reservation implements Serializable{
 	@ManyToMany
 	@JoinTable(name = "reservation_activite", 
 			joinColumns = @JoinColumn(name = "id_reservation"), 
-			inverseJoinColumns = @JoinColumn(name = "id_activit�") 
+			inverseJoinColumns = @JoinColumn(name = "id_activite") 
 	)
 	private Set<Activite> activites;
 	
@@ -51,21 +54,26 @@ public class Reservation implements Serializable{
 	
 	public Reservation () {}
 	
-	public Reservation(Trajet aller, Client client) {
+	public Reservation(Long id, Compte client, Trajet aller, Set<Passager> passagers,
+			Set<Activite> activites) {
+		this.id = id;
+		this.dateReservation = LocalDate.now();
+		this.passagers = passagers;
 		this.aller = aller;
-		this.client = client;
-		this.dateReservation=LocalDate.now();
+		this.activites = activites;
+		this.client = (Client) client;
+	}
+
+	public Reservation(Compte client2, Trajet aller, Set<Passager> passagers,
+			Set<Activite> activites) {
+		this.dateReservation = LocalDate.now();
+		this.passagers = passagers;
+		this.aller = aller;
+		this.activites = activites;
+		this.client = (Client) client2;
 	}
 
 	
-	public Reservation(Long id, Trajet aller, Client client,LocalDate dateReservation) {
-		this.id=id;
-		this.aller = aller;
-		this.client = client;
-		this.dateReservation=dateReservation;
-	}
-
-
 	public Long getId() {
 		return id;
 	}
