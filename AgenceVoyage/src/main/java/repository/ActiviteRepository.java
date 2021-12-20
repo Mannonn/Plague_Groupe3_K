@@ -17,7 +17,7 @@ public interface ActiviteRepository extends JpaRepository<Activite, Long>{
 	List<Activite> findByNom(String nom);
 
 	List<Activite> findByNomContaining(String nom);
-
+/*
 	@Query("select a from Compagnon c left join fetch c.maitre where c.id=:id")
 	Optional<Compagnon> findByIdWithMaitre(@Param("id") Long id);
 
@@ -30,4 +30,5 @@ public interface ActiviteRepository extends JpaRepository<Activite, Long>{
 	@Modifying
 	@Query("delete Compagnon c where c.maitre=:maitre")
 	void deleteByMaitre(@Param("maitre") Personnage maitre);
+	*/
 }

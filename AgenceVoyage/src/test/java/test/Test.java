@@ -12,6 +12,5 @@ class Test {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 		ctx.getBeanFactory().createBean(InitBase.class).run(args);
 		ctx.close();
-
 }
 }
