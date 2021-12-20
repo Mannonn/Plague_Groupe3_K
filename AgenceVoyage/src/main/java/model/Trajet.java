@@ -26,7 +26,7 @@ public class Trajet implements Serializable {
 	private LocalTime heureDepart;
 	
 	@Column(name="date_arrivee",columnDefinition = "DATE")
-	private LocalDate dateArriveet;
+	private LocalDate dateArrivee;
 	
 	@Column(name="heure_arrivee",columnDefinition = "TIME")
 	private LocalTime heureArrivee;
@@ -100,10 +100,10 @@ public class Trajet implements Serializable {
 		this.heureDepart = heureDepart;
 	}
 	public LocalDate getDateArriveet() {
-		return dateArriveet;
+		return dateArrivee;
 	}
-	public void setDateArriveet(LocalDate dateArriveet) {
-		this.dateArriveet = dateArriveet;
+	public void setDateArriveet(LocalDate dateArrivee) {
+		this.dateArrivee = dateArrivee;
 	}
 	public LocalTime getHeureArrivee() {
 		return heureArrivee;
@@ -139,8 +139,8 @@ public class Trajet implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Trajet [id=" + id + ", dateDepart=" + dateDepart + ", heureDepart=" + heureDepart + ", dateArriveet="
-				+ dateArriveet + ", heureArrivee=" + heureArrivee + ", depart=" + depart + ", arrivee=" + arrivee
+		return "Trajet [id=" + id + ", dateDepart=" + dateDepart + ", heureDepart=" + heureDepart + ", dateArrivee="
+				+ dateArrivee + ", heureArrivee=" + heureArrivee + ", depart=" + depart + ", arrivee=" + arrivee
 				+ ", vaisseau=" + vaisseau + ", prix=" + prix + "]";
 	}
 	

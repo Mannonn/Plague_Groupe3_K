@@ -1,21 +1,17 @@
 package repository;
 
 import java.util.List;
-import java.util.Optional;
-
-import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import model.Activite;
+import model.Planete;
 
 public interface ActiviteRepository extends JpaRepository<Activite, Long>{
 
 	List<Activite> findByNom(String nom);
 
+<<<<<<< HEAD
 	List<Activite> findByNomContaining(String nom);
 /*
 	@Query("select a from Compagnon c left join fetch c.maitre where c.id=:id")
@@ -31,4 +27,12 @@ public interface ActiviteRepository extends JpaRepository<Activite, Long>{
 	@Query("delete Compagnon c where c.maitre=:maitre")
 	void deleteByMaitre(@Param("maitre") Personnage maitre);
 	*/
+=======
+	List<Activite> findById(Long id);
+	
+	List<Activite> findByPlanete(Planete planete);
+	
+	List<Activite> findByPrixLessThanEqual(double prix);
+
+>>>>>>> developp
 }
