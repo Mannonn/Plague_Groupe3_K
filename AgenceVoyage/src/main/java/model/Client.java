@@ -26,7 +26,7 @@ public class Client extends Compte {
 	}
 	
 	
-	public Client(long id,String login, String password, String nom, String prenom) {
+	public Client(Long id,String login, String password, String nom, String prenom) {
 		super(id, login, password);
 		this.nom = nom;
 		this.prenom = prenom;
@@ -73,11 +73,11 @@ public class Client extends Compte {
 		this.reservations = reservations;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

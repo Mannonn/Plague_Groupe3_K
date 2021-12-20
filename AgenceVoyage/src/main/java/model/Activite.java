@@ -14,7 +14,7 @@ public class Activite {
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Obligatoire*
 	@Column(name="id_activite")
-	private long id;
+	private Long id;
 	
 	@Column(name="nom_activite")
 	private String nom;
@@ -22,7 +22,7 @@ public class Activite {
 	@Column(name="prix_activite")
 	private double prix;
 	
-	@JoinColumn(name="activite_planete")
+	@JoinColumn(name="id_planete")
 	@ManyToOne
 	private Planete Planete;
 	
@@ -30,16 +30,13 @@ public class Activite {
 
 
 	
-	public Activite(long id, String nom, double prix, model.Planete planete) {
+	public Activite(Long id, String nom, double prix, model.Planete planete) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prix = prix;
 		Planete = planete;
 	}
-
-	
-
 
 	public Activite(String nom, double prix, model.Planete planete) {
 		super();
@@ -49,12 +46,11 @@ public class Activite {
 	}
 
 
-
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

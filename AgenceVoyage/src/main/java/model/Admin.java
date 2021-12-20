@@ -16,7 +16,7 @@ public class Admin extends Compte {
 	}
 	
 	
-	public Admin(long id,String login, String password) {
+	public Admin(Long id,String login, String password) {
 		super(id, login, password);
 	}
 	
@@ -35,11 +35,11 @@ public class Admin extends Compte {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}*/
 	

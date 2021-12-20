@@ -19,7 +19,7 @@ public class Planete implements Serializable {
 	
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	
 	@Column(name="nom_planete")
 	private String nom;
@@ -31,12 +31,14 @@ public class Planete implements Serializable {
 	
 	
 	
+	
+	
 	public Planete(String nom, TypePlanete type) {
 		this.nom = nom;
 		this.type = type;
 	}
 	
-	public Planete(int id,String nom, TypePlanete type) {
+	public Planete(Long id,String nom, TypePlanete type) {
 		this.id=id;
 		this.nom = nom;
 		this.type = type;
@@ -62,11 +64,11 @@ public class Planete implements Serializable {
 		this.type = type;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -21,7 +21,7 @@ public class Reservation implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int numero;
+	private Long id;
 	
 	@Column(name = "date_reservation")
 	private LocalDate dateReservation;
@@ -43,7 +43,7 @@ public class Reservation implements Serializable{
 			joinColumns = @JoinColumn(name = "id_reservation"), 
 			inverseJoinColumns = @JoinColumn(name = "id_activit�") 
 	)
-	private List<Activite> activites;
+	private Set<Activite> activites;
 	
 	@JoinColumn(name = "client")
 	@ManyToOne
@@ -58,20 +58,20 @@ public class Reservation implements Serializable{
 	}
 
 	
-	public Reservation(int numero, Trajet aller, Client client,LocalDate dateReservation) {
-		this.numero=numero;
+	public Reservation(Long id, Trajet aller, Client client,LocalDate dateReservation) {
+		this.id=id;
 		this.aller = aller;
 		this.client = client;
 		this.dateReservation=dateReservation;
 	}
 
 
-	public int getNumero() {
-		return numero;
+	public Long getId() {
+		return id;
 	}
 
-	public void setNumero(int numero) {
-		this.numero = numero;
+	public void setId(Long id) {
+		this.id=id;
 	}
 
 	public LocalDate getDateReservation() {
@@ -124,7 +124,7 @@ public class Reservation implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Reservation [numero=" + numero + ", dateReservation=" + dateReservation + ", passagers=" + passagers
+		return "Reservation [id=" + id + ", dateReservation=" + dateReservation + ", passagers=" + passagers
 				+ ", aller=" + aller + ", retour=" + retour + ", activites=" + activites + ", client=" + client + "]";
 	}
 

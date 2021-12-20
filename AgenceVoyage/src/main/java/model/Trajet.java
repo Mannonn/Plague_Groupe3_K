@@ -17,7 +17,7 @@ public class Trajet implements Serializable {
 
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Obligatoire*
-	private long id;
+	private Long id;
 	
 	@Column(name="date_depart",columnDefinition = "DATE")
 	private LocalDate dateDepart;
@@ -49,24 +49,41 @@ public class Trajet implements Serializable {
 	public Trajet () {
 		
 	}
-	public Trajet(LocalDate dateDepart,LocalTime heureDepart, Planete depart, Planete arrivee, Vaisseau vaisseau) {
+	
+
+	public Trajet(LocalDate dateDepart, LocalTime heureDepart, LocalDate dateArriveet, LocalTime heureArrivee,
+			Planete depart, Planete arrivee, Vaisseau vaisseau, double prix) {
+		super();
 		this.dateDepart = dateDepart;
-		this.heureDepart=heureDepart;
+		this.heureDepart = heureDepart;
+		this.dateArriveet = dateArriveet;
+		this.heureArrivee = heureArrivee;
 		this.depart = depart;
 		this.arrivee = arrivee;
 		this.vaisseau = vaisseau;
+		this.prix = prix;
 	}
 
-	public Trajet(int id,LocalDate dateDepart,LocalTime heureDepart, Planete depart, Planete arrivee, Vaisseau vaisseau) {
-		this.id=id;
+
+	
+
+	public Trajet(Long id, LocalDate dateDepart, LocalTime heureDepart, LocalDate dateArriveet, LocalTime heureArrivee,
+			Planete depart, Planete arrivee, Vaisseau vaisseau, double prix) {
+		super();
+		this.id = id;
 		this.dateDepart = dateDepart;
-		this.heureDepart=heureDepart;
+		this.heureDepart = heureDepart;
+		this.dateArriveet = dateArriveet;
+		this.heureArrivee = heureArrivee;
 		this.depart = depart;
 		this.arrivee = arrivee;
 		this.vaisseau = vaisseau;
+		this.prix = prix;
 	}
 
 
+
+	public Long getId() {
 	
 	
 	
@@ -99,9 +116,13 @@ public class Trajet implements Serializable {
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
+
+
+	public void setId(Long id) {
 		this.id = id;
 	}
+
+
 	public LocalDate getDateDepart() {
 		return dateDepart;
 	}
@@ -150,6 +171,8 @@ public class Trajet implements Serializable {
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "Trajet [id=" + id + ", dateDepart=" + dateDepart + ", heureDepart=" + heureDepart + ", dateArriveet="
