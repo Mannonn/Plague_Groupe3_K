@@ -16,6 +16,7 @@ import model.Trajet;
 
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 
+	/*
 	Optional<Reservation> findById(Long id);
 
 	List<Reservation> findByClient(Client client);
@@ -29,5 +30,6 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 	List<Reservation> findByRetour(Trajet trajet);
 	
 	int CountByActiviteContaining(Activite activite);
+	*/
 
 }

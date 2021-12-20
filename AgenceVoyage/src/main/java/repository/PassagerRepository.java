@@ -9,9 +9,11 @@ import model.Passager;
 
 public interface PassagerRepository extends JpaRepository<Passager, Long>{
 
+	/*
 	Optional<Passager> findByNom(String nom);
 
 	List<Passager> findByNomContaining(String nom);
 	
 	Optional<Passager> findById(Long id);
+	*/
 }

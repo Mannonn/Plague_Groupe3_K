@@ -75,19 +75,21 @@ public class Trajet implements Serializable {
 
 
 
+
+
+
 	public Long getId() {
 		return id;
 	}
-
-
-
-	public Long getId() {
-		return id;}
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-
+	public LocalDate getDateArrivee() {
+		return dateArrivee;
+	}
+	public void setDateArrivee(LocalDate dateArrivee) {
+		this.dateArrivee = dateArrivee;
+	}
 	public LocalDate getDateDepart() {
 		return dateDepart;
 	}
@@ -100,12 +102,7 @@ public class Trajet implements Serializable {
 	public void setHeureDepart(LocalTime heureDepart) {
 		this.heureDepart = heureDepart;
 	}
-	public LocalDate getDateArriveet() {
-		return dateArrivee;
-	}
-	public void setDateArriveet(LocalDate dateArrivee) {
-		this.dateArrivee = dateArrivee;
-	}
+
 	public LocalTime getHeureArrivee() {
 		return heureArrivee;
 	}

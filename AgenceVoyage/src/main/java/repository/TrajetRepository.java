@@ -12,6 +12,7 @@ import model.Vaisseau;
 
 public interface TrajetRepository extends JpaRepository<Trajet, Long> {
 	
+	/*
 	Optional<Trajet> findById(Long id);
 	
 	List<Trajet> findByPlaneteDepart(Planete planeteDepart);
@@ -29,5 +30,5 @@ public interface TrajetRepository extends JpaRepository<Trajet, Long> {
 	
 	
 	Optional<Trajet> findByVaisseau(Vaisseau vaisseau);
-	
+	*/
 }
