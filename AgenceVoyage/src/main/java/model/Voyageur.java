@@ -1,4 +1,4 @@
-package model;
+/*package model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -79,11 +79,5 @@ public class Voyageur {
 		return "Voyageur [id=" + id + ", reservation=" + reservation + ", passager=" + passager + "]";
 	}
 
-
-
-
 	
-	
-	
-	
-}
+}*/

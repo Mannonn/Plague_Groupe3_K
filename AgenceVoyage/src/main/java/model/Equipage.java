@@ -14,19 +14,14 @@ import javax.persistence.ManyToOne;
 public class Equipage implements Serializable {
 
 	
-		private long id;
-		
-		
+		private Long id;
 		private String nom;
-		
-		
 		private String prenom;
-		
 		private Grade grade;
 		
 		public Equipage () {}
 
-		public Equipage(long id, String nom, String prenom, Grade grade) {
+		public Equipage(Long id, String nom, String prenom, Grade grade) {
 			this.id = id;
 			this.nom = nom;
 			this.prenom = prenom;
@@ -39,11 +34,11 @@ public class Equipage implements Serializable {
 			this.grade = grade;
 		}
 
-		public long getId() {
+		public Long getId() {
 			return id;
 		}
 
-		public void setId(long id) {
+		public void setId(Long id) {
 			this.id = id;
 		}
 

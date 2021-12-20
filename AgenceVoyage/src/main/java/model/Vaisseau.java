@@ -14,7 +14,7 @@ public class Vaisseau implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	
 	@Column(name="capacite_vaisseau")
 	private int capacite;
@@ -28,7 +28,7 @@ public class Vaisseau implements Serializable {
 	public Vaisseau() {
 	}
 	
-	public Vaisseau(long id, int capacite, String nom, String capitaine) {
+	public Vaisseau(Long id, int capacite, String nom, String capitaine) {
 		super();
 		this.id = id;
 		this.capacite = capacite;
@@ -44,11 +44,11 @@ public class Vaisseau implements Serializable {
 	}
 
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

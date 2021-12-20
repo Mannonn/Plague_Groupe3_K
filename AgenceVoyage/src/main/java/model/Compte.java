@@ -20,7 +20,7 @@ public abstract class Compte implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
 
-	protected long id;
+	protected Long id;
 	protected String login;
 	protected String password;
 	
@@ -29,7 +29,7 @@ public abstract class Compte implements Serializable {
 		
 	}
 	
-	public Compte(long id, String login, String password) {
+	public Compte(Long id, String login, String password) {
 		this.id = id;
 		this.login = login;
 		this.password = password;
@@ -58,11 +58,11 @@ public abstract class Compte implements Serializable {
 	}
 
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
