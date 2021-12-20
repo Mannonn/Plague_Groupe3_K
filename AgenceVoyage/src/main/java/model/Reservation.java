@@ -4,15 +4,17 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Reservation implements Serializable{
@@ -36,8 +38,11 @@ public class Reservation implements Serializable{
 	@ManyToOne
 	private Trajet retour;
 	
-	@JoinColumn(name="reservation_activite")
-	@OneToMany
+	@ManyToMany
+	@JoinTable(name = "reservation_activite", 
+			joinColumns = @JoinColumn(name = "id_reservation"), 
+			inverseJoinColumns = @JoinColumn(name = "id_activité") 
+	)
 	private List<Activite> activites;
 	
 	@JoinColumn(name = "client")
