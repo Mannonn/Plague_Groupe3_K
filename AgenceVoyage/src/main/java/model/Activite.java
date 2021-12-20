@@ -1,27 +1,54 @@
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Activite {
 	
+	@Id//Obligatoire
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //Obligatoire*
+	@Column(name="id_activite")
 	private long id;
 	
+	@Column(name="nom_activite")
 	private String nom;
 	
+	@Column(name="prix_activite")
+	private double prix;
+	
+	@JoinColumn(name="activite_planete")
+	@ManyToOne
 	private Planete Planete;
 	
 	public Activite() {}
 
-	public Activite(long id, String nom, model.Planete planete) {
+
+	
+	public Activite(long id, String nom, double prix, model.Planete planete) {
 		super();
 		this.id = id;
 		this.nom = nom;
+		this.prix = prix;
 		Planete = planete;
 	}
 
-	public Activite(String nom, model.Planete planete) {
+	
+
+
+	public Activite(String nom, double prix, model.Planete planete) {
 		super();
 		this.nom = nom;
+		this.prix = prix;
 		Planete = planete;
 	}
+
+
 
 	public long getId() {
 		return id;
@@ -46,6 +73,20 @@ public class Activite {
 	public void setPlanete(Planete planete) {
 		Planete = planete;
 	}
+	
+	
+
+	public double getPrix() {
+		return prix;
+	}
+
+
+
+	public void setPrix(double prix) {
+		this.prix = prix;
+	}
+
+
 
 	@Override
 	public String toString() {
