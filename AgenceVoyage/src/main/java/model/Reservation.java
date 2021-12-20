@@ -2,7 +2,8 @@ package model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.List;
+import java.util.Set;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -26,10 +27,7 @@ public class Reservation implements Serializable{
 	@Column(name = "date_reservation")
 	private LocalDate dateReservation;
 	
-	@JoinColumn(name="reservation_passager")
-	@OneToMany
-	private List<Passager> passagers;
-	
+
 	@JoinColumn(name="trajet_aller")
 	@ManyToOne
 	private Trajet aller;
@@ -43,7 +41,17 @@ public class Reservation implements Serializable{
 			joinColumns = @JoinColumn(name = "id_reservation"), 
 			inverseJoinColumns = @JoinColumn(name = "id_activité") 
 	)
-	private List<Activite> activites;
+	private Set<Activite> activites;
+	
+	
+	@ManyToMany
+	@JoinTable(name = "reservation_passager", 
+			joinColumns = @JoinColumn(name = "id_reservation"), 
+			inverseJoinColumns = @JoinColumn(name = "id_passager") 
+	)
+	private Set<Passager> passagers;
+	
+	
 	
 	@JoinColumn(name = "client")
 	@ManyToOne
@@ -58,14 +66,21 @@ public class Reservation implements Serializable{
 	}
 
 	
-	public Reservation(int numero, Trajet aller, Client client,LocalDate dateReservation) {
+	public Reservation(int numero, Trajet aller, Compte client,LocalDate dateReservation) {
 		this.numero=numero;
 		this.aller = aller;
-		this.client = client;
+		this.client = (Client) client;
 		this.dateReservation=dateReservation;
 	}
 
-
+	public Reservation(Trajet aller, Compte client1,Set<Passager> passagers) {
+		this.aller = aller;
+		this.client = (Client) client1;
+		this.dateReservation=LocalDate.now();
+		this.passagers=(Set<Passager>) passagers;
+	}
+	
+	
 	public int getNumero() {
 		return numero;
 	}
@@ -82,11 +97,11 @@ public class Reservation implements Serializable{
 		this.dateReservation = dateReservation;
 	}
 
-	public List<Passager> getPassagers() {
+	public Set<Passager> getPassagers() {
 		return passagers;
 	}
 
-	public void setPassagers(List<Passager> passagers) {
+	public void setPassagers(Set<Passager> passagers) {
 		this.passagers = passagers;
 	}
 
@@ -106,11 +121,11 @@ public class Reservation implements Serializable{
 		this.retour = retour;
 	}
 
-	public List<Activite> getActivites() {
+	public Set<Activite> getActivites() {
 		return activites;
 	}
 
-	public void setActivites(List<Activite> activites) {
+	public void setActivites(Set<Activite> activites) {
 		this.activites = activites;
 	}
 
