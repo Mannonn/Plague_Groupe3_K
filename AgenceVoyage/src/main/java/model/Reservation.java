@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +26,7 @@ public class Reservation implements Serializable{
 	
 	@JoinColumn(name="reservation_passager")
 	@OneToMany
-	private List<Passager> passagers;
+	private Set<Passager> passagers;
 	
 	@JoinColumn(name="trajet_aller")
 	@ManyToOne
@@ -38,7 +38,7 @@ public class Reservation implements Serializable{
 	
 	@JoinColumn(name="reservation_activite")
 	@OneToMany
-	private List<Activite> activites;
+	private Set<Activite> activites;
 	
 	@JoinColumn(name = "client")
 	@ManyToOne
@@ -77,11 +77,11 @@ public class Reservation implements Serializable{
 		this.dateReservation = dateReservation;
 	}
 
-	public List<Passager> getPassagers() {
+	public Set<Passager> getPassagers() {
 		return passagers;
 	}
 
-	public void setPassagers(List<Passager> passagers) {
+	public void setPassagers(Set<Passager> passagers) {
 		this.passagers = passagers;
 	}
 
@@ -101,11 +101,11 @@ public class Reservation implements Serializable{
 		this.retour = retour;
 	}
 
-	public List<Activite> getActivites() {
+	public Set<Activite> getActivites() {
 		return activites;
 	}
 
-	public void setActivites(List<Activite> activites) {
+	public void setActivites(Set<Activite> activites) {
 		this.activites = activites;
 	}
 

@@ -1,6 +1,6 @@
 package model;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
@@ -10,7 +10,6 @@ import javax.persistence.OneToMany;
 @Entity
 @DiscriminatorValue("client")
 public class Client extends Compte {
-
 	@Column(name="nom")
 	private String nom;
 	
@@ -19,7 +18,7 @@ public class Client extends Compte {
 	
 	
 	@OneToMany(mappedBy = "client")
-	private List<Reservation> reservations;
+	private Set<Reservation> reservations;
 	
 	
 	public Client () {
@@ -42,7 +41,7 @@ public class Client extends Compte {
 	}
 
 
-	public Client(String login, String password, String nom, String prenom, List<Reservation> reservations) {
+	public Client(String login, String password, String nom, String prenom, Set<Reservation> reservations) {
 		super(login, password);
 		this.nom = nom;
 		this.prenom = prenom;
@@ -66,11 +65,11 @@ public class Client extends Compte {
 		this.prenom = prenom;
 	}
 
-	public List<Reservation> getReservations() {
+	public Set<Reservation> getReservations() {
 		return reservations;
 	}
 
-	public void setReservations(List<Reservation> reservations) {
+	public void setReservations(Set<Reservation> reservations) {
 		this.reservations = reservations;
 	}
 
