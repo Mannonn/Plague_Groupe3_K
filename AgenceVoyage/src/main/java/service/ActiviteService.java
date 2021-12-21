@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import exception.ActiviteException;
-
-
 import model.Activite;
-
 import repository.ActiviteRepository;
 
 @Service
@@ -17,11 +14,9 @@ public class ActiviteService {
 
 	@Autowired
 	private ActiviteRepository activiteRepo;
-	/*@Autowired
-	private PersonnageService personnageService;*/
 
 	public void creation(Activite activite) {
-		if (activite.getNom() == null) {
+		if (activite.getId() == null) {
 			throw new ActiviteException();
 		}
 		activiteRepo.save(activite);
@@ -36,15 +31,6 @@ public class ActiviteService {
 			throw new ActiviteException();
 		}
 	}
-
-	/*public void suppression(Personnage personnage) {
-		if (personnage.getId() != null) {
-			Personnage personnageEnBase = personnageService.getBy(personnage.getId());
-			ActiviteRepo.deleteByMaitre(personnageEnBase);
-		} else {
-			throw new ActiviteException();
-		}
-	}*/
 
 	public Activite getById(Long id) {
 		if (id != null) {

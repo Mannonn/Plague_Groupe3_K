@@ -17,8 +17,7 @@ public class VaisseauService {
 
 	@Autowired
 	private VaisseauRepository vaisseauRepo;
-	/*@Autowired
-	private PersonnageService personnageService;*/
+
 
 	public void creation(Vaisseau vaisseau) {
 		if (vaisseau.getNom() == null) {
@@ -36,15 +35,6 @@ public class VaisseauService {
 			throw new VaisseauException();
 		}
 	}
-
-	/*public void suppression(Personnage personnage) {
-		if (personnage.getId() != null) {
-			Personnage personnageEnBase = personnageService.getBy(personnage.getId());
-			vaisseauRepo.deleteByMaitre(personnageEnBase);
-		} else {
-			throw new vaisseauException();
-		}
-	}*/
 
 	public Vaisseau getById(Long id) {
 		if (id != null) {

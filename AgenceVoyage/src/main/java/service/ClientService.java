@@ -19,7 +19,7 @@ public class ClientService {
 	private ClientRepository clientRepo;
 
 	public void creation(Client client) {
-		if (client.getNom() == null) {
+		if (client.getId() == null) {
 			throw new ClientException();
 		}
 		clientRepo.save(client);
@@ -34,7 +34,6 @@ public class ClientService {
 			throw new ClientException();
 		}
 	}
-
 
 	public Client getById(Long id) {
 		if (id != null) {

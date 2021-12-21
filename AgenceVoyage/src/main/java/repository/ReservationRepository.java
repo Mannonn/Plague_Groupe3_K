@@ -3,6 +3,7 @@ package repository;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -12,16 +13,13 @@ import model.Passager;
 import model.Reservation;
 import model.Trajet;
 
-
-
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 
-	/*
 	Optional<Reservation> findById(Long id);
 
 	List<Reservation> findByClient(Client client);
 	
-	List<Reservation> findByPassager(Passager passager);
+	List<Reservation> findByPassagers(Set<Passager> passagers);
 	
 	List<Reservation> findByDateReservation(LocalDate dateReservation);
 	
@@ -30,6 +28,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 	List<Reservation> findByRetour(Trajet trajet);
 	
 	int CountByActiviteContaining(Activite activite);
-	*/
+	int CountByPassagerContaining(Passager passager);
+
 
 }

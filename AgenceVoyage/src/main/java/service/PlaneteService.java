@@ -23,7 +23,7 @@ public class PlaneteService {
 	
 
 	public void creation(Planete planete) {
-		if (planete.getNom() == null) {
+		if (planete.getId() == null) {
 			throw new PlaneteException();
 		}
 		planeteRepo.save(planete);
@@ -42,7 +42,6 @@ public class PlaneteService {
 		}
 	}
 
-	
 	public Planete getById(Long id) {
 		if (id != null) {
 			return planeteRepo.findById(id).orElseThrow(PlaneteException::new);
