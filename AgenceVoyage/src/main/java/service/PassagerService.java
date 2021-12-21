@@ -6,11 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import exception.PassagerException;
-import exception.ClientException;
-
-import model.Client;
 import model.Passager;
-
+import model.Reservation;
 import repository.PassagerRepository;
 
 @Service
@@ -18,35 +15,26 @@ public class PassagerService {
 
 	@Autowired
 	private PassagerRepository passagerRepo;
-	
-	//A modifier avec le module à venir !
 	@Autowired
-	private ClientService clientService;
+	private ReservationService reservationService;
 
 	public void creation(Passager passager) {
-		if (passager.getNom() == null) {
+		if (passager.getId() == null) {
 			throw new PassagerException();
 		}
 		passagerRepo.save(passager);
 	}
 
-	public void suppression(Passager passager) {
+	//Supprime le passager et la réservation si la liste de passagers est nulle
+	public void suppression(Passager passager, Reservation reservation) {
 		Passager passagerEnBase = null;
-		if (passager.getId() != null) {
+		if (passager.getId() != null ) {
 			passagerEnBase = passagerRepo.findById(passager.getId()).orElseThrow(PassagerException::new);
-			passagerRepo.delete(passagerEnBase);
+			if (passagerRepo.CountByPassagerContaining(passager)>1) {passagerRepo.delete(passagerEnBase);}
+			else  {
+				reservationService.suppression(reservation, passagerEnBase);}
 		} else {
-			throw new PassagerException();
-		}
-	}
-
-	public void suppression(Client client) {
-		if (client.getId() != null) {
-			Client clientEnBase = clientService.getBy(client.getId());
-			passagerRepo.deleteByMaitre(clientEnBase);
-		} else {
-			throw new ClientException();
-		}
+			throw new PassagerException();}
 	}
 
 	public Passager getById(Long id) {

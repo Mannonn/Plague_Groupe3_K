@@ -73,11 +73,6 @@ public class Trajet implements Serializable {
 		this.prix = prix;
 	}
 
-
-
-
-
-
 	public Long getId() {
 		return id;
 	}

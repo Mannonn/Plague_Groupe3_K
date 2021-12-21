@@ -20,7 +20,7 @@ public class TrajetService {
 	
 
 	public void creation(Trajet trajet) {
-		if (trajet.getNom() == null) {
+		if (trajet.getId() == null) {
 			throw new TrajetException();
 		}
 		trajetRepo.save(trajet);
@@ -35,7 +35,6 @@ public class TrajetService {
 			throw new TrajetException();
 		}
 	}
-
 
 	public Trajet getById(Long id) {
 		if (id != null) {

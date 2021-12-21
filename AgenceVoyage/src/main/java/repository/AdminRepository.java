@@ -8,11 +8,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import model.Admin;
 
 public interface AdminRepository extends JpaRepository<Admin, Long>{
-	/*
-	Optional<Admin> findByNom(String nom);
 
-	List<Admin> findByNomContaining(String nom);
+	Optional<Admin> findByLogin(String login);
+
+	List<Admin> findByLoginContaining(String login);
 	
 	Optional<Admin> findById(Long id);
-	*/
+
 }
