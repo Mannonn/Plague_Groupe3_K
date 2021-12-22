@@ -14,7 +14,7 @@ public interface ActiviteRepository extends JpaRepository<Activite, Long>{
 
 	Optional<Activite> findById(Long id);
 	
-	List<Activite> findByPlanete(Planete planete);
+	List<Activite> findByPlanete();
 	
 	List<Activite> findByPrixLessThanEqual(double prix);
 }

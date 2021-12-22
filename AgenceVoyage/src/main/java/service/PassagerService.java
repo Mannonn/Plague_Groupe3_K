@@ -26,7 +26,7 @@ public class PassagerService {
 	}
 
 	//Supprime le passager et la réservation si la liste de passagers est nulle
-	public void suppression(Passager passager, Reservation reservation) {
+	/*public void suppression(Passager passager, Reservation reservation) {
 		Passager passagerEnBase = null;
 		if (passager.getId() != null ) {
 			passagerEnBase = passagerRepo.findById(passager.getId()).orElseThrow(PassagerException::new);
@@ -35,7 +35,7 @@ public class PassagerService {
 				reservationService.suppression(reservation, passagerEnBase);}
 		} else {
 			throw new PassagerException();}
-	}
+	}*/
 
 	public Passager getById(Long id) {
 		if (id != null) {
