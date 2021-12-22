@@ -28,7 +28,7 @@ public class ReservationService {
 	}
 
 	//Lorsqu'on supprime la resa, on supprime les passagers aussi
-	public void suppression(Reservation reservation, Passager passager) {
+	/*public void suppression(Reservation reservation, Passager passager) {
 		Reservation reservationEnBase = null;
 		if (reservation.getId() != null) {
 			reservationEnBase = reservationRepo.findById(reservation.getId()).orElseThrow(ReservationException::new);
@@ -36,7 +36,7 @@ public class ReservationService {
 		} else {
 			throw new ReservationException();
 		}
-	}
+	}*/
 	
 	public Reservation getById(Long id) {
 		if (id != null) {

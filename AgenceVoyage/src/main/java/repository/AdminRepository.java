@@ -9,10 +9,10 @@ import model.Admin;
 
 public interface AdminRepository extends JpaRepository<Admin, Long>{
 
-	Optional<Admin> findByLogin(String login);
+	/*Optional<Admin> findByLogin(String login);
 
 	List<Admin> findByLoginContaining(String login);
 	
-	Optional<Admin> findById(Long id);
+	Optional<Admin> findById(Long id);*/
 
 }
