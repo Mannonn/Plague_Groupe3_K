@@ -16,6 +16,6 @@ public interface PassagerRepository extends JpaRepository<Passager, Long>{
 	
 	Optional<Passager> findById(Long id);
 	
-	int CountByPassagerContaining(Passager passager);
+	//int CountByPassagerContaining(Passager passager);  //erreur detecter 
 	
 }

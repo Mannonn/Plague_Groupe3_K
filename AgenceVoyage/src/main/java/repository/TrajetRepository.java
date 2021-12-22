@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import model.Planete;
 import model.Trajet;
 import model.Vaisseau;
-
+// c ok
 public interface TrajetRepository extends JpaRepository<Trajet, Long> {
 
 	Optional<Trajet> findById(Long id);

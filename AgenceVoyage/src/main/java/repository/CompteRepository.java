@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import model.Compte;
-
+//Test valide, aucun pb detecte
 public interface CompteRepository extends JpaRepository<Compte, Long>{
 
 	Optional<Compte> findByLogin(String login);

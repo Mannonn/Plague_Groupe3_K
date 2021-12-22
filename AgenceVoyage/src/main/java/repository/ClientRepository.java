@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import model.Client;
-
+//Test valide, aucun pb detecte
 public interface ClientRepository extends JpaRepository<Client, Long>{
 
-	/*Optional<Client> findByNom(String nom);
+	Optional<Client> findByNom(String nom);
 
 	List<Client> findByNomContaining(String nom);
 	
@@ -17,6 +17,6 @@ public interface ClientRepository extends JpaRepository<Client, Long>{
 
 	List<Client> findByLoginContaining(String login);
 	
-	Optional<Client> findById(Long id);*/
+	Optional<Client> findById(Long id);
 
 }

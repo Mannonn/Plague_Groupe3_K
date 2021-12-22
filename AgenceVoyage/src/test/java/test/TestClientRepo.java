@@ -12,20 +12,21 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import config.AppConfig;
-import repository.PassagerRepository;
+import repository.ClientRepository;
+
 
 @Transactional
 @Rollback(true)
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {AppConfig.class})
-class TestPassagerRepo {
+class TestClientRepo {
 	
 	@Autowired
-	private PassagerRepository passagerRepo;
+	private ClientRepository clientRepo;
 
 	@Test
 	void test() {
-		assertNotNull(passagerRepo);
+		assertNotNull(clientRepo);
 	}
 	
 	

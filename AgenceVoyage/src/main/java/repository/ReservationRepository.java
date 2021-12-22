@@ -19,7 +19,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 
 	List<Reservation> findByClient(Client client);
 	
-	List<Reservation> findByPassagers(Set<Passager> passagers);
+	//List<Reservation> findByPassagers(Set<Passager> passagers); //erreur detecter
 	
 	List<Reservation> findByDateReservation(LocalDate dateReservation);
 	
@@ -27,8 +27,8 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 	
 	List<Reservation> findByRetour(Trajet trajet);
 	
-	int CountByActiviteContaining(Activite activite);
-	int CountByPassagerContaining(Passager passager);
+	// int CountByActiviteContaining(Activite activite); //erreur detecter
+	// int CountByPassagerContaining(Passager passager); //erreur detecter
 
 
 }
