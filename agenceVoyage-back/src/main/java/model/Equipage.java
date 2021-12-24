@@ -10,13 +10,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+import com.fasterxml.jackson.annotation.JsonView;
 public class Equipage implements Serializable {
 
-	
+	@JsonView(JsonViews.Common.class)
 		private Long id;
-		private String nom;
+		
+	@JsonView(JsonViews.Common.class)private String nom;
 		private String prenom;
+		@JsonView(JsonViews.Common.class)
 		private Grade grade;
 		
 		public Equipage () {}

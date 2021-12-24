@@ -10,21 +10,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+import com.fasterxml.jackson.annotation.JsonView;
 
 @Entity
 @Table(name="planete")
 public class Planete implements Serializable {
 
-	
+	@JsonView(JsonViews.Common.class)
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+	@JsonView(JsonViews.Common.class)
 	@Column(name="nom_planete")
 	private String nom;
 	
-	
+	@JsonView(JsonViews.Common.class)
 	@Enumerated(EnumType.STRING)
 	@Column(name="type_planete",columnDefinition = "enum('Glaciaire','Desertique','Urbaine','Montagneuse','Tropicale')") 
 	private TypePlanete type;

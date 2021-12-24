@@ -13,39 +13,39 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-
+import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 public class Reservation implements Serializable{
-	
+	@JsonView(JsonViews.Common.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "date_reservation")
 	private LocalDate dateReservation;
-	
+	@JsonView(JsonViews.Common.class)
 	@ManyToMany
 	@JoinTable(name = "reservation_passager", 
 			joinColumns = @JoinColumn(name = "id_reservation"), 
 			inverseJoinColumns = @JoinColumn(name = "id_passager") 
 	)
 	private Set<Passager> passagers;
-	
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name="trajet_aller")
 	@ManyToOne
 	private Trajet aller;
-	
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name="trajet_retour")
 	@ManyToOne
 	private Trajet retour;
-	
+	@JsonView(JsonViews.Common.class)
 	@ManyToMany
 	@JoinTable(name = "reservation_activite", 
 			joinColumns = @JoinColumn(name = "id_reservation"), 
 			inverseJoinColumns = @JoinColumn(name = "id_activite") 
 	)
 	private Set<Activite> activites;
-	
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name = "client")
 	@ManyToOne
 	private Client client;

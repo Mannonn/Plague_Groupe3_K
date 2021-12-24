@@ -9,19 +9,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-
+import com.fasterxml.jackson.annotation.JsonView;
 
 
 @Entity
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="type_compte")
 public abstract class Compte implements Serializable {
-	
+	@JsonView(JsonViews.Common.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
 
 	protected Long id;
+	@JsonView(JsonViews.Common.class)
 	protected String login;
+	@JsonView(JsonViews.Common.class)
 	protected String password;
 	
 	public Compte () {

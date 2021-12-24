@@ -2,7 +2,7 @@ package model;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-
+import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 @DiscriminatorValue("admin")
 public class Admin extends Compte {
