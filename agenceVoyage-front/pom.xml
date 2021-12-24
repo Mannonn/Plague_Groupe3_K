@@ -69,7 +69,7 @@
 	</dependencies>
 	<build>
 		<finalName>
-			lotr
+			voyageez
 		</finalName>
 
 		<plugins>
