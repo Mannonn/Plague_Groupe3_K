@@ -6,17 +6,18 @@ import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-
+import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 @DiscriminatorValue("client")
 public class Client extends Compte {
+	@JsonView(JsonViews.Common.class)
 	@Column(name="nom")
 	private String nom;
-	
+	@JsonView(JsonViews.Common.class)
 	@Column(name="prenom")
 	private String prenom;
 	
-	
+	@JsonView(JsonViews.Common.class)
 	@OneToMany(mappedBy = "client")
 	private Set<Reservation> reservations;
 	

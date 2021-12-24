@@ -11,38 +11,38 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 public class Trajet implements Serializable {
-
+	@JsonView(JsonViews.Common.class)
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Obligatoire*
 	private Long id;
-	
+	@JsonView(JsonViews.Common.class)
 	@Column(name="date_depart",columnDefinition = "DATE")
 	private LocalDate dateDepart;
-	
+	@JsonView(JsonViews.Common.class)
 	@Column(name="heure_depart",columnDefinition = "TIME")
 	private LocalTime heureDepart;
-	
+	@JsonView(JsonViews.Common.class)
 	@Column(name="date_arrivee",columnDefinition = "DATE")
 	private LocalDate dateArrivee;
-	
+	@JsonView(JsonViews.Common.class)
 	@Column(name="heure_arrivee",columnDefinition = "TIME")
 	private LocalTime heureArrivee;
-	
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name="depart")
 	@ManyToOne
 	private Planete depart;
-	
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name="arrivee")
 	@ManyToOne
 	private Planete arrivee;
-	
+	@JsonView(JsonViews.Common.class)
 	@ManyToOne
 	@JoinColumn(name="vaisseau")
 	private Vaisseau vaisseau;
-	
+	@JsonView(JsonViews.Common.class)
 	@Column(name="prix_trajet")
 	private double prix;
 	

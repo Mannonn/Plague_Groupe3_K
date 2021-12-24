@@ -8,20 +8,22 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 public class Activite {
-	
+	@JsonView(JsonViews.Common.class)
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Obligatoire*
 	@Column(name="id_activite")
 	private Long id;
-	
+	@JsonView(JsonViews.Common.class)
 	@Column(name="nom_activite")
 	private String nom;
-	
+	@JsonView(JsonViews.Common.class)
 	@Column(name="prix_activite")
 	private double prix;
-	
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name="id_planete")
 	@ManyToOne
 	private Planete Planete;
