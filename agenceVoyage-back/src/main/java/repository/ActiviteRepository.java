@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import model.Activite;
+import model.Planete;
 
 public interface ActiviteRepository extends JpaRepository<Activite, Long>{
 
@@ -20,4 +21,7 @@ public interface ActiviteRepository extends JpaRepository<Activite, Long>{
 	Optional<Activite> findByIdWithPlanete(@Param("id") Long id); //Cette méthode plante, à modifier
 	
 	List<Activite> findByPrixLessThanEqual(double prix);
+	
+	@Query("delete Activite a where a.planete=:planete")
+	void deleteByPlanete(@Param("planete") Planete planete);
 }
