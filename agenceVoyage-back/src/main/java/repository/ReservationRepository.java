@@ -19,7 +19,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 	List<Reservation> findByClient(Client client);
 	
 	@Query("select r from Reservation r left join fetch r.passagers where r.id=:id")
-	Optional<Reservation> findByIdWithPassagers(@Param("id") Long id); //erreur detecter
+	Optional<Reservation> findByIdWithPassagers(@Param("id") Long id); 
 	
 	List<Reservation> findByDateReservation(LocalDate dateReservation);
 	

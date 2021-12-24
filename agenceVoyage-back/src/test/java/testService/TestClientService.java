@@ -21,7 +21,7 @@ import service.ClientService;
 @ContextConfiguration(classes = {AppConfig.class})
 class TestClientService {
 	
-	@Autowired
+	@Autowired 
 	private ClientService clientService;
 
 	@Test
