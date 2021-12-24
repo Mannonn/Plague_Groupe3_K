@@ -10,22 +10,22 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
+import com.fasterxml.jackson.annotation.JsonView;
 
 @Entity
 @Table(name="passager")
 public class Passager implements Serializable {
-	
+	@JsonView(JsonViews.Common.class)
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+	@JsonView(JsonViews.Common.class)
 	@Column(name="nom")
 	private String nom;
-	
+	@JsonView(JsonViews.Common.class)
 	@Column(name="prenom")
 	private String prenom;
-	
+	@JsonView(JsonViews.Common.class)
 	@ManyToOne
 	@JoinColumn(name="client")
 	private Client client;
