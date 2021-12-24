@@ -1,4 +1,4 @@
-package test;
+package testRepo;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -12,21 +12,20 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import config.AppConfig;
-import repository.CompteRepository;
-
+import repository.PassagerRepository;
 
 @Transactional
 @Rollback(true)
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {AppConfig.class})
-class TestCompteRepo {
+class TestPassagerRepo {
 	
 	@Autowired
-	private CompteRepository compteRepo;
+	private PassagerRepository passagerRepo;
 
 	@Test
 	void test() {
-		assertNotNull(compteRepo);
+		assertNotNull(passagerRepo);
 	}
 	
 	
