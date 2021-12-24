@@ -25,17 +25,20 @@ public class PassagerService {
 		passagerRepo.save(passager);
 	}
 
-	//Supprime le passager et la réservation si la liste de passagers est nulle
-	/*public void suppression(Passager passager, Reservation reservation) {
+	// Supprime le passager et la réservation si la liste de passagers est nulle
+	public void suppression(Passager passager, Reservation reservation) {
 		Passager passagerEnBase = null;
-		if (passager.getId() != null ) {
+		if (passager.getId() != null) {
 			passagerEnBase = passagerRepo.findById(passager.getId()).orElseThrow(PassagerException::new);
-			if (passagerRepo.CountByPassagerContaining(passager)>1) {passagerRepo.delete(passagerEnBase);}
-			else  {
-				reservationService.suppression(reservation, passagerEnBase);}
+			passagerRepo.delete(passagerEnBase);
+			reservation = reservationService.getByIdWithPassagers(reservation.getId());
+			if (reservation.getPassagers().isEmpty()) {
+				reservationService.suppression(reservation);
+			}
 		} else {
-			throw new PassagerException();}
-	}*/
+			throw new PassagerException();
+		}
+	}
 
 	public Passager getById(Long id) {
 		if (id != null) {
@@ -49,4 +52,3 @@ public class PassagerService {
 	}
 
 }
-

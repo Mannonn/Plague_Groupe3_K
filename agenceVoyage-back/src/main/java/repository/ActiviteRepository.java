@@ -18,7 +18,7 @@ public interface ActiviteRepository extends JpaRepository<Activite, Long>{
 	
 	
 	@Query ("select a from Activite a left join fetch a.planete where a.id=:id")
-	Optional<Activite> findByIdWithPlanete(@Param("id") Long id); //Cette méthode plante, à modifier
+	Optional<Activite> findByIdWithPlanete(@Param("id") Long id); 
 	
 	List<Activite> findByPrixLessThanEqual(double prix);
 	

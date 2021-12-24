@@ -20,7 +20,17 @@ public class ActiviteService {
 			throw new ActiviteException();
 		}
 		activiteRepo.save(activite);
-	}
+	} 
+	
+	public Activite update(Activite activite) {
+        if (activite.getId() == null) {
+            throw new ActiviteException();
+        }
+        Activite activiteEnBase = activiteRepo.findById(activite.getId()).orElseThrow(ActiviteException::new);
+        creation(activiteEnBase);
+        return activiteRepo.save(activite);
+
+    }
 
 	public void suppression(Activite activite) {
 		Activite activiteEnBase = null;
@@ -31,7 +41,7 @@ public class ActiviteService {
 			throw new ActiviteException();
 		}
 	}
-
+	
 	public Activite getById(Long id) {
 		if (id != null) {
 			return activiteRepo.findById(id).orElseThrow(ActiviteException::new);
