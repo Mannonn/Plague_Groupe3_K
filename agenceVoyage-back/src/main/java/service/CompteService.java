@@ -23,6 +23,16 @@ public class CompteService {
 		}
 		compteRepo.save(compte);
 	}
+	
+	public Compte update(Compte compte) {
+        if (compte.getId() == null) {
+            throw new CompteException();
+        }
+        Compte compteEnBase = compteRepo.findById(compte.getId()).orElseThrow(CompteException::new);
+        creation(compteEnBase);
+        return compteRepo.save(compte);
+
+    }
 
 	public void suppression(Compte compte) {
 		Compte compteEnBase = null;
