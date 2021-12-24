@@ -52,7 +52,7 @@
 		</dependency>
 		<dependency>
 	<groupId>SoprAjc</groupId>
-	<artifactId>seigneur-back-spring-perso</artifactId>
+	<artifactId>agenceVoyage-back</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
