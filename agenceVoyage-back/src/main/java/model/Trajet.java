@@ -46,7 +46,9 @@ public class Trajet implements Serializable {
 	@Column(name="prix_trajet")
 	private double prix;
 	
+	public Trajet() {
 	
+	}
 	public Trajet(Long id, LocalDate dateDepart, LocalTime heureDepart, LocalDate dateArrivee, LocalTime heureArrivee,
 			Planete depart, Planete arrivee, Vaisseau vaisseau, double prix) {
 		super();
