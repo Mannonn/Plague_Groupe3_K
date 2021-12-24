@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import exception.ActiviteException;
 import model.Activite;
-import model.Planete;
 import repository.ActiviteRepository;
 
 @Service
@@ -40,9 +39,9 @@ public class ActiviteService {
 		throw new ActiviteException();
 	}
 	
-	public Activite getByPlanete(Planete planete) {
-		if (planete.getId() != null) {
-			return activiteRepo.findByIdWithPlanete(planete).orElseThrow(ActiviteException::new);
+	public Activite getByPlanete(Long id) {
+		if (id != null) {
+			return activiteRepo.findByIdWithPlanete(id).orElseThrow(ActiviteException::new);
 		}
 		throw new ActiviteException();
 	}

@@ -20,24 +20,29 @@ public class Reservation implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@JsonView(JsonViews.Common.class)
 	@Column(name = "date_reservation")
 	private LocalDate dateReservation;
-	@JsonView(JsonViews.Common.class)
+	
+	@JsonView(JsonViews.Reservation.class)
 	@ManyToMany
 	@JoinTable(name = "reservation_passager", 
 			joinColumns = @JoinColumn(name = "id_reservation"), 
 			inverseJoinColumns = @JoinColumn(name = "id_passager") 
 	)
 	private Set<Passager> passagers;
+	
 	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name="trajet_aller")
 	@ManyToOne
 	private Trajet aller;
+	
 	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name="trajet_retour")
 	@ManyToOne
 	private Trajet retour;
+	
 	@JsonView(JsonViews.Common.class)
 	@ManyToMany
 	@JoinTable(name = "reservation_activite", 

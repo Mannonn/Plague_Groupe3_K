@@ -26,7 +26,7 @@ public class Activite {
 	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name="id_planete")
 	@ManyToOne
-	private Planete Planete;
+	private Planete planete;
 	
 	public Activite() {}
 
@@ -37,14 +37,14 @@ public class Activite {
 		this.id = id;
 		this.nom = nom;
 		this.prix = prix;
-		Planete = planete;
+		this.planete = planete;
 	}
 
 	public Activite(String nom, double prix, model.Planete planete) {
 		super();
 		this.nom = nom;
 		this.prix = prix;
-		Planete = planete;
+		this.planete = planete;
 	}
 
 
@@ -65,11 +65,11 @@ public class Activite {
 	}
 
 	public Planete getPlanete() {
-		return Planete;
+		return planete;
 	}
 
 	public void setPlanete(Planete planete) {
-		Planete = planete;
+		this.planete = planete;
 	}
 	
 	
@@ -88,7 +88,7 @@ public class Activite {
 
 	@Override
 	public String toString() {
-		return "Activite [id=" + id + ", nom=" + nom + ", Planete=" + Planete + "]";
+		return "Activite [id=" + id + ", nom=" + nom + ", Planete=" + planete + "]";
 	}
 	
 

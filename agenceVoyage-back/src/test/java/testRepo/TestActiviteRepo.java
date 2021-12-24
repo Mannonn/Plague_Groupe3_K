@@ -1,7 +1,6 @@
 package testRepo;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import javax.transaction.Transactional;
 
@@ -20,7 +19,7 @@ import repository.ActiviteRepository;
 @Rollback(true)
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {AppConfig.class})
-class TestActiciteRepo {
+class TestActiviteRepo {
 	
 	@Autowired
 	private ActiviteRepository activiteRepo;

@@ -8,7 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import model.Activite;
-import model.Planete;
 
 public interface ActiviteRepository extends JpaRepository<Activite, Long>{
 
@@ -18,7 +17,7 @@ public interface ActiviteRepository extends JpaRepository<Activite, Long>{
 	
 	
 	@Query ("select a from Activite a left join fetch a.planete where a.id=:id")
-	Optional<Activite> findByIdWithPlanete(@Param("planete") Planete planete); //Cette méthode plante, à modifier
+	Optional<Activite> findByIdWithPlanete(@Param("id") Long id); //Cette méthode plante, à modifier
 	
 	List<Activite> findByPrixLessThanEqual(double prix);
 }

@@ -3,13 +3,12 @@ package repository;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
-import model.Activite;
 import model.Client;
-import model.Passager;
 import model.Reservation;
 import model.Trajet;
 
@@ -19,7 +18,8 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 
 	List<Reservation> findByClient(Client client);
 	
-	//List<Reservation> findByPassagers(Set<Passager> passagers); //erreur detecter
+	@Query("select r from Reservation r left join fetch r.passagers where r.id=:id")
+	Optional<Reservation> findByIdWithPassagers(@Param("id") Long id); //erreur detecter
 	
 	List<Reservation> findByDateReservation(LocalDate dateReservation);
 	
@@ -27,8 +27,5 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 	
 	List<Reservation> findByRetour(Trajet trajet);
 	
-	// int CountByActiviteContaining(Activite activite); //erreur detecter
-	// int CountByPassagerContaining(Passager passager); //erreur detecter
-
 
 }
