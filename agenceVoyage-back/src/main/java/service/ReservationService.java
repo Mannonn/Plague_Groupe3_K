@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import exception.ReservationException;
-import model.Passager;
 import model.Reservation;
 import repository.ReservationRepository;
 
@@ -27,16 +26,14 @@ public class ReservationService {
 		reservationRepo.save(reservation);
 	}
 
-	//Lorsqu'on supprime la resa, on supprime les passagers aussi
-	/*public void suppression(Reservation reservation, Passager passager) {
+	public void suppression(Reservation reservation) {
 		Reservation reservationEnBase = null;
 		if (reservation.getId() != null) {
 			reservationEnBase = reservationRepo.findById(reservation.getId()).orElseThrow(ReservationException::new);
-			passagerService.suppression(passager, reservationEnBase);
 		} else {
 			throw new ReservationException();
 		}
-	}*/
+	}
 	
 	public Reservation getById(Long id) {
 		if (id != null) {
@@ -49,5 +46,11 @@ public class ReservationService {
 		return reservationRepo.findAll();
 	}
 
+	public Reservation getByIdWithPassagers(Long id) {
+		if (id != null) {
+			return reservationRepo.findByIdWithPassagers(id).orElseThrow(ReservationException::new);
+		}
+		throw new ReservationException();
+	}
 }
 
