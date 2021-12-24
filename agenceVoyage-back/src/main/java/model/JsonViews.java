@@ -9,23 +9,23 @@ public class JsonViews {
 
 	}
 
-	public static class PersonnageAvecFamilier extends Personnage {
+	public static class ReservationAvecFamilier extends Reservation {
 
 	}
 
-	public static class Personnage extends Common {
-
-	}
-	
-	public static class PersonnageWithQuetes extends Personnage {
+	public static class Reservation extends Common {
 
 	}
 	
-	public static class PersonnageWithInventaire extends Personnage{
+	public static class ReservationWithTrajets extends Reservation {
+
+	}
+	
+	public static class ReservationWithClient extends Reservation{
 		
 	}
 	
-	public static class PersonnageWithQuetesInventaire extends Personnage{
+	public static class ReservationWithPassagers extends Reservation{
 		
 	}
 	
