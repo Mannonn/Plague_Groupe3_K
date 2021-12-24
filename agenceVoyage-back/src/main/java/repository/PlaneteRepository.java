@@ -13,6 +13,6 @@ public interface PlaneteRepository extends JpaRepository<Planete, Long>{
 	 
 	  List<Planete> findByNomContaining(String nom);
 	
-	Optional<Planete> findById(Long id);
+	  Optional<Planete> findById(Long id);
 
 }
