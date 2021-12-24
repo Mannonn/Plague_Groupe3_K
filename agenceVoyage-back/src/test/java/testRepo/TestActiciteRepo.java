@@ -1,6 +1,7 @@
-package test;
+package testRepo;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import javax.transaction.Transactional;
 
@@ -12,21 +13,21 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import config.AppConfig;
-import repository.TrajetRepository;
+import repository.ActiviteRepository;
 
 
 @Transactional
 @Rollback(true)
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {AppConfig.class})
-class TestTrajetRepo {
+class TestActiciteRepo {
 	
 	@Autowired
-	private TrajetRepository trajetRepo;
+	private ActiviteRepository activiteRepo;
 
 	@Test
 	void test() {
-		assertNotNull(trajetRepo);
+		assertNotNull(activiteRepo);
 	}
 	
 	
