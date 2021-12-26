@@ -38,7 +38,6 @@ public class PlaneteRestController {
 	@JsonView(JsonViews.Common.class)
 	public List<Planete> getAll() {
 		return planeteService.getAll();
-		//return planeteService.getAll();
 	}
 	
 	@PostMapping("")
@@ -61,7 +60,7 @@ public class PlaneteRestController {
 		if (planete.getId() == null) {
 			planete.setId(id);
 		}
-		//planeteService.update(planete);
+		planeteService.update(planete);
 		return planete;
 	}
 
@@ -75,7 +74,7 @@ public class PlaneteRestController {
 			ReflectionUtils.setField(field, planete, v);
 
 		});
-		//planeteService.update(planete);
+		planeteService.update(planete);
 		return planete;
 	}
 
