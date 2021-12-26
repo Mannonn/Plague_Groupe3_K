@@ -30,7 +30,7 @@ import service.PassagerService;
 import service.ReservationService;
 
 @RestController
-@RequestMapping("/api/admin")
+@RequestMapping("/api/passager")
 public class PassagerRestController {
 	@Autowired
 	private PassagerService passagerService;
@@ -43,47 +43,47 @@ public class PassagerRestController {
 		return passagerService.getAll();
 	}
 	
-	@PostMapping("")
-	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
-	public Passager create(@Valid @RequestBody Passager passager, BindingResult br) {
-		if (br.hasErrors()) {
-			throw new PassagerException();
-		}
-		passagerService.creation(passager);
-		return passager;
-	}
-	
-	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
-	public Passager put(@Valid @RequestBody Passager passager, BindingResult br, @PathVariable Long id) {
-		if (br.hasErrors()) {
-			throw new PassagerException();
-		}
-		if (passager.getId() == null) {
-			passager.setId(id);
-		}
-		passagerService.update(passager);
-		return passager;
-	}
-
-	@PatchMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
-	public Passager patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
-		Passager passager = passagerService.getById(id);
-		fields.forEach((k, v) -> {
-			Field field = ReflectionUtils.findField(Passager.class, k);
-			ReflectionUtils.makeAccessible(field);
-			ReflectionUtils.setField(field, passager, v);
-
-		});
-		passagerService.update(passager);
-		return passager;
-	}
-
-	@DeleteMapping("/{id}")
-	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
-		passagerService.suppression(passagerService.getById(id), reservationService.getById(id));
-	}
+//	@PostMapping("")
+//	@ResponseStatus(code = HttpStatus.CREATED)
+//	@JsonView(JsonViews.Common.class)
+//	public Passager create(@Valid @RequestBody Passager passager, BindingResult br) {
+//		if (br.hasErrors()) {
+//			throw new PassagerException();
+//		}
+//		passagerService.creation(passager);
+//		return passager;
+//	}
+//	
+//	@PutMapping("/{id}")
+//	@JsonView(JsonViews.Common.class)
+//	public Passager put(@Valid @RequestBody Passager passager, BindingResult br, @PathVariable Long id) {
+//		if (br.hasErrors()) {
+//			throw new PassagerException();
+//		}
+//		if (passager.getId() == null) {
+//			passager.setId(id);
+//		}
+//		passagerService.update(passager);
+//		return passager;
+//	}
+//
+//	@PatchMapping("/{id}")
+//	@JsonView(JsonViews.Common.class)
+//	public Passager patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
+//		Passager passager = passagerService.getById(id);
+//		fields.forEach((k, v) -> {
+//			Field field = ReflectionUtils.findField(Passager.class, k);
+//			ReflectionUtils.makeAccessible(field);
+//			ReflectionUtils.setField(field, passager, v);
+//
+//		});
+//		passagerService.update(passager);
+//		return passager;
+//	}
+//
+//	@DeleteMapping("/{id}")
+//	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+//	public void delete(@PathVariable Long id) {
+//		passagerService.suppression(passagerService.getById(id), reservationService.getById(id));
+//	}
 }

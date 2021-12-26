@@ -40,47 +40,47 @@ public class AdminRestController {
 		return adminService.getAll();
 	}
 	
-	@PostMapping("")
-	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
-	public Admin create(@Valid @RequestBody Admin admin, BindingResult br) {
-		if (br.hasErrors()) {
-			throw new AdminException();
-		}
-		adminService.creation(admin);
-		return admin;
-	}
-	
-	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
-	public Admin put(@Valid @RequestBody Admin admin, BindingResult br, @PathVariable Long id) {
-		if (br.hasErrors()) {
-			throw new AdminException();
-		}
-		if (admin.getId() == null) {
-			admin.setId(id);
-		}
-		adminService.update(admin);
-		return admin;
-	}
-
-	@PatchMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
-	public Admin patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
-		Admin admin = adminService.getById(id);
-		fields.forEach((k, v) -> {
-			Field field = ReflectionUtils.findField(Admin.class, k);
-			ReflectionUtils.makeAccessible(field);
-			ReflectionUtils.setField(field, admin, v);
-
-		});
-		adminService.update(admin);
-		return admin;
-	}
-
-	@DeleteMapping("/{id}")
-	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
-		adminService.suppression(adminService.getById(id));
-	}
+//	@PostMapping("")
+//	@ResponseStatus(code = HttpStatus.CREATED)
+//	@JsonView(JsonViews.Common.class)
+//	public Admin create(@Valid @RequestBody Admin admin, BindingResult br) {
+//		if (br.hasErrors()) {
+//			throw new AdminException();
+//		}
+//		adminService.creation(admin);
+//		return admin;
+//	}
+//	
+//	@PutMapping("/{id}")
+//	@JsonView(JsonViews.Common.class)
+//	public Admin put(@Valid @RequestBody Admin admin, BindingResult br, @PathVariable Long id) {
+//		if (br.hasErrors()) {
+//			throw new AdminException();
+//		}
+//		if (admin.getId() == null) {
+//			admin.setId(id);
+//		}
+//		adminService.update(admin);
+//		return admin;
+//	}
+//
+//	@PatchMapping("/{id}")
+//	@JsonView(JsonViews.Common.class)
+//	public Admin patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
+//		Admin admin = adminService.getById(id);
+//		fields.forEach((k, v) -> {
+//			Field field = ReflectionUtils.findField(Admin.class, k);
+//			ReflectionUtils.makeAccessible(field);
+//			ReflectionUtils.setField(field, admin, v);
+//
+//		});
+//		adminService.update(admin);
+//		return admin;
+//	}
+//
+//	@DeleteMapping("/{id}")
+//	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+//	public void delete(@PathVariable Long id) {
+//		adminService.suppression(adminService.getById(id));
+//	}
 }

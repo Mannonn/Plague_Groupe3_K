@@ -42,47 +42,47 @@ public class ClientRestController {
 		return clientService.getAll();
 	}
 	
-	@PostMapping("")
-	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
-	public Client create(@Valid @RequestBody Client client, BindingResult br) {
-		if (br.hasErrors()) {
-			throw new ClientException();
-		}
-		clientService.creation(client);
-		return client;
-	}
-	
-	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
-	public Client put(@Valid @RequestBody Client client, BindingResult br, @PathVariable Long id) {
-		if (br.hasErrors()) {
-			throw new ClientException();
-		}
-		if (client.getId() == null) {
-			client.setId(id);
-		}
-		clientService.update(client);
-		return client;
-	}
-
-	@PatchMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
-	public Client patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
-		Client client = clientService.getById(id);
-		fields.forEach((k, v) -> {
-			Field field = ReflectionUtils.findField(Client.class, k);
-			ReflectionUtils.makeAccessible(field);
-			ReflectionUtils.setField(field, client, v);
-
-		});
-		clientService.update(client);
-		return client;
-	}
-
-	@DeleteMapping("/{id}")
-	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
-		clientService.suppression(clientService.getById(id));
-	}
+//	@PostMapping("")
+//	@ResponseStatus(code = HttpStatus.CREATED)
+//	@JsonView(JsonViews.Common.class)
+//	public Client create(@Valid @RequestBody Client client, BindingResult br) {
+//		if (br.hasErrors()) {
+//			throw new ClientException();
+//		}
+//		clientService.creation(client);
+//		return client;
+//	}
+//	
+//	@PutMapping("/{id}")
+//	@JsonView(JsonViews.Common.class)
+//	public Client put(@Valid @RequestBody Client client, BindingResult br, @PathVariable Long id) {
+//		if (br.hasErrors()) {
+//			throw new ClientException();
+//		}
+//		if (client.getId() == null) {
+//			client.setId(id);
+//		}
+//		clientService.update(client);
+//		return client;
+//	}
+//
+//	@PatchMapping("/{id}")
+//	@JsonView(JsonViews.Common.class)
+//	public Client patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
+//		Client client = clientService.getById(id);
+//		fields.forEach((k, v) -> {
+//			Field field = ReflectionUtils.findField(Client.class, k);
+//			ReflectionUtils.makeAccessible(field);
+//			ReflectionUtils.setField(field, client, v);
+//
+//		});
+//		clientService.update(client);
+//		return client;
+//	}
+//
+//	@DeleteMapping("/{id}")
+//	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+//	public void delete(@PathVariable Long id) {
+//		clientService.suppression(clientService.getById(id));
+//	}
 }

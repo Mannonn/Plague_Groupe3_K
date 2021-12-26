@@ -42,47 +42,47 @@ public class ReservationRestController {
 		return reservationService.getAll();
 	}
 	
-	@PostMapping("")
-	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
-	public Reservation create(@Valid @RequestBody Reservation reservation, BindingResult br) {
-		if (br.hasErrors()) {
-			throw new ReservationException();
-		}
-		reservationService.creation(reservation);
-		return reservation ;
-	}
-	
-	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
-	public Reservation put(@Valid @RequestBody Reservation reservation, BindingResult br, @PathVariable Long id) {
-		if (br.hasErrors()) {
-			throw new ReservationException();
-		}
-		if (reservation.getId() == null) {
-			reservation.setId(id);
-		}
-		reservationService.update(reservation);
-		return reservation;
-	}
-
-	@PatchMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
-	public Reservation patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
-		Reservation reservation = reservationService.getById(id);
-		fields.forEach((k, v) -> {
-			Field field = ReflectionUtils.findField(Reservation.class, k);
-			ReflectionUtils.makeAccessible(field);
-			ReflectionUtils.setField(field, reservation, v);
-
-		});
-		reservationService.update(reservation);
-		return reservation;
-	}
-
-	@DeleteMapping("/{id}")
-	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
-		reservationService.suppression(reservationService.getById(id));
-	}
+//	@PostMapping("")
+//	@ResponseStatus(code = HttpStatus.CREATED)
+//	@JsonView(JsonViews.Common.class)
+//	public Reservation create(@Valid @RequestBody Reservation reservation, BindingResult br) {
+//		if (br.hasErrors()) {
+//			throw new ReservationException();
+//		}
+//		reservationService.creation(reservation);
+//		return reservation ;
+//	}
+//	
+//	@PutMapping("/{id}")
+//	@JsonView(JsonViews.Common.class)
+//	public Reservation put(@Valid @RequestBody Reservation reservation, BindingResult br, @PathVariable Long id) {
+//		if (br.hasErrors()) {
+//			throw new ReservationException();
+//		}
+//		if (reservation.getId() == null) {
+//			reservation.setId(id);
+//		}
+//		reservationService.update(reservation);
+//		return reservation;
+//	}
+//
+//	@PatchMapping("/{id}")
+//	@JsonView(JsonViews.Common.class)
+//	public Reservation patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
+//		Reservation reservation = reservationService.getById(id);
+//		fields.forEach((k, v) -> {
+//			Field field = ReflectionUtils.findField(Reservation.class, k);
+//			ReflectionUtils.makeAccessible(field);
+//			ReflectionUtils.setField(field, reservation, v);
+//
+//		});
+//		reservationService.update(reservation);
+//		return reservation;
+//	}
+//
+//	@DeleteMapping("/{id}")
+//	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+//	public void delete(@PathVariable Long id) {
+//		reservationService.suppression(reservationService.getById(id));
+//	}
 }

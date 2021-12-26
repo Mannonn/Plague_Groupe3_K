@@ -40,47 +40,47 @@ public class VaisseauRestController {
 		return vaisseauService.getAll();
 	}
 	
-	@PostMapping("")
-	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
-	public Vaisseau create(@Valid @RequestBody Vaisseau vaisseau, BindingResult br) {
-		if (br.hasErrors()) {
-			throw new VaisseauException();
-		}
-		vaisseauService.creation(vaisseau);
-		return vaisseau;
-	}
-	
-	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
-	public Vaisseau put(@Valid @RequestBody Vaisseau vaisseau, BindingResult br, @PathVariable Long id) {
-		if (br.hasErrors()) {
-			throw new VaisseauException();
-		}
-		if (vaisseau.getId() == null) {
-			vaisseau.setId(id);
-		}
-		vaisseauService.update(vaisseau);
-		return vaisseau;
-	}
-
-	@PatchMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
-	public Vaisseau patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
-		Vaisseau vaisseau = vaisseauService.getById(id);
-		fields.forEach((k, v) -> {
-			Field field = ReflectionUtils.findField(Vaisseau.class, k);
-			ReflectionUtils.makeAccessible(field);
-			ReflectionUtils.setField(field, vaisseau, v);
-
-		});
-		vaisseauService.update(vaisseau);
-		return vaisseau;
-	}
-
-	@DeleteMapping("/{id}")
-	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
-		vaisseauService.suppression(vaisseauService.getById(id));
-	}
+//	@PostMapping("")
+//	@ResponseStatus(code = HttpStatus.CREATED)
+//	@JsonView(JsonViews.Common.class)
+//	public Vaisseau create(@Valid @RequestBody Vaisseau vaisseau, BindingResult br) {
+//		if (br.hasErrors()) {
+//			throw new VaisseauException();
+//		}
+//		vaisseauService.creation(vaisseau);
+//		return vaisseau;
+//	}
+//	
+//	@PutMapping("/{id}")
+//	@JsonView(JsonViews.Common.class)
+//	public Vaisseau put(@Valid @RequestBody Vaisseau vaisseau, BindingResult br, @PathVariable Long id) {
+//		if (br.hasErrors()) {
+//			throw new VaisseauException();
+//		}
+//		if (vaisseau.getId() == null) {
+//			vaisseau.setId(id);
+//		}
+//		vaisseauService.update(vaisseau);
+//		return vaisseau;
+//	}
+//
+//	@PatchMapping("/{id}")
+//	@JsonView(JsonViews.Common.class)
+//	public Vaisseau patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
+//		Vaisseau vaisseau = vaisseauService.getById(id);
+//		fields.forEach((k, v) -> {
+//			Field field = ReflectionUtils.findField(Vaisseau.class, k);
+//			ReflectionUtils.makeAccessible(field);
+//			ReflectionUtils.setField(field, vaisseau, v);
+//
+//		});
+//		vaisseauService.update(vaisseau);
+//		return vaisseau;
+//	}
+//
+//	@DeleteMapping("/{id}")
+//	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+//	public void delete(@PathVariable Long id) {
+//		vaisseauService.suppression(vaisseauService.getById(id));
+//	}
 }
