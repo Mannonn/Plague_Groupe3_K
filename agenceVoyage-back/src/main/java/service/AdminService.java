@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import exception.ActiviteException;
 import exception.AdminException;
+import model.Activite;
 import model.Admin;
 import repository.AdminRepository;
 
@@ -21,6 +23,17 @@ public class AdminService {
 		}
 		adminRepo.save(admin);
 	}
+	
+	public Admin update(Admin admin) {
+        if (admin.getId() == null) {
+            throw new AdminException();
+        }
+        Admin adminEnBase = adminRepo.findById(admin.getId()).orElseThrow(AdminException::new);
+        creation(adminEnBase);
+        return adminRepo.save(admin);
+
+    }
+
 
 	public void suppression(Admin admin) {
 		Admin adminEnBase = null;

@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import exception.ActiviteException;
 import exception.PassagerException;
+import model.Activite;
 import model.Passager;
 import model.Reservation;
 import repository.PassagerRepository;
@@ -24,6 +26,17 @@ public class PassagerService {
 		}
 		passagerRepo.save(passager);
 	}
+	
+	public Passager update(Passager passager) {
+        if (passager.getId() == null) {
+            throw new PassagerException();
+        }
+        Passager passagerEnBase = passagerRepo.findById(passager.getId()).orElseThrow(PassagerException::new);
+        creation(passagerEnBase);
+        return passagerRepo.save(passager);
+
+    }
+
 
 	// Supprime le passager et la réservation si la liste de passagers est nulle
 	public void suppression(Passager passager, Reservation reservation) {
