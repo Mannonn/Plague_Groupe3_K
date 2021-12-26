@@ -38,7 +38,6 @@ public class VaisseauRestController {
 	@JsonView(JsonViews.Common.class)
 	public List<Vaisseau> getAll() {
 		return vaisseauService.getAll();
-		//return vaisseauService.getAll();
 	}
 	
 	@PostMapping("")
@@ -61,7 +60,7 @@ public class VaisseauRestController {
 		if (vaisseau.getId() == null) {
 			vaisseau.setId(id);
 		}
-		//vaisseauService.update(vaisseau);
+		vaisseauService.update(vaisseau);
 		return vaisseau;
 	}
 
@@ -75,7 +74,7 @@ public class VaisseauRestController {
 			ReflectionUtils.setField(field, vaisseau, v);
 
 		});
-		//vaisseauService.update(vaisseau);
+		vaisseauService.update(vaisseau);
 		return vaisseau;
 	}
 
