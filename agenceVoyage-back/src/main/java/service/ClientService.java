@@ -6,7 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import exception.ActiviteException;
 import exception.ClientException;
+import model.Activite;
 import model.Client;
 import repository.ClientRepository;
 
@@ -22,6 +24,17 @@ public class ClientService {
 		}
 		clientRepo.save(client);
 	}
+	
+	public Client update(Client client) {
+        if (client.getId() == null) {
+            throw new ClientException();
+        }
+        Client clientEnBase = clientRepo.findById(client.getId()).orElseThrow(ClientException::new);
+        creation(clientEnBase);
+        return clientRepo.save(client);
+
+    }
+
 
 	public void suppression(Client client) {
 		Client clientEnBase = null;

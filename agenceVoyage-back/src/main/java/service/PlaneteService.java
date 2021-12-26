@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import exception.ActiviteException;
 import exception.PlaneteException;
 import model.Activite;
 import model.Planete;
@@ -35,6 +36,17 @@ public class PlaneteService {
 		}
 		planeteRepo.save(planete);
 	}
+	
+	
+	public Planete update(Planete planete) {
+        if (planete.getId() == null) {
+            throw new PlaneteException();
+        }
+        Planete planeteEnBase = planeteRepo.findById(planete.getId()).orElseThrow(PlaneteException::new);
+        creation(planeteEnBase);
+        return planeteRepo.save(planete);
+
+    }
 
 //	public void suppression(Planete planete, Trajet trajet, Activite activite) {
 //		Planete planeteEnBase = null;

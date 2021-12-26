@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import exception.ActiviteException;
 import exception.ReservationException;
+import model.Activite;
 import model.Reservation;
 import repository.ReservationRepository;
 
@@ -25,6 +27,17 @@ public class ReservationService {
 		}
 		reservationRepo.save(reservation);
 	}
+	
+	public Reservation update(Reservation reservation) {
+        if (reservation.getId() == null) {
+            throw new ReservationException();
+        }
+        Reservation reservationEnBase = reservationRepo.findById(reservation.getId()).orElseThrow(ReservationException::new);
+        creation(reservationEnBase);
+        return reservationRepo.save(reservation);
+
+    }
+
 
 	public void suppression(Reservation reservation) {
 		Reservation reservationEnBase = null;

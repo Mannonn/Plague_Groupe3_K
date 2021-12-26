@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import exception.ActiviteException;
 import exception.VaisseauException;
-
-
+import model.Activite;
 import model.Vaisseau;
 
 import repository.VaisseauRepository;
@@ -25,6 +25,17 @@ public class VaisseauService {
 		}
 		vaisseauRepo.save(vaisseau);
 	}
+	
+	public Vaisseau update(Vaisseau vaisseau) {
+        if (vaisseau.getId() == null) {
+            throw new VaisseauException();
+        }
+        Vaisseau vaisseauEnBase = vaisseauRepo.findById(vaisseau.getId()).orElseThrow(VaisseauException::new);
+        creation(vaisseauEnBase);
+        return vaisseauRepo.save(vaisseau);
+
+    }
+
 
 	public void suppression(Vaisseau vaisseau) {
 		Vaisseau vaisseauEnBase = null;
