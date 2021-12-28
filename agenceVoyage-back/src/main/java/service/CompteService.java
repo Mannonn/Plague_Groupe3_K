@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 
 import exception.CompteException;
 import model.Compte;
-import repository.AdminRepository;
-import repository.ClientRepository;
 import repository.CompteRepository;
 
 @Service

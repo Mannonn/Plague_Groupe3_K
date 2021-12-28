@@ -26,12 +26,12 @@ import com.fasterxml.jackson.annotation.JsonView;
 import exception.ActiviteException;
 import model.Activite;
 import model.JsonViews;
-import model.Vaisseau;
 import service.ActiviteService;
 
 @RestController
 @RequestMapping("/api/activite")
 public class ActiviteRestController {
+
 	@Autowired
 	private ActiviteService activiteService;
 
@@ -40,48 +40,47 @@ public class ActiviteRestController {
 	public List<Activite> getAll() {
 		return activiteService.getAll();
 	}
-	
-////	@PostMapping("")
-//	@ResponseStatus(code = HttpStatus.CREATED)
-//	@JsonView(JsonViews.Common.class)
-//	public Activite create(@Valid @RequestBody Activite activite, BindingResult br) {
-//		if (br.hasErrors()) {
-//			throw new ActiviteException();
-//		}
-//		activiteService.creation(activite);
-//		return activite;
-//	}
-//	
-//	@PutMapping("/{id}")
-//	@JsonView(JsonViews.Common.class)
-//	public Activite put(@Valid @RequestBody Activite activite, BindingResult br, @PathVariable Long id) {
-//		if (br.hasErrors()) {
-//			throw new ActiviteException();
-//		}
-//		if (activite.getId() == null) {
-//			activite.setId(id);
-//		}
-//		activiteService.update(activite);
-//		return activite;
-//	}
-//
-//	@PatchMapping("/{id}")
-//	@JsonView(JsonViews.Common.class)
-//	public Activite patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
-//		Activite activite = activiteService.getById(id);
-//		fields.forEach((k, v) -> {
-//			Field field = ReflectionUtils.findField(Activite.class, k);
-//			ReflectionUtils.makeAccessible(field);
-//			ReflectionUtils.setField(field, activite, v);
-//
-//		});
-//		activiteService.update(activite);
-//		return activite;
-//	}
-//
-//	@DeleteMapping("/{id}")
-//	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-//	public void delete(@PathVariable Long id) {
-//		activiteService.suppression(activiteService.getById(id));
-//	}
+
+	@PostMapping("")
+	@ResponseStatus(code = HttpStatus.CREATED)
+	@JsonView(JsonViews.Common.class)
+	public Activite create(@Valid @RequestBody Activite activite, BindingResult br) {
+		if (br.hasErrors()) {
+			throw new ActiviteException();
+		}
+		activiteService.creation(activite);
+		return activite;
+	}
+
+	@PutMapping("/{id}")
+	@JsonView(JsonViews.Common.class)
+	public Activite put(@Valid @RequestBody Activite activite, BindingResult br, @PathVariable Long id) {
+		if (br.hasErrors()) {
+			throw new ActiviteException();
+		}
+		if (activite.getId() == null) {
+			activite.setId(id);
+		}
+		activiteService.update(activite);
+		return activite;
+	}
+
+	@PatchMapping("/{id}")
+	@JsonView(JsonViews.Common.class)
+	public Activite patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
+		Activite activite = activiteService.getById(id);
+		fields.forEach((k, v) -> {
+			Field field = ReflectionUtils.findField(Activite.class, k);
+			ReflectionUtils.makeAccessible(field);
+			ReflectionUtils.setField(field, activite, v);
+		});
+		activiteService.update(activite);
+		return activite;
+	}
+
+	@DeleteMapping("/{id}")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable Long id) {
+		activiteService.suppression(activiteService.getById(id));
+	}
 }

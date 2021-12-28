@@ -5,9 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import exception.ActiviteException;
 import exception.ReservationException;
-import model.Activite;
+import model.Client;
 import model.Reservation;
 import repository.ReservationRepository;
 
@@ -20,24 +19,23 @@ public class ReservationService {
 	@Autowired
 	private PassagerService passagerService;
 
-
 	public void creation(Reservation reservation) {
 		if (reservation.getId() == null) {
 			throw new ReservationException();
 		}
 		reservationRepo.save(reservation);
 	}
-	
+
 	public Reservation update(Reservation reservation) {
-        if (reservation.getId() == null) {
-            throw new ReservationException();
-        }
-        Reservation reservationEnBase = reservationRepo.findById(reservation.getId()).orElseThrow(ReservationException::new);
-        creation(reservationEnBase);
-        return reservationRepo.save(reservation);
+		if (reservation.getId() == null) {
+			throw new ReservationException();
+		}
+		Reservation reservationEnBase = reservationRepo.findById(reservation.getId())
+				.orElseThrow(ReservationException::new);
+		creation(reservationEnBase);
+		return reservationRepo.save(reservation);
 
-    }
-
+	}
 
 	public void suppression(Reservation reservation) {
 		Reservation reservationEnBase = null;
@@ -47,7 +45,14 @@ public class ReservationService {
 			throw new ReservationException();
 		}
 	}
-	
+
+	public void suppressionAll(Client client) {
+		List<Reservation> reservations = reservationRepo.findByClient(client);
+		for (Reservation r : reservations) {
+			suppression(r);
+		}
+	}
+
 	public Reservation getById(Long id) {
 		if (id != null) {
 			return reservationRepo.findById(id).orElseThrow(ReservationException::new);
@@ -66,4 +71,3 @@ public class ReservationService {
 		throw new ReservationException();
 	}
 }
-

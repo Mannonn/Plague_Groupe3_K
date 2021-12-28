@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import exception.ActiviteException;
 import exception.AdminException;
-import model.Activite;
 import model.Admin;
 import repository.AdminRepository;
 

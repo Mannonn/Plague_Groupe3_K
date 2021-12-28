@@ -3,6 +3,8 @@ package repository;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -18,12 +20,13 @@ public interface ActiviteRepository extends JpaRepository<Activite, Long>{
 
 	Optional<Activite> findById(Long id);
 	
-	
 	@Query ("select a from Activite a left join fetch a.planete where a.id=:id")
 	Optional<Activite> findByIdWithPlanete(@Param("id") Long id); 
 	
 	List<Activite> findByPrixLessThanEqual(double prix);
 	
+	@Transactional
+	@Modifying
 	 
 	@Transactional
 	@Modifying

@@ -1,5 +1,6 @@
 package model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,25 +14,24 @@ import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 public class Activite {
 	@JsonView(JsonViews.Common.class)
-	@Id//Obligatoire
-	@GeneratedValue(strategy = GenerationType.IDENTITY) //Obligatoire*
-	@Column(name="id_activite")
+	@Id // Obligatoire
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Obligatoire*
+	@Column(name = "id_activite")
 	private Long id;
 	@JsonView(JsonViews.Common.class)
-	@Column(name="nom_activite")
+	@Column(name = "nom_activite")
 	private String nom;
 	@JsonView(JsonViews.Common.class)
-	@Column(name="prix_activite")
+	@Column(name = "prix_activite")
 	private double prix;
 	@JsonView(JsonViews.Common.class)
-	@JoinColumn(name="id_planete")
-	@ManyToOne
+	@JoinColumn(name = "id_planete")
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Planete planete;
-	
-	public Activite() {}
 
+	public Activite() {
+	}
 
-	
 	public Activite(Long id, String nom, double prix, model.Planete planete) {
 		super();
 		this.id = id;
@@ -46,7 +46,6 @@ public class Activite {
 		this.prix = prix;
 		this.planete = planete;
 	}
-
 
 	public Long getId() {
 		return id;
@@ -71,25 +70,18 @@ public class Activite {
 	public void setPlanete(Planete planete) {
 		this.planete = planete;
 	}
-	
-	
 
 	public double getPrix() {
 		return prix;
 	}
 
-
-
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
-
-
 
 	@Override
 	public String toString() {
 		return "Activite [id=" + id + ", nom=" + nom + ", Planete=" + planete + "]";
 	}
-	
 
 }

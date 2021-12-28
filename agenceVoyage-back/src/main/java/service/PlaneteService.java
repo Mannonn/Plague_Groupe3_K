@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import exception.ActiviteException;
 import exception.PlaneteException;
-import model.Activite;
 import model.Planete;
 import model.Trajet;
 import repository.ActiviteRepository;
@@ -21,14 +19,13 @@ public class PlaneteService {
 	private PlaneteRepository planeteRepo;
 	@Autowired
 	private TrajetRepository trajetRepo;
-	
+
 	@Autowired
 	private ActiviteRepository activiteRepo;
 	@Autowired
 	private TrajetService trajetService;
 	@Autowired
 	private ActiviteService activiteService;
-	
 
 	public void creation(Planete planete) {
 		if (planete.getId() == null) {
@@ -36,36 +33,27 @@ public class PlaneteService {
 		}
 		planeteRepo.save(planete);
 	}
-	
-	
-	public Planete update(Planete planete) {
-        if (planete.getId() == null) {
-            throw new PlaneteException();
-        }
-        Planete planeteEnBase = planeteRepo.findById(planete.getId()).orElseThrow(PlaneteException::new);
-        creation(planeteEnBase);
-        return planeteRepo.save(planete);
 
     }
 
 	public void suppression(Planete planete) {
 		Planete planeteEnBase = null;
-		
+
 		if (planete.getId() != null) {
 			planeteEnBase = planeteRepo.findById(planete.getId()).orElseThrow(PlaneteException::new);
 			List<Trajet> trajetsDepart = trajetRepo.findByDepart(planete);
 			List<Trajet> trajetsArrivee = trajetRepo.findByArrivee(planete);
-			activiteRepo.deleteByPlanete(planeteEnBase);
-			if (trajetsDepart.isEmpty() && trajetsArrivee.isEmpty() )
-			{
+
+			if (trajetsDepart.isEmpty() && trajetsArrivee.isEmpty()) {
+				activiteRepo.deleteByPlanete(planeteEnBase);
 				planeteRepo.delete(planeteEnBase);
+
 			}
-			}
-			else {
+		} else {
 			throw new PlaneteException();
 		}
 	}
-	
+
 	public Planete getById(Long id) {
 		if (id != null) {
 			return planeteRepo.findById(id).orElseThrow(PlaneteException::new);
@@ -78,4 +66,3 @@ public class PlaneteService {
 	}
 
 }
-

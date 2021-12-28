@@ -1,14 +1,11 @@
 package service;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import exception.ActiviteException;
 import exception.ClientException;
-import model.Activite;
 import model.Client;
 import repository.ClientRepository;
 
@@ -17,6 +14,9 @@ public class ClientService {
 
 	@Autowired
 	private ClientRepository clientRepo;
+	
+	@Autowired
+	private ReservationService reservationService;
 
 	public void creation(Client client) {
 		if (client.getId() == null) {
@@ -40,7 +40,8 @@ public class ClientService {
 		Client clientEnBase = null;
 		if (client.getId() != null) {
 			clientEnBase = clientRepo.findById(client.getId()).orElseThrow(ClientException::new);
-			clientRepo.delete(clientEnBase);
+			clientRepo.delete(clientEnBase);	
+			reservationService.suppressionAll(clientEnBase);
 		} else {
 			throw new ClientException();
 		}

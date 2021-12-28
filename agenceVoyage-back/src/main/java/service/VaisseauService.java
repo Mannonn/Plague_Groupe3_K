@@ -5,11 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import exception.ActiviteException;
 import exception.VaisseauException;
-import model.Activite;
 import model.Vaisseau;
-
 import repository.VaisseauRepository;
 
 @Service

@@ -5,11 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import exception.ActiviteException;
 import exception.TrajetException;
-import model.Activite;
 import model.Trajet;
-
 import repository.TrajetRepository;
 
 @Service

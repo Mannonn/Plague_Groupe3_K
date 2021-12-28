@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
 import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 public class Trajet implements Serializable {
@@ -31,20 +33,21 @@ public class Trajet implements Serializable {
 	@Column(name="heure_arrivee",columnDefinition = "TIME")
 	private LocalTime heureArrivee;
 	@JsonView(JsonViews.Common.class)
+	@Column(name="prix_trajet")
+	private double prix;
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name="depart")
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Planete depart;
 	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name="arrivee")
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Planete arrivee;
 	@JsonView(JsonViews.Common.class)
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name="vaisseau")
 	private Vaisseau vaisseau;
-	@JsonView(JsonViews.Common.class)
-	@Column(name="prix_trajet")
-	private double prix;
+
 	
 	public Trajet() {
 	
@@ -99,7 +102,6 @@ public class Trajet implements Serializable {
 	public void setHeureDepart(LocalTime heureDepart) {
 		this.heureDepart = heureDepart;
 	}
-
 	public LocalTime getHeureArrivee() {
 		return heureArrivee;
 	}

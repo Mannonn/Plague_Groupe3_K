@@ -2,38 +2,38 @@ package model;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+
 import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @DiscriminatorValue("client")
 public class Client extends Compte {
 	@JsonView(JsonViews.Common.class)
-	@Column(name="nom")
+	@Column(name = "nom")
 	private String nom;
 	@JsonView(JsonViews.Common.class)
-	@Column(name="prenom")
+	@Column(name = "prenom")
 	private String prenom;
-	
+
 	@JsonView(JsonViews.Common.class)
-	@OneToMany(mappedBy = "client")
+	@OneToMany(mappedBy = "client", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	private Set<Reservation> reservations;
-	
-	
-	public Client () {
-		
+
+	public Client() {
+
 	}
-	
-	
-	public Client(Long id,String login, String password, String nom, String prenom) {
+
+	public Client(Long id, String login, String password, String nom, String prenom) {
 		super(id, login, password);
 		this.nom = nom;
 		this.prenom = prenom;
 	}
-	
-	
 
 	public Client(String login, String password, String nom, String prenom) {
 		super(login, password);
@@ -41,15 +41,13 @@ public class Client extends Compte {
 		this.prenom = prenom;
 	}
 
-
 	public Client(String login, String password, String nom, String prenom, Set<Reservation> reservations) {
 		super(login, password);
 		this.nom = nom;
 		this.prenom = prenom;
 		this.reservations = reservations;
 	}
-	
-	
+
 	public String getNom() {
 		return nom;
 	}
@@ -87,12 +85,4 @@ public class Client extends Compte {
 		return "Client [nom=" + nom + ", prenom=" + prenom + ", reservations=" + reservations + "]";
 	}
 
-	
-
-	
-	
-
-	
-	
-	
 }

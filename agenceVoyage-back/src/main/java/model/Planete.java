@@ -10,42 +10,38 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 import com.fasterxml.jackson.annotation.JsonView;
 
 @Entity
-@Table(name="planete")
+@Table(name = "planete")
 public class Planete implements Serializable {
 
 	@JsonView(JsonViews.Common.class)
-	@Id//Obligatoire
+	@Id // Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@JsonView(JsonViews.Common.class)
-	@Column(name="nom_planete")
+	@Column(name = "nom_planete")
 	private String nom;
-	
 	@JsonView(JsonViews.Common.class)
 	@Enumerated(EnumType.STRING)
-	@Column(name="type_planete",columnDefinition = "enum('Glaciaire','Desertique','Urbaine','Montagneuse','Tropicale')") 
+	@Column(name = "type_planete", columnDefinition = "enum('Glaciaire','Desertique','Urbaine','Montagneuse','Tropicale')")
 	private TypePlanete type;
-	
-	
-	
-	
-	
+
 	public Planete(String nom, TypePlanete type) {
 		this.nom = nom;
 		this.type = type;
 	}
-	
-	public Planete(Long id,String nom, TypePlanete type) {
-		this.id=id;
+
+	public Planete(Long id, String nom, TypePlanete type) {
+		this.id = id;
 		this.nom = nom;
 		this.type = type;
 	}
-	
+
 	public Planete() {
-		
+
 	}
 
 	public String getNom() {
@@ -77,8 +73,4 @@ public class Planete implements Serializable {
 		return "Planete [id=" + id + ", nom=" + nom + ", type=" + type + "]";
 	}
 
-	
-	
-	
-	
 }

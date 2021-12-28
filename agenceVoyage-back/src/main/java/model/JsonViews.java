@@ -5,23 +5,11 @@ public class JsonViews {
 
 	}
 
-	public static class CompagnonAvecMaitre extends Common {
-
-	}
-
-	public static class ReservationAvecFamilier extends Reservation {
-
-	}
-
 	public static class Reservation extends Common {
 
 	}
 	
-	public static class ReservationWithTrajets extends Reservation {
-
-	}
-	
-	public static class ReservationWithClient extends Reservation{
+	public static class ReservationWithActivites extends Reservation{
 		
 	}
 	
@@ -29,4 +17,5 @@ public class JsonViews {
 		
 	}
 	
+
 }
