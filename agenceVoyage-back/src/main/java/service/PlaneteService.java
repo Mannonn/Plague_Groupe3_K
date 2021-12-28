@@ -48,19 +48,6 @@ public class PlaneteService {
 
     }
 
-	public void suppression(Planete planete, Trajet trajet, Activite activite) {
-		Planete planeteEnBase = null;
-		if (planete.getId() != null) {
-			planeteEnBase = planeteRepo.findById(planete.getId()).orElseThrow(PlaneteException::new);
-			planeteRepo.delete(planeteEnBase);
-			trajetService.suppression(trajet);
-			activiteService.suppression(activite);
-			
-		} else {
-			throw new PlaneteException();
-		}
-	}
-
 	public void suppression(Planete planete) {
 		Planete planeteEnBase = null;
 		

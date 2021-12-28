@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import exception.PlaneteException;
 import model.JsonViews;
 import model.Planete;
+import model.TypePlanete;
 import service.PlaneteService;
 
 @RestController
@@ -40,47 +41,53 @@ public class PlaneteRestController {
 		return planeteService.getAll();
 	}
 	
-//	@PostMapping("")
-//	@ResponseStatus(code = HttpStatus.CREATED)
-//	@JsonView(JsonViews.Common.class)
-//	public Planete create(@Valid @RequestBody Planete planete, BindingResult br) {
-//		if (br.hasErrors()) {
-//			throw new PlaneteException();
-//		}
-//		planeteService.creation(planete);
-//		return planete;
-//	}
-//	
-//	@PutMapping("/{id}")
-//	@JsonView(JsonViews.Common.class)
-//	public Planete put(@Valid @RequestBody Planete planete, BindingResult br, @PathVariable Long id) {
-//		if (br.hasErrors()) {
-//			throw new PlaneteException();
-//		}
-//		if (planete.getId() == null) {
-//			planete.setId(id);
-//		}
-//		planeteService.update(planete);
-//		return planete;
-//	}
-//
-//	@PatchMapping("/{id}")
-//	@JsonView(JsonViews.Common.class)
-//	public Planete patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
-//		Planete planete = planeteService.getById(id);
-//		fields.forEach((k, v) -> {
-//			Field field = ReflectionUtils.findField(Planete.class, k);
-//			ReflectionUtils.makeAccessible(field);
-//			ReflectionUtils.setField(field, planete, v);
-//
-//		});
-//		planeteService.update(planete);
-//		return planete;
-//	}
-//
-//	@DeleteMapping("/{id}")
-//	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-//	public void delete(@PathVariable Long id) {
-//		planeteService.suppression(planeteService.getById(id));
-//	}
+	@PostMapping("")
+	@ResponseStatus(code = HttpStatus.CREATED)
+	@JsonView(JsonViews.Common.class)
+	public Planete create(@Valid @RequestBody Planete planete, BindingResult br) {
+		if (br.hasErrors()) {
+			throw new PlaneteException();
+		}
+		planeteService.creation(planete);
+		return planete;
+	}
+	
+	@PutMapping("/{id}")
+	@JsonView(JsonViews.Common.class)
+	public Planete put(@Valid @RequestBody Planete planete, BindingResult br, @PathVariable Long id) {
+		if (br.hasErrors()) {
+			throw new PlaneteException();
+		}
+		if (planete.getId() == null) {
+			planete.setId(id);
+		}
+		planeteService.update(planete);
+		return planete;
+	}
+
+
+	@PatchMapping("/{id}")
+	@JsonView(JsonViews.Common.class)
+	public Planete patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
+		Planete planete = planeteService.getById(id);
+		
+		fields.forEach((k, v) -> {
+			Field field = ReflectionUtils.findField(Planete.class, k);
+			ReflectionUtils.makeAccessible(field);
+			if (k.equals("type")) {
+				planete.setType(TypePlanete.valueOf(v.toString()));
+			} else {
+				ReflectionUtils.setField(field, planete, v);
+			}
+
+		});
+		planeteService.update(planete);
+		return planete;
+	}
+
+	@DeleteMapping("/{id}")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable Long id) {
+		planeteService.suppression(planeteService.getById(id));
+	}
 }
