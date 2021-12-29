@@ -1,115 +1,63 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-<style media="screen">
-  #formUpdate,#formAjout
-{
-	display:none;
-    background-color:white;
-    width:30%;
-    border:2px solid black;
-    margin:10px;
-    margin-left:35%;
-
-    padding: 30px;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 5px 5px 0 rgb(0 0 0 / 24%);
-}
-  body{background-color:#F4EFE7!important;}
+<style>
 header {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 20%;
+	background-color: #5B9BD5;
+	margin: 0px;
+	border-bottom: solid black 2px;
 }
 
-#title {
+a:link {
+	color: black;
+	font-size: large;
+}
+
+#menu {
 	display: flex;
-	width: 100%;
-	height: auto;
-	background-color: #5A9599;
 	justify-content: center;
 	align-items: center;
-	margin: 0px;
-	border: solid black 5px;
-}
-
-#imgLogo {
-	display: flex;
 }
 
 #logo {
 	display: flex;
 	justify-content: center;
-	background-color: #FF6F00;
-	border: solid black 5px;
+	align-items: center;
 }
 
-#txtTitle {
-	font-size: auto;
-	line-height: 100%;
-	font-family: Prompt, monospace;
+#imgMenu {
+	width: 80px;
+	justify-content: center;
 }
 
-#connection {
+#imgLogo {
+	width: 150px;
+	justify-content: center;
+}
+
+#corps {
 	display: flex;
-	background-color: #FF6F00;
-	border: solid black 5px;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 50%;
+	background-color: #5B9BD5;
+	margin: 0px;
+	border-bottom: solid black 2px;
+	border-top: solid black 2px;
 }
 
-.btnC {
-	background-color: silver;
-	padding: 3px;
-	margin: 3px;
-	border: solid black 1px;
-	border-radius: 4px;
-}
-
-.padding-0 {
-	margin-right: 0;
-	margin-left: 0;
-	padding-right: 0;
-	padding-left: 0;
-}
-
-@media screen and (min-width: 320px) {
-	#txtTitle {
-		font-size: calc(22px + 38 * (( 100vw - 320px)/(1360- 320)));
-	}
-	#imgLogo {
-		width: calc(100px + 38 * (( 100vw - 320px)/(1360- 320)));
-	}
-	#connection {
-		justify-content: space-around;
-		align-items: center;
-		flex-direction: row;
-		border-top: none;
-	}
-	#logo {
-		border-bottom: none;
-	}
-}
-
-@media screen and (min-width: 768px) {
-	#connection {
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		border-top: solid black 5px;
-		border-left: none;
-	}
-	#logo {
-		border-bottom: solid black 5px;
-		border-right: none;
-	}
-}
-
-@media screen and (min-width: 1400px) {
-	#txtTitle {
-		font-size: 60px;
-	}
-	#imgLogo {
-		width: 160px;
-	}
+body {
+	background-image: url("./images/espace.jpg");
 }
 </style>
+
 <head>
 <meta charset="utf-8">
 <link
@@ -119,7 +67,7 @@ header {
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
 	integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
 	crossorigin="anonymous">
-<link rel="icon" href="img/logo.png">
+<link rel="icon" href="">
 <script
 	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
 	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -132,30 +80,45 @@ header {
 	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
 </head>
+
 <header class="row no-gutters">
-	<div class="col-12 col-md-2" id="logo">
-		<a href="home"><img id="imgLogo" src="img/logo.png" alt=""></a>
+	<div class="col-12 col-md-2" id=menu>
+		<a href="menu.jsp"><img id="imgMenu" src="./images/Menu.png"
+			alt=""></a>
 	</div>
-	<div id="title" class="col-md-8 d-none d-md-flex">
-		<span id="txtTitle">Notre équipage est <br>remplaçable,
-			vous non!
-		</span>
+	<div class="col-md-8 d-none d-md-flex" id=logo>
+		<a href="fontjsp"><img id="imgLogo" src="./images/Logo.png" alt=""></a>
 	</div>
-	<div class="col-12 col-md-2 no-gutters" id="connection">
+	<div class="col-12 col-md-2 no-gutters" id=compteAccess>
 		<c:if test="${isConnected==null}">
-
-			<div class="row no-gutters btnC" id="connect">
-				<a href="connexion.jsp">Se connecter</a>
+			<div id="connection">
+				<a href="connection.jsp">Se connecter</a>
 			</div>
-			<div class="row no-gutters btnC" id="nvCompte">
-				<a href="inscription">Créer un compte</a>
+			<div id="inscription">
+				<a href="inscription.jsp">CrÃ©er un compte</a>
 			</div>
-
 		</c:if>
-
-		<c:if test="${isConnected=='y'}"><div class="row no-gutters btnC" id="deConnect">
-				<a href="deconnection">Se déconnecter</a>
-			</div></c:if>
-
+		<c:if test="${isConnected=='y'}">
+			<div id="deConnect">
+				<a href="deconnection">Se dÃ©connecter</a>
+			</div>
+		</c:if>
+	</div>
+	<div class="row no-gutters" id="corps">
+		<div class="col-12 col-md-2" id=vols>
+			<a href="vols.jsp">Nos Vols</a>
+		</div>
+		<div class="col-12 col-md-2" id=sejours>
+			<a href="sejours.jsp">Nos Sejours</a>
+		</div>
+		<div class="col-12 col-md-2" id=lastmin>
+			<a href="lastmin.jsp">Last Minute</a>
+		</div>
+		<div class="col-12 col-md-2" id=offres>
+			<a href="offres.jsp">Nos offres</a>
+		</div>
+		<div class="col-12 col-md-2" id=promos>
+			<a href="promos.jsp">Promotions</a>
+		</div>
 	</div>
 </header>
