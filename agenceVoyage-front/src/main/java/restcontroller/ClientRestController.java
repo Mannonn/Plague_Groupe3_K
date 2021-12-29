@@ -72,7 +72,6 @@ public class ClientRestController {
 			Field field = ReflectionUtils.findField(Client.class, k);
 			ReflectionUtils.makeAccessible(field);
 			ReflectionUtils.setField(field, client, v);
-
 		});
 		clientService.update(client);
 		return client;

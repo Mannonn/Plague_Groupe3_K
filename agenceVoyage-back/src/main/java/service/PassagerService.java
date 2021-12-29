@@ -24,28 +24,23 @@ public class PassagerService {
 		}
 		passagerRepo.save(passager);
 	}
-	
+
 	public Passager update(Passager passager) {
-        if (passager.getId() == null) {
-            throw new PassagerException();
-        }
-        Passager passagerEnBase = passagerRepo.findById(passager.getId()).orElseThrow(PassagerException::new);
-        creation(passagerEnBase);
-        return passagerRepo.save(passager);
+		if (passager.getId() == null) {
+			throw new PassagerException();
+		}
+		Passager passagerEnBase = passagerRepo.findById(passager.getId()).orElseThrow(PassagerException::new);
+		creation(passagerEnBase);
+		return passagerRepo.save(passager);
 
-    }
+	}
 
-
-	// Supprime le passager et la réservation si la liste de passagers est nulle
-	public void suppression(Passager passager, Reservation reservation) {
+	// Supprime le passager et la réservation si la liste de passagers est vide --> impossible car si resa nulle exception 
+	public void suppression(Passager passager) {
 		Passager passagerEnBase = null;
-		if (passager.getId() != null) {
+		if (passager.getId() != null ) {
 			passagerEnBase = passagerRepo.findById(passager.getId()).orElseThrow(PassagerException::new);
 			passagerRepo.delete(passagerEnBase);
-			reservation = reservationService.getByIdWithPassagers(reservation.getId());
-			if (reservation.getPassagers().isEmpty()) {
-				reservationService.suppression(reservation);
-			}
 		} else {
 			throw new PassagerException();
 		}
