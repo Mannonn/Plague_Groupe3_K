@@ -1,14 +1,18 @@
 package restcontroller;
 
+import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.util.ReflectionUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -21,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import exception.ReservationException;
 import model.JsonViews;
+import model.Passager;
 import model.Reservation;
 import service.ReservationService;
 
@@ -61,18 +66,19 @@ public class ReservationRestController {
 	}
 
 //A voir avec Olivier!!
-//	@PatchMapping("/{id}")
-//	@JsonView(JsonViews.Common.class)
-//	public Reservation patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
-//		Reservation reservation = reservationService.getById(id);
-//		fields.forEach((k, v) -> {
-//			Field field = ReflectionUtils.findField(Reservation.class, k);
-//			ReflectionUtils.makeAccessible(field);
-//			ReflectionUtils.setField(field, reservation, v);
-//		});
-//		reservationService.update(reservation);
-//		return reservation;
-//	}
+	@PatchMapping("/{id}")
+	@JsonView(JsonViews.Common.class)
+	public Reservation patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
+		Reservation reservation = reservationService.getById(id);
+		fields.forEach((k, v) -> {
+			Field field = ReflectionUtils.findField(Reservation.class, k);
+			ReflectionUtils.makeAccessible(field);
+			ReflectionUtils.setField(field, reservation, v);
+		}); 
+		reservationService.update(reservation);
+		return reservation;
+	}
+
 
 	@DeleteMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)

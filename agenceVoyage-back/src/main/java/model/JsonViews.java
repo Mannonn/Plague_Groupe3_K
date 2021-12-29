@@ -17,5 +17,22 @@ public class JsonViews {
 		
 	}
 	
+	public static class VaisseauWithEquipage extends Vaisseau{
+		
+	}
+	
+	public static class TrajetWithVaisseau extends Trajet{
+		
+	}
+	
+	public static class PlaneteWithTrajet extends Planete{
+		
+	}
+	
+	
+	public static class PlaneteWithActivite extends Planete{
+		
+	}
+	
 
 }
