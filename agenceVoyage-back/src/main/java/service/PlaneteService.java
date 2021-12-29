@@ -34,6 +34,14 @@ public class PlaneteService {
 		planeteRepo.save(planete);
 	}
 
+	public Planete update(Planete planete) {
+        if (planete.getId() == null) {
+            throw new PlaneteException();
+        }
+        Planete planeteEnBase = planeteRepo.findById(planete.getId()).orElseThrow(PlaneteException::new);
+        creation(planeteEnBase);
+        return planeteRepo.save(planete);
+
     }
 
 	public void suppression(Planete planete) {

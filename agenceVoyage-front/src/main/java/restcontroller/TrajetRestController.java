@@ -103,8 +103,7 @@ public class TrajetRestController {
 			}
 //			else if (k.equals("vaisseau"))
 //			{
-//				Vaisseau vaisseau=vaisseauService.getById(new Long(((ArrayList<Integer>) v).get(0)));
-//				trajet.setVaisseau(vaisseau);
+//				trajet.setVaisseau((Vaisseau)v);
 //			}  //probleme pour changer le vaisseau associé au trajet
 				
 			else {
