@@ -26,13 +26,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import exception.AdminException;
 import exception.TrajetException;
-import model.Admin;
 import model.JsonViews;
 import model.Trajet;
-import model.TypePlanete;
-import model.Vaisseau;
 import service.TrajetService;
 import service.VaisseauService;
 
@@ -44,14 +40,13 @@ public class TrajetRestController {
 
 	@Autowired
 	private VaisseauService vaisseauService;
-	
-	
+
 	@GetMapping("")
 	@JsonView(JsonViews.Common.class)
 	public List<Trajet> getAll() {
 		return trajetService.getAll();
 	}
-	
+
 	@PostMapping("")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	@JsonView(JsonViews.Common.class)
@@ -62,7 +57,7 @@ public class TrajetRestController {
 		trajetService.creation(trajet);
 		return trajet;
 	}
-	
+
 	@PutMapping("/{id}")
 	@JsonView(JsonViews.Common.class)
 	public Trajet put(@Valid @RequestBody Trajet trajet, BindingResult br, @PathVariable Long id) {
@@ -70,7 +65,7 @@ public class TrajetRestController {
 			throw new TrajetException();
 		}
 		if (trajet.getId() == null) {
-			trajet.setId(id);
+			trajetService.creation(trajet);
 		}
 		trajetService.update(trajet);
 		return trajet;
@@ -83,31 +78,32 @@ public class TrajetRestController {
 		fields.forEach((k, v) -> {
 			Field field = ReflectionUtils.findField(Trajet.class, k);
 			ReflectionUtils.makeAccessible(field);
-			if (k.equals("dateDepart")|| k.equals("dateArrivee")) {
-				int annee =((ArrayList<Integer>) v).get(0);
-				int mois =((ArrayList<Integer>) v).get(1);
-				int jour =((ArrayList<Integer>) v).get(2);
-				if (k.equals("dateDepart"))
-					{trajet.setDateDepart(LocalDate.of(annee,mois,jour));}
-				else
-					{trajet.setDateArrivee(LocalDate.of(annee,mois,jour));}
-			}
-			else if(k.equals("heureDepart")|| k.equals("heureArrivee"))
-			{
-				int heure =((ArrayList<Integer>) v).get(0);
-				int minute =((ArrayList<Integer>) v).get(1);
-				if (k.equals("heureDepart"))
-					{trajet.setHeureDepart(LocalTime.of(heure,minute));}
-				else
-					{trajet.setHeureArrivee(LocalTime.of(heure,minute));}
-			}
+//			if (k.equals("dateDepart")|| k.equals("dateArrivee")) {
+//				int annee =((ArrayList<Integer>) v).get(0);
+//				int mois =((ArrayList<Integer>) v).get(1);
+//				int jour =((ArrayList<Integer>) v).get(2);
+//				if (k.equals("dateDepart"))
+//					{trajet.setDateDepart(LocalDate.of(annee,mois,jour));}
+//				else
+//					{trajet.setDateArrivee(LocalDate.of(annee,mois,jour));}
+//			}
+//			else if(k.equals("heureDepart")|| k.equals("heureArrivee"))
+//			{
+//				int heure =((ArrayList<Integer>) v).get(0);
+//				int minute =((ArrayList<Integer>) v).get(1);
+//				if (k.equals("heureDepart"))
+//					{trajet.setHeureDepart(LocalTime.of(heure,minute));}
+//				else
+//					{trajet.setHeureArrivee(LocalTime.of(heure,minute));}
+//			}
 //			else if (k.equals("vaisseau"))
 //			{
 //				trajet.setVaisseau((Vaisseau)v);
 //			}  //probleme pour changer le vaisseau associé au trajet
-				
-			else {
-				ReflectionUtils.setField(field, trajet, v);}
+
+//			else {
+			ReflectionUtils.setField(field, trajet, v);
+//				}
 		});
 		trajetService.update(trajet);
 		return trajet;

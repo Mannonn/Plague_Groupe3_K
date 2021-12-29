@@ -27,15 +27,12 @@ import exception.PassagerException;
 import model.JsonViews;
 import model.Passager;
 import service.PassagerService;
-import service.ReservationService;
 
 @RestController
 @RequestMapping("/api/passager")
 public class PassagerRestController {
 	@Autowired
 	private PassagerService passagerService;
-	@Autowired
-	private ReservationService reservationService; 
 
 	@GetMapping("")
 	@JsonView(JsonViews.Common.class)
@@ -83,6 +80,6 @@ public class PassagerRestController {
 	@DeleteMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {
-		passagerService.suppression(passagerService.getById(id), null);
+		passagerService.suppression(passagerService.getById(id));
 	}
 }

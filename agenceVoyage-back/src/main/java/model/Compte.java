@@ -18,8 +18,8 @@ public abstract class Compte implements Serializable {
 	@JsonView(JsonViews.Common.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
 	protected Long id;
+
 	@JsonView(JsonViews.Common.class)
 	protected String login;
 	@JsonView(JsonViews.Common.class)

@@ -23,6 +23,7 @@ public class Reservation implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	@JsonView(JsonViews.Common.class)
 	@Column(name = "date_reservation")
 	private LocalDate dateReservation;
