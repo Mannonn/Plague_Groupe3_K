@@ -2,16 +2,18 @@
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<html lang="fr" dir="ltr">
+
 <style>
 header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-	height: 20%;
+	text-align: center;
+	height: 35%;
 	background-color: #5B9BD5;
 	margin: 0px;
-	border-bottom: solid black 2px;
+	width: 100%;
 }
 
 a:link {
@@ -32,18 +34,18 @@ a:link {
 }
 
 #imgMenu {
-	width: 80px;
+	width: 55px;
 	justify-content: center;
 }
 
 #imgLogo {
-	width: 150px;
+	width: 130px;
 	justify-content: center;
 }
 
 #corps {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 	width: 100%;
 	height: 50%;
@@ -55,6 +57,20 @@ a:link {
 
 body {
 	background-image: url("./images/espace.jpg");
+	height: 50%;
+	width: 100%;
+	margin: 0px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 7%;
+	background-color: #5B9BD5;
+	border-top: solid black 2px;
+	text-align: center;
+	text
 }
 </style>
 
@@ -80,45 +96,69 @@ body {
 	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
 </head>
-
-<header class="row no-gutters">
-	<div class="col-12 col-md-2" id=menu>
-		<a href="menu.jsp"><img id="imgMenu" src="./images/Menu.png"
-			alt=""></a>
-	</div>
-	<div class="col-md-8 d-none d-md-flex" id=logo>
-		<a href="fontjsp"><img id="imgLogo" src="./images/Logo.png" alt=""></a>
-	</div>
-	<div class="col-12 col-md-2 no-gutters" id=compteAccess>
-		<c:if test="${isConnected==null}">
-			<div id="connection">
-				<a href="connection.jsp">Se connecter</a>
+<body>
+	<header class="row no-gutters">
+		<div class="col-11 col-md-2" id=menu>
+			<a href="menu.jsp"><img id="imgMenu" src="./images/Menu.png"
+				alt=""></a>
+		</div>
+		<div class="col-md-8 d-none d-md-flex" id=logo>
+			<a href="fontjsp"><img id="imgLogo" src="./images/Logo.png"
+				alt=""></a>
+		</div>
+		<div class="col-12 col-md-2 no-gutters" id=compteAccess>
+			<c:if test="${isConnected==null}">
+				<div id="connection">
+					<a href="connection.jsp">Se connecter</a>
+				</div>
+				<div id="inscription">
+					<a href="inscription.jsp">Créer un compte</a>
+				</div>
+			</c:if>
+			<c:if test="${isConnected=='y'}">
+				<div id="deConnect">
+					<a href="deconnection">Se déconnecter</a>
+				</div>
+			</c:if>
+		</div>
+		<div class="row" id="corps">
+			<div class="col" id=vols>
+				<a href="vols.jsp">Nos Vols</a>
 			</div>
-			<div id="inscription">
-				<a href="inscription.jsp">Créer un compte</a>
+			<div class="col" id=sejours>
+				<a href="sejours.jsp">Nos Sejours</a>
 			</div>
-		</c:if>
-		<c:if test="${isConnected=='y'}">
-			<div id="deConnect">
-				<a href="deconnection">Se déconnecter</a>
+			<div class="col" id=lastmin>
+				<a href="lastmin.jsp">Last Minute</a>
 			</div>
-		</c:if>
-	</div>
-	<div class="row no-gutters" id="corps">
-		<div class="col-12 col-md-2" id=vols>
-			<a href="vols.jsp">Nos Vols</a>
+			<div class="col" id=offres>
+				<a href="offres.jsp">Nos offres</a>
+			</div>
+			<div class="col" id=promos>
+				<a href="promos.jsp">Promotions</a>
+			</div>
 		</div>
-		<div class="col-12 col-md-2" id=sejours>
-			<a href="sejours.jsp">Nos Sejours</a>
+	</header>
+	<footer class="row no-gutters">
+		<div class="col" id=faq>
+			<a href="faq.jsp">Foire Aux Questions</a>
 		</div>
-		<div class="col-12 col-md-2" id=lastmin>
-			<a href="lastmin.jsp">Last Minute</a>
+		<div class="col" id=infos>
+			<a href="infos.jsp">Infos Legales</a>
 		</div>
-		<div class="col-12 col-md-2" id=offres>
-			<a href="offres.jsp">Nos offres</a>
+		<div class="col" id=connaitre>
+			<a href="connaitre.jsp">Nous connaitre</a>
 		</div>
-		<div class="col-12 col-md-2" id=promos>
-			<a href="promos.jsp">Promotions</a>
+		<div class="col" id=contacts>
+			<a href="contact.jsp">Contact</a>
 		</div>
-	</div>
-</header>
+		<div class="col" id=paiements>
+			<a href="paiement.jsp">Moyens de paiements</a>
+		</div>
+		<div class="col" id=missions>
+			<a href="missions.jsp">Nos missions</a>
+		</div>
+	</footer>
+</body>
+</body>
+</html>
