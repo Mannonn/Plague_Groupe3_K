@@ -56,6 +56,26 @@ a:link {
 body {
 	background-image: url("./images/espace.jpg");
 }
+
+footer
+{
+	display: flex;
+	justify-content: center;
+	align-self: flex-end ;
+	width: 100%;
+	height: 75%;
+	background-color: #5B9BD5;
+	margin: 0px;
+	border-bottom: solid black 2px;
+	border-top: solid black 2px;
+}
+
+#fin{
+	display: flex;
+	justify-content:flex-end;
+}
+
+}
 </style>
 
 <head>
@@ -121,4 +141,32 @@ body {
 			<a href="promos.jsp">Promotions</a>
 		</div>
 	</div>
+
+	<footer>
+		<div class="row row-cols-2 row-cols-lg-3 g-2 id="fin">
+			<div class="col" id=faq>
+				<a href="faq.jsp">FAQ</a>
+			</div>
+			<div class="col" id=sejours>
+				<a href="infos.jsp">Infos Legales</a>
+			</div>
+			<div class="col" id=lastmin>
+				<a href="connaitre.jsp">Nous connaitre</a>
+			</div>
+			<div class="col" id=offres>
+				<a href="contact.jsp">Contact</a>
+			</div>
+			<div class="col" id=promos>
+				<a href="paiement.jsp">Moyens de paiements</a>
+			</div>
+			<div class="col" id=promos>
+				<a href="missions.jsp">Nos missions</a>
+			</div>
+		</div>
+		</div>
+	</footer>
+
+
 </header>
+
+
