@@ -74,7 +74,6 @@ footer {
 }
 
 article {
-
 	/* 	dipsplay: flex; */
 	/* 	justify-content: center; */
 	/* 	align-items: center; */
@@ -171,6 +170,7 @@ article {
 					suis la pro des séjours insolites » _Rôle</p>
 
 				<p>Chloe «  La nourriture intergalactique, ça vous tente?» _Rôle
+
 
 				
 	</article>
