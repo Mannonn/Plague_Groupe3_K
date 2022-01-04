@@ -86,15 +86,12 @@ footer {
 	text-align: center;
 }
 
-article {
-	color: white;
-}
 
-#container {
+#placement {
 	position: absolute;
 	width: 45.5%;
-	margin-left: 27%;
-	margin-top: 4.5%;
+	margin-left: 28%;
+	margin-top: 6%;
 	color: white;
 }
 
@@ -105,11 +102,16 @@ article {
 	margin-top: 9%;
 }
 
-table{
-color: white;}
+table {
+	color: white;
+}
 
-th.colonne{
-width: 10%;
+th.colonne {
+	width: 5%;
+}
+
+th.largeur {
+	width: 25%;
 }
 
 form {
@@ -209,50 +211,53 @@ input[type=submit]:hover {
 			</div>
 		</div>
 	</header>
-	<div id="container">
-		<form action="post">
-			<table>
-				<tr>
-					<th></th>
-					<th></th>
-					<th class=colonne></th>
-					<th><label><b>Message:</b></label></th>
-				</tr>
-				<tr>
-					<th><label><b>Nom:</b></label></th>
-					<th><input type="text" placeholder="Entrez votre nom"
-						name="nom" required></th>
-					<th class=colonne></th>
-					<th rowspan=5><textarea rows=9
-							placeholder="Entrez votre message" name="message" required></textarea></th>
-				</tr>
-				<tr>
-					<th><label><b>Prenom:</b></label></th>
-					<th><input type="text" placeholder="Entrez votre prenom"
-						name="prenom" required></th>
-					<th class=colonne></th>
-				</tr>
-				<tr>
-					<th><label><b>Email:</b></label></th>
-					<th><input type="email" placeholder="Entrez votre email"
-						name="mail" required></th>
-					<th class=colonne></th>
-				</tr>
-				<tr>
-					<th><label><b>Telephone:</b></label></th>
-					<th><input type="tel" placeholder="Entrez votre numero"
-						name="tel"></th>
-					<th class=colonne></th>
-				</tr>
-				<tr>
-					<th><label><b>Objet:</b></label></th>
-					<th><input type="text" placeholder="Objet de la demande"
-						name="username" required></th>
-					<th class=colonne></th>
-				</tr>
-			</table>
-			<input type="submit" id='submit' value='Envoyer'>
-		</form>
+	<div id="placement">
+		<h4>Nous contacter</h4>
+		<div id="container">
+			<form action="post">
+				<table>
+					<tr>
+						<th class=largeur></th>
+						<th></th>
+						<th class=colonne></th>
+						<th><label><b>Message:</b></label></th>
+					</tr>
+					<tr>
+						<th class=largeur><label><b>Nom:</b></label></th>
+						<th><input type="text" placeholder="Entrez votre nom"
+							name="nom" required></th>
+						<th class=colonne></th>
+						<th rowspan=5><textarea rows=7
+								placeholder="Entrez votre message" name="message" required></textarea></th>
+					</tr>
+					<tr>
+						<th class=largeur><label><b>Prenom:</b></label></th>
+						<th><input type="text" placeholder="Entrez votre prenom"
+							name="prenom" required></th>
+						<th class=colonne></th>
+					</tr>
+					<tr>
+						<th class=largeur><label><b>Email:</b></label></th>
+						<th><input type="email" placeholder="Entrez votre email"
+							name="mail" required></th>
+						<th class=colonne></th>
+					</tr>
+					<tr>
+						<th class=largeur><label><b>Telephone:</b></label></th>
+						<th><input type="tel" placeholder="Entrez votre numero"
+							name="tel"></th>
+						<th class=colonne></th>
+					</tr>
+					<tr>
+						<th class=largeur><label><b>Objet:</b></label></th>
+						<th><input type="text" placeholder="Objet de la demande"
+							name="username" required></th>
+						<th class=colonne></th>
+					</tr>
+				</table>
+				<input type="submit" id='submit' value='Envoyer'>
+			</form>
+		</div>
 	</div>
 	<footer class="row no-gutters">
 		<div class="col" id=faq>
