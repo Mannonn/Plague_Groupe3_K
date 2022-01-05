@@ -63,14 +63,86 @@ body {
 }
 
 footer {
-	position: absolute;
+	position: relative;
 	bottom: 0;
 	width: 100%;
-	height: 7%;
+	height: 10%;
 	background-color: #5B9BD5;
 	border-top: solid black 2px;
 	text-align: center;
-	text
+}
+
+article {
+	position: relative;
+	margin-left: 10%;
+	margin-right: 10%;
+	color: white;
+	text-align: justify;
+}
+
+#article1 {
+	margin-top: 8%;
+}
+
+#article2 {
+	margin-top: 2%;
+}
+
+#slideshow {
+	overflow: hidden;
+	width: 1000px;
+	height: 500px;
+	position: relative;
+	margin: auto;
+}
+
+#slideshow-container {
+	width: 4000px;
+	-webkit-animation: slide 18s ease infinite;
+}
+
+#mySlides {
+	float: left;
+	height: 500px;
+	width: 1000px;
+	background-size: cover;
+}
+
+#mySlides:nth-child(1) {
+	background-image: url("./images/img1.jpg");
+}
+
+#mySlides:nth-child(2) {
+	background-image: url("./images/img2.jpg");
+}
+
+#mySlides:nth-child(3) {
+	background-image: url("./images/img3.jpg");
+}
+
+#mySlides:nth-child(4) {
+	background-image: url("./images/img4.jpg");
+}
+
+#numbertext {
+	color: white;
+}
+
+#text {
+ 	position: absolute;
+ 	bottom:0;
+	color: white;
+}
+
+@-webkit-keyframes slide { 
+20% {margin-left: 0px;}
+30% {margin-left:-1000px;}
+50% {margin-left:-1000px;}
+60% {margin-left:-2000px;}
+70% {margin-left:-2000px;}
+80% {margin-left:-3000px;}
+90% {margin-left:-3000px;}
+}
 }
 </style>
 
@@ -139,6 +211,64 @@ footer {
 			</div>
 		</div>
 	</header>
+
+	<article id="article1">
+		<h1>
+			Bienvenue sur le site de Voyageez, la première agence de voyages
+			interplanetaires pour tous!<br><br>
+		</h1>
+		<p>
+			Notre mission: vous proposer des services de qualités pour que vos
+			vacances dans les étoiles soient les plus belles possibles.<br> Pour toi,
+			qui aime le frisson et l'aventure, ou encore toi, qui veut te dorer
+			la pillule au soleil, et toi là bas, qui ne sais pas faire autrement
+			que te prendre à la dernière minute pour tes vacances et pour tous
+			les autres qu'on embrasse fort <3... <br> <br> Il ne vous
+			reste qu'à commencer votre recherche, cliquez et ...
+		</p>
+		<h2 align="right">...Voyageez vers d'autres cieux!</h2>
+		
+		<br>
+	</article>
+	<div id="slideshow">
+		<div id="slideshow-container">
+			<div id="mySlides">
+				<div id="numbertext">1 / 4</div>
+				<div id="text">Magnifique vue du levé de soleil sur la planète Venus, le meilleur spot romantique de la galaxie.</div>
+			</div>
+			<div id="mySlides">
+				<div id="numbertext">2 / 4</div>
+				<div id="text">Les canyons de Mars, une aventure à couper le souffle en famille ou entre amis.</div>
+			</div>
+			<div id="mySlides">
+				<div id="numbertext">3 / 4</div>
+				<div id="text">Et pourquoi pas une croisière autour de Mercure pour oublier la grisaille de l'hivers. </div>
+			</div>
+			<div id="mySlides">
+				<div id="numbertext">4 / 4</div>
+				<div id="text">Sur Uranus, vous pouvez observer les plus belles aurores boréales de la Voie Lactée, alors ? Ca vous tente ?</div>
+			</div>
+		</div>
+	</div>
+
+	<article id="article2">
+		<p>Pour commencer votre recherche rien de plus simple. Il vous
+			suffit de préciser votre planète de départ puis votre planète
+			d'arrivée. Sélectionner la date de départ souhaitée (attention, il se
+			peut qu'à cause d'une forte demande vous ne trouviez pas de vol pour
+			vos dates, nous vous recommandons de choisir une autre dates ou de
+			tenter le tout pour le tout en attendant qu'une place se libère dans
+			la journée). Si le coeur vous en dit vous pouvez aussi choisir une
+			activité sur votre le lieu de destination parmis une large sélection
+			d'offres. Enfin, il ne vous restera plus qu'à préciser le nombre de
+			passagers qui vous accompagnent et à cliquer sur le bouton "VALIDER"
+			afin d'acceder à vos résultats.</p>
+	</article>
+	
+	<form action="">
+	
+	</form>
+
 	<footer class="row no-gutters">
 		<div class="col" id=faq>
 			<a href="faq.jsp">Foire Aux Questions</a>
