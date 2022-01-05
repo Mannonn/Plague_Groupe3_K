@@ -26,13 +26,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import exception.AdminException;
 import exception.TrajetException;
-import model.Admin;
 import model.JsonViews;
 import model.Trajet;
-import model.TypePlanete;
-import model.Vaisseau;
+import service.PlaneteService;
 import service.TrajetService;
 import service.VaisseauService;
 
@@ -45,6 +42,8 @@ public class TrajetRestController {
 	@Autowired
 	private VaisseauService vaisseauService;
 	
+	@Autowired
+	private PlaneteService planeteService;
 	
 	@GetMapping("")
 	@JsonView(JsonViews.Common.class)
@@ -101,11 +100,18 @@ public class TrajetRestController {
 				else
 					{trajet.setHeureArrivee(LocalTime.of(heure,minute));}
 			}
-//			else if (k.equals("vaisseau"))
-//			{
-//				trajet.setVaisseau((Vaisseau)v);
-//			}  //probleme pour changer le vaisseau associé au trajet
-				
+			else if (k.equals("vaisseau")||k.equals("depart")||k.equals("arrivee"))
+			{
+				Map<String,String> objetJson=(Map<String,String>) v;
+				Object a=objetJson.get("id");
+				Long idPatch=Long.valueOf((int)a);
+				if (k.equals("vaisseau"))
+					{trajet.setVaisseau(vaisseauService.getById(idPatch));}
+				else if (k.equals("depart"))
+					{trajet.setDepart(planeteService.getById(idPatch));}
+				else
+					{trajet.setArrivee(planeteService.getById(idPatch));}
+			}
 			else {
 				ReflectionUtils.setField(field, trajet, v);}
 		});
