@@ -128,7 +128,7 @@ input[type=text], input[type=password] {
 /* Set a style for all buttons */
 input[type=submit] {
 	background-color: #00BFF;
-	color: white;
+	color: black;
 	padding: 14px 20px;
 	margin: 8px 0;
 	border: none;
@@ -230,7 +230,7 @@ input[type=submit]:hover {
 				<label><b>Mot de passe</b></label> <input type="password"
 					placeholder="Entrer le mot de passe" name="password" required></br>
 
-				<input type="submit" id='submit' value='LOGIN'>
+				<input type="submit" id='submit' value='Se connecter'>
 			</form>
 		</div>
 		<div id="imageP"><img id="imgCo" src="./images/pilote.png"
