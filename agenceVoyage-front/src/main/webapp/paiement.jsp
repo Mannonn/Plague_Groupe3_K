@@ -43,6 +43,22 @@ a:link {
 	justify-content: center;
 }
 
+.logoP {
+	width: 130px;
+	justify-content: center;
+}
+
+#comete{
+	width: 100px;
+	justify-content: center;
+}
+
+#grille{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
 #corps {
 	display: flex;
 	justify-content: flex-end;
@@ -62,10 +78,12 @@ body {
 	margin: 0px;
 }
 
+
 footer {
-	position: relative;
+	position: absolute;
+	bottom :0;
 	width: 100%;
-	height: 10%;
+	height: 7%;
 	background-color: #5B9BD5;
 	border-top: solid black 2px;
 	text-align: center;
@@ -78,6 +96,10 @@ article {
 	margin-top: 8%;
 	color: white;
 	text-align: justify;
+}
+
+.form-group {
+        margin-bottom: 20px;
 }
 </style>
 
@@ -147,42 +169,40 @@ article {
 		</div>
 	</header>
 	<article>
-		<h2>MODE DE PAIEMENT</h2><br>
-		<ul>
-			<p>IMAGE PAIEMENT 1</p>
+		<h2>MOYEN DE PAIEMENTS</h2><br>
+		<!-- <ul> -->
+		<!--<div class="container overflow-hidden"> -->
+		<div class="row form-group" id=grille>
+		
+			<div class="col"><img class="LogoP" src="./images/Visalogo.svg.png"></div>
+		
+			<div class="col" ><img class="LogoP" src="./images/MasterCard.jpg"></div>
+		
+			<div class="col"><img class="LogoP" src="./images/Paypal.png"></div> 
+			 
+			<div class="col"><img id=comete src="./images/Comete.png"></div> 
+			 
+		
+		</div>
+		
+		<div class="row" id=grille>
+		
+			<div class="col"><img class="LogoP" src="./images/ANCV.png"></div>
+		
+			<div class="col" ><img class="LogoP" src="./images/NeuraLink.png"></div>
+			
+			<div class="col"><img id=comete src="./images/Etoiles.png"></div>
+		
+			<div class="col"><img class="LogoP" src="./images/BitCoin.png"></div>
+			
+			
+		
+		</div>
+		
+		
+		
+	<!--</div> -->
 
-			<p>IMAGE PAIEMENT 2</p>
-
-			<p>IMAGE PAIEMENT 3</p>
-
-			<p>IMAGE PAIEMENT 4</p>
-
-			<p>IMAGE PAIEMENT 5</p>
-
-			<p>IMAGE PAIEMENT 6</p>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-				do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-				enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-				ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-				pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-				culpa qui officia deserunt mollit anim id est laborum.</p>
-
-			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-				accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-				quae ab illo inventore veritatis et quasi architecto beatae vitae
-				dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-				aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-				eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-				qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-				sed quia non numquam eius modi tempora incidunt ut labore et dolore
-				magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-				nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-				aliquid ex ea commodi consequatur? Quis autem vel eum iure
-				reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-				consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-				pariatur?</p>
 	</article>
 	<footer class="row no-gutters">
 		<div class="col" id=faq>
