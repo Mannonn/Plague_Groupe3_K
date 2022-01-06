@@ -515,19 +515,16 @@ margin-left
 		</div>
 		<div class="row" id="corps">
 			<div class="col" id=vols>
-				<a href="vols.jsp">Nos Vols</a>
+				<a href="planetes.jsp">Nos Planètes</a>
 			</div>
 			<div class="col" id=sejours>
-				<a href="sejours.jsp">Nos Sejours</a>
+				<a href="activites.jsp">Nos Activités</a>
 			</div>
 			<div class="col" id=lastmin>
-				<a href="lastmin.jsp">Last Minute</a>
+				<a href="vols.jsp">Nos vols</a>
 			</div>
 			<div class="col" id=offres>
 				<a href="offres.jsp">Nos offres</a>
-			</div>
-			<div class="col" id=promos>
-				<a href="promos.jsp">Promotions</a>
 			</div>
 		</div>
 	</header>
