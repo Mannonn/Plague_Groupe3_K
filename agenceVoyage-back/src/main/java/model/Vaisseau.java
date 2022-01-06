@@ -1,6 +1,8 @@
 package model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,19 +12,20 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
+
 @Entity
 public class Vaisseau implements Serializable {
 	@JsonView(JsonViews.Common.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.VaisseauWithCapacite.class)
 	@Column(name = "capacite_vaisseau")
 	private int capacite;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.VaisseauWithNom.class)
 	@Column(name = "nom_vaisseau")
 	private String nom;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.VaisseauWithCapitaine.class)
 	@Column(name = "capitaine_vaisseau")
 	private String capitaine;
 
