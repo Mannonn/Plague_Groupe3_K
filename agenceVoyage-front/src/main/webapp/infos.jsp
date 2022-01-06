@@ -21,6 +21,10 @@ a:link {
 	font-size: large;
 }
 
+#articcle {
+font-size: large;
+}
+
 #menu {
 	display: flex;
 	justify-content: center;
@@ -106,11 +110,11 @@ article {
 <body>
 	<header class="row no-gutters">
 		<div class="col-11 col-md-2" id=menu>
-			<a href="menu.jsp"><img id="imgMenu" src="./images/Menu.png"
+			<a href="banniere.jsp"><img id="imgMenu" src="./images/Menu.png"
 				alt=""></a>
 		</div>
 		<div class="col-md-8 d-none d-md-flex" id=logo>
-			<a href="fontjsp"><img id="imgLogo" src="./images/Logo.png"
+			<a href="banniere.jsp"><img id="imgLogo" src="./images/Logo.png"
 				alt=""></a>
 		</div>
 		<div class="col-12 col-md-2 no-gutters" id=compteAccess>
@@ -130,59 +134,32 @@ article {
 		</div>
 		<div class="row" id="corps">
 			<div class="col" id=vols>
-				<a href="vols.jsp">Nos Vols</a>
+				<a href="planetes.jsp">Nos Planètes</a>
 			</div>
 			<div class="col" id=sejours>
-				<a href="sejours.jsp">Nos Sejours</a>
+				<a href="activites.jsp">Nos Activités</a>
 			</div>
 			<div class="col" id=lastmin>
-				<a href="lastmin.jsp">Last Minute</a>
+				<a href="vols.jsp">Nos vols</a>
 			</div>
 			<div class="col" id=offres>
 				<a href="offres.jsp">Nos offres</a>
 			</div>
-			<div class="col" id=promos>
-				<a href="promos.jsp">Promotions</a>
-			</div>
 		</div>
 	</header>
-	<article>
-		<h2>INFOS</h2><br>
+	<article id="articcle">
+		<h2>Informations légales</h2><br>
 		<ul>
-			<p>INFOS 1</p>
 
-			<p>INFOS 2</p>
+			<p> Selon la loi pour la confiance de l’économie numérique du 35 juin 2500 (Articles 6-III et 19 de la Loi n°2500-575):
+Entreprise Voyageez fondée par Terrien Pollueur.
+<br>Le siège social se trouve sur le Satelite 7276 avec un capital de 42 000 000$ (déclaré le reste ça ne vous concerne pas).</br>
+<br>Vos brownies seront enregistrés afin de faciliter votre navigation sur le site.</br>
+Nous nous reservons le droit de les exploiter afin de rendre plus agréable votre visite chez nous.
+<br><small>Vous devez nous préciser si vous ne souhaitez pas que vos données soient vendues à des fin monetaires</small></br>
+</p>
 
-			<p>INFOS 3</p>
 
-			<p>INFOS 4</p>
-
-			<p>INFOS 5</p>
-
-			<p>INFOS 6</p>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-				do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-				enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-				ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-				pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-				culpa qui officia deserunt mollit anim id est laborum.</p>
-
-			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-				accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-				quae ab illo inventore veritatis et quasi architecto beatae vitae
-				dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-				aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-				eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-				qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-				sed quia non numquam eius modi tempora incidunt ut labore et dolore
-				magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-				nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-				aliquid ex ea commodi consequatur? Quis autem vel eum iure
-				reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-				consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-				pariatur?</p>
 	</article>
 	<footer class="row no-gutters">
 		<div class="col" id=faq>

@@ -21,10 +21,6 @@ a:link {
 	font-size: large;
 }
 
-#articcle {
-	font-size: large;
-}
-
 #menu {
 	display: flex;
 	justify-content: center;
@@ -147,41 +143,43 @@ article {
 			</div>
 		</div>
 	</header>
-	<article id="articcle">
-		<h2>FAQ</h2>
-		<br>
+	<article>
+		<h2>PROMOS</h2><br>
 		<ul>
-			<p>
-				<b>Je souhaite annuler ma réservation, suis-je remboursé?</b> <br>
-				Vous pouvez annuler votre réservation sans frais jusqu'à une semaine
-				avant le départ. Vous recevrez un bon d'achat pour un prochain
-				voyage. Pour un délais inférieur, c'est trop tard mais vous pouvez
-				choisir à quelle association vous reversez votre mise.
-			</p><br><br>
+			<p>QUESTION 1</p>
 
-			<p>
-				<b>Je souhaite changer un voyageur.</b> <br> Une fois la
-				réservation validée, notre compagnie envoie les informations des
-				passagers aux futures planètes visitées, le changement n'est donc
-				pas possible. Vous pouvez néanmoins annuler le billet du voyageur ne
-				souhaitant plus partir.
-			</p><br><br>
+			<p>QUESTION 2</p>
 
-			<p>
-				<b>Je souhaite voyager avec mon animal, doit-il voyager en
-					soute?</b> <br> Si votre animal de compagnie pèse moins de 10 kg
-				et rentre dans un sac cabine, il peut voyager dans un panier fermé
-				avec atmosphère protectrice pour le modique prix d'un billet adulte.
-				Sinon il voyagera cryonisé (avec amour) en soute.
-			</p><br><br>
+			<p>QUESTION 3</p>
 
-			<p>
-				<b>Je ne trouve plus la destination Soleil, qu'en est-il
-					réellement ?</b> <br> Malheureusement depuis la dernière éruption
-				solaire, une partie de notre spatioport a été abimé... Par mesure de
-				précaution, Voyageez a pris la décision de suspendre ses liaisons
-				avec le Soleil jusqu'à la fin des réparations.
-			</p><br>
+			<p>QUESTION 4</p>
+
+			<p>QUESTION 5</p>
+
+			<p>QUESTION 6</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+				do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+				enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+				ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+				pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+				culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+				accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+				quae ab illo inventore veritatis et quasi architecto beatae vitae
+				dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+				aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+				eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+				qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+				sed quia non numquam eius modi tempora incidunt ut labore et dolore
+				magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+				nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+				aliquid ex ea commodi consequatur? Quis autem vel eum iure
+				reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+				consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
+				pariatur?</p>
 	</article>
 	<footer class="row no-gutters">
 		<div class="col" id=faq>

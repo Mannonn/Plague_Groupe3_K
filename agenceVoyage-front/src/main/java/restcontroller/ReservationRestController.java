@@ -25,7 +25,6 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import exception.ReservationException;
 import model.JsonViews;
-import model.Passager;
 import model.Reservation;
 import service.ReservationService;
 
@@ -41,9 +40,31 @@ public class ReservationRestController {
 		return reservationService.getAll();
 	}
 
+	@GetMapping("/{id}")
+	@JsonView(JsonViews.Reservation.class)
+	private Reservation getByIdBase(@PathVariable Long id) {
+		return reservationService.getById(id);
+	}
+
+	public Reservation getById(Long id) {
+		return getByIdBase(id);
+	}
+	
+	@GetMapping("/{id}/activite")
+	@JsonView(JsonViews.ReservationWithActivites.class)
+	private Reservation getByIdWithActivites(@PathVariable Long id) {
+		return reservationService.getByIdWithActivites(id);
+	}
+	
+	@GetMapping("/{id}/passager")
+	@JsonView(JsonViews.ReservationWithPassagers.class)
+	private Reservation getByIdWithQuetes(@PathVariable Long id) {
+		return reservationService.getByIdWithPassagers(id);
+	}
+
 	@PostMapping("")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Reservation.class)
 	public Reservation create(@Valid @RequestBody Reservation reservation, BindingResult br) {
 		if (br.hasErrors()) {
 			throw new ReservationException();
@@ -53,7 +74,7 @@ public class ReservationRestController {
 	}
 
 	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Reservation.class)
 	public Reservation put(@Valid @RequestBody Reservation reservation, BindingResult br, @PathVariable Long id) {
 		if (br.hasErrors()) {
 			throw new ReservationException();
@@ -67,18 +88,17 @@ public class ReservationRestController {
 
 //A voir avec Olivier!!
 	@PatchMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Reservation.class)
 	public Reservation patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
 		Reservation reservation = reservationService.getById(id);
 		fields.forEach((k, v) -> {
 			Field field = ReflectionUtils.findField(Reservation.class, k);
 			ReflectionUtils.makeAccessible(field);
 			ReflectionUtils.setField(field, reservation, v);
-		}); 
+		});
 		reservationService.update(reservation);
 		return reservation;
 	}
-
 
 	@DeleteMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)

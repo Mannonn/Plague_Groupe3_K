@@ -19,13 +19,13 @@ public class Vaisseau implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@JsonView(JsonViews.VaisseauWithCapacite.class)
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "capacite_vaisseau")
 	private int capacite;
-	@JsonView(JsonViews.VaisseauWithNom.class)
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "nom_vaisseau")
 	private String nom;
-	@JsonView(JsonViews.VaisseauWithCapitaine.class)
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "capitaine_vaisseau")
 	private String capitaine;
 

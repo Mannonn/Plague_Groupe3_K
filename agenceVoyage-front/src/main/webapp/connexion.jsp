@@ -16,9 +16,9 @@ header {
 	width: 100%;
 }
 
-a:link {
-	color: black;
+a {
 	font-size: large;
+	color: black;
 }
 
 #menu {
@@ -38,18 +38,19 @@ a:link {
 	justify-content: center;
 }
 
-#imageP{
-position: absolute;
-margin-left: 70%;
-margin-top: 3%;
+#imageP {
+	position: absolute;
+	margin-left: 70%;
+	margin-top: 3%;
 }
 
-#imgCo{
-width: 90%;;
+#imgCo {
+	width: 90%;;
 }
 
-#image1{
-width: 40%;}
+#image1 {
+	width: 40%;
+}
 
 #imgLogo {
 	width: 130px;
@@ -91,7 +92,7 @@ article {
 
 #container {
 	position: absolute;
-	width: 500%;
+	width: 30%;
 	margin-left: 35%;
 	margin-top: 5%;
 	color: white;
@@ -106,7 +107,6 @@ article {
 	text-align: center;
 	margin-left: 6%;
 	margin-top: 9%;
-	
 }
 
 form {
@@ -168,11 +168,11 @@ input[type=submit]:hover {
 <body>
 	<header class="row no-gutters">
 		<div class="col-11 col-md-2" id=menu>
-			<a href="menu.jsp"><img id="imgMenu" src="./images/Menu.png"
+			<a href="banniere.jsp"><img id="imgMenu" src="./images/Menu.png"
 				alt=""></a>
 		</div>
 		<div class="col-md-8 d-none d-md-flex" id=logo>
-			<a href="fontjsp"><img id="imgLogo" src="./images/Logo.png"
+			<a href="banniere.jsp"><img id="imgLogo" src="./images/Logo.png"
 				alt=""></a>
 		</div>
 		<div class="col-12 col-md-2 no-gutters" id=compteAccess>
@@ -192,33 +192,26 @@ input[type=submit]:hover {
 		</div>
 		<div class="row" id="corps">
 			<div class="col" id=vols>
-				<a href="vols.jsp">Nos Vols</a>
+				<a href="planetes.jsp">Nos Planètes</a>
 			</div>
 			<div class="col" id=sejours>
-				<a href="sejours.jsp">Nos Sejours</a>
+				<a href="activites.jsp">Nos Activités</a>
 			</div>
 			<div class="col" id=lastmin>
-				<a href="lastmin.jsp">Last Minute</a>
+				<a href="vols.jsp">Nos vols</a>
 			</div>
 			<div class="col" id=offres>
 				<a href="offres.jsp">Nos offres</a>
-			</div>
-			<div class="col" id=promos>
-				<a href="promos.jsp">Promotions</a>
 			</div>
 		</div>
 	</header>
 	<article>
 		<div id="texte">
 			<h2>
-				Faites confiance à nos</br> pilotes d'exceptions
+				Faites confiance à nos</br> pilotes d'exceptions</br> Leur metier,</br> notre
+				fierte
 			</h2>
-			<h2>
-				Leur metier,</br> notre fierte
-			</h2>
-			</br>
-			<img id="image1" src="./images/Image1.png"
-				alt="">
+			</br> <img id="image1" src="./images/Image1.png" alt="">
 		</div>
 		<div id="container">
 			<form action="post">
@@ -233,8 +226,9 @@ input[type=submit]:hover {
 				<input type="submit" id='submit' value='Se connecter'>
 			</form>
 		</div>
-		<div id="imageP"><img id="imgCo" src="./images/pilote.png"
-				alt=""></div>
+		<div id="imageP">
+			<img id="imgCo" src="./images/pilote.png" alt="">
+		</div>
 	</article>
 	<footer class="row no-gutters">
 		<div class="col" id=faq>

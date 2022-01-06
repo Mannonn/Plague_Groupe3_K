@@ -41,9 +41,25 @@ public class ActiviteRestController {
 		return activiteService.getAll();
 	}
 
+	@GetMapping("/{id}")
+	@JsonView(JsonViews.Activite.class)
+	private Activite getByIdBase(@PathVariable Long id) {
+		return activiteService.getById(id);
+	}
+
+	public Activite getById(Long id) {
+		return getByIdBase(id);
+	}
+
+	@GetMapping("/{id}/planete")
+	@JsonView(JsonViews.ActiviteWithIdPlanete.class)
+	private Activite getByIdWithPlanete(@PathVariable Long id) {
+		return activiteService.getById(id);
+	}
+
 	@PostMapping("")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Activite.class)
 	public Activite create(@Valid @RequestBody Activite activite, BindingResult br) {
 		if (br.hasErrors()) {
 			throw new ActiviteException();
@@ -53,7 +69,7 @@ public class ActiviteRestController {
 	}
 
 	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Activite.class)
 	public Activite put(@Valid @RequestBody Activite activite, BindingResult br, @PathVariable Long id) {
 		if (br.hasErrors()) {
 			throw new ActiviteException();
@@ -66,7 +82,7 @@ public class ActiviteRestController {
 	}
 
 	@PatchMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Activite.class)
 	public Activite patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
 		Activite activite = activiteService.getById(id);
 		fields.forEach((k, v) -> {

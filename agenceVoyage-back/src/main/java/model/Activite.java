@@ -18,13 +18,13 @@ public class Activite {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Obligatoire*
 	@Column(name = "id_activite")
 	private Long id;
-	@JsonView(JsonViews.ActiviteWithNom.class)
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "nom_activite")
 	private String nom;
-	@JsonView(JsonViews.ActiviteWithPrix.class)
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "prix_activite")
 	private double prix;
-	@JsonView(JsonViews.ActiviteWithIdPlanete.class)
+	@JsonView(JsonViews.Activite.class)
 	@JoinColumn(name = "id_planete")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Planete planete;

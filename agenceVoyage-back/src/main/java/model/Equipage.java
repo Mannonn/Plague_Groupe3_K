@@ -11,6 +11,7 @@ public class Equipage implements Serializable {
 
 	@JsonView(JsonViews.Common.class)
 	private String nom;
+	@JsonView(JsonViews.Common.class)
 	private String prenom;
 	@JsonView(JsonViews.Common.class)
 	private Grade grade;

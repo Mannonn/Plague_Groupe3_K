@@ -38,6 +38,20 @@ a:link {
 	justify-content: center;
 }
 
+#imageP {
+	position: absolute;
+	margin-left: 70%;
+	margin-top: 3%;
+}
+
+#imgCo {
+	width: 90%;;
+}
+
+#image1 {
+	width: 40%;
+}
+
 #imgLogo {
 	width: 130px;
 	justify-content: center;
@@ -63,21 +77,92 @@ body {
 }
 
 footer {
-	position: relative;
+	position: absolute;
+	bottom: 0;
 	width: 100%;
-	height: 10%;
+	height: 7%;
 	background-color: #5B9BD5;
 	border-top: solid black 2px;
 	text-align: center;
 }
 
-article {
-	position: relative;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 8%;
+#Tableau2 {
+	position: absolute;
+	margin-right: 5%;
+	margin-left: 5%;
+	margin-top: 5%;
+	color: gray;
+	border-radius: 10px;
+	background-color: gray;
+	border-style: solid;
+	box-sizing: border-box;
+	border-color: blue;
+
+}
+
+#appleBDD {
+	position: absolute;
+	margin-right: 55%;
+	margin-left: 55%;
+	margin-top: 55%;
+	color: gray;
+	border-radius: 10px;
+	background-color: gray;
+	border-style: solid;
+	box-sizing: border-box;
+	border-color: blue;
+
+}
+
+
+#texte {
+	position: absolute;
+	text-align: center;
+	margin-left: 6%;
+	margin-top: 9%;
+}
+
+table {
 	color: white;
-	text-align: justify;
+}
+
+th.colonne {
+	width: 5%;
+}
+
+th.largeur {
+	width: 25%;
+}
+
+form {
+	width: 100%;
+	padding: 30px;
+	border: 1px solid #003396;
+	background: #003396;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=tel],
+	textarea {
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+input[type=submit] {
+	background-color: white;
+	color: black;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+input[type=submit]:hover {
+	background-color: white;
+	color: #53af57;
+	border: 1px solid #53af57;
 }
 </style>
 
@@ -106,84 +191,59 @@ article {
 <body>
 	<header class="row no-gutters">
 		<div class="col-11 col-md-2" id=menu>
-			<a href="menu.jsp"><img id="imgMenu" src="./images/Menu.png"
+			<a href="banniere.jsp"><img id="imgMenu" src="./images/Menu.png"
 				alt=""></a>
 		</div>
 		<div class="col-md-8 d-none d-md-flex" id=logo>
-			<a href="fontjsp"><img id="imgLogo" src="./images/Logo.png"
+			<a href="banniere.jsp"><img id="imgLogo" src="./images/Logo.png"
 				alt=""></a>
 		</div>
-		<div class="col-12 col-md-2 no-gutters" id=compteAccess>
-			<c:if test="${isConnected==null}">
-				<div id="connection">
-					<a href="connexion.jsp">Se connecter</a>
-				</div>
-				<div id="inscription">
-					<a href="inscription.jsp">Créer un compte</a>
-				</div>
-			</c:if>
-			<c:if test="${isConnected=='y'}">
-				<div id="deConnect">
-					<a href="deconnection">Se déconnecter</a>
-				</div>
-			</c:if>
+		<div class="col-12 col-md-2 no-gutters" id=choixClient>
+			<div>
+				<a href="MenuClient.jsp">Mon compte</a>
+			</div>
+			<div>
+				<a href="MenuClient.jsp">Se deconnecter</a>
+			</div>
 		</div>
+
 		<div class="row" id="corps">
 			<div class="col" id=vols>
-				<a href="vols.jsp">Nos Vols</a>
+				<a href="planetes.jsp">Nos Planètes</a>
 			</div>
 			<div class="col" id=sejours>
-				<a href="sejours.jsp">Nos Sejours</a>
+				<a href="activites.jsp">Nos Activités</a>
 			</div>
 			<div class="col" id=lastmin>
-				<a href="lastmin.jsp">Last Minute</a>
+				<a href="vols.jsp">Nos vols</a>
 			</div>
 			<div class="col" id=offres>
 				<a href="offres.jsp">Nos offres</a>
 			</div>
-			<div class="col" id=promos>
-				<a href="promos.jsp">Promotions</a>
-			</div>
 		</div>
 	</header>
-	<article>
-		<h2>PROMOS</h2><br>
-		<ul>
-			<p>QUESTION 1</p>
+	<div id="Tableau2">
+		<table border>
+			<tbody>
+					<tr><td><a href="MenuClient.jsp">Mes infos</a></td></tr>
+					<tr><td><a href="MenuClient.jsp">Mon panier</a></td></tr>
+					<tr><td><a href="MenuClient.jsp">Mes passagers</a></td></tr>
+					<tr><td><a href="MenuClient.jsp">Mes reservations</a></td></tr>
 
-			<p>QUESTION 2</p>
-
-			<p>QUESTION 3</p>
-
-			<p>QUESTION 4</p>
-
-			<p>QUESTION 5</p>
-
-			<p>QUESTION 6</p>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-				do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-				enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-				ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-				pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-				culpa qui officia deserunt mollit anim id est laborum.</p>
-
-			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-				accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-				quae ab illo inventore veritatis et quasi architecto beatae vitae
-				dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-				aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-				eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-				qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-				sed quia non numquam eius modi tempora incidunt ut labore et dolore
-				magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-				nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-				aliquid ex ea commodi consequatur? Quis autem vel eum iure
-				reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-				consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-				pariatur?</p>
-	</article>
+			</tbody>
+		</table>
+	</div>
+	
+	<div>
+		<div id="appelBDD">
+		<table border>
+			<tbody>
+					<tr><td>infos bdd</td></tr>
+			</tbody>
+		</table>
+	</div>
+	
+	
 	<footer class="row no-gutters">
 		<div class="col" id=faq>
 			<a href="faq.jsp">Foire Aux Questions</a>

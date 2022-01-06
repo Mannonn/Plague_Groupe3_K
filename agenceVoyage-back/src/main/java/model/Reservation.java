@@ -24,7 +24,7 @@ public class Reservation implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@JsonView(JsonViews.ReservationWithDateResa.class)
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "date_reservation")
 	private LocalDate dateReservation;
 
@@ -33,11 +33,11 @@ public class Reservation implements Serializable {
 	@JoinTable(name = "reservation_passager", joinColumns = @JoinColumn(name = "id_reservation"), inverseJoinColumns = @JoinColumn(name = "id_passager"))
 	private Set<Passager> passagers;
 
-	@JsonView(JsonViews.ReservationWithTrajetAller.class)
+	@JsonView(JsonViews.Reservation.class)
 	@JoinColumn(name = "trajet_aller")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Trajet aller;
-	@JsonView(JsonViews.ReservationWithTrajetRetour.class)
+	@JsonView(JsonViews.Reservation.class)
 	@JoinColumn(name = "trajet_retour")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Trajet retour;
@@ -47,7 +47,7 @@ public class Reservation implements Serializable {
 	@JoinTable(name = "reservation_activite", joinColumns = @JoinColumn(name = "id_reservation"), inverseJoinColumns = @JoinColumn(name = "id_activite"))
 	private Set<Activite> activites;
 
-	@JsonView(JsonViews.ReservationWithClients.class)
+	@JsonView(JsonViews.Reservation.class)
 	@JoinColumn(name = "client")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Client client;
