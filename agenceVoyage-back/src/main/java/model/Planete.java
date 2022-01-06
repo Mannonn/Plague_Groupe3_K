@@ -21,10 +21,10 @@ public class Planete implements Serializable {
 	@Id // Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.PlaneteWithNom.class)
 	@Column(name = "nom_planete")
 	private String nom;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.PlaneteWithType.class)
 	@Enumerated(EnumType.STRING)
 	@Column(name = "type_planete", columnDefinition = "enum('Glaciaire','Desertique','Urbaine','Montagneuse','Tropicale')")
 	private TypePlanete type;

@@ -14,14 +14,14 @@ import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 @DiscriminatorValue("client")
 public class Client extends Compte {
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.ClientWithNomPrenom.class)
 	@Column(name = "nom")
 	private String nom;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.ClientWithNomPrenom.class)
 	@Column(name = "prenom")
 	private String prenom;
 
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.ClientWithReservations.class)
 	@OneToMany(mappedBy = "client", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	private Set<Reservation> reservations;
 

@@ -20,30 +20,30 @@ public class Trajet implements Serializable {
 	@Id//Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Obligatoire*
 	private Long id;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.TrajetWithDateDepart.class)
 	@Column(name="date_depart",columnDefinition = "DATE")
 	private LocalDate dateDepart;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.TrajetWithHeuredepart.class)
 	@Column(name="heure_depart",columnDefinition = "TIME")
 	private LocalTime heureDepart;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.TrajetWithDateArrivee.class)
 	@Column(name="date_arrivee",columnDefinition = "DATE")
 	private LocalDate dateArrivee;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.TrajetWithHeureArrivee.class)
 	@Column(name="heure_arrivee",columnDefinition = "TIME")
 	private LocalTime heureArrivee;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.TrajetWithPrix.class)
 	@Column(name="prix_trajet")
 	private double prix;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.TrajetWithDepart.class)
 	@JoinColumn(name="depart")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Planete depart;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.TrajetWithArrivee.class)
 	@JoinColumn(name="arrivee")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Planete arrivee;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.TrajetWithVaisseau.class)
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name="vaisseau")
 	private Vaisseau vaisseau;
