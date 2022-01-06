@@ -116,7 +116,7 @@ article {
 		<div class="col-12 col-md-2 no-gutters" id=compteAccess>
 			<c:if test="${isConnected==null}">
 				<div id="connection">
-					<a href="connection.jsp">Se connecter</a>
+					<a href="connexion.jsp">Se connecter</a>
 				</div>
 				<div id="inscription">
 					<a href="inscription.jsp">Créer un compte</a>
