@@ -15,24 +15,26 @@ public class VaisseauService {
 	@Autowired
 	private VaisseauRepository vaisseauRepo;
 
-
 	public void creation(Vaisseau vaisseau) {
 		if (vaisseau.getNom() == null) {
 			throw new VaisseauException();
 		}
 		vaisseauRepo.save(vaisseau);
 	}
-	
+
 	public Vaisseau update(Vaisseau vaisseau) {
-        if (vaisseau.getId() == null) {
-            throw new VaisseauException();
-        }
-        Vaisseau vaisseauEnBase = vaisseauRepo.findById(vaisseau.getId()).orElseThrow(VaisseauException::new);
-        creation(vaisseauEnBase);
-        return vaisseauRepo.save(vaisseau);
+		if (vaisseau.getId() == null) {
+			throw new VaisseauException();
+		}
+		Vaisseau vaisseauEnBase = vaisseauRepo.findById(vaisseau.getId()).orElseThrow(VaisseauException::new);
+		creation(vaisseauEnBase);
+		return vaisseauRepo.save(vaisseau);
 
-    }
+	}
 
+	public void suppression(Long id) {
+		suppression(getById(id));
+	}
 
 	public void suppression(Vaisseau vaisseau) {
 		Vaisseau vaisseauEnBase = null;
@@ -56,4 +58,3 @@ public class VaisseauService {
 	}
 
 }
-

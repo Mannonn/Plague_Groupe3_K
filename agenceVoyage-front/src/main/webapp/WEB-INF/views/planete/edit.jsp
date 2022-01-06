@@ -20,40 +20,36 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
 	integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
 	crossorigin="anonymous"></script>
-<title>voyageez</title>
+<title>lotr</title>
 </head>
 <body>
 	<div class="container">
-		<h1>edition vaisseau</h1>
+		<h1>edition planete</h1>
 
-		<form:form action="${ctx}/vaisseau" method="post"
-			modelAttribute="vaisseau">
+		<form:form action="${ctx}/planete/save" method="get"
+			modelAttribute="planete">
 			<div class="form-group">
 				<form:label path="id">id:</form:label>
 				<form:input cssClass="form-control" path="id" readonly="true"
 					placeholder="generation automatique" />
 			</div>
 			<div class="form-group">
-				<form:label path="nom">capacite:</form:label>
-				<form:input cssClass="form-control" path="capacite" />
-				<form:errors path="capacite" cssClass="alert alert-danger"
-					element="div"></form:errors>
-			</div>
-			<div class="form-group">
 				<form:label path="nom">nom:</form:label>
 				<form:input cssClass="form-control" path="nom" />
 				<form:errors path="nom" cssClass="alert alert-danger" element="div"></form:errors>
 			</div>
-			<div class="form-group">
-				<form:label path="nom">capitaine:</form:label>
-				<form:input cssClass="form-control" path="capitaine" />
-				<form:errors path="capitaine" cssClass="alert alert-danger" element="div"></form:errors>
-			</div>
-
+			<c:if test="${planete.getClass().name=='model.TypePlanete'}">
+				<label>type:</label>
+				<select class="form-control" name="type">
+					<c:forEach items="${types}" var="type">
+						<option value="${type}">${type}</option>
+					</c:forEach>
+				</select>
+			</c:if>
 
 			<div>
 				<button type="submit" class="btn btn-outline-success">enregistrer</button>
-				<a href="${ctx}/vaisseau" class="btn btn-outline-warning">annuler</a>
+				<a href="${ctx}/planete" class="btn btn-outline-warning">annuler</a>
 			</div>
 		</form:form>
 	</div>

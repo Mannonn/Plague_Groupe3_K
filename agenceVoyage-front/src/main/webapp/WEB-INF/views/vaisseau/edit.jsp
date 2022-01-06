@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <c:set var="ctx" value="${pageContext.servletContext.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -24,31 +23,32 @@
 </head>
 <body>
 	<div class="container">
-		<h1>edition planete</h1>
+		<h1>edition vaisseau</h1>
 
-		<form:form action="${ctx}/planete" method="post"
-			modelAttribute="planete">
+		<form action="${action}" method="post">
 			<div class="form-group">
-				<form:label path="id">id:</form:label>
-				<form:input cssClass="form-control" path="id" readonly="true"
-					placeholder="generation automatique" />
+				<label>id:</label> <input class="form-control" name="id"
+					readonly="readonly" placeholder="generation automatique"
+					value="${vaisseau.id}">
 			</div>
 			<div class="form-group">
-				<form:label path="nom">nom:</form:label>
-				<form:input cssClass="form-control" path="nom" />
-				<form:errors path="nom" cssClass="alert alert-danger" element="div"></form:errors>
+				<label>capacite:</label> <input class="form-control" name="capacite"
+					value="${vaisseau.capacite}">
 			</div>
-
-			<c:if test="${planete.getClass().name=='model.TypePlanete'}">
-				<form:label path="type">type:</form:label>
-				<form:select cssClass="form-control" path="type" items="${types}"></form:select>
-			</c:if>
+			<div class="form-group">
+				<label>nom:</label> <input class="form-control" name="nom"
+					value="${vaisseau.nom}">
+			</div>
+			<div class="form-group">
+				<label>capitaine:</label> <input class="form-control"
+					name="capitaine" value="${vaisseau.capitaine}">
+			</div>
 
 			<div>
 				<button type="submit" class="btn btn-outline-success">enregistrer</button>
-				<a href="${ctx}/planete" class="btn btn-outline-warning">annuler</a>
+				<a href="${ctx}/vaisseau" class="btn btn-outline-warning">annuler</a>
 			</div>
-		</form:form>
+		</form>
 	</div>
 </body>
 </html>

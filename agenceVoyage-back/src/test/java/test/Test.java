@@ -11,10 +11,10 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import config.AppConfig;
 import main.InitBase;
 
-//@Transactional
-//@Rollback(true)
-//@ExtendWith(SpringExtension.class)
-//@ContextConfiguration(classes = {AppConfig.class})
+@Transactional
+@Rollback(true)
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes = {AppConfig.class})
 class Test {
 	
 	public static void main(String[] args) {

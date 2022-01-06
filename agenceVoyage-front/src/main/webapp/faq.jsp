@@ -22,7 +22,7 @@ a:link {
 }
 
 #articcle {
-font-size: large;
+	font-size: large;
 }
 
 #menu {
@@ -148,22 +148,40 @@ article {
 		</div>
 	</header>
 	<article id="articcle">
-		<h2>FAQ</h2><br>
+		<h2>FAQ</h2>
+		<br>
 		<ul>
-			<p> <b>Je souhaite annuler ma réservation, suis-je remboursé?</b>
-			<br> Vous pouvez annuler votre réservation sans frais  jusqu'à une semaine avant le départ. Vous recevrez un bon d'achat pour un prochain voyage.</br>
-			Pour un délais inférieur, c'est trop tard mais vous pouvez choisir à quelle association vous reversez votre mise.</p>
+			<p>
+				<b>Je souhaite annuler ma réservation, suis-je remboursé?</b> <br>
+				Vous pouvez annuler votre réservation sans frais jusqu'à une semaine
+				avant le départ. Vous recevrez un bon d'achat pour un prochain
+				voyage. Pour un délais inférieur, c'est trop tard mais vous pouvez
+				choisir à quelle association vous reversez votre mise.
+			</p><br><br>
 
-			<p> <b>Je souhaite changer un voyageur.</b>
-			<br> Une fois la réservation validée, notre compagnie envoie les informations des passagers aux futures planètes visitées, le changement n'est donc pas possible. Vous pouvez néanmoins annuler le billet du voyageur ne souhaitant plus partir.</br>
-			</p>
+			<p>
+				<b>Je souhaite changer un voyageur.</b> <br> Une fois la
+				réservation validée, notre compagnie envoie les informations des
+				passagers aux futures planètes visitées, le changement n'est donc
+				pas possible. Vous pouvez néanmoins annuler le billet du voyageur ne
+				souhaitant plus partir.
+			</p><br><br>
 
-			<p> <b>Je souhaite voyager avec mon animal, doit-il voyager en soute?</b>
-			<br> Si votre animal de compagnie pèse moins de 10 kg et rentre dans un sac cabine, il peut voyager dans un panier fermé avec atmosphère protectrice pour le modique prix d'un billet adulte. Sinon il voyagera cryonisé (avec amour) en soute.</br>
-			</p>
+			<p>
+				<b>Je souhaite voyager avec mon animal, doit-il voyager en
+					soute?</b> <br> Si votre animal de compagnie pèse moins de 10 kg
+				et rentre dans un sac cabine, il peut voyager dans un panier fermé
+				avec atmosphère protectrice pour le modique prix d'un billet adulte.
+				Sinon il voyagera cryonisé (avec amour) en soute.
+			</p><br><br>
 
-
-
+			<p>
+				<b>Je ne trouve plus la destination Soleil, qu'en est-il
+					réellement ?</b> <br> Malheureusement depuis la dernière éruption
+				solaire, une partie de notre spatioport a été abimé... Par mesure de
+				précaution, Voyageez a pris la décision de suspendre ses liaisons
+				avec le Soleil jusqu'à la fin des réparations.
+			</p><br>
 	</article>
 	<footer class="row no-gutters">
 		<div class="col" id=faq>

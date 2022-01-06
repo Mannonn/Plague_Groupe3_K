@@ -24,7 +24,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>liste des vaisseaus</h1>
+		<h1>liste des vaisseaux</h1>
 		<table class="table">
 			<thead>
 				<tr>
@@ -37,23 +37,21 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${vaisseaus}" var="p">
+				<c:forEach items="${vaisseaux}" var="v">
 					<tr>
-						<td>${p.id}</td>
-						<td>${p.capacite}</td>
-						<td>${p.nom}</td>
-						<td>${p.capitaine}</td>
-
-						<td><a href="${ctx}/vaisseau/edit?id=${p.id}"
+						<td>${v.id}</td>
+						<td>${v.capacite}</td>
+						<td>${v.nom}</td>
+						<td>${v.capitaine}</td>
+						
+						<td><a href="${ctx}/vaisseau/edit?id=${v.id}"
 							class="btn btn-outline-primary">editer</a></td>
-						<td><a href="${ctx}/vaisseau/delete?id=${p.id}"
+						<td><a href="${ctx}/vaisseau/delete?id=${v.id}"
 							class="btn btn-outline-danger">supprimer</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-		<a href="${ctx}/vaisseau/add" class="btn btn-link">ajouter un
-			vaisseau</a>
 	</div>
 </body>
 </html>
