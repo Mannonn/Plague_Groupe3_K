@@ -39,10 +39,20 @@ public class PassagerRestController {
 	public List<Passager> getAll() {
 		return passagerService.getAll();
 	}
-	
+
+	@GetMapping("/{id}")
+	@JsonView(JsonViews.Passager.class)
+	private Passager getByIdBase(@PathVariable Long id) {
+		return passagerService.getById(id);
+	}
+
+	public Passager getById(Long id) {
+		return getByIdBase(id);
+	}
+
 	@PostMapping("")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Passager.class)
 	public Passager create(@Valid @RequestBody Passager passager, BindingResult br) {
 		if (br.hasErrors()) {
 			throw new PassagerException();
@@ -50,9 +60,9 @@ public class PassagerRestController {
 		passagerService.creation(passager);
 		return passager;
 	}
-	
+
 	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Passager.class)
 	public Passager put(@Valid @RequestBody Passager passager, BindingResult br, @PathVariable Long id) {
 		if (br.hasErrors()) {
 			throw new PassagerException();
@@ -65,7 +75,7 @@ public class PassagerRestController {
 	}
 
 	@PatchMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Passager.class)
 	public Passager patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
 		Passager passager = passagerService.getById(id);
 		fields.forEach((k, v) -> {

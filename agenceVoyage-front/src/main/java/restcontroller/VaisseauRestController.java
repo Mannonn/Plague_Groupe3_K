@@ -40,9 +40,19 @@ public class VaisseauRestController {
 		return vaisseauService.getAll();
 	}
 	
+	@GetMapping("/{id}")
+	@JsonView(JsonViews.Vaisseau.class)
+	private Vaisseau getByIdBase(@PathVariable Long id) {
+		return vaisseauService.getById(id);
+	}
+
+	public Vaisseau getById(Long id) {
+		return getByIdBase(id);
+	}
+	
 	@PostMapping("")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Vaisseau.class)
 	public Vaisseau create(@Valid @RequestBody Vaisseau vaisseau, BindingResult br) {
 		if (br.hasErrors()) {
 			throw new VaisseauException();
@@ -52,7 +62,7 @@ public class VaisseauRestController {
 	}
 	
 	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Vaisseau.class)
 	public Vaisseau put(@Valid @RequestBody Vaisseau vaisseau, BindingResult br, @PathVariable Long id) {
 		if (br.hasErrors()) {
 			throw new VaisseauException();

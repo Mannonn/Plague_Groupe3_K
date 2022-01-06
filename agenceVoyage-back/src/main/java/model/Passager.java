@@ -21,13 +21,13 @@ public class Passager implements Serializable {
 	@Id // Obligatoire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@JsonView(JsonViews.PassagerWithNomPrenom.class)
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "nom")
 	private String nom;
-	@JsonView(JsonViews.PassagerWithNomPrenom.class)
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "prenom")
 	private String prenom;
-	@JsonView(JsonViews.PassagerWithClients.class)
+	@JsonView(JsonViews.Passager.class)
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "client")
 	private Client client;

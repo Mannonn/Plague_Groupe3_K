@@ -7,8 +7,8 @@ import java.util.Map;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.ReflectionUtils;
 import org.springframework.http.HttpStatus;
+import org.springframework.util.ReflectionUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,9 +40,25 @@ public class ClientRestController {
 		return clientService.getAll();
 	}
 
+	@GetMapping("/{id}")
+	@JsonView(JsonViews.Client.class)
+	private Client getByIdBase(@PathVariable Long id) {
+		return clientService.getById(id);
+	}
+
+	public Client getById(Long id) {
+		return getByIdBase(id);
+	}
+	
+	@GetMapping("/{id}/reservation")
+	@JsonView(JsonViews.ClientWithReservations.class)
+	private Client getByIdWithReservation (@PathVariable Long id) {
+		return clientService.getById(id);
+	}
+
 	@PostMapping("")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Client.class)
 	public Client create(@Valid @RequestBody Client client, BindingResult br) {
 		if (br.hasErrors()) {
 			throw new ClientException();
@@ -52,7 +68,7 @@ public class ClientRestController {
 	}
 
 	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Client.class)
 	public Client put(@Valid @RequestBody Client client, BindingResult br, @PathVariable Long id) {
 		if (br.hasErrors()) {
 			throw new ClientException();
@@ -65,7 +81,7 @@ public class ClientRestController {
 	}
 
 	@PatchMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Client.class)
 	public Client patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
 		Client client = clientService.getById(id);
 		fields.forEach((k, v) -> {

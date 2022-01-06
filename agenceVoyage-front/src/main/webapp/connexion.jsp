@@ -211,9 +211,7 @@ input[type=submit]:hover {
 	<article>
 		<div id="texte">
 			<h2>
-				Faites confiance à nos</br> pilotes d'exceptions
-			</h2>
-			<h2>
+				Faites confiance à nos</br> pilotes d'exceptions</br>
 				Leur metier,</br> notre fierte
 			</h2>
 			</br>

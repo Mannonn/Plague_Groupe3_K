@@ -40,10 +40,20 @@ public class PlaneteRestController {
 	public List<Planete> getAll() {
 		return planeteService.getAll();
 	}
-	
+
+	@GetMapping("/{id}")
+	@JsonView(JsonViews.Planete.class)
+	private Planete getByIdBase(@PathVariable Long id) {
+		return planeteService.getById(id);
+	}
+
+	public Planete getById(Long id) {
+		return getByIdBase(id);
+	}
+
 	@PostMapping("")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Planete.class)
 	public Planete create(@Valid @RequestBody Planete planete, BindingResult br) {
 		if (br.hasErrors()) {
 			throw new PlaneteException();
@@ -51,9 +61,9 @@ public class PlaneteRestController {
 		planeteService.creation(planete);
 		return planete;
 	}
-	
+
 	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Planete.class)
 	public Planete put(@Valid @RequestBody Planete planete, BindingResult br, @PathVariable Long id) {
 		if (br.hasErrors()) {
 			throw new PlaneteException();
@@ -65,12 +75,11 @@ public class PlaneteRestController {
 		return planete;
 	}
 
-
 	@PatchMapping("/{id}")
 	@JsonView(JsonViews.Common.class)
 	public Planete patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
 		Planete planete = planeteService.getById(id);
-		
+
 		fields.forEach((k, v) -> {
 			Field field = ReflectionUtils.findField(Planete.class, k);
 			ReflectionUtils.makeAccessible(field);

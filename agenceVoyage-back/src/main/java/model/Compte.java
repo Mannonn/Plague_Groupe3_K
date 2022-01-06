@@ -20,9 +20,9 @@ public abstract class Compte implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected Long id;
 
-	@JsonView(JsonViews.CompteWithLogin.class)
+	@JsonView(JsonViews.Common.class)
 	protected String login;
-	@JsonView(JsonViews.CompteWithPassword.class)
+	@JsonView(JsonViews.Common.class)
 	protected String password;
 
 	public Compte() {

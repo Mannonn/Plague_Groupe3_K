@@ -42,7 +42,7 @@ public class AdminRestController {
 	
 	@PostMapping("")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Admin.class)
 	public Admin create(@Valid @RequestBody Admin admin, BindingResult br) {
 		if (br.hasErrors()) {
 			throw new AdminException();
@@ -52,7 +52,7 @@ public class AdminRestController {
 	}
 	
 	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Admin.class)
 	public Admin put(@Valid @RequestBody Admin admin, BindingResult br, @PathVariable Long id) {
 		if (br.hasErrors()) {
 			throw new AdminException();
@@ -65,7 +65,7 @@ public class AdminRestController {
 	}
 
 	@PatchMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Admin.class)
 	public Admin patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
 		Admin admin = adminService.getById(id);
 		fields.forEach((k, v) -> {

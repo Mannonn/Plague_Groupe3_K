@@ -70,4 +70,11 @@ public class ReservationService {
 		}
 		throw new ReservationException();
 	}
+
+	public Reservation getByIdWithActivites(Long id) {
+		if (id != null) {
+			return reservationRepo.findByIdWithActivites(id).orElseThrow(ReservationException::new);
+		}
+		throw new ReservationException();
+	}
 }

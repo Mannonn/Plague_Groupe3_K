@@ -21,6 +21,9 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 	@Query("select r from Reservation r left join fetch r.passagers where r.id=:id")
 	Optional<Reservation> findByIdWithPassagers(@Param("id") Long id); 
 	
+	@Query("select r from Reservation r left join fetch r.activites where r.id=:id")
+	Optional<Reservation> findByIdWithActivites(@Param("id") Long id); 
+	
 	List<Reservation> findByDateReservation(LocalDate dateReservation);
 	
 	List<Reservation> findByAller(Trajet trajet);
