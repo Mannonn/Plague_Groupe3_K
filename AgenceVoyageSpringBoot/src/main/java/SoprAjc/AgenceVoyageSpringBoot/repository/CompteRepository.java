@@ -1,0 +1,18 @@
+package SoprAjc.AgenceVoyageSpringBoot.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import SoprAjc.AgenceVoyageSpringBoot.model.Compte;
+//Test valide, aucun pb detecte
+public interface CompteRepository extends JpaRepository<Compte, Long>{
+
+	Optional<Compte> findByLogin(String login);
+
+	List<Compte> findByLoginContaining(String login);
+	
+	Optional<Compte> findById(Long id);
+
+}
