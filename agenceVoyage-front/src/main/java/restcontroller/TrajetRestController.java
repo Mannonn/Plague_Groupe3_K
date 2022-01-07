@@ -1,9 +1,6 @@
 package restcontroller;
 
 import java.lang.reflect.Field;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -51,9 +48,19 @@ public class TrajetRestController {
 		return trajetService.getAll();
 	}
 
+	@GetMapping("/{id}")
+	@JsonView(JsonViews.Trajet.class)
+	private Trajet getByIdBase(@PathVariable Long id) {
+		return trajetService.getById(id);
+	}
+
+	public Trajet getById(Long id) {
+		return getByIdBase(id);
+	}
+
 	@PostMapping("")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Trajet.class)
 	public Trajet create(@Valid @RequestBody Trajet trajet, BindingResult br) {
 		if (br.hasErrors()) {
 			throw new TrajetException();
@@ -63,7 +70,7 @@ public class TrajetRestController {
 	}
 
 	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Trajet.class)
 	public Trajet put(@Valid @RequestBody Trajet trajet, BindingResult br, @PathVariable Long id) {
 		if (br.hasErrors()) {
 			throw new TrajetException();
@@ -76,7 +83,7 @@ public class TrajetRestController {
 	}
 
 	@PatchMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Trajet.class)
 	public Trajet patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
 		Trajet trajet = trajetService.getById(id);
 		fields.forEach((k, v) -> {

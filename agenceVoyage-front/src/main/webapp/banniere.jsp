@@ -16,7 +16,7 @@ header {
 	width: 100%;
 }
 
-a:link {
+a {
 	color: black;
 	font-size: large;
 }
@@ -129,8 +129,8 @@ article {
 }
 
 #text {
- 	position: absolute;
- 	bottom:0;
+	position: absolute;
+	bottom: 0;
 	color: white;
 }
 
@@ -171,17 +171,17 @@ article {
 <body>
 	<header class="row no-gutters">
 		<div class="col-11 col-md-2" id=menu>
-			<a href="menu.jsp"><img id="imgMenu" src="./images/Menu.png"
+			<a href="banniere.jsp"><img id="imgMenu" src="./images/Menu.png"
 				alt=""></a>
 		</div>
 		<div class="col-md-8 d-none d-md-flex" id=logo>
-			<a href="fontjsp"><img id="imgLogo" src="./images/Logo.png"
+			<a href="banniere.jsp"><img id="imgLogo" src="./images/Logo.png"
 				alt=""></a>
 		</div>
 		<div class="col-12 col-md-2 no-gutters" id=compteAccess>
 			<c:if test="${isConnected==null}">
 				<div id="connection">
-					<a href="connection.jsp">Se connecter</a>
+					<a href="connexion.jsp">Se connecter</a>
 				</div>
 				<div id="inscription">
 					<a href="inscription.jsp">Créer un compte</a>
@@ -195,58 +195,60 @@ article {
 		</div>
 		<div class="row" id="corps">
 			<div class="col" id=vols>
-				<a href="vols.jsp">Nos Vols</a>
+				<a href="planetes.jsp">Nos Planètes</a>
 			</div>
 			<div class="col" id=sejours>
-				<a href="sejours.jsp">Nos Sejours</a>
+				<a href="activites.jsp">Nos Activités</a>
 			</div>
 			<div class="col" id=lastmin>
-				<a href="lastmin.jsp">Last Minute</a>
+				<a href="vols.jsp">Nos vols</a>
 			</div>
 			<div class="col" id=offres>
 				<a href="offres.jsp">Nos offres</a>
-			</div>
-			<div class="col" id=promos>
-				<a href="promos.jsp">Promotions</a>
 			</div>
 		</div>
 	</header>
 
 	<article id="article1">
 		<h1>
-			Bienvenue sur le site de Voyageez, la première agence de voyages
-			interplanetaires pour tous!<br><br>
+			Bienvenue sur le site de la première agence de voyages
+			interplanetaires pour tous!<br> <br>
 		</h1>
 		<p>
 			Notre mission: vous proposer des services de qualités pour que vos
-			vacances dans les étoiles soient les plus belles possibles.<br> Pour toi,
-			qui aime le frisson et l'aventure, ou encore toi, qui veut te dorer
-			la pillule au soleil, et toi là bas, qui ne sais pas faire autrement
-			que te prendre à la dernière minute pour tes vacances et pour tous
-			les autres qu'on embrasse fort <3... <br> <br> Il ne vous
-			reste qu'à commencer votre recherche, cliquez et ...
+			vacances dans les étoiles soient les plus belles possibles.<br>
+			Pour toi, qui aime le frisson et l'aventure, ou encore toi, qui veut
+			te dorer la pillule au soleil, et toi là bas, qui ne sais pas faire
+			autrement que te prendre à la dernière minute pour tes vacances et
+			pour tous les autres qu'on embrasse fort <3... <br> <br> Il
+			ne vous reste qu'à commencer votre recherche, cliquez et ...
 		</p>
 		<h2 align="right">...Voyageez vers d'autres cieux!</h2>
-		
+
 		<br>
 	</article>
+
 	<div id="slideshow">
 		<div id="slideshow-container">
 			<div id="mySlides">
 				<div id="numbertext">1 / 4</div>
-				<div id="text">Magnifique vue du levé de soleil sur la planète Venus, le meilleur spot romantique de la galaxie.</div>
+				<div id="text">Magnifique vue du levé de soleil sur la planète
+					Venus, le meilleur spot romantique de la galaxie.</div>
 			</div>
 			<div id="mySlides">
 				<div id="numbertext">2 / 4</div>
-				<div id="text">Les canyons de Mars, une aventure à couper le souffle en famille ou entre amis.</div>
+				<div id="text">Les canyons de Mars, une aventure à couper le
+					souffle en famille ou entre amis.</div>
 			</div>
 			<div id="mySlides">
 				<div id="numbertext">3 / 4</div>
-				<div id="text">Et pourquoi pas une croisière autour de Mercure pour oublier la grisaille de l'hivers. </div>
+				<div id="text">Et pourquoi pas une croisière autour de Mercure
+					pour oublier la grisaille de l'hivers.</div>
 			</div>
 			<div id="mySlides">
 				<div id="numbertext">4 / 4</div>
-				<div id="text">Sur Uranus, vous pouvez observer les plus belles aurores boréales de la Voie Lactée, alors ? Ca vous tente ?</div>
+				<div id="text">Sur Uranus, vous pouvez observer les plus
+					belles aurores boréales de la Voie Lactée, alors ? Ca vous tente ?</div>
 			</div>
 		</div>
 	</div>
@@ -264,10 +266,21 @@ article {
 			passagers qui vous accompagnent et à cliquer sur le bouton "VALIDER"
 			afin d'acceder à vos résultats.</p>
 	</article>
-	
-	<form action="">
-	
-	</form>
+
+	<div id="recherche">
+		<form action="post">
+			<h2>Recherche</h2>
+
+			<label>Planete de départ</label> <input type="text" name="depart">
+			<label>Planete d'arrivee</label> <input type="text" name="arrivee"></br>
+			<label>Date de départ</label> <input type="date" name="date"></br>
+			<label>Choisir une activité en plus</label> <input type="radio"
+				name="activite"> <label>Activité</label> <select
+				name="activites" id="activite-select">
+				<option value="">--Choisir une activité--</option>
+			</select> </br> <input type="submit" id='submit' value='Valider ma sélection'>
+		</form>
+	</div>
 
 	<footer class="row no-gutters">
 		<div class="col" id=faq>

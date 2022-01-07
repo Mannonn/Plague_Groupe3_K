@@ -21,7 +21,7 @@ public class Client extends Compte {
 	@Column(name = "prenom")
 	private String prenom;
 
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Client.class)
 	@OneToMany(mappedBy = "client", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	private Set<Reservation> reservations;
 

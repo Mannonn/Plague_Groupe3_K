@@ -39,10 +39,20 @@ public class CompteRestController {
 	public List<Compte> getAll() {
 		return compteService.getAll();
 	}
-	
+
+	@GetMapping("/{id}")
+	@JsonView(JsonViews.Compte.class)
+	private Compte getByIdBase(@PathVariable Long id) {
+		return compteService.getById(id);
+	}
+
+	public Compte getById(Long id) {
+		return getByIdBase(id);
+	}
+
 	@PostMapping("")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Compte.class)
 	public Compte create(@Valid @RequestBody Compte compte, BindingResult br) {
 		if (br.hasErrors()) {
 			throw new CompteException();
@@ -50,9 +60,9 @@ public class CompteRestController {
 		compteService.creation(compte);
 		return compte;
 	}
-	
+
 	@PutMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Compte.class)
 	public Compte put(@Valid @RequestBody Compte compte, BindingResult br, @PathVariable Long id) {
 		if (br.hasErrors()) {
 			throw new CompteException();
@@ -65,7 +75,7 @@ public class CompteRestController {
 	}
 
 	@PatchMapping("/{id}")
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Compte.class)
 	public Compte patch(@RequestBody Map<String, Object> fields, @PathVariable Long id) {
 		Compte compte = compteService.getById(id);
 		fields.forEach((k, v) -> {

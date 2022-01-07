@@ -23,7 +23,7 @@ public class Trajet implements Serializable {
 	@JsonView(JsonViews.Common.class)
 	@Column(name="date_depart",columnDefinition = "DATE")
 	private LocalDate dateDepart;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Common.class) 
 	@Column(name="heure_depart",columnDefinition = "TIME")
 	private LocalTime heureDepart;
 	@JsonView(JsonViews.Common.class)
@@ -35,15 +35,15 @@ public class Trajet implements Serializable {
 	@JsonView(JsonViews.Common.class)
 	@Column(name="prix_trajet")
 	private double prix;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Trajet.class)
 	@JoinColumn(name="depart")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Planete depart;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Trajet.class)
 	@JoinColumn(name="arrivee")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Planete arrivee;
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Trajet.class)
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name="vaisseau")
 	private Vaisseau vaisseau;
