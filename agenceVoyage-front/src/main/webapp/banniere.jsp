@@ -171,11 +171,11 @@ article {
 <body>
 	<header class="row no-gutters">
 		<div class="col-11 col-md-2" id=menu>
-			<a href="menu.jsp"><img id="imgMenu" src="./images/Menu.png"
+			<a href="banniere.jsp"><img id="imgMenu" src="./images/Menu.png"
 				alt=""></a>
 		</div>
 		<div class="col-md-8 d-none d-md-flex" id=logo>
-			<a href="fontjsp"><img id="imgLogo" src="./images/Logo.png"
+			<a href="banniere.jsp"><img id="imgLogo" src="./images/Logo.png"
 				alt=""></a>
 		</div>
 		<div class="col-12 col-md-2 no-gutters" id=compteAccess>
