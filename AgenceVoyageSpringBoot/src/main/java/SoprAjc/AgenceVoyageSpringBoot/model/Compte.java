@@ -34,7 +34,7 @@ public abstract class Compte implements Serializable,UserDetails {
 	@JsonView(JsonViews.Common.class)
 	protected String password;
 	@Column(name = "enabled", nullable = false)
-	private boolean enabled;
+	protected boolean enabled;
 
 	public Compte() {
 

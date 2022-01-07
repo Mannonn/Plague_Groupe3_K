@@ -39,6 +39,7 @@ public class Client extends Compte {
 		super(login, password);
 		this.nom = nom;
 		this.prenom = prenom;
+		this.enabled =true;
 	}
 
 	public Client(String login, String password, String nom, String prenom, Set<Reservation> reservations) {

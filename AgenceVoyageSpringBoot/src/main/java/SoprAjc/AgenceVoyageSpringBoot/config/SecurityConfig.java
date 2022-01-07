@@ -18,71 +18,72 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-//	// utilisé pour les resources en acces direct
-//	@Override
-//	public void configure(WebSecurity web) throws Exception {
-//		web.ignoring().antMatchers("/images/**", "/css/**");
-//	}
-//
-//	@Override
-//	// les acces au resources
-//	// le mode d'authentification
-//	protected void configure(HttpSecurity http) throws Exception {
-//		// @formatter:off
-//		
-//		http.antMatcher("/api/**")
-//				.csrf().ignoringAntMatchers("/api/**")
-//				.and()
-//				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//				.and()
+	// utilisé pour les resources en acces direct
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/images/**", "/css/**");
+	}
+
+	@Override
+	// les acces au resources
+	// le mode d'authentification
+	protected void configure(HttpSecurity http) throws Exception {
+		// @formatter:off
+		
+		http.antMatcher("/api/**")
+				.csrf().ignoringAntMatchers("/api/**") 
+				.and()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) //ok
+				.and()
+				.authorizeHttpRequests()
+					.antMatchers(HttpMethod.POST,"/api/**").permitAll()
+					.antMatchers("/api/**").authenticated()
+				.and()
+				.httpBasic();
+		
+//			.and()
+//			.antMatcher("/**")
 //				.authorizeHttpRequests()
-//					.antMatchers(HttpMethod.GET,"/api/personnage/**").permitAll()
-//					.antMatchers("/api/**").authenticated()
-//				.and()
-//				.httpBasic();
-////			.and()
-////			.antMatcher("/**")
-////				.authorizeHttpRequests()
-////					.antMatchers("/personnage/**").permitAll()
-////					.antMatchers("/compagnon/**").hasAnyRole("COMPAGNON","ADMIN")
-////					.anyRequest().authenticated()
-////				.and()	
-////				.formLogin();
-//		// @formatter:on
-//	}
-//
-////	@Autowired
-////	private DataSource dataSource;
-//
+//					.antMatchers("/personnage/**").permitAll()
+//					.antMatchers("/compagnon/**").hasAnyRole("COMPAGNON","ADMIN")
+//					.anyRequest().authenticated()
+//				.and()	
+//				.formLogin();
+		// @formatter:on
+	}
+
 //	@Autowired
-//	private UserDetailsService userDetailsService;
-//
-//	@Override
-//	// la methode d'authentification
-//	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//		// authentification en memoire
-////		// @formatter:off
-////		auth.inMemoryAuthentication()
-////				.withUser("olivier").password("{noop}olivier").roles("ADMIN","COMPAGNON")
-////				.and()
-////				.withUser("compagnon").password("{noop}compagnon").roles("COMPAGNON")
-////				.and()
-////				.withUser("user").password("{noop}user").roles("USER");
-////		// @formatter:on
-//
-//		// authentification avec requetes sql
-////		// @formatter:off
-////		auth.jdbcAuthentication()
-////				.dataSource(dataSource)
-////					.usersByUsernameQuery("select login,password,enable from users where login=?")
-////					.authoritiesByUsernameQuery("select login,roles from users_roles ur join users u on ur.user_id=u.id where login=?");
-////		// @formatter:on
-//
-//		auth.userDetailsService(userDetailsService);
-//	}
-//
-//	@Bean
-//	public PasswordEncoder passwordEncoder() {
-//		return new BCryptPasswordEncoder();
-//	}
+//	private DataSource dataSource;
+
+	@Autowired
+	private UserDetailsService userDetailsService;
+
+	@Override
+	// la methode d'authentification
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		// authentification en memoire
+//		// @formatter:off
+//		auth.inMemoryAuthentication()
+//				.withUser("olivier").password("{noop}olivier").roles("ADMIN","COMPAGNON")
+//				.and()
+//				.withUser("compagnon").password("{noop}compagnon").roles("COMPAGNON")
+//				.and()
+//				.withUser("user").password("{noop}user").roles("USER");
+//		// @formatter:on
+
+		// authentification avec requetes sql
+//		// @formatter:off
+//		auth.jdbcAuthentication()
+//				.dataSource(dataSource)
+//					.usersByUsernameQuery("select login,password,enable from users where login=?")
+//					.authoritiesByUsernameQuery("select login,roles from users_roles ur join users u on ur.user_id=u.id where login=?");
+//		// @formatter:on
+
+		auth.userDetailsService(userDetailsService);
+	}
+
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 }

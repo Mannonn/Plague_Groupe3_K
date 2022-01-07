@@ -6,6 +6,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import SoprAjc.AgenceVoyageSpringBoot.model.Activite;
 import SoprAjc.AgenceVoyageSpringBoot.model.Admin;
@@ -27,7 +30,8 @@ import SoprAjc.AgenceVoyageSpringBoot.repository.ReservationRepository;
 import SoprAjc.AgenceVoyageSpringBoot.repository.TrajetRepository;
 import SoprAjc.AgenceVoyageSpringBoot.repository.VaisseauRepository;
 
-public class InitBase {
+@Service
+public class InitBase implements CommandLineRunner {
 
 	@Autowired
 	private ActiviteRepository activiteRepo;
@@ -47,7 +51,8 @@ public class InitBase {
 	private TrajetRepository trajetRepo;
 	@Autowired
 	private VaisseauRepository vaisseauRepo;
-
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
 	
 
@@ -61,6 +66,9 @@ public class InitBase {
 	
 	private void initDataBase() 
 	{
+		
+		
+		
 		// Planete 
 		Planete terre = new Planete("Terre",TypePlanete.Urbaine);
 		Planete mars = new Planete("Mars",TypePlanete.Desertique);
@@ -132,10 +140,10 @@ public class InitBase {
 		
 		 //Compte admin et client
 		
-		 Compte admin1 = new Admin("admin1","admin1");
-		 Compte admin2 = new Admin("admin2","admin2");
-		 Compte client1 = new Client("client1","client1","Dupond","Martin");
-		 Compte client2 = new Client("client2","client2","Dupont","Martine");
+		 Compte admin1 = new Admin("admin1",passwordEncoder.encode("admin1"));
+		 Compte admin2 = new Admin("admin2",passwordEncoder.encode("admin2"));
+		 Compte client1 = new Client("client1",passwordEncoder.encode("client1"),"Dupond","Martin");
+		 Compte client2 = new Client("client2",passwordEncoder.encode("client2"),"Dupont","Martine");
 		 
 		 compteRepo.save(admin1);
 		 compteRepo.save(admin2);

@@ -13,6 +13,7 @@ public class Admin extends Compte {
 
 	public Admin(String login, String password) {
 		super(login, password);
+		this.enabled=true;
 	}
 
 	public Admin(Long id, String login, String password, boolean enabled) {
