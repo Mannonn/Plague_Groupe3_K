@@ -146,7 +146,8 @@ article {
 	<article>
 		<h2>NOS MISSIONS</h2><br>
 		<ul>
-			<p>MISSION 1</p>
+			<p>"Ce n'est pas la destination le plus important mais le chemin parcouru"<br/>
+			</p>
 
 			<p>MISSION 2</p>
 
