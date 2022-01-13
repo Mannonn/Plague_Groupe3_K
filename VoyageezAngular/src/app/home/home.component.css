@@ -2,7 +2,6 @@ body {
   background-image: url("espace.jpg");
   height: 100%;
   width: 100%;
-  margin: 0px;
 }
 
 article {
@@ -14,7 +13,7 @@ article {
 }
 
 #article1 {
-  margin-top: 8%;
+  margin-bottom: 8%;
 }
 
 #article2 {

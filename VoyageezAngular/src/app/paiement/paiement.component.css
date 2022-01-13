@@ -2,7 +2,6 @@ body {
   background-image: url("espace.jpg");
   height: 100%;
   width: 100%;
-  margin: 0px;
 }
 article {
   position: relative;
@@ -19,11 +18,11 @@ article {
 }
 
 .logoP {
-  width: 130px;
+  width: 20px;
   justify-content: center;
 }
 
 #comete {
-  width: 100px;
+  width: 10px;
   justify-content: center;
 }

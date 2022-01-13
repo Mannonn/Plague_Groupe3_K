@@ -6,16 +6,20 @@ header {
   text-align: center;
 }
 
-.menu {
+.imgMenu {
   display: flex;
   justify-content: left;
   align-items: center;
+  max-width: 100%;
+  height: auto;
 }
 
-.logo {
+.imgLogo {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
+  height: auto;
 }
 
 .imgMenu {
