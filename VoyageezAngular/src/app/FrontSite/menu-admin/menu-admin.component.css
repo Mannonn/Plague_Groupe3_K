@@ -1,0 +1,39 @@
+body {
+  background-image: url("/assets/espace.jpg");
+  height: 700px;
+  width: 100%;
+}
+article {
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: black;
+  text-align: justify;
+}
+
+.choix {
+  background-color: silver;
+  height: 500px;
+  width: 300px;
+  border-radius: 30%;
+  border: black;
+  border-width: 2px;
+  text-align: center;
+  justify-content: center;
+}
+
+.vide {
+  width: 150px;
+}
+
+.tableau {
+  visibility: var(affich);
+  background-color: silver;
+  height: 500px;
+  width: 700px;
+  text-align: center;
+  border-radius: 10%;
+  border: black;
+  border-width: 2px;
+  border-radius: 30%;
+}

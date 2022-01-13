@@ -5,28 +5,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './FrontSite/home/home.component';
 import { routes } from './routes';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './FrontSite/footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './FrontSite/nav/nav.component';
 import { NavigationParLeCodeComponent } from './navigation-par-le-code/navigation-par-le-code.component';
-import { MissionsComponent } from './missions/missions.component';
-import { FaqComponent } from './faq/faq.component';
-import { ConnaitreComponent } from './connaitre/connaitre.component';
-import { ActivitesComponent } from './activites/activites.component';
-import { BanniereComponent } from './banniere/banniere.component';
-import { ConnexionComponent } from './connexion/connexion.component';
-import { ContactComponent } from './contact/contact.component';
-import { InfosComponent } from './infos/infos.component';
-import { InscriptionComponent } from './inscription/inscription.component';
-import { MenuAdminComponent } from './menu-admin/menu-admin.component';
-import { MenuClientComponent } from './menu-client/menu-client.component';
-import { OffresComponent } from './offres/offres.component';
-import { PaiementComponent } from './paiement/paiement.component';
-import { PlanetesComponent } from './planetes/planetes.component';
-import { VolsComponent } from './vols/vols.component';
-import { BarreNavComponent } from './barre-nav/barre-nav.component';
+import { MissionsComponent } from './FrontSite/missions/missions.component';
+import { FaqComponent } from './FrontSite/faq/faq.component';
+import { ConnaitreComponent } from './FrontSite/connaitre/connaitre.component';
+import { ActivitesComponent } from './FrontSite/activites/activites.component';
+import { BanniereComponent } from './FrontSite/banniere/banniere.component';
+import { ConnexionComponent } from './FrontSite/connexion/connexion.component';
+import { ContactComponent } from './FrontSite/contact/contact.component';
+import { InfosComponent } from './FrontSite/infos/infos.component';
+import { InscriptionComponent } from './FrontSite/inscription/inscription.component';
+import { MenuAdminComponent } from './FrontSite/menu-admin/menu-admin.component';
+import { MenuClientComponent } from './FrontSite/menu-client/menu-client.component';
+import { OffresComponent } from './FrontSite/offres/offres.component';
+import { PaiementComponent } from './FrontSite/paiement/paiement.component';
+import { PlanetesComponent } from './FrontSite/planetes/planetes.component';
+import { VolsComponent } from './FrontSite/vols/vols.component';
+import { BarreNavComponent } from './FrontSite/barre-nav/barre-nav.component';
 
 @NgModule({
   declarations: [
