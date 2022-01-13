@@ -1,6 +1,6 @@
 body {
-  background-image: url("espace.jpg");
-  height: 100%;
+  background-image: url("/assets/espace.jpg");
+  height: 700px;
   width: 100%;
 }
 article {
@@ -25,4 +25,8 @@ article {
 #comete {
   width: 10px;
   justify-content: center;
+}
+
+.img-responsive {
+  height: 85px;
 }

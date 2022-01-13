@@ -1,6 +1,6 @@
 body {
-  background-image: url("espace.jpg");
-  height: 100%;
+  background-image: url("/assets/espace.jpg");
+  height: 700px;
   width: 100%;
 }
 
@@ -10,6 +10,10 @@ article {
   margin-right: 10%;
   color: white;
   text-align: justify;
+}
+
+.text {
+  color: white;
 }
 
 #article1 {

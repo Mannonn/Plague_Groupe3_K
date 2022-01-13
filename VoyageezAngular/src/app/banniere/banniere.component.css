@@ -4,30 +4,21 @@ header {
   height: 100px;
   background-color: #5b9bd5;
   text-align: center;
+  align-content: center;
 }
 
-.imgMenu {
+.img-responsive {
+  height: 85px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+.menu {
   display: flex;
   justify-content: left;
-  align-items: center;
-  max-width: 100%;
-  height: auto;
-}
-
-.imgLogo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-  height: auto;
-}
-
-.imgMenu {
-  width: 55px;
-  justify-content: center;
-}
-
-.imgLogo {
-  width: 130px;
-  justify-content: center;
+  width: auto;
 }

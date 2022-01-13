@@ -1,10 +1,34 @@
-import { NavComponent } from './nav/nav.component';
-import { NavigationParLeCodeComponent } from './navigation-par-le-code/navigation-par-le-code.component';
+import { ActivitesComponent } from './activites/activites.component';
 import { HomeComponent } from './home/home.component';
 import { Routes } from '@angular/router';
-
+import { ConnaitreComponent } from './connaitre/connaitre.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { ContactComponent } from './contact/contact.component';
+import { FaqComponent } from './faq/faq.component';
+import { InfosComponent } from './infos/infos.component';
+import { OffresComponent } from './offres/offres.component';
+import { PaiementComponent } from './paiement/paiement.component';
+import { MissionsComponent } from './missions/missions.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { MenuClientComponent } from './menu-client/menu-client.component';
+import { PlanetesComponent } from './planetes/planetes.component';
+import { VolsComponent } from './vols/vols.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'nav', component: NavigationParLeCodeComponent },
+  { path: 'faq', component: FaqComponent },
+  { path: 'infos', component: InfosComponent },
+  { path: 'connaitre', component: ConnaitreComponent },
+  { path: 'offres', component: OffresComponent },
+  { path: 'paiement', component: PaiementComponent },
+  { path: 'missions', component: MissionsComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'connexion', component: ConnexionComponent },
+  { path: 'inscription', component: InscriptionComponent },
+  { path: 'menu_client', component: MenuClientComponent },
+  { path: 'activites', component: ActivitesComponent },
+  { path: 'planetes', component: PlanetesComponent },
+  { path: 'vols', component: VolsComponent },
+  { path: 'menu_admin', component: MenuAdminComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
