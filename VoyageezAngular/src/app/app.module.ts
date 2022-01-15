@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from './FrontSite/home/home.component';
 import { routes } from './routes';
@@ -27,6 +28,10 @@ import { PaiementComponent } from './FrontSite/paiement/paiement.component';
 import { PlanetesComponent } from './FrontSite/planetes/planetes.component';
 import { VolsComponent } from './FrontSite/vols/vols.component';
 import { BarreNavComponent } from './FrontSite/barre-nav/barre-nav.component';
+import { PlaneteComponent } from './voyageez/planete/planete.component';
+
+import { VaisseauComponent } from './voyageez/vaisseau/vaisseau.component';
+import { EditPlaneteComponent } from './voyageez/planete/edit-planete/edit-planete.component';
 
 @NgModule({
   declarations: [
@@ -52,8 +57,16 @@ import { BarreNavComponent } from './FrontSite/barre-nav/barre-nav.component';
     PlanetesComponent,
     VolsComponent,
     BarreNavComponent,
+    PlaneteComponent,
+    EditPlaneteComponent,
+    VaisseauComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
