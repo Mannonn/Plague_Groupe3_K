@@ -4,15 +4,16 @@ import { Reservation } from './reservation';
 
 export class Client extends Compte {
   public constructor(
-    protected _login?: any,
-    protected _password?: any,
+    _id?: number,
+    _login?: any,
+    _password?: any,
+    _enabled?: boolean,
     private _nom?: string,
     private _prenom?: string,
     private _reservations?: Array<Reservation>
   ) {
-    super(login, password);
+    super(_id, _login, _password, _enabled);
   }
-
   public get nom(): string | undefined {
     return this._nom;
   }
