@@ -10,7 +10,8 @@ export class AuthentificationService {
   public get headers(): HttpHeaders {
     return new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Basic ' + btoa('olivier:olivier'),
+      //'Access-Control-Allow-Origin': '*',
+      //Authorization: 'Basic ' + btoa('olivier:olivier'),
     });
   }
 }
