@@ -14,6 +14,8 @@ import { MenuClientComponent } from './FrontSite/menu-client/menu-client.compone
 import { PlanetesComponent } from './FrontSite/planetes/planetes.component';
 import { VolsComponent } from './FrontSite/vols/vols.component';
 import { MenuAdminComponent } from './FrontSite/menu-admin/menu-admin.component';
+import { PlaneteComponent } from './voyageez/planete/planete.component';
+
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'faq', component: FaqComponent },
@@ -30,5 +32,6 @@ export const routes: Routes = [
   { path: 'planetes', component: PlanetesComponent },
   { path: 'vols', component: VolsComponent },
   { path: 'menu_admin', component: MenuAdminComponent },
+  { path: 'planete', component: PlaneteComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
