@@ -46,4 +46,9 @@ export class MenuAdminComponent implements OnInit {
     alert('Modifier les activites');
     this.affich = true;
   }
+
+  clicSurBoutonVaisseaux() {
+    alert('Modifier les vaisseaux');
+    this.affich = true;
+  }
 }
