@@ -1,7 +1,12 @@
 import { Compte } from './compte';
 
 export class Admin extends Compte {
-  public constructor(protected _login?: any, protected _password?: any) {
-    super(login, password);
+  public constructor(
+    _id?: number,
+    _login?: any,
+    _password?: any,
+    _enabled?: boolean
+  ) {
+    super(_id, _login, _password, _enabled);
   }
 }
