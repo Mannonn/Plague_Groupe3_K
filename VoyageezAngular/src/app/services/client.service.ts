@@ -29,9 +29,12 @@ export class ClientService {
   }
 
   public update(compte: Client): Observable<Client> {
-    return this.http.put<Client>(ClientService.URL + '/' + client.id, client, {
-      headers: this.auth.headers,
-    });
+    return this.http.put<Client>(
+      ClientService.URL + '/' + /*Client.id,*/ Client,
+      {
+        headers: this.auth.headers,
+      }
+    );
   }
 
   public create(client: Client): Observable<Client> {
