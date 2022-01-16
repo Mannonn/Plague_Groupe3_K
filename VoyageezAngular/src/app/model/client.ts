@@ -1,5 +1,5 @@
 import { Compte } from './compte';
-import { Passager } from './passager';
+
 import { Reservation } from './reservation';
 
 export class Client extends Compte {
