@@ -18,15 +18,27 @@ article {
 }
 
 .logoP {
-  width: 20px;
+  width: 10%;
   justify-content: center;
+  height: 20%;
 }
 
 #comete {
-  width: 10px;
+  width: 50%;
   justify-content: center;
 }
 
+#etoile {
+  width: 60%;
+  justify-content: center;
+}
 .img-responsive {
-  height: 85px;
+  height: 80%;
+  width: 80%;
+  justify-content: center;
+}
+
+.form-group {
+  margin-bottom: 7%;
+  margin-top: 5%;
 }
