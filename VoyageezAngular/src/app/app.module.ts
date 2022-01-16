@@ -39,6 +39,13 @@ import { CompteComponent } from './voyageez/compte/compte.component';
 import { PassagerComponent } from './voyageez/passager/passager.component';
 import { ReservationComponent } from './voyageez/reservation/reservation.component';
 import { TrajetComponent } from './voyageez/trajet/trajet.component';
+import { EditActiviteComponent } from './voyageez/activite/edit-activite/edit-activite.component';
+import { EditAdminComponent } from './voyageez/admin/edit-admin/edit-admin.component';
+import { EditClientComponent } from './voyageez/client/edit-client/edit-client.component';
+import { EditPassagerComponent } from './voyageez/passager/edit-passager/edit-passager.component';
+import { EditReservationComponent } from './voyageez/reservation/edit-reservation/edit-reservation.component';
+import { EditTrajetComponent } from './voyageez/trajet/edit-trajet/edit-trajet.component';
+import { EditVaisseauComponent } from './voyageez/vaisseau/edit-vaisseau/edit-vaisseau.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +81,13 @@ import { TrajetComponent } from './voyageez/trajet/trajet.component';
     PassagerComponent,
     ReservationComponent,
     TrajetComponent,
+    EditActiviteComponent,
+    EditAdminComponent,
+    EditClientComponent,
+    EditPassagerComponent,
+    EditReservationComponent,
+    EditTrajetComponent,
+    EditVaisseauComponent,
   ],
   imports: [
     BrowserModule,
