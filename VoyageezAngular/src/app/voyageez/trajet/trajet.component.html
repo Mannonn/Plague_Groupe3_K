@@ -1,1 +1,43 @@
-<p>trajet works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>date depart</th>
+      <th>heure depart</th>
+      <th>date arrivee</th>
+      <th>heure arrivee</th>
+      <th>prix</th>
+      <th>planete depart</th>
+      <th>planete arrivee</th>
+      <th>vaisseau</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of trajets">
+      <td>{{ t.id }}</td>
+      <td>{{ t.dateDepart }}</td>
+      <td>{{ t.heureDepart }}</td>
+      <td>{{ t.dateArrivee }}</td>
+      <td>{{ t.heureArrivee }}</td>
+      <td>{{ t.prix }}</td>
+      <td>{{ t.planeteDepart }}</td>
+      <td>{{ t.planeteArrivee }}</td>
+      <td>{{ t.vaisseau }}</td>
+      <td>
+        <a
+          [routerLink]="['/trajet', 'edit', t.id]"
+          routerLinkActive="active"
+          class="btn btn-outline-primary"
+          >editer</a
+        >
+      </td>
+      <td><button class="btn btn-outline-danger">supprimer</button></td>
+    </tr>
+  </tbody>
+</table>
+<a
+  [routerLink]="['/trajet', 'edit']"
+  routerLinkActive="active"
+  class="btn btn-link"
+  >nouveau trajet</a
+>
