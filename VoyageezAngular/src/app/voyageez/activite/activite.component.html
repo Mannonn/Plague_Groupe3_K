@@ -1,1 +1,33 @@
-<p>activite works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nom</th>
+      <th>prix</th>
+      <th>planete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of activites">
+      <td>{{ a.id }}</td>
+      <td>{{ a.nom }}</td>
+      <td>{{ a.prix }}</td>
+      <td>{{ a.planete }}</td>
+      <td>
+        <a
+          [routerLink]="['/activite', 'edit', a.id]"
+          routerLinkActive="active"
+          class="btn btn-outline-primary"
+          >editer</a
+        >
+      </td>
+      <td><button class="btn btn-outline-danger">supprimer</button></td>
+    </tr>
+  </tbody>
+</table>
+<a
+  [routerLink]="['/activite', 'edit']"
+  routerLinkActive="active"
+  class="btn btn-link"
+  >nouvel activite</a
+>
