@@ -1,0 +1,13 @@
+body {
+  background-image: url("/assets/espace.jpg");
+  height: 700px;
+  width: 100%;
+  margin: 0px;
+}
+article {
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: white;
+  text-align: justify;
+}

@@ -10,5 +10,7 @@
     <div>confirmation:<input formControlName="confirm" /></div>
     <div *ngIf="form.controls['passwordGroup'].invalid">invalide</div>
   </div>
-  <div><button type="submit" [disabled]="form.invalid">valider</button></div>
+  <div>
+    <button type="submit" [disabled]="form.invalid">valider</button>
+  </div>
 </form>
