@@ -49,5 +49,13 @@ export const routes: Routes = [
   { path: 'reservation', component: ReservationComponent },
   { path: 'trajet', component: TrajetComponent },
   { path: 'vaisseau', component: VaisseauComponent },
+  { path: 'planete/edit/:id', component: EditPlaneteComponent, canActivate: [AuthenticationService] },
+  { path: 'activite/edit/:id', component: EditActiviteComponent, canActivate: [AuthenticationService] },
+  { path: 'admin/edit/:id', component: EditAdminComponent, canActivate: [AuthenticationService] },
+  { path: 'client/edit/:id', component: EditClientComponent, canActivate: [AuthenticationService] },
+  { path: 'passager/edit/:id', component: EditPassagerComponent, canActivate: [AuthenticationService] },
+  { path: 'reservation/edit/:id', component: EditReservationComponent, canActivate: [AuthenticationService] },
+  { path: 'trajet/edit/:id', component: EditTrajetComponent, canActivate: [AuthenticationService] },
+  { path: 'vaisseau/edit/:id', component: EditAdminComponent, canActivate: [AuthenticationService] },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
