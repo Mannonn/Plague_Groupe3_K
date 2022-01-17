@@ -1,8 +1,7 @@
 body {
   background-image: url("/assets/espace.jpg");
-  height: auto;
+  height: 700px;
   width: 100%;
-  padding-bottom: 2%;
 }
 article {
   position: relative;
@@ -17,6 +16,9 @@ article {
   align-content: center;
   margin-top: 3%;
   color: white;
+}
+#container {
+  align-content: center;
 }
 
 #texte {
