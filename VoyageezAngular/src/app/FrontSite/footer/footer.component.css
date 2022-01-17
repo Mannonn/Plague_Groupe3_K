@@ -1,9 +1,7 @@
 footer {
   position: relative;
-  width: 100%;
   height: auto;
   background-color: #5b9bd5;
   text-align: center;
-  align-content: center;
-  margin: none;
+  margin-right: 0%;
 }

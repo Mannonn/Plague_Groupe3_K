@@ -6,3 +6,7 @@ body {
   text-align: center;
   align-content: center;
 }
+
+.row {
+  margin-right: 0%;
+}
