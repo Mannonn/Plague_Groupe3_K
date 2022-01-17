@@ -12,10 +12,10 @@ import { PlaneteService } from 'src/app/services/planete.service';
 })
 export class EditPlaneteComponent implements OnInit {
   planete: Planete = new Planete();
+  type = TypePlanete;
   constructor(
     private activatedRoute: ActivatedRoute,
     private planeteService: PlaneteService,
-    public typePlanete: TypePlanete,
     private router: Router
   ) {}
 
@@ -27,5 +27,16 @@ export class EditPlaneteComponent implements OnInit {
         });
       }
     });
+  }
+  save() {
+    if (!!this.planete.id) {
+      this.planeteService.update(this.planete).subscribe((ok) => {
+        this.router.navigate(['/planete']);
+      });
+    } else {
+      this.planeteService.create(this.planete).subscribe((ok) => {
+        this.router.navigate(['/planete']);
+      });
+    }
   }
 }

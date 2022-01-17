@@ -10,7 +10,7 @@
     <tr *ngFor="let p of planetes">
       <td>{{ p.id }}</td>
       <td>{{ p.nom }}</td>
-      <td>{{ p.typePlanete }}</td>
+      <td>{{ p.type }}</td>
 
       <td>
         <a
@@ -20,7 +20,11 @@
           >editer</a
         >
       </td>
-      <td><button class="btn btn-outline-danger">supprimer</button></td>
+      <td>
+        <button class="btn btn-outline-danger" (click)="delete(p.id!)">
+          supprimer
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -28,5 +32,5 @@
   [routerLink]="['/planete', 'edit']"
   routerLinkActive="active"
   class="btn btn-link"
-  >nouvel planete</a
+  >Nouvelle planète</a
 >
