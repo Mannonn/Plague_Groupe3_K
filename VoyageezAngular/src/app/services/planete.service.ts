@@ -2,7 +2,7 @@ import { Planete } from './../model/planete';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuthentificationService } from './authentification.service';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +10,7 @@ import { AuthentificationService } from './authentification.service';
 export class PlaneteService {
   private static URL: string = 'http://localhost:8080/voyageez/api/planete';
 
-  constructor(
-    private http: HttpClient,
-    private auth: AuthentificationService
-  ) {}
+  constructor(private http: HttpClient, private auth: AuthenticationService) {}
 
   public getAll(): Observable<Planete[]> {
     return this.http.get<Planete[]>(PlaneteService.URL, {

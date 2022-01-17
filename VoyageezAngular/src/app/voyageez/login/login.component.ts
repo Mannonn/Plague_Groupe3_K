@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthentificationService } from 'src/app/services/authentification.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { AuthentificationService } from 'src/app/services/authentification.servi
 export class LoginComponent implements OnInit {
   form: FormGroup;
   error: boolean = false;
-  constructor(private auth: AuthentificationService, private router: Router) {
+  constructor(private auth: AuthenticationService, private router: Router) {
     this.form = new FormGroup({
       login: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
