@@ -27,7 +27,7 @@ public class Passager implements Serializable {
 	@JsonView(JsonViews.Common.class)
 	@Column(name = "prenom")
 	private String prenom;
-	@JsonView(JsonViews.Passager.class)
+	@JsonView(JsonViews.Common.class)
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "client")
 	private Client client;

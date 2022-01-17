@@ -27,4 +27,8 @@ export class ActiviteComponent implements OnInit {
       this.initActivites();
     });
   }
+
+  contenu() {
+    console.log(this.activites);
+  }
 }

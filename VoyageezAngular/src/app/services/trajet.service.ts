@@ -40,8 +40,8 @@ export class TrajetService {
       dateArrivee: trajet.dateArrivee,
       heureArrivee: trajet.heureArrivee,
       prix: trajet.prix,
-      planeteDepart: trajet.planeteDepart,
-      planeteArrivee: trajet.planeteArrivee,
+      depart: trajet.depart,
+      arrivee: trajet.arrivee,
       vaisseau: trajet.vaisseau,
     };
     return this.http.post<Trajet>(TrajetService.URL, o, {

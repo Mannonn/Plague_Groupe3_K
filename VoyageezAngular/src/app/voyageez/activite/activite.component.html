@@ -1,10 +1,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th>id</th>
-      <th>nom</th>
-      <th>prix</th>
-      <th>planete</th>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Prix</th>
+      <th>Planete</th>
     </tr>
   </thead>
   <tbody>
@@ -12,16 +12,16 @@
       <td>{{ a.id }}</td>
       <td>{{ a.nom }}</td>
       <td>{{ a.prix }}</td>
-      <td>{{ a.planete }}</td>
+      <td>{{ a.planete!.nom }}</td>
       <td>
         <a
           [routerLink]="['/activite', 'edit', a.id]"
           routerLinkActive="active"
           class="btn btn-outline-primary"
-          >editer</a
+          >Editer</a
         >
       </td>
-      <td><button class="btn btn-outline-danger">supprimer</button></td>
+      <td><button class="btn btn-outline-danger">Supprimer</button></td>
     </tr>
   </tbody>
 </table>
@@ -29,5 +29,8 @@
   [routerLink]="['/activite', 'edit']"
   routerLinkActive="active"
   class="btn btn-link"
-  >nouvel activite</a
+  >Nouvelle activité</a
 >
+<div>
+  <button class="btn btn-outline-danger" (click)="contenu()">Contenu</button>
+</div>

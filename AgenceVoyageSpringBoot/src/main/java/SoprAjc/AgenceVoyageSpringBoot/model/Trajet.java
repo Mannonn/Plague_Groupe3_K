@@ -35,15 +35,15 @@ public class Trajet implements Serializable {
 	@JsonView(JsonViews.Common.class)
 	@Column(name="prix_trajet")
 	private double prix;
-	@JsonView(JsonViews.Trajet.class)
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name="depart")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Planete depart;
-	@JsonView(JsonViews.Trajet.class)
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name="arrivee")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Planete arrivee;
-	@JsonView(JsonViews.Trajet.class)
+	@JsonView(JsonViews.Common.class)
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name="vaisseau")
 	private Vaisseau vaisseau;

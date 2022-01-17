@@ -1,21 +1,35 @@
 <div>
-  <h1>edition activite</h1>
+  <h1>Edition activité</h1>
   <div>
     <div class="form-group">
-      <label>id</label>
+      <label>Id</label>
       <input [(ngModel)]="activite.id" readonly class="form-control" />
     </div>
+
     <div class="form-group">
-      <label>nom</label>
+      <label>Nom</label>
       <input [(ngModel)]="activite.nom" class="form-control" />
     </div>
+
     <div class="form-group">
-      <label>prix</label>
+      <label>Prix</label>
       <input [(ngModel)]="activite.prix" class="form-control" />
     </div>
-    <div class="form-group">
-      <label>planete</label>
-      <input [(ngModel)]="activite.planete" class="form-control" />
+
+    <!--     <div class="form-group">
+      <label>Planète</label>
+      <input [(ngModel)]="activite.planete!.nom" class="form-control" />
     </div>
+ -->
+    <!--     <select class="form-control" [(ngModel)]="planetesNom">
+      <option *ngFor="let s of planetesNom | keyvalue" [value]="s">
+        {{ s }}
+      </option>
+    </select> -->
+  </div>
+  <div class="form-group">
+    <button class="btn btn-outline-primary" (click)="save()">
+      Enregistrer
+    </button>
   </div>
 </div>
