@@ -2,6 +2,7 @@ body {
   background-image: url("/assets/espace.jpg");
   height: auto;
   width: 100%;
+  padding-bottom: 2%;
 }
 article {
   position: relative;
@@ -9,39 +10,27 @@ article {
   margin-right: 10%;
   padding-top: 2%;
   color: white;
-  text-align: justify;
 }
 
 table {
   border: none;
 }
 
-.planete1,
-.planete2,
-.planete3 {
-  background-color: white;
+.planete {
   height: 150px;
-  border-radius: 10%;
-  margin-left: 10%;
-  margin-right: 10%;
-  color: black;
-  display: flex;
-  justify-content: space-around;
-}
-
-.vide {
-  padding-bottom: 2%;
   border: none;
+  text-align: center;
 }
 
-.photo,
 .infos {
-  padding: none;
+  border: none;
+  color: white;
+  text-align: center;
 }
 
 img {
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 10%;
 }

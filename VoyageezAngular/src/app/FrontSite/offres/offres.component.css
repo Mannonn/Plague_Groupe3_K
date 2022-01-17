@@ -2,6 +2,7 @@ body {
   background-image: url("/assets/espace.jpg");
   height: 700px;
   width: 100%;
+  padding-bottom: 2%;
 }
 article {
   position: relative;
