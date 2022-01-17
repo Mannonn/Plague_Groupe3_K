@@ -1,17 +1,39 @@
-import { HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CanActivate } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthentificationService {
-  constructor() {}
+export class AuthentificationService implements CanActivate {
+  constructor(private http: HttpClient) {}
+
+  canActivate(): boolean {
+    if (localStorage.getItem('token') != null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   public get headers(): HttpHeaders {
-    return new HttpHeaders({
+    if (localStorage.getItem('token') != null) {
+      return new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'Basic ' + localStorage.getItem('token'),
+      });
+    }
+    return new HttpHeaders();
+  }
+
+  public login(login: string, password: string): Observable<any> {
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      //'Access-Control-Allow-Origin': '*',
-      //Authorization: 'Basic ' + btoa('olivier:olivier'),
+      Authorization: 'Basic ' + btoa(login + ':' + password),
+    });
+    return this.http.get<any>('http://localhost:8080/lotr/api/user', {
+      headers: headers,
     });
   }
 }
