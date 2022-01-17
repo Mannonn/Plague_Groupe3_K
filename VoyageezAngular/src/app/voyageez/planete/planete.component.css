@@ -11,3 +11,29 @@ article {
   color: white;
   text-align: justify;
 }
+
+th,
+td {
+  text-align: center;
+}
+
+th.id {
+  width: 5%;
+}
+
+th.nom {
+  width: 40%;
+}
+
+th.type {
+  width: 30%;
+}
+
+/* td.id2 {
+  text-align: center;
+} */
+
+.new {
+  position: relative;
+  margin-left: 38%;
+}
