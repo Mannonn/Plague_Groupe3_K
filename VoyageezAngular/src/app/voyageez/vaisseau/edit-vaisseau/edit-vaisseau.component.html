@@ -1,21 +1,26 @@
 <div>
-  <h1>edition vaisseau</h1>
+  <h1>Edition vaisseau</h1>
   <div>
     <div class="form-group">
-      <label>id</label>
+      <label>Id</label>
       <input [(ngModel)]="vaisseau.id" readonly class="form-control" />
     </div>
     <div class="form-group">
-      <label>nom</label>
+      <label>Nom</label>
       <input [(ngModel)]="vaisseau.nom" class="form-control" />
     </div>
     <div class="form-group">
-      <label>capacite</label>
+      <label>Capacite</label>
       <input [(ngModel)]="vaisseau.capacite" class="form-control" />
     </div>
     <div class="form-group">
-      <label>capitaine</label>
+      <label>Capitaine</label>
       <input [(ngModel)]="vaisseau.capitaine" class="form-control" />
     </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-outline-primary" (click)="save()">
+      Enregistrer
+    </button>
   </div>
 </div>

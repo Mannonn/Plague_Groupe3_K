@@ -7,8 +7,8 @@ import { BanniereComponent } from '../banniere/banniere.component';
 })
 export class BarreNavComponent implements OnInit {
   public visiteurIsChecked: boolean = false;
-  public adminIsChecked: boolean = false;
-  public clientIsChecked: boolean = true;
+  public adminIsChecked: boolean = true;
+  public clientIsChecked: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}

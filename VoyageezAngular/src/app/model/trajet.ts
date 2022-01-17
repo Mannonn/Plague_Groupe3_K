@@ -10,8 +10,8 @@ export class Trajet {
     private _dateArrivee?: DatePipe,
     private _heureArrivee?: Time,
     private _prix?: number,
-    private _planeteDepart?: Planete,
-    private _planeteArrivee?: Planete,
+    private _depart?: Planete,
+    private _arrivee?: Planete,
     private _vaisseau?: Vaisseau
   ) {}
 
@@ -63,20 +63,20 @@ export class Trajet {
     this._prix = value;
   }
 
-  public get planeteDepart(): Planete | undefined {
-    return this._planeteDepart;
+  public get depart(): Planete | undefined {
+    return this._depart;
   }
 
-  public set planeteDepart(value: Planete | undefined) {
-    this._planeteDepart = value;
+  public set depart(value: Planete | undefined) {
+    this._depart = value;
   }
 
-  public get planeteArrivee(): Planete | undefined {
-    return this._planeteArrivee;
+  public get arrivee(): Planete | undefined {
+    return this._arrivee;
   }
 
-  public set planeteArrivee(value: Planete | undefined) {
-    this._planeteArrivee = value;
+  public set arrivee(value: Planete | undefined) {
+    this._arrivee = value;
   }
 
   public get vaisseau(): Vaisseau | undefined {

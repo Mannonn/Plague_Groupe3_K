@@ -25,4 +25,15 @@ export class EditVaisseauComponent implements OnInit {
       }
     });
   }
+  save() {
+    if (!!this.vaisseau.id) {
+      this.vaisseauService.update(this.vaisseau).subscribe((ok) => {
+        this.router.navigate(['/vaisseau']);
+      });
+    } else {
+      this.vaisseauService.create(this.vaisseau).subscribe((ok) => {
+        this.router.navigate(['/vaisseau']);
+      });
+    }
+  }
 }

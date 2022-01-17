@@ -24,7 +24,7 @@ public class Activite {
 	@JsonView(JsonViews.Common.class)
 	@Column(name = "prix_activite")
 	private double prix;
-	@JsonView(JsonViews.Activite.class)
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name = "id_planete")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Planete planete;

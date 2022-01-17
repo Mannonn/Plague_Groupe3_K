@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BanniereComponent implements OnInit {
   public visiteurIsChecked: boolean = false;
-  public adminIsChecked: boolean = false;
-  public clientIsChecked: boolean = true;
+  public adminIsChecked: boolean = true;
+  public clientIsChecked: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}
