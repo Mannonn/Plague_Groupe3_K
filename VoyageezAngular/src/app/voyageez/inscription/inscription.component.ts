@@ -1,5 +1,5 @@
+import { Router } from '@angular/router';
 import { InscriptionService } from './../../services/inscription.service';
-import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -7,7 +7,7 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-inscription',
