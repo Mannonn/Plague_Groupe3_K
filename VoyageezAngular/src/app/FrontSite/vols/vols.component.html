@@ -1,8 +1,37 @@
 <body>
   <article>
-    <h2>VOLS</h2>
-    <p>
-      <b>TABLEAUX BDD</b>
-    </p>
+    <h2>NOS VOLS</h2>
+    <div id="recherche">
+      <form action="post">
+        <td>
+          <tr>
+            <label>Planete de départ</label>
+            <input type="text" name="depart" />
+          </tr>
+          <br />
+          <tr>
+            <label>Date de départ</label>
+            <input type="date" name="date" />
+          </tr>
+          <br />
+        </td>
+        <td class="vide"></td>
+        <td>
+          <tr>
+            <label>Planete d'arrivee</label>
+            <input type="text" name="arrivee" />
+          </tr>
+          <br />
+          <tr>
+            <label>Activité</label>
+            <select name="activites" id="activite-select">
+              <option value="">--Choisir une activité--</option></select
+            ><br />
+          </tr>
+        </td>
+        <br />
+        <button type="submit" id="submit">Valider ma sélection</button>
+      </form>
+    </div>
   </article>
 </body>

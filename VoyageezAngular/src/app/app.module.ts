@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -46,6 +46,8 @@ import { EditPassagerComponent } from './voyageez/passager/edit-passager/edit-pa
 import { EditReservationComponent } from './voyageez/reservation/edit-reservation/edit-reservation.component';
 import { EditTrajetComponent } from './voyageez/trajet/edit-trajet/edit-trajet.component';
 import { EditVaisseauComponent } from './voyageez/vaisseau/edit-vaisseau/edit-vaisseau.component';
+import { Roles } from './Roles';
+import { LoginComponent } from './voyageez/login/login.component';
 
 @NgModule({
   declarations: [
@@ -88,12 +90,14 @@ import { EditVaisseauComponent } from './voyageez/vaisseau/edit-vaisseau/edit-va
     EditReservationComponent,
     EditTrajetComponent,
     EditVaisseauComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

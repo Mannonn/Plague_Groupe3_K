@@ -10,3 +10,68 @@ article {
   color: white;
   text-align: justify;
 }
+#placement {
+  position: absolute;
+  width: 100%;
+  align-content: center;
+  margin-top: 3%;
+  color: white;
+}
+#container {
+  align-content: center;
+}
+
+#texte {
+  position: absolute;
+  text-align: center;
+  margin-left: 6%;
+  margin-top: 9%;
+}
+
+table {
+  color: white;
+}
+
+th.colonne {
+  width: 5%;
+}
+
+th.largeur {
+  width: 25%;
+}
+
+form {
+  width: 80%;
+  padding: 30px;
+  border: 1px solid #003396;
+  background: #003396;
+  border-radius: 10%;
+  align-content: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  display: inline-block;
+  border: 1px solid #ccc;
+  /* box-sizing: border-box;*/
+}
+
+/* Set a style for all buttons */
+input[type="submit"] {
+  background-color: white;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 69%;
+}
+
+input[type="submit"]:hover {
+  background-color: white;
+  color: #53af57;
+  border: 1px solid #53af57;
+}

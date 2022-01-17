@@ -1,6 +1,6 @@
 body {
   background-image: url("/assets/espace.jpg");
-  height: 700px;
+  height: auto;
   width: 100%;
 }
 article {

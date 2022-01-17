@@ -1,8 +1,12 @@
 body {
   position: relative;
   width: 100%;
-  height: 60px;
+  height: auto;
   background-color: #5b9bd5;
   text-align: center;
   align-content: center;
+}
+
+.row {
+  margin-right: 0%;
 }
