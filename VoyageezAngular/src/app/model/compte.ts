@@ -1,9 +1,9 @@
 export class Compte {
   public constructor(
-    protected _id?: number,
-    protected _login?: any,
-    protected _password?: any,
-    protected _enabled?: boolean
+    private _id?: number,
+    private _login?: any,
+    private _password?: any,
+    private _enabled?: boolean
   ) {}
 
   public get id(): number | undefined {

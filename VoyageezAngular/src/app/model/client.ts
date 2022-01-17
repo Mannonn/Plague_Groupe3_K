@@ -14,7 +14,6 @@ export class Client extends Compte {
   ) {
     super(_id, _login, _password, _enabled);
   }
-
   public get nom(): string | undefined {
     return this._nom;
   }

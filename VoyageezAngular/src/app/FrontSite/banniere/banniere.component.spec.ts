@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BanniereComponent } from './banniere.component';
 
 describe('BanniereComponent', () => {
@@ -8,9 +7,8 @@ describe('BanniereComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BanniereComponent ]
-    })
-    .compileComponents();
+      declarations: [BanniereComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

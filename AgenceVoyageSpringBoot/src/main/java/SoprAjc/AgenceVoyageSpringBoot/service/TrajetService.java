@@ -17,7 +17,7 @@ public class TrajetService {
 	
 
 	public void creation(Trajet trajet) {
-		if (trajet.getId() == null) {
+		if (trajet.getDateDepart() == null) {
 			throw new TrajetException();
 		}
 		trajetRepo.save(trajet);

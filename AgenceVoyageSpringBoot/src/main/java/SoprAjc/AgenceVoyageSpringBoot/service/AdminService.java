@@ -16,7 +16,7 @@ public class AdminService {
 	private AdminRepository adminRepo;
 	
 	public void creation(Admin admin) {
-		if (admin.getId() == null) {
+		if (admin.getLogin() == null) {
 			throw new AdminException();
 		}
 		adminRepo.save(admin);

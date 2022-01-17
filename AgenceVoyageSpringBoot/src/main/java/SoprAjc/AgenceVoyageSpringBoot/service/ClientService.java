@@ -19,7 +19,7 @@ public class ClientService {
 	private ReservationService reservationService;
 
 	public void creation(Client client) {
-		if (client.getId() == null) {
+		if (client.getLogin() == null) {
 			throw new ClientException();
 		}
 		clientRepo.save(client);

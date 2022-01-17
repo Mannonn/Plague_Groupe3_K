@@ -20,7 +20,7 @@ public class ReservationService {
 	private PassagerService passagerService;
 
 	public void creation(Reservation reservation) {
-		if (reservation.getId() == null) {
+		if (reservation.getAller() == null) {
 			throw new ReservationException();
 		}
 		reservationRepo.save(reservation);
