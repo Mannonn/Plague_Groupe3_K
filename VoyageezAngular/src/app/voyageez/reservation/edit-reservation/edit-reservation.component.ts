@@ -32,4 +32,16 @@ export class EditReservationComponent implements OnInit {
       }
     });
   }
+
+  save() {
+    if (!!this.reservation.id) {
+      this.reservationService.update(this.reservation).subscribe((ok) => {
+        this.router.navigate(['/reservation']);
+      });
+    } else {
+      this.reservationService.create(this.reservation).subscribe((ok) => {
+        this.router.navigate(['/reservation']);
+      });
+    }
+  }
 }

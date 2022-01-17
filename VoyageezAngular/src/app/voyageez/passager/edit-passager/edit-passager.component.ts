@@ -27,4 +27,16 @@ export class EditPassagerComponent implements OnInit {
       }
     });
   }
+
+  save() {
+    if (!!this.passager.id) {
+      this.passagerService.update(this.passager).subscribe((ok) => {
+        this.router.navigate(['/passager']);
+      });
+    } else {
+      this.passagerService.create(this.passager).subscribe((ok) => {
+        this.router.navigate(['/passager']);
+      });
+    }
+  }
 }
