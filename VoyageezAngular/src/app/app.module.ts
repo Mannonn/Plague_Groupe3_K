@@ -32,6 +32,20 @@ import { PlaneteComponent } from './voyageez/planete/planete.component';
 
 import { VaisseauComponent } from './voyageez/vaisseau/vaisseau.component';
 import { EditPlaneteComponent } from './voyageez/planete/edit-planete/edit-planete.component';
+import { ActiviteComponent } from './voyageez/activite/activite.component';
+import { AdminComponent } from './voyageez/admin/admin.component';
+import { ClientComponent } from './voyageez/client/client.component';
+import { CompteComponent } from './voyageez/compte/compte.component';
+import { PassagerComponent } from './voyageez/passager/passager.component';
+import { ReservationComponent } from './voyageez/reservation/reservation.component';
+import { TrajetComponent } from './voyageez/trajet/trajet.component';
+import { EditActiviteComponent } from './voyageez/activite/edit-activite/edit-activite.component';
+import { EditAdminComponent } from './voyageez/admin/edit-admin/edit-admin.component';
+import { EditClientComponent } from './voyageez/client/edit-client/edit-client.component';
+import { EditPassagerComponent } from './voyageez/passager/edit-passager/edit-passager.component';
+import { EditReservationComponent } from './voyageez/reservation/edit-reservation/edit-reservation.component';
+import { EditTrajetComponent } from './voyageez/trajet/edit-trajet/edit-trajet.component';
+import { EditVaisseauComponent } from './voyageez/vaisseau/edit-vaisseau/edit-vaisseau.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +74,20 @@ import { EditPlaneteComponent } from './voyageez/planete/edit-planete/edit-plane
     PlaneteComponent,
     EditPlaneteComponent,
     VaisseauComponent,
+    ActiviteComponent,
+    AdminComponent,
+    ClientComponent,
+    CompteComponent,
+    PassagerComponent,
+    ReservationComponent,
+    TrajetComponent,
+    EditActiviteComponent,
+    EditAdminComponent,
+    EditClientComponent,
+    EditPassagerComponent,
+    EditReservationComponent,
+    EditTrajetComponent,
+    EditVaisseauComponent,
   ],
   imports: [
     BrowserModule,

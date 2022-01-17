@@ -9,8 +9,52 @@
     /></a>
   </div>
 -->
-  <div id="contenu">
-    <td id="logo">
+  <header class="row no-gutters">
+    <div class="container">
+      <div class="row">
+        <div class="col" id="maison">
+          <a routerLink="/home"
+            ><img
+              class="img-responsive"
+              id="imgMaison"
+              src="./assets/banniere_Maison.png"
+              alt=""
+          /></a>
+        </div>
+        <div class="col-6">
+          <a routerLink="/home">
+            <img
+              class="img-responsive"
+              id="imgLogo"
+              src="assets/banniere_Logo.png"
+              alt=" "
+          /></a>
+        </div>
+        <div class="col">
+          <a routerLink="/connexion"
+            ><button class="btn">Se connecter</button></a
+          ><a routerLink="/home"><button class="btn">Se déconnecter</button></a
+          ><br />
+
+          <a routerLink="/inscription"
+            ><button class="btn">Créer un compte</button></a
+          >
+          <a routerLink="/home"><button class="btn">Mon compte</button></a
+          ><br /><a routerLink="/menu_admin"
+            ><button class="btn">Menu admin</button></a
+          >
+          <a routerLink="/menu_client"
+            ><button class="btn">Menu Client</button></a
+          >
+        </div>
+      </div>
+    </div>
+  </header>
+</body>
+
+<!--Version au moment de passer sous angular-->
+<!-- <header class="row no-gutters">
+    <div class="col-md-8 d-none d-md-flex" id="logo">
       <a routerLink="/home">
         <img
           class="img-responsive"
@@ -18,12 +62,23 @@
           src="assets/banniere_Logo.png"
           alt=" "
       /></a>
-    </td>
-    <td id="mennus">
-      <a routerLink="/menu_admin"><button class="btn">Menu admin</button></a
-      ><br />
-      <a routerLink="/menu_client"><button class="btn">Menu Client</button></a>
-    </td>
+    </div>
+
+    <div class="col-2 col-md-2" id="maison">
+      <a routerLink="/home"
+        ><img id="imgMaison" src="./images/Maison.png" alt=""
+      /></a>
+    </div>
+
+    <div>
+      <td id="mennus">
+        <a routerLink="/menu_admin"><button class="btn">Menu admin</button></a
+        ><br />
+        <a routerLink="/menu_client"
+          ><button class="btn">Menu Client</button></a
+        >
+      </td>
+    </div>
 
     <td id="connecte">
       <div>
@@ -34,15 +89,43 @@
       </div>
     </td>
 
-    <td id="connexxion">
-      <div>
+    <div class="col-12 col-md-2 no-gutters" id="compteAccess">
+      <div id="connection">
         <a routerLink="/connexion"><button class="btn">Se connecter</button></a>
       </div>
-      <div>
+      <div id="connection">
         <a routerLink="/inscription"
           ><button class="btn">Créer un compte</button></a
         >
       </div>
-    </td>
+    </div>
+  </header>-->
+
+<!--Version en .jsp-->
+<!-- <header class="row no-gutters">
+  <div class="col-11 col-md-2" id="menu">
+    <a href="banniere.jsp"
+      ><img id="imgMenu" src="./images/Menu.png" alt=""
+    /></a>
   </div>
-</body>
+  <div class="col-md-8 d-none d-md-flex" id="logo">
+    <a href="banniere.jsp"
+      ><img id="imgLogo" src="./images/Logo.png" alt=""
+    /></a>
+  </div>
+  <div class="col-12 col-md-2 no-gutters" id="compteAccess">
+    <c:if test="${isConnected==null}">
+      <div id="connection">
+        <a href="connexion.jsp">Se connecter</a>
+      </div>
+      <div id="inscription">
+        <a href="inscription.jsp">Créer un compte</a>
+      </div>
+    </c:if>
+    <c:if test="${isConnected=='y'}">
+      <div id="deConnect">
+        <a href="deconnection">Se déconnecter</a>
+      </div>
+    </c:if>
+  </div>
+</header> -->

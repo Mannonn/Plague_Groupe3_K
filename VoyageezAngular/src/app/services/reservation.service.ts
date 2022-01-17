@@ -38,7 +38,7 @@ export class ReservationService {
     );
   }
 
-  public create(reservation: ReservationService): Observable<Reservation> {
+  public create(reservation: Reservation): Observable<Reservation> {
     const o = {
       dateReservation: reservation.dateReservation,
       passager: reservation.passager,
