@@ -2,12 +2,13 @@
   <article>
     <body>
       <article>
-        <table class="table">
+        <table class="table table-bordered" border>
           <thead>
             <tr>
-              <th>Id</th>
-              <th>Nom</th>
-              <th>Type de planète</th>
+              <th class="id">Id</th>
+              <th class="nom">Nom</th>
+              <th class="type">Type de planète</th>
+              <th colspan="2">Modification</th>
             </tr>
           </thead>
           <tbody>
@@ -37,12 +38,15 @@
             </tr>
           </tbody>
         </table>
-        <a
-          [routerLink]="['/planete', 'edit']"
-          routerLinkActive="active"
-          class="btn btn-link"
-          >Nouvelle planète</a
-        >
+        <div class="new">
+          <br />
+          <a
+            [routerLink]="['/planete', 'edit']"
+            routerLinkActive="active"
+            class="btn btn-outline-primary"
+            >Création d'une planète</a
+          >
+        </div>
       </article>
     </body>
   </article>
