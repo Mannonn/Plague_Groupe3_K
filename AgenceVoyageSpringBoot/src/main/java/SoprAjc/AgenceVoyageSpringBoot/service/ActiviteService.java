@@ -16,7 +16,7 @@ public class ActiviteService {
 	private ActiviteRepository activiteRepo;
 
 	public void creation(Activite activite) {
-		if (activite.getId() == null) {
+		if (activite.getNom() == null) {
 			throw new ActiviteException();
 		}
 		activiteRepo.save(activite);

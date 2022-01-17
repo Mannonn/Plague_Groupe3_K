@@ -28,7 +28,7 @@ public class PlaneteService {
 	private ActiviteService activiteService;
 
 	public void creation(Planete planete) {
-		if (planete.getId() == null) {
+		if (planete.getNom() == null) {
 			throw new PlaneteException();
 		}
 		planeteRepo.save(planete);

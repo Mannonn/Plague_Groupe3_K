@@ -16,7 +16,7 @@ public class CompteService {
 	private CompteRepository compteRepo;
 	
 	public void creation(Compte compte) {
-		if (compte.getId() == null) {
+		if (compte.getLogin() == null) {
 			throw new CompteException();
 		}
 		compteRepo.save(compte);
