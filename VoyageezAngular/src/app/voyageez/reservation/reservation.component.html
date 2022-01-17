@@ -1,39 +1,43 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>date reservation</th>
-      <th>passager</th>
-      <th>trajet aller</th>
-      <th>trajet retour</th>
-      <th>liste activites</th>
-      <th>client</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let r of reservations">
-      <td>{{ r.id }}</td>
-      <td>{{ r.dateReservation }}</td>
-      <td>{{ r.passager }}</td>
-      <td>{{ r.aller }}</td>
-      <td>{{ r.retour }}</td>
-      <td>{{ r.activite }}</td>
-      <td>{{ r.client }}</td>
-      <td>
-        <a
-          [routerLink]="['/reservation', 'edit', r.id]"
-          routerLinkActive="active"
-          class="btn btn-outline-primary"
-          >editer</a
-        >
-      </td>
-      <td><button class="btn btn-outline-danger">supprimer</button></td>
-    </tr>
-  </tbody>
-</table>
-<a
-  [routerLink]="['/reservation', 'edit']"
-  routerLinkActive="active"
-  class="btn btn-link"
-  >nouvel reservation</a
->
+<body>
+  <article>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>date reservation</th>
+          <th>passager</th>
+          <th>trajet aller</th>
+          <th>trajet retour</th>
+          <th>liste activites</th>
+          <th>client</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of reservations">
+          <td>{{ r.id }}</td>
+          <td>{{ r.dateReservation }}</td>
+          <td>{{ r.passager }}</td>
+          <td>{{ r.aller }}</td>
+          <td>{{ r.retour }}</td>
+          <td>{{ r.activite }}</td>
+          <td>{{ r.client }}</td>
+          <td>
+            <a
+              [routerLink]="['/reservation', 'edit', r.id]"
+              routerLinkActive="active"
+              class="btn btn-outline-primary"
+              >editer</a
+            >
+          </td>
+          <td><button class="btn btn-outline-danger">supprimer</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <a
+      [routerLink]="['/reservation', 'edit']"
+      routerLinkActive="active"
+      class="btn btn-link"
+      >nouvel reservation</a
+    >
+  </article>
+</body>

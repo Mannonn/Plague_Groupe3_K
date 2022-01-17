@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Roles } from 'src/app/Roles';
 
 @Component({
   selector: 'app-banniere',
@@ -6,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banniere.component.css'],
 })
 export class BanniereComponent implements OnInit {
-  public visiteurIsChecked: boolean = false;
-  public adminIsChecked: boolean = false;
-  public clientIsChecked: boolean = true;
+  public rrole = Roles;
   constructor() {}
 
   ngOnInit(): void {}

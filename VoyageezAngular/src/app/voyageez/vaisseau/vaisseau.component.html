@@ -1,33 +1,50 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>nom</th>
-      <th>capacite</th>
-      <th>capitaine</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let v of vaisseaux">
-      <td>{{ v.id }}</td>
-      <td>{{ v.nom }}</td>
-      <td>{{ v.capacite }}</td>
-      <td>{{ v.capitaine }}</td>
-      <td>
+<body>
+  <article>
+    <body>
+      <article>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nom</th>
+              <th>Capacité</th>
+              <th>Capitaine</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let v of vaisseaux">
+              <td>{{ v.id }}</td>
+              <td>{{ v.nom }}</td>
+              <td>{{ v.capacite }}</td>
+              <td>{{ v.capitaine }}</td>
+              <td>
+                <a
+                  [routerLink]="['/vaisseau', 'edit', v.id]"
+                  routerLinkActive="active"
+                  class="btn btn-outline-primary"
+                  >Editer</a
+                >
+              </td>
+              <td>
+                <button
+                  class="btn btn-outline-danger"
+                  (click)="delete(v.id!)"
+                  *ngIf="!vaisseauUtilise(v)"
+                >
+                  Supprimer
+                </button>
+                <p *ngIf="vaisseauUtilise(v)">Vaisseau utilisé !</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <a
-          [routerLink]="['/vaisseau', 'edit', v.id]"
+          [routerLink]="['/vaisseau', 'edit']"
           routerLinkActive="active"
-          class="btn btn-outline-primary"
-          >editer</a
+          class="btn btn-link"
+          >Nouveau vaisseau</a
         >
-      </td>
-      <td><button class="btn btn-outline-danger">supprimer</button></td>
-    </tr>
-  </tbody>
-</table>
-<a
-  [routerLink]="['/vaisseau', 'edit']"
-  routerLinkActive="active"
-  class="btn btn-link"
-  >nouveau vaisseau</a
->
+      </article>
+    </body>
+  </article>
+</body>

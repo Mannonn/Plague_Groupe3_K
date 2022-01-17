@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Roles } from 'src/app/Roles';
 import { BanniereComponent } from '../banniere/banniere.component';
 @Component({
   selector: 'app-barre-nav',
@@ -6,9 +7,7 @@ import { BanniereComponent } from '../banniere/banniere.component';
   styleUrls: ['./barre-nav.component.css'],
 })
 export class BarreNavComponent implements OnInit {
-  public visiteurIsChecked: boolean = false;
-  public adminIsChecked: boolean = false;
-  public clientIsChecked: boolean = true;
+  public rrole = Roles;
   constructor() {}
 
   ngOnInit(): void {}

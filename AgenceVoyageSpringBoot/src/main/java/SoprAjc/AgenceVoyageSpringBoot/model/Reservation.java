@@ -28,26 +28,26 @@ public class Reservation implements Serializable {
 	@Column(name = "date_reservation")
 	private LocalDate dateReservation;
 
-	@JsonView(JsonViews.ReservationWithPassagers.class)
+	@JsonView(JsonViews.Common.class)
 	@ManyToMany(cascade = CascadeType.MERGE)
 	@JoinTable(name = "reservation_passager", joinColumns = @JoinColumn(name = "id_reservation"), inverseJoinColumns = @JoinColumn(name = "id_passager"))
 	private Set<Passager> passagers;
 
-	@JsonView(JsonViews.Reservation.class)
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name = "trajet_aller")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Trajet aller;
-	@JsonView(JsonViews.Reservation.class)
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name = "trajet_retour")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Trajet retour;
 
-	@JsonView(JsonViews.ReservationWithActivites.class)
+	@JsonView(JsonViews.Common.class)
 	@ManyToMany(cascade = CascadeType.MERGE)
 	@JoinTable(name = "reservation_activite", joinColumns = @JoinColumn(name = "id_reservation"), inverseJoinColumns = @JoinColumn(name = "id_activite"))
 	private Set<Activite> activites;
 
-	@JsonView(JsonViews.Reservation.class)
+	@JsonView(JsonViews.Common.class)
 	@JoinColumn(name = "client")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Client client;

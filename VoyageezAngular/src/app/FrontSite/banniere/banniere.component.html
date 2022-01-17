@@ -37,7 +37,7 @@
           /></a>
         </div>
         <div class="col">
-          <div *ngIf="visiteurIsChecked">
+          <div *ngIf="rrole == 0">
             <a routerLink="/connexion"
               ><button class="btn">Se connecter</button></a
             ><br />
@@ -47,18 +47,18 @@
             >
           </div>
 
-          <div *ngIf="adminIsChecked">
+          <div *ngIf="rrole == 3">
             <a routerLink="/menu_admin"
               ><button class="btn">Mon compte admin</button></a
             >
           </div>
-          <div *ngIf="clientIsChecked">
+          <div *ngIf="rrole == 2">
             <a routerLink="/menu_client"
               ><button class="btn">Mon compte client</button></a
             >
           </div>
 
-          <div *ngIf="adminIsChecked || clientIsChecked">
+          <div *ngIf="rrole == 2 || rrole == 3">
             <a routerLink="/home"
               ><button class="btn">Se déconnecter</button></a
             >
