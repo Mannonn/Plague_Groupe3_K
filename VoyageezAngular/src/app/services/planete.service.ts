@@ -40,7 +40,7 @@ export class PlaneteService {
   public create(planete: Planete): Observable<Planete> {
     const o = {
       nom: planete.nom,
-      race: planete.typePlanete,
+      type: planete.type,
     };
     return this.http.post<Planete>(PlaneteService.URL, o, {
       headers: this.auth.headers,

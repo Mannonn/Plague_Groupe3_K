@@ -24,7 +24,7 @@ public class Planete implements Serializable {
 	@JsonView(JsonViews.Common.class)
 	@Column(name = "nom_planete")
 	private String nom;
-	@JsonView(JsonViews.Planete.class)
+	@JsonView(JsonViews.Common.class)
 	@Enumerated(EnumType.STRING)
 	@Column(name = "type_planete", columnDefinition = "enum('Glaciaire','Desertique','Urbaine','Montagneuse','Tropicale')")
 	private TypePlanete type;

@@ -4,7 +4,7 @@ export class Planete {
   public constructor(
     private _id?: number,
     private _nom?: string,
-    private _typePlanete?: TypePlanete
+    private _type?: TypePlanete
   ) {}
 
   public get id(): number | undefined {
@@ -15,12 +15,12 @@ export class Planete {
     this._id = value;
   }
 
-  public get typePlanete(): TypePlanete | undefined {
-    return this._typePlanete;
+  public get type(): TypePlanete | undefined {
+    return this._type;
   }
 
-  public set race(value: TypePlanete | undefined) {
-    this._typePlanete = value;
+  public set type(value: TypePlanete | undefined) {
+    this._type = value;
   }
 
   public get nom(): string | undefined {
