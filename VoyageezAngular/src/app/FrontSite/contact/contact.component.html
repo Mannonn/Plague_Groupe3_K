@@ -1,8 +1,100 @@
 <body>
   <article>
-    <h2>CONTACT</h2>
-    <p>
-      <b>FORMULAIRE CONTACT A IMPORTER de eclipse front</b>
-    </p>
+    <h2>Nous contacter</h2>
+    <div id="placement">
+      <h4></h4>
+      <div id="container">
+        <form action="post">
+          <table>
+            <tr>
+              <th class="largeur"></th>
+              <th></th>
+              <th class="colonne"></th>
+              <th>
+                <label>Message:</label>
+              </th>
+            </tr>
+            <tr>
+              <th class="largeur">
+                <label>Nom:</label>
+              </th>
+              <th>
+                <input
+                  type="text"
+                  placeholder="Entrez votre nom"
+                  name="nom"
+                  required
+                />
+              </th>
+              <th class="colonne"></th>
+              <th rowspan="5">
+                <textarea
+                  rows="7"
+                  placeholder="Entrez votre message"
+                  name="message"
+                  required
+                ></textarea>
+              </th>
+            </tr>
+            <tr>
+              <th class="largeur">
+                <label>Prenom:</label>
+              </th>
+              <th>
+                <input
+                  type="text"
+                  placeholder="Entrez votre prenom"
+                  name="prenom"
+                  required
+                />
+              </th>
+              <th class="colonne"></th>
+            </tr>
+            <tr>
+              <th class="largeur">
+                <label>Email:</label>
+              </th>
+              <th>
+                <input
+                  type="email"
+                  placeholder="Entrez votre email"
+                  name="mail"
+                  required
+                />
+              </th>
+              <th class="colonne"></th>
+            </tr>
+            <tr>
+              <th class="largeur">
+                <label>Telephone:</label>
+              </th>
+              <th>
+                <input
+                  type="tel"
+                  placeholder="Entrez votre numero"
+                  name="tel"
+                />
+              </th>
+              <th class="colonne"></th>
+            </tr>
+            <tr>
+              <th class="largeur">
+                <label>Objet:</label>
+              </th>
+              <th>
+                <input
+                  type="text"
+                  placeholder="Objet de la demande"
+                  name="username"
+                  required
+                />
+              </th>
+              <th class="colonne"></th>
+            </tr>
+          </table>
+          <input type="submit" id="submit" value="Envoyer" />
+        </form>
+      </div>
+    </div>
   </article>
 </body>
