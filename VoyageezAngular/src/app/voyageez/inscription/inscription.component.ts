@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 })
 export class InscriptionComponent implements OnInit {
   form: FormGroup;
+
   constructor(
     private inscriptionService: InscriptionService,
     private router: Router
