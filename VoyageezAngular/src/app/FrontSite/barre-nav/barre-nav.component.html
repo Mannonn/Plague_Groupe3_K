@@ -1,5 +1,9 @@
 <body>
-  <div class="row" id="planetes">
+  <div
+    class="row"
+    *ngIf="visiteurIsChecked || clientIsChecked"
+    id="barrnavVisi"
+  >
     <div class="col" id="planetes">
       <a routerLink="/planetes"><button class="btn">Planetes</button></a>
     </div>
@@ -12,6 +16,15 @@
     <div class="col" id="offres">
       <a routerLink="/offres"><button class="btn">Offres</button></a>
     </div>
+  </div>
+
+  <div class="row" *ngIf="adminIsChecked" id="barrnavadmin">
+    <div class="col" id="admins">
+      <a routerLink="/admin"><button class="btn">Admin</button></a>
+    </div>
+    <div class="col" id="clients">
+      <a routerLink="/client"><button class="btn">Client</button></a>
+    </div>
     <div class="col" id="planetes">
       <a routerLink="/planete" routerLinkActive="active" class="btn btn-link"
         >planete</a
@@ -19,12 +32,6 @@
     </div>
     <div class="col" id="activites">
       <a routerLink="/activite"><button class="btn">Activite</button></a>
-    </div>
-    <div class="col" id="admins">
-      <a routerLink="/admin"><button class="btn">Admin</button></a>
-    </div>
-    <div class="col" id="clients">
-      <a routerLink="/client"><button class="btn">Client</button></a>
     </div>
     <div class="col" id="passagers">
       <a routerLink="/passager"><button class="btn">Passager</button></a>
