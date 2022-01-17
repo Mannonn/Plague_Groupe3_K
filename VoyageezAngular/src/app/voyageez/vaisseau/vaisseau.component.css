@@ -11,3 +11,33 @@ article {
   color: white;
   text-align: justify;
 }
+
+table {
+  color: whitesmoke;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+th.id {
+  width: 5%;
+}
+
+th.nom {
+  width: 30%;
+}
+
+th.capacite {
+  width: 10%;
+}
+
+th.capitaine {
+  width: 30%;
+}
+
+.new {
+  position: relative;
+  margin-left: 38%;
+}

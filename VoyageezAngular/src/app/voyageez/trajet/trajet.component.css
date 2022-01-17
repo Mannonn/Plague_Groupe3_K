@@ -11,3 +11,43 @@ article {
   color: white;
   text-align: justify;
 }
+
+.position {
+  position: relative;
+  right: 12%;
+  width: 124%;
+}
+
+table {
+  color: whitesmoke;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+th.id {
+  width: 5%;
+}
+
+th.prix {
+  width: 6%;
+}
+
+th.depart {
+  width: 8%;
+}
+
+th.arrivee {
+  width: 8%;
+}
+
+th.modif {
+  width: 15%;
+}
+
+.new {
+  position: relative;
+  margin-left: 44%;
+}
