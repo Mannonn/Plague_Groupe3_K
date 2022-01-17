@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BarreNavComponent } from './barre-nav.component';
 
 describe('BarreNavComponent', () => {
@@ -8,9 +7,8 @@ describe('BarreNavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BarreNavComponent ]
-    })
-    .compileComponents();
+      declarations: [BarreNavComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

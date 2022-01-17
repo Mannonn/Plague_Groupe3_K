@@ -21,6 +21,12 @@
               alt=""
           /></a>
         </div>
+        <!--    <div class="col">
+          <input type="checkbox" ng-model="all" /> Check all
+          <input type="checkbox" ng-checked="VisiteurIsChecked" />Visiteur<br />
+          <input type="checkbox" ng-checked="AdminIsChecked" />Admin<br />
+          <input type="checkbox" ng-checked="ClientIsChecked" />Client
+        </div> -->
         <div class="col-6">
           <a routerLink="/home">
             <img
@@ -31,21 +37,32 @@
           /></a>
         </div>
         <div class="col">
-          <a routerLink="/connexion"
-            ><button class="btn">Se connecter</button></a
-          ><a routerLink="/home"><button class="btn">Se déconnecter</button></a
-          ><br />
+          <div *ngIf="visiteurIsChecked">
+            <a routerLink="/connexion"
+              ><button class="btn">Se connecter</button></a
+            ><br />
 
-          <a routerLink="/inscription"
-            ><button class="btn">Créer un compte</button></a
-          >
-          <a routerLink="/home"><button class="btn">Mon compte</button></a
-          ><br /><a routerLink="/menu_admin"
-            ><button class="btn">Menu admin</button></a
-          >
-          <a routerLink="/menu_client"
-            ><button class="btn">Menu Client</button></a
-          >
+            <a routerLink="/inscription"
+              ><button class="btn">Créer un compte</button></a
+            >
+          </div>
+
+          <div *ngIf="adminIsChecked">
+            <a routerLink="/menu_admin"
+              ><button class="btn">Mon compte admin</button></a
+            >
+          </div>
+          <div *ngIf="clientIsChecked">
+            <a routerLink="/menu_client"
+              ><button class="btn">Mon compte client</button></a
+            >
+          </div>
+
+          <div *ngIf="adminIsChecked || clientIsChecked">
+            <a routerLink="/home"
+              ><button class="btn">Se déconnecter</button></a
+            >
+          </div>
         </div>
       </div>
     </div>
