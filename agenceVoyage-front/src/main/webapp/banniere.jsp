@@ -88,61 +88,7 @@ article {
 	margin-top: 2%;
 }
 
-#slideshow {
-	overflow: hidden;
-	width: 1000px;
-	height: 500px;
-	position: relative;
-	margin: auto;
-}
-
-#slideshow-container {
-	width: 4000px;
-	-webkit-animation: slide 18s ease infinite;
-}
-
-#mySlides {
-	float: left;
-	height: 500px;
-	width: 1000px;
-	background-size: cover;
-}
-
-#mySlides:nth-child(1) {
-	background-image: url("./images/img1.jpg");
-}
-
-#mySlides:nth-child(2) {
-	background-image: url("./images/img2.jpg");
-}
-
-#mySlides:nth-child(3) {
-	background-image: url("./images/img3.jpg");
-}
-
-#mySlides:nth-child(4) {
-	background-image: url("./images/img4.jpg");
-}
-
-#numbertext {
-	color: white;
-}
-
-#text {
-	position: absolute;
-	bottom: 0;
-	color: white;
-}
-
-@-webkit-keyframes slide { 
-20% {margin-left: 0px;}
-30% {margin-left:-1000px;}
-50% {margin-left:-1000px;}
-60% {margin-left:-2000px;}
-70% {margin-left:-2000px;}
-80% {margin-left:-3000px;}
-90% {margin-left:-3000px;}
-}
+50%
 }
 </style>
 

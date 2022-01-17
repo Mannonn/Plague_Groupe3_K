@@ -16,8 +16,6 @@
       Il ne vous reste qu'à commencer votre recherche, cliquez et ...
     </p>
     <h2 align="right">...Voyageez vers d'autres cieux!</h2>
-
-    <br />
   </article>
 
   <div id="slideshow">
@@ -51,5 +49,37 @@
         </div>
       </div>
     </div>
+  </div>
+  <article id="article2">
+    <p>
+      Pour commencer votre recherche rien de plus simple. Il vous suffit de
+      préciser votre planète de départ puis votre planète d'arrivée.
+      Sélectionner la date de départ souhaitée (attention, il se peut qu'à cause
+      d'une forte demande vous ne trouviez pas de vol pour vos dates, nous vous
+      recommandons de choisir une autre dates ou de tenter le tout pour le tout
+      en attendant qu'une place se libère dans la journée). Si le coeur vous en
+      dit vous pouvez aussi choisir une activité sur votre le lieu de
+      destination parmis une large sélection d'offres. Enfin, il ne vous restera
+      plus qu'à préciser le nombre de passagers qui vous accompagnent et à
+      cliquer sur le bouton "VALIDER" afin d'acceder à vos résultats.
+    </p>
+  </article>
+
+  <div id="recherche">
+    <form action="post">
+      <h2>Recherche</h2>
+
+      <label>Planete de départ</label> <input type="text" name="depart" />
+      <label>Planete d'arrivee</label>
+      <input type="text" name="arrivee" /><br />
+      <label>Date de départ</label> <input type="date" name="date" /><br />
+      <label>Choisir une activité en plus</label>
+      <input type="radio" name="activite" /> <label>Activité</label>
+      <select name="activites" id="activite-select">
+        <option value="">--Choisir une activité--</option>
+      </select>
+      <br />
+      <input type="submit" id="submit" value="Valider ma sélection" />
+    </form>
   </div>
 </body>
