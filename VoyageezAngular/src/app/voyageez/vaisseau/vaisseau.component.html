@@ -2,13 +2,15 @@
   <article>
     <body>
       <article>
+        <br /><br />
         <table class="table">
           <thead>
             <tr>
-              <th>Id</th>
-              <th>Nom</th>
-              <th>Capacité</th>
-              <th>Capitaine</th>
+              <th class="id">Id</th>
+              <th class="nom">Nom</th>
+              <th class="capacite">Capacité</th>
+              <th class="capitaine">Capitaine</th>
+              <th colspan="2">Modification</th>
             </tr>
           </thead>
           <tbody>
@@ -38,12 +40,14 @@
             </tr>
           </tbody>
         </table>
-        <a
-          [routerLink]="['/vaisseau', 'edit']"
-          routerLinkActive="active"
-          class="btn btn-link"
-          >Nouveau vaisseau</a
-        >
+        <div class="new">
+          <a
+            [routerLink]="['/vaisseau', 'edit']"
+            routerLinkActive="active"
+            class="btn btn-outline-info"
+            >Création nouveau vaisseau</a
+          >
+        </div>
       </article>
     </body>
   </article>

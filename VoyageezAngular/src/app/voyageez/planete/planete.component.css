@@ -12,6 +12,10 @@ article {
   text-align: justify;
 }
 
+table {
+  color: whitesmoke;
+}
+
 th,
 td {
   text-align: center;
@@ -28,10 +32,6 @@ th.nom {
 th.type {
   width: 30%;
 }
-
-/* td.id2 {
-  text-align: center;
-} */
 
 .new {
   position: relative;
