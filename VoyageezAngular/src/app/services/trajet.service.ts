@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Trajet } from '../model/trajet';
-import { AuthentificationService } from './authentification.service';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +10,7 @@ import { AuthentificationService } from './authentification.service';
 export class TrajetService {
   private static URL: string = 'http://localhost:8080/voyageez/api/trajet';
 
-  constructor(
-    private http: HttpClient,
-    private auth: AuthentificationService
-  ) {}
+  constructor(private http: HttpClient, private auth: AuthenticationService) {}
 
   public getAll(): Observable<Trajet[]> {
     return this.http.get<Trajet[]>(TrajetService.URL, {

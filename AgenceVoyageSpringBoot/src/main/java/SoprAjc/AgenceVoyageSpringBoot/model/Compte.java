@@ -30,8 +30,10 @@ public abstract class Compte implements Serializable,UserDetails {
 	protected Long id;
 
 	@JsonView(JsonViews.Common.class)
+	@Column(name = "login", length = 150, unique = true, nullable = false)
 	protected String login;
 	@JsonView(JsonViews.Common.class)
+	@Column(name = "password", length = 200, nullable = false)
 	protected String password;
 	@Column(name = "enabled", nullable = false)
 	protected boolean enabled;
@@ -41,7 +43,6 @@ public abstract class Compte implements Serializable,UserDetails {
 	}
 
 	public Compte(Long id, String login, String password, boolean enabled) {
-		super();
 		this.id = id;
 		this.login = login;
 		this.password = password;

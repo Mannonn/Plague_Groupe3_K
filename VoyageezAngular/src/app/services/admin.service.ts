@@ -2,7 +2,7 @@ import { Admin } from './../model/admin';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuthentificationService } from './authentification.service';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +10,7 @@ import { AuthentificationService } from './authentification.service';
 export class AdminService {
   private static URL: string = 'http://localhost:8080/voyageez/api/admin';
 
-  constructor(
-    private http: HttpClient,
-    private auth: AuthentificationService
-  ) {}
+  constructor(private http: HttpClient, private auth: AuthenticationService) {}
 
   public getAll(): Observable<Admin[]> {
     return this.http.get<Admin[]>(AdminService.URL, {

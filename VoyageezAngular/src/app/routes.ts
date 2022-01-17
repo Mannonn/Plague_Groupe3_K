@@ -10,7 +10,7 @@ import { InfosComponent } from './FrontSite/infos/infos.component';
 import { OffresComponent } from './FrontSite/offres/offres.component';
 import { PaiementComponent } from './FrontSite/paiement/paiement.component';
 import { MissionsComponent } from './FrontSite/missions/missions.component';
-import { InscriptionComponent } from './FrontSite/inscription/inscription.component';
+
 import { MenuClientComponent } from './FrontSite/menu-client/menu-client.component';
 import { PlanetesComponent } from './FrontSite/planetes/planetes.component';
 import { VolsComponent } from './FrontSite/vols/vols.component';
@@ -24,7 +24,7 @@ import { PassagerComponent } from './voyageez/passager/passager.component';
 import { ReservationComponent } from './voyageez/reservation/reservation.component';
 import { TrajetComponent } from './voyageez/trajet/trajet.component';
 import { VaisseauComponent } from './voyageez/vaisseau/vaisseau.component';
-import { AuthentificationService } from './services/authentification.service';
+import { AuthenticationService } from './services/authentication.service';
 import { EditActiviteComponent } from './voyageez/activite/edit-activite/edit-activite.component';
 import { EditAdminComponent } from './voyageez/admin/edit-admin/edit-admin.component';
 import { EditPassagerComponent } from './voyageez/passager/edit-passager/edit-passager.component';
@@ -32,6 +32,7 @@ import { EditClientComponent } from './voyageez/client/edit-client/edit-client.c
 import { EditReservationComponent } from './voyageez/reservation/edit-reservation/edit-reservation.component';
 import { EditTrajetComponent } from './voyageez/trajet/edit-trajet/edit-trajet.component';
 import { EditVaisseauComponent } from './voyageez/vaisseau/edit-vaisseau/edit-vaisseau.component';
+import { InscriptionComponent } from './voyageez/inscription/inscription.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -61,82 +62,82 @@ export const routes: Routes = [
   {
     path: 'planete/edit/:id',
     component: EditPlaneteComponent,
-    /* canActivate: [AuthentificationService], */
+    canActivate: [AuthenticationService],
   },
   {
     path: 'planete/edit',
     component: EditPlaneteComponent,
-    /* canActivate: [AuthentificationService], */
+    canActivate: [AuthenticationService],
   },
   {
     path: 'activite/edit/:id',
     component: EditActiviteComponent,
-    /* canActivate: [AuthentificationService], */
+    canActivate: [AuthenticationService],
   },
   {
     path: 'activite/edit',
     component: EditActiviteComponent,
-    /* canActivate: [AuthentificationService], */
+    canActivate: [AuthenticationService],
   },
   {
     path: 'admin/edit/:id',
     component: EditAdminComponent,
-    /* canActivate: [AuthentificationService], */
+    canActivate: [AuthenticationService],
   },
   {
     path: 'admin/edit',
     component: EditAdminComponent,
-    /* canActivate: [AuthentificationService], */
+    canActivate: [AuthenticationService],
   },
   {
     path: 'client/edit/:id',
     component: EditClientComponent,
-    /* canActivate: [AuthentificationService], */
+    canActivate: [AuthenticationService],
   },
   {
     path: 'client/edit',
     component: EditClientComponent,
-    /* canActivate: [AuthentificationService], */
+    canActivate: [AuthenticationService],
   },
   {
     path: 'passager/edit/:id',
     component: EditPassagerComponent,
-    /* canActivate: [AuthentificationService], */
+    canActivate: [AuthenticationService],
   },
   {
     path: 'passager/edit',
     component: EditPassagerComponent,
-    //canActivate: [AuthentificationService],
+    canActivate: [AuthenticationService],
   },
   {
     path: 'reservation/edit/:id',
     component: EditReservationComponent,
-    //canActivate: [AuthentificationService],
+    canActivate: [AuthenticationService],
   },
   {
     path: 'reservation/edit',
     component: EditReservationComponent,
-    //canActivate: [AuthentificationService],
+    canActivate: [AuthenticationService],
   },
   {
     path: 'trajet/edit/:id',
     component: EditTrajetComponent,
-    //canActivate: [AuthentificationService],
+    canActivate: [AuthenticationService],
   },
   {
     path: 'trajet/edit',
     component: EditTrajetComponent,
-    //canActivate: [AuthentificationService],
+    canActivate: [AuthenticationService],
   },
   {
     path: 'vaisseau/edit/:id',
     component: EditVaisseauComponent,
-    //canActivate: [AuthentificationService],
+    canActivate: [AuthenticationService],
   },
   {
     path: 'vaisseau/edit',
     component: EditVaisseauComponent,
-    //canActivate: [AuthentificationService],
+    canActivate: [AuthenticationService],
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];

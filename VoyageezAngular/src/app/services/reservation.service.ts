@@ -2,8 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Reservation } from '../model/reservation';
-
-import { AuthentificationService } from './authentification.service';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,10 +10,7 @@ import { AuthentificationService } from './authentification.service';
 export class ReservationService {
   private static URL: string = 'http://localhost:8080/voyageez/api/reservation';
 
-  constructor(
-    private http: HttpClient,
-    private auth: AuthentificationService
-  ) {}
+  constructor(private http: HttpClient, private auth: AuthenticationService) {}
 
   public getAll(): Observable<Reservation[]> {
     return this.http.get<Reservation[]>(ReservationService.URL, {

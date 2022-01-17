@@ -27,4 +27,16 @@ export class EditTrajetComponent implements OnInit {
       }
     });
   }
+
+  save() {
+    if (!!this.planete.id) {
+      this.trajetService.update(this.trajet).subscribe((ok) => {
+        this.router.navigate(['/trajet']);
+      });
+    } else {
+      this.trajetService.create(this.trajet).subscribe((ok) => {
+        this.router.navigate(['/trajet']);
+      });
+    }
+  }
 }

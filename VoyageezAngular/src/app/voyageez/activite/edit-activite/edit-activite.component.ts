@@ -43,11 +43,11 @@ export class EditActiviteComponent implements OnInit {
   save() {
     if (!!this.activite.id) {
       this.activiteService.update(this.activite).subscribe((ok) => {
-        this.router.navigate(['/vaisseau']);
+        this.router.navigate(['/activite']);
       });
     } else {
       this.activiteService.create(this.activite).subscribe((ok) => {
-        this.router.navigate(['/vaisseau']);
+        this.router.navigate(['/activite']);
       });
     }
   }
