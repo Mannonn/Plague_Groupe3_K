@@ -1,7 +1,5 @@
 package SoprAjc.AgenceVoyageSpringBoot.config;
 
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	// les acces au resources
-	// le mode d'authentification
+	// le mode d'authentification 
 	protected void configure(HttpSecurity http) throws Exception {
 		// @formatter:off
 		
@@ -37,9 +35,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 				.authorizeHttpRequests()
 					.antMatchers(HttpMethod.OPTIONS).permitAll()
+					.antMatchers(HttpMethod.GET,"/api/compte/connexion").authenticated()
 					.antMatchers(HttpMethod.GET,"/api/**").permitAll()
-					//.antMatchers(HttpMethod.POST,"/api/**").permitAll()
-					//.antMatchers("/api/**").authenticated()
+					.antMatchers(HttpMethod.POST,"/api/**").permitAll()
+					.antMatchers("/api/**").authenticated()
 				.and()
 				.httpBasic();
 		

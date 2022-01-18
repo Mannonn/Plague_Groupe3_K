@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -40,6 +41,12 @@ public class CompteRestController {
 	@JsonView(JsonViews.Common.class)
 	public List<Compte> getAll() {
 		return compteService.getAll();
+	}
+	
+	@GetMapping("/connexion")
+	@JsonView(JsonViews.Common.class)
+	public Compte connexion(@AuthenticationPrincipal Compte compte) {
+		return compte;
 	}
 
 	@GetMapping("/{id}")

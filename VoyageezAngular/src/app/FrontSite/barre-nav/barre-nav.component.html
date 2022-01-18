@@ -1,4 +1,34 @@
-<div id="toto">
+<nav>
+  <ng-container *ngIf="!login || (!!login && role == 'client')">
+    <a routerLink="/planetes" routerLinkActive="active"
+      ><button class="btn">Planetes</button></a
+    >
+    <a routerLink="/vols" routerLinkActive="active"
+      ><button class="btn">Vols</button></a
+    >
+    <a routerLink="/offres" routerLinkActive="active"
+      ><button class="btn">Offres</button></a
+    >
+    <a routerLink="/activites" routerLinkActive="active"
+      ><button class="btn">Activites</button></a
+    >
+  </ng-container>
+
+  <ng-container *ngIf="!!login && role == 'admin'">
+    <a routerLink="/planete" routerLinkActive="active" class="btn">Planetes</a>
+    <a routerLink="/activite" routerLinkActive="active" class="btn"
+      >Activites</a
+    >
+    <a routerLink="/vaisseau" routerLinkActive="active" class="btn"
+      >Vaisseaux</a
+    >
+    <a routerLink="/trajet" routerLinkActive="active" class="btn">Trajets</a>
+    <a routerLink="/client" routerLinkActive="active" class="btn">Clients</a>
+    <a routerLink="/admin" routerLinkActive="active" class="btn">Admins</a>
+  </ng-container>
+</nav>
+
+<!--<body>
   <div class="row" *ngIf="rrole == 0 || rrole == 2" id="barrnavVisi">
     <div class="col" id="planetes">
       <a routerLink="/planetes"><button class="btn">Planetes</button></a>
@@ -45,26 +75,4 @@
       <a routerLink="/inscription"><button class="btn">Inscription</button></a>
     </div>
   </div>
-</div>
-
-<!-- <nav>
-  <a routerLink="/planetes" routerLinkActive="active"
-    ><button class="btn">Planetes</button></a
-  >
-  <a routerLink="/vols" routerLinkActive="active"
-    ><button class="btn">Vols</button></a
-  >
-  <a routerLink="/offres" routerLinkActive="active"
-    ><button class="btn">Offres</button></a
-  >
-  <a routerLink="/activites" routerLinkActive="active"
-    ><button class="btn">Activites</button></a
-  >
-  <a
-    *ngIf="!!login"
-    routerLink="/compte"
-    routerLinkActive="active"
-    class="btn btn-link"
-    >compagnon</a
-  >
-</nav> -->
+<div> -->

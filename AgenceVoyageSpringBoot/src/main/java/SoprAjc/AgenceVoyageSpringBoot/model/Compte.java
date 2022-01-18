@@ -1,5 +1,6 @@
 package SoprAjc.AgenceVoyageSpringBoot.model;
 
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Transient;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -32,21 +34,26 @@ public abstract class Compte implements Serializable,UserDetails {
 	@JsonView(JsonViews.Common.class)
 	@Column(name = "login", length = 150, unique = true, nullable = false)
 	protected String login;
-	@JsonView(JsonViews.Common.class)
+	
 	@Column(name = "password", length = 200, nullable = false)
 	protected String password;
 	@Column(name = "enabled", nullable = false)
 	protected boolean enabled;
+	
+	@JsonView(JsonViews.Common.class)
+	@Transient
+	protected String role;
 
 	public Compte() {
 
 	}
 
-	public Compte(Long id, String login, String password, boolean enabled) {
+	public Compte(Long id, String login, String password, boolean enabled,String role) {
 		this.id = id;
 		this.login = login;
 		this.password = password;
 		this.enabled = enabled;
+		this.role=role;
 	}
 
 	public Compte(String login, String password) {
@@ -54,6 +61,14 @@ public abstract class Compte implements Serializable,UserDetails {
 		this.password = password;
 		this.enabled=true;
 
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public String getLogin() {
@@ -90,7 +105,8 @@ public abstract class Compte implements Serializable,UserDetails {
 
 	@Override
 	public String toString() {
-		return "Compte [id=" + id + ", login=" + login + ", password=" + password + "]";
+		return "Compte [id=" + id + ", login=" + login + ", password=" + password + ", enabled=" + enabled + ", role="
+				+ role + "]";
 	}
 
 	@Override
