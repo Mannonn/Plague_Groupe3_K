@@ -5,11 +5,31 @@
       <table class="table">
         <thead>
           <tr>
+            <th class="id"></th>
+            <th class="date"></th>
+            <th class="passager"></th>
+            <th colspan="6" class="aller">Trajet aller</th>
+            <!-- <th colspan="6" class="retour">Trajet retour</th> -->
+            <th class="activite"></th>
+            <th class="client"></th>
+            <th colspan="2"></th>
+          </tr>
+          <tr>
             <th class="id">id</th>
             <th class="date">date reservation</th>
             <th class="passager">passager</th>
-            <th class="aller">trajet aller</th>
-            <th class="retour">trajet retour</th>
+            <th class="aller">planete depart</th>
+            <th class="aller">date depart</th>
+            <th class="aller">heure depart</th>
+            <th class="aller">planete arrivee</th>
+            <th class="aller">date arrivee</th>
+            <th class="aller">heure arrivee</th>
+            <!--             <th class="retour">planete depart</th>
+            <th class="retour">date depart</th>
+            <th class="retour">heure depart</th>
+            <th class="retour">planete arrivee</th>
+            <th class="retour">date arrivee</th>
+            <th class="retour">heure arrivee</th> -->
             <th class="activite">liste activites</th>
             <th class="client">client</th>
             <th colspan="2">Modification</th>
@@ -19,11 +39,21 @@
           <tr *ngFor="let r of reservations">
             <td>{{ r.id }}</td>
             <td>{{ r.dateReservation }}</td>
-            <td>{{ r.passager }}</td>
-            <td>{{ r.aller }}</td>
-            <td>{{ r.retour }}</td>
+            <td>{{ r.passager! }}</td>
+            <td>{{ r.aller!.depart!.nom }}</td>
+            <td>{{ r.aller!.heureDepart }}</td>
+            <td>{{ r.aller!.dateDepart }}</td>
+            <td>{{ r.aller!.arrivee!.nom }}</td>
+            <td>{{ r.aller!.heureArrivee }}</td>
+            <td>{{ r.aller!.dateArrivee }}</td>
+            <!--             <td>{{ r.retour!.depart!.nom }}</td>
+            <td>{{ r.retour!.heureDepart }}</td>
+            <td>{{ r.retour!.dateDepart }}</td>
+            <td>{{ r.retour!.arrivee!.nom }}</td>
+            <td>{{ r.retour!.heureArrivee }}</td>
+            <td>{{ r.retour!.dateArrivee }}</td> -->
             <td>{{ r.activite }}</td>
-            <td>{{ r.client }}</td>
+            <td>{{ r.client!.nom }}</td>
             <td>
               <a
                 [routerLink]="['/reservation', 'edit', r.id]"

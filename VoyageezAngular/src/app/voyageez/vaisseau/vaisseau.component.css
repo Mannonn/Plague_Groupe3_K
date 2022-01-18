@@ -1,6 +1,6 @@
 body {
   background-image: url("/assets/espace.jpg");
-  height: auto;
+  height: min(auto, 1400px);
   width: 100%;
 }
 

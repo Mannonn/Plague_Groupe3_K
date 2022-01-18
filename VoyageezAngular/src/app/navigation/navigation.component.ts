@@ -1,14 +1,12 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Roles } from 'src/app/Roles';
 
 @Component({
-  selector: 'app-banniere',
-  templateUrl: './banniere.component.html',
-  styleUrls: ['./banniere.component.css'],
+  selector: 'app-navigation',
+  templateUrl: './navigation.component.html',
+  styleUrls: ['./navigation.component.css'],
 })
-export class BanniereComponent implements OnInit {
-  //public rrole = Roles;
+export class NavigationComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
