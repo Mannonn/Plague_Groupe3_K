@@ -13,24 +13,24 @@
           </tr>
         </thead>
         <tbody>
-          <!--          <tr>
-            <td>{{ c.id }}</td>
-            <td>{{ c.login }}</td>
-            <td>{{ c.password }}</td>
-            <td>{{ c.enabled }}</td>
-            <td>{{ c.nom }}</td>
-            <td>{{ c.prenom }}</td>
-            <td>{{ c.reservations }}</td>
+          <tr>
+            <td>{{ client.id }}</td>
+            <td>{{ client.login }}</td>
+            <td>{{ client.password }}</td>
+            <td>{{ client.enabled }}</td>
+            <td>{{ client.nom }}</td>
+            <td>{{ client.prenom }}</td>
+            <td>{{ client.reservations }}</td>
             <td>
               <a
-                [routerLink]="['/client', 'edit', c.id]"
+                [routerLink]="['/client', 'edit', client.id]"
                 routerLinkActive="active"
                 class="btn btn-outline-primary"
                 >editer</a
               >
             </td>
             <td><button class="btn btn-outline-danger">supprimer</button></td>
-          </tr>-->
+          </tr>
         </tbody>
       </table>
       <div class="new">

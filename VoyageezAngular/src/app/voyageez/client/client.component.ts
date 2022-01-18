@@ -8,21 +8,25 @@ import { ClientService } from 'src/app/services/client.service';
   styleUrls: ['./client.component.css'],
 })
 export class ClientComponent implements OnInit {
-  clients: Client[] = [];
+  client: Client = new Client();
 
   constructor(private clientService: ClientService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.initClient();
+  }
 
-  initClients() {
-    this.clientService.getAll().subscribe((result) => {
-      this.clients = result;
-    });
+  initClient() {
+    this.clientService
+      .getById(+localStorage.getItem('id')!)
+      .subscribe((result) => {
+        this.client = result;
+      });
   }
 
   delete(id: number) {
     this.clientService.delete(id).subscribe((ok) => {
-      this.initClients();
+      this.initClient();
     });
   }
 }
