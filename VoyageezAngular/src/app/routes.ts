@@ -72,12 +72,12 @@ export const routes: Routes = [
   {
     path: 'activite/edit/:id',
     component: EditActiviteComponent,
-    canActivate: [AuthenticationService],
+    // canActivate: [AuthenticationService],
   },
   {
     path: 'activite/edit',
     component: EditActiviteComponent,
-    canActivate: [AuthenticationService],
+    //canActivate: [AuthenticationService],
   },
   {
     path: 'admin/edit/:id',

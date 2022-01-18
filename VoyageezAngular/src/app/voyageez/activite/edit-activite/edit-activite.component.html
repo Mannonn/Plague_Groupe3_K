@@ -17,17 +17,18 @@
           <label>Prix</label>
           <input [(ngModel)]="activite.prix" class="form-control" />
         </div>
-
-        <!--     <div class="form-group">
-      <label>Planète</label>
-      <input [(ngModel)]="activite.planete!.nom" class="form-control" />
-    </div>
- -->
-        <!--     <select class="form-control" [(ngModel)]="planetesNom">
-      <option *ngFor="let s of planetesNom | keyvalue" [value]="s">
-        {{ s }}
-      </option>
-    </select> -->
+        <div>
+          <label>Planète</label
+          ><select class="form-control" [(ngModel)]="indicePlanete">
+            <option disabled>Selectionner une planete.</option>
+            <option *ngFor="let p of planetes; let i = index" [value]="i">
+              {{ p.nom }}
+            </option>
+          </select>
+          <p *ngIf="!!activite.planete">
+            (Planète actuelle: {{ activite.planete!.nom }})
+          </p>
+        </div>
       </div>
       <div class="form-group">
         <button class="btn btn-outline-primary" (click)="save()">
