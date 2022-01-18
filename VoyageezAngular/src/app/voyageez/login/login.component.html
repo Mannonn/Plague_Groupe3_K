@@ -13,11 +13,10 @@
     <article>
       <form (ngSubmit)="validate()" [formGroup]="form">
         <h2>Connexion</h2>
-        <br />
+        <h4 *ngIf="error" coslpan="3" class="authentification">
+          Erreur authentification
+        </h4>
         <table>
-          <tr *ngIf="error" coslpan="3">
-            erreur authentification
-          </tr>
           <tr>
             <td class="login">login</td>
             <td class="formulaire"><input formControlName="login" /></td>
