@@ -5,15 +5,15 @@
       <table class="table">
         <thead>
           <tr>
-            <th class="id">id</th>
-            <th class="ddepart">date depart</th>
-            <th class="hdepart">heure depart</th>
-            <th class="darrivee">date arrivee</th>
-            <th class="harrivee">heure arrivee</th>
-            <th class="prix">prix</th>
-            <th class="depart">planete depart</th>
-            <th class="arrivee">planete arrivee</th>
-            <th class="vaisseau">vaisseau</th>
+            <th class="id">Id</th>
+            <th class="ddepart">Date départ</th>
+            <th class="hdepart">Heure départ</th>
+            <th class="darrivee">Date arrivée</th>
+            <th class="harrivee">Heure arrivée</th>
+            <th class="prix">Prix</th>
+            <th class="depart">Planète départ</th>
+            <th class="arrivee">Planète arrivée</th>
+            <th class="vaisseau">Vaisseau</th>
             <th colspan="2" class="modif">Modification</th>
           </tr>
         </thead>
@@ -25,9 +25,9 @@
             <td>{{ t.dateArrivee }}</td>
             <td>{{ t.heureArrivee }}</td>
             <td>{{ t.prix }}</td>
-            <td>{{ t.depart }}</td>
-            <td>{{ t.arrivee }}</td>
-            <td>{{ t.vaisseau }}</td>
+            <td>{{ t.depart!.nom }}</td>
+            <td>{{ t.arrivee!.nom }}</td>
+            <td>{{ t.vaisseau!.nom }}</td>
 
             <td>
               <div>
@@ -35,11 +35,11 @@
                   [routerLink]="['/trajet', 'edit', t.id]"
                   routerLinkActive="active"
                   class="btn btn-outline-primary"
-                  >editer</a
+                  >Editer</a
                 >
               </div>
             </td>
-            <td><button class="btn btn-outline-danger">supprimer</button></td>
+            <td><button class="btn btn-outline-danger">Supprimer</button></td>
           </tr>
         </tbody>
       </table>
@@ -52,5 +52,6 @@
         >
       </div>
     </div>
+    <button class="btn btn-outline-danger" (click)="contenu()">contenu</button>
   </article>
 </body>

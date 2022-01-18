@@ -122,12 +122,12 @@ export const routes: Routes = [
   {
     path: 'trajet/edit/:id',
     component: EditTrajetComponent,
-    canActivate: [AuthenticationService],
+    //canActivate: [AuthenticationService],
   },
   {
     path: 'trajet/edit',
     component: EditTrajetComponent,
-    canActivate: [AuthenticationService],
+    //canActivate: [AuthenticationService],
   },
   {
     path: 'vaisseau/edit/:id',

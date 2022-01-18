@@ -24,9 +24,14 @@
             >
           </td>
           <td>
-            <button class="btn btn-outline-danger" (click)="delete(a.id!)">
+            <button
+              class="btn btn-outline-danger"
+              (click)="delete(a.id!)"
+              *ngIf="!activiteUtilise(a)"
+            >
               Supprimer
             </button>
+            <p *ngIf="activiteUtilise(a)">Activité encore utilisée !</p>
           </td>
         </tr>
       </tbody>
