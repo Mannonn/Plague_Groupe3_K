@@ -1,3 +1,5 @@
+import { Client } from './../../model/client';
+import { Passager } from './../../model/passager';
 import { Component, OnInit } from '@angular/core';
 import { Reservation } from 'src/app/model/reservation';
 import { ReservationService } from 'src/app/services/reservation.service';
@@ -13,6 +15,11 @@ export class ReservationComponent implements OnInit {
 
   ngOnInit(): void {
     this.initReservations();
+  }
+
+  listpassager() {
+    console.log(this.reservations);
+    console.log(this.reservations[0].passager);
   }
 
   initReservations() {

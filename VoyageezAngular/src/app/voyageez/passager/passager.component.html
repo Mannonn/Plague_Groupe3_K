@@ -16,7 +16,7 @@
           <td>{{ p.id }}</td>
           <td>{{ p.nom }}</td>
           <td>{{ p.prenom }}</td>
-          <td>{{ p.client }}</td>
+          <td>{{ p.client!.nom }}</td>
           <td>
             <a
               [routerLink]="['/passager', 'edit', p.id]"

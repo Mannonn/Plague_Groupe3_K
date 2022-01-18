@@ -1,5 +1,5 @@
 body {
-  background-image: url("/assets/espace.jpg");
+  background: calc();
   height: 700px;
   width: 100%;
   margin: 0px;
