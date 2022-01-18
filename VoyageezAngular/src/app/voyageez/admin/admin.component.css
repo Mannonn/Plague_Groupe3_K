@@ -11,3 +11,39 @@ article {
   color: white;
   text-align: justify;
 }
+
+.position {
+  position: relative;
+  right: 4.5%;
+  width: 110%;
+}
+
+table {
+  color: whitesmoke;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+th.id {
+  width: 5%;
+}
+
+th.login {
+  width: 25%;
+}
+
+th.password {
+  width: 25%;
+}
+
+th.modif {
+  width: 20%;
+}
+
+.new {
+  position: relative;
+  margin-left: 43%;
+}
