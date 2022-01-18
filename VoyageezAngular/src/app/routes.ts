@@ -18,7 +18,6 @@ import { PlaneteComponent } from './voyageez/planete/planete.component';
 import { ActiviteComponent } from './voyageez/activite/activite.component';
 import { AdminComponent } from './voyageez/admin/admin.component';
 import { ClientComponent } from './voyageez/client/client.component';
-import { CompteComponent } from './voyageez/compte/compte.component';
 import { PassagerComponent } from './voyageez/passager/passager.component';
 import { ReservationComponent } from './voyageez/reservation/reservation.component';
 import { TrajetComponent } from './voyageez/trajet/trajet.component';
@@ -53,7 +52,6 @@ export const routes: Routes = [
   { path: 'activite', component: ActiviteComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'client', component: ClientComponent },
-  { path: 'compte', component: CompteComponent },
   { path: 'passager', component: PassagerComponent },
   { path: 'reservation', component: ReservationComponent },
   { path: 'trajet', component: TrajetComponent },

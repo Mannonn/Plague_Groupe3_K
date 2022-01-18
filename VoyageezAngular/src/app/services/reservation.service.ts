@@ -37,7 +37,7 @@ export class ReservationService {
   public create(reservation: Reservation): Observable<Reservation> {
     const o = {
       dateReservation: reservation.dateReservation,
-      passager: reservation.passager,
+      passagers: reservation.passagers,
       aller: reservation.aller,
       retour: reservation.retour,
       activite: reservation.activites,

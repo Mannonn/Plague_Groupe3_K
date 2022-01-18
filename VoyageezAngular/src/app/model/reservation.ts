@@ -8,7 +8,7 @@ export class Reservation {
   public constructor(
     private _id?: number,
     private _dateReservation?: DatePipe,
-    private _passager?: Array<Passager>,
+    private _passagers?: Array<Passager>,
     private _aller?: Trajet,
     private _retour?: Trajet,
     private _activites?: Array<Activite>,
@@ -31,12 +31,12 @@ export class Reservation {
     this._dateReservation = value;
   }
 
-  public get passager(): Array<Passager> | undefined {
-    return this._passager;
+  public get passagers(): Array<Passager> | undefined {
+    return this._passagers;
   }
 
-  public set passager(value: Array<Passager> | undefined) {
-    this._passager = value;
+  public set passagers(value: Array<Passager> | undefined) {
+    this._passagers = value;
   }
 
   public get aller(): Trajet | undefined {
