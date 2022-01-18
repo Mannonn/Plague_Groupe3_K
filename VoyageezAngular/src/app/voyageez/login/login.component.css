@@ -34,8 +34,12 @@ form {
   color: white;
 }
 
-td.couleur,
-td.authentification {
+td.couleur {
+  color: red;
+  text-align: center;
+}
+
+.authentification {
   color: red;
   text-align: center;
 }
