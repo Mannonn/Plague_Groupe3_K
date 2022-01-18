@@ -39,7 +39,16 @@
                 >
               </div>
             </td>
-            <td><button class="btn btn-outline-danger">Supprimer</button></td>
+            <td>
+              <button
+                class="btn btn-outline-danger"
+                (click)="delete(t.id!)"
+                *ngIf="!trajetUtilise(t)"
+              >
+                Supprimer
+              </button>
+              <p *ngIf="trajetUtilise(t)">Trajet encore utilisé !</p>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -52,6 +61,5 @@
         >
       </div>
     </div>
-    <button class="btn btn-outline-danger" (click)="contenu()">contenu</button>
   </article>
 </body>
