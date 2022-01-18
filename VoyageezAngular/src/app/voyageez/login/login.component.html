@@ -1,26 +1,35 @@
 <body>
   <article>
-    <div *ngIf="error">erreur authentification</div>
     <form (ngSubmit)="validate()" [formGroup]="form">
-      <div>
-        login:<input formControlName="login" />
-        <div
-          *ngIf="form.controls['login'].dirty && form.controls['login'].invalid"
-        >
-          login invalide
-        </div>
-      </div>
-      <div>
-        password:<input formControlName="password" type="password" />
-        <div
-          *ngIf="
-            form.controls['password'].dirty && form.controls['password'].invalid
-          "
-        >
-          password invalide
-        </div>
-      </div>
-      <div><button type="submit">connection</button></div>
+      <table>
+        <tr *ngIf="error" coslpan="3">
+          erreur authentification
+        </tr>
+        <tr>
+          <td>login :</td>
+          <td><input formControlName="login" /></td>
+          <td
+            *ngIf="
+              form.controls['login'].dirty && form.controls['login'].invalid
+            "
+          >
+            login invalide
+          </td>
+        </tr>
+        <tr>
+          <td>password :</td>
+          <td><input formControlName="password" type="password" /></td>
+          <td
+            *ngIf="
+              form.controls['password'].dirty &&
+              form.controls['password'].invalid
+            "
+          >
+            password invalide
+          </td>
+        </tr>
+        <div><button type="submit">connection</button></div>
+      </table>
     </form>
   </article>
 </body>
