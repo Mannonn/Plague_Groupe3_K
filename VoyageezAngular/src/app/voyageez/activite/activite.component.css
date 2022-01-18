@@ -5,10 +5,12 @@ body {
 }
 table {
   position: relative;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   color: white;
   text-align: justify;
+  max-width: 90%;
+  min-width: 100px;
 }
 .new {
   position: relative;

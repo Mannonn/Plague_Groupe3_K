@@ -19,6 +19,8 @@ article {
 
 table {
   color: whitesmoke;
+  max-width: 90%;
+  min-width: 100px;
 }
 
 th,
