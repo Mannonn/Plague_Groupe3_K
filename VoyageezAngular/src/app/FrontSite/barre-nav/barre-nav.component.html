@@ -1,7 +1,7 @@
-<nav>
+<nav id="toto">
   <ng-container *ngIf="!login || (!!login && role == 'client')">
     <a routerLink="/planetes" routerLinkActive="active"
-      ><button class="btn">Planetes</button></a
+      ><button class="btn">Planètes</button></a
     >
     <a routerLink="/vols" routerLinkActive="active"
       ><button class="btn">Vols</button></a
@@ -10,69 +10,26 @@
       ><button class="btn">Offres</button></a
     >
     <a routerLink="/activites" routerLinkActive="active"
-      ><button class="btn">Activites</button></a
+      ><button class="btn">Activités</button></a
     >
   </ng-container>
 
   <ng-container *ngIf="!!login && role == 'admin'">
-    <a routerLink="/planete" routerLinkActive="active" class="btn">Planetes</a>
+    <a routerLink="/planete" routerLinkActive="active" class="btn">Planètes</a>
     <a routerLink="/activite" routerLinkActive="active" class="btn"
-      >Activites</a
+      >Activités</a
     >
     <a routerLink="/vaisseau" routerLinkActive="active" class="btn"
       >Vaisseaux</a
+    >
+    <a routerLink="/reservation" routerLinkActive="active" class="btn"
+      >Réservations(temporaire)</a
+    >
+    <a routerLink="/passager" routerLinkActive="active" class="btn"
+      >Passagers(temporaire)</a
     >
     <a routerLink="/trajet" routerLinkActive="active" class="btn">Trajets</a>
     <a routerLink="/client" routerLinkActive="active" class="btn">Clients</a>
     <a routerLink="/admin" routerLinkActive="active" class="btn">Admins</a>
   </ng-container>
 </nav>
-
-<!--<body>
-  <div class="row" *ngIf="rrole == 0 || rrole == 2" id="barrnavVisi">
-    <div class="col" id="planetes">
-      <a routerLink="/planetes"><button class="btn">Planetes</button></a>
-    </div>
-    <div class="col" id="activites">
-      <a routerLink="/activites"><button class="btn">Activites</button></a>
-    </div>
-    <div class="col" id="vols">
-      <a routerLink="/vols"><button class="btn">Vols</button></a>
-    </div>
-    <div class="col" id="offres">
-      <a routerLink="/offres"><button class="btn">Offres</button></a>
-    </div>
-  </div>
-
-  <div class="row" *ngIf="rrole == 3" id="barrnavadmin">
-    <div class="col" id="admins">
-      <a routerLink="/admin"><button class="btn">Admin</button></a>
-    </div>
-    <div class="col" id="clients">
-      <a routerLink="/client"><button class="btn">Client</button></a>
-    </div>
-    <div class="col" id="planetes">
-      <a routerLink="/planete" routerLinkActive="active" class="btn btn-link"
-        >planete</a
-      >
-    </div>
-    <div class="col" id="activites">
-      <a routerLink="/activite"><button class="btn">Activite</button></a>
-    </div>
-    <div class="col" id="passagers">
-      <a routerLink="/passager"><button class="btn">Passager</button></a>
-    </div>
-    <div class="col" id="reservations">
-      <a routerLink="/reservation"><button class="btn">Reservations</button></a>
-    </div>
-    <div class="col" id="trajets">
-      <a routerLink="/trajet"><button class="btn">Trajet</button></a>
-    </div>
-    <div class="col" id="vaisseaux">
-      <a routerLink="/vaisseau"><button class="btn">Vaisseau</button></a>
-    </div>
-    <div class="col" id="inscription">
-      <a routerLink="/inscription"><button class="btn">Inscription</button></a>
-    </div>
-  </div>
-<div> -->

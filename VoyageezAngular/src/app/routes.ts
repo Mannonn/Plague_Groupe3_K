@@ -3,7 +3,6 @@ import { ActivitesComponent } from './FrontSite/activites/activites.component';
 import { HomeComponent } from './FrontSite/home/home.component';
 import { Routes } from '@angular/router';
 import { ConnaitreComponent } from './FrontSite/connaitre/connaitre.component';
-import { ConnexionComponent } from './FrontSite/connexion/connexion.component';
 import { ContactComponent } from './FrontSite/contact/contact.component';
 import { FaqComponent } from './FrontSite/faq/faq.component';
 import { InfosComponent } from './FrontSite/infos/infos.component';
@@ -19,7 +18,6 @@ import { PlaneteComponent } from './voyageez/planete/planete.component';
 import { ActiviteComponent } from './voyageez/activite/activite.component';
 import { AdminComponent } from './voyageez/admin/admin.component';
 import { ClientComponent } from './voyageez/client/client.component';
-import { CompteComponent } from './voyageez/compte/compte.component';
 import { PassagerComponent } from './voyageez/passager/passager.component';
 import { ReservationComponent } from './voyageez/reservation/reservation.component';
 import { TrajetComponent } from './voyageez/trajet/trajet.component';
@@ -44,7 +42,6 @@ export const routes: Routes = [
   { path: 'paiement', component: PaiementComponent },
   { path: 'missions', component: MissionsComponent },
   { path: 'contact', component: ContactComponent },
-  // { path: 'connexion', component: ConnexionComponent },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'menu_client', component: MenuClientComponent },
   { path: 'activites', component: ActivitesComponent },
@@ -55,7 +52,6 @@ export const routes: Routes = [
   { path: 'activite', component: ActiviteComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'client', component: ClientComponent },
-  { path: 'compte', component: CompteComponent },
   { path: 'passager', component: PassagerComponent },
   { path: 'reservation', component: ReservationComponent },
   { path: 'trajet', component: TrajetComponent },

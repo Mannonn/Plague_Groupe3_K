@@ -1,12 +1,77 @@
 body {
-  height: 700px;
-  width: 100%;
   margin: 0px;
 }
-article {
-  position: relative;
-  margin-left: 10%;
-  margin-right: 10%;
+
+.position {
+  width: 100%;
+}
+
+#texte {
+  width: 25%;
+  position: absolute;
+  text-align: center;
+  margin-left: 3%;
+  margin-top: 9%;
   color: white;
-  text-align: justify;
+}
+
+#container {
+  position: absolute;
+  width: 30%;
+  margin-left: 35%;
+  margin-top: 8%;
+  color: white;
+  border-radius: 10%;
+}
+form {
+  border-radius: 10%;
+}
+
+#container h2 {
+  text-align: center;
+  color: white;
+}
+
+td.couleur {
+  color: red;
+  text-align: center;
+}
+
+.authentification {
+  color: red;
+  text-align: center;
+}
+
+table {
+  color: white;
+}
+
+form {
+  width: 100%;
+  padding: 30px;
+  border: 1px solid #003396;
+  background: #003396;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#image1 {
+  width: 43%;
+}
+
+#imgCo {
+  width: 30%;
+  margin-left: 70%;
+  margin-top: 4%;
+}
+
+button {
+  position: relative;
+  margin-left: 33.5%;
 }

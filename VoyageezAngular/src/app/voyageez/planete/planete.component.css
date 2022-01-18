@@ -1,6 +1,4 @@
 body {
-  height: 700px;
-  width: 100%;
 }
 
 article {
@@ -13,6 +11,8 @@ article {
 
 table {
   color: whitesmoke;
+  max-width: 90%;
+  min-width: 100px;
 }
 
 th,

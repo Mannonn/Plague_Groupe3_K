@@ -1,54 +1,51 @@
 <body>
   <article>
-    <body>
-      <article>
-        <br /><br />
-        <table class="table">
-          <thead>
-            <tr>
-              <th class="id">Id</th>
-              <th class="nom">Nom</th>
-              <th class="type">Type de planète</th>
-              <th colspan="2">Modification</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let p of planetes">
-              <td>{{ p.id }}</td>
-              <td>{{ p.nom }}</td>
-              <td>{{ p.type }}</td>
+    <br /><br />
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="id">Id</th>
+          <th class="nom">Nom</th>
+          <th class="type">Type de planète</th>
+          <th colspan="2">Modification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of planetes">
+          <td>{{ p.id }}</td>
+          <td>{{ p.nom }}</td>
+          <td>{{ p.type }}</td>
 
-              <td>
-                <a
-                  [routerLink]="['/planete', 'edit', p.id]"
-                  routerLinkActive="active"
-                  class="btn btn-outline-primary"
-                  >Editer</a
-                >
-              </td>
-              <td>
-                <button
-                  class="btn btn-outline-danger"
-                  (click)="delete(p.id!)"
-                  *ngIf="!planeteUtilise(p)"
-                >
-                  Supprimer
-                </button>
-                <p *ngIf="planeteUtilise(p)">Planète utilisée !</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="new">
-          <br />
-          <a
-            [routerLink]="['/planete', 'edit']"
-            routerLinkActive="active"
-            class="btn btn-outline-primary"
-            >Création d'une planète</a
-          >
-        </div>
-      </article>
-    </body>
+          <td>
+            <a
+              [routerLink]="['/planete', 'edit', p.id]"
+              routerLinkActive="active"
+              class="btn btn-outline-primary"
+              >Editer</a
+            >
+          </td>
+          <td>
+            <button
+              class="btn btn-outline-danger"
+              (click)="delete(p.id!)"
+              *ngIf="!planeteUtilise(p)"
+            >
+              Supprimer
+            </button>
+            <p *ngIf="planeteUtilise(p)">Planète utilisée !</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="new">
+      <br />
+      <a
+        [routerLink]="['/planete', 'edit']"
+        routerLinkActive="active"
+        class="btn btn-outline-primary"
+        >Création d'une planète</a
+      >
+    </div>
+    <br /><br />
   </article>
 </body>

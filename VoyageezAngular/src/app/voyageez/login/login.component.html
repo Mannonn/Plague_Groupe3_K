@@ -1,26 +1,56 @@
 <body>
-  <article>
-    <div *ngIf="error">erreur authentification</div>
-    <form (ngSubmit)="validate()" [formGroup]="form">
-      <div>
-        login:<input formControlName="login" />
-        <div
-          *ngIf="form.controls['login'].dirty && form.controls['login'].invalid"
-        >
-          login invalide
-        </div>
-      </div>
-      <div>
-        password:<input formControlName="password" type="password" />
-        <div
-          *ngIf="
-            form.controls['password'].dirty && form.controls['password'].invalid
-          "
-        >
-          password invalide
-        </div>
-      </div>
-      <div><button type="submit">connection</button></div>
-    </form>
-  </article>
+  <div id="texte">
+    <h2>
+      Faites confiance à nos<br />
+      pilotes d'exceptions<br />
+      Leur metier,<br />
+      notre fierte
+    </h2>
+    <br />
+    <img id="image1" src="./assets/logo_blanc.png" />
+  </div>
+  <div id="container">
+    <article>
+      <form (ngSubmit)="validate()" [formGroup]="form">
+        <h2>Connexion</h2>
+        <h4 *ngIf="error" coslpan="3" class="authentification">
+          Erreur authentification
+        </h4>
+        <table>
+          <tr>
+            <td class="login">login</td>
+            <td class="formulaire"><input formControlName="login" /></td>
+            <td
+              *ngIf="
+                form.controls['login'].dirty && form.controls['login'].invalid
+              "
+              class="couleur"
+            >
+              Non valide
+            </td>
+          </tr>
+          <tr>
+            <td class="login">password</td>
+            <td class="formulaire">
+              <input formControlName="password" type="password" />
+            </td>
+            <td
+              *ngIf="
+                form.controls['password'].dirty &&
+                form.controls['password'].invalid
+              "
+              class="couleur"
+            >
+              Non valide
+            </td>
+          </tr>
+        </table>
+        <br />
+        <button class="btn btn-light" type="submit">Se connecter</button>
+      </form>
+    </article>
+  </div>
+  <div id="imageP">
+    <img id="imgCo" src="./assets/astronaute.png" alt="" />
+  </div>
 </body>

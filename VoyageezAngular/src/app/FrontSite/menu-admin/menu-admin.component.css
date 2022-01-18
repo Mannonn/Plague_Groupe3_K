@@ -1,6 +1,4 @@
 body {
-  height: 700px;
-  width: 100%;
 }
 p {
   color: white;
@@ -8,20 +6,6 @@ p {
   font-size: 24px;
   padding-top: 2%;
 }
-
-/* .choix {
-  background-color: silver;
-  height: 500px;
-  width: 300px;
-  border-radius: 30%;
-  border: black;
-  border-width: 2px;
-  text-align: center;
-  justify-content: center;
-}
-.vide {
-  width: 150px;
-} */
 
 .tableau {
   visibility: var(affich);

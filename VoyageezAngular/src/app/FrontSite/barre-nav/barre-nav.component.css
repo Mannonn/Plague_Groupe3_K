@@ -1,13 +1,16 @@
 #toto {
+  display: flex;
   position: relative;
   width: 100%;
-  height: 80px;
+  height: 60px;
   background-color: #5b9bd5;
   text-align: center;
-  align-content: center;
+  justify-content: space-around;
+  align-items: center;
   margin: 0;
 }
 
 .row {
+  display: inline;
   margin-right: 0%;
 }

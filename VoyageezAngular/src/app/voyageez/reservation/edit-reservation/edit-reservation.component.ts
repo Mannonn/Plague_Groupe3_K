@@ -6,6 +6,7 @@ import { Activite } from 'src/app/model/activite';
 import { Reservation } from 'src/app/model/reservation';
 import { Trajet } from 'src/app/model/trajet';
 import { ReservationService } from 'src/app/services/reservation.service';
+import { Passager } from 'src/app/model/passager';
 
 @Component({
   selector: 'app-edit-reservation',
@@ -19,6 +20,7 @@ export class EditReservationComponent implements OnInit {
     private reservationService: ReservationService,
     public trajet: Trajet,
     public activite: Activite,
+    public passager: Passager,
     public client: Client,
     private router: Router
   ) {}

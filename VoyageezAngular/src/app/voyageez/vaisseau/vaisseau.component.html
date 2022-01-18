@@ -1,54 +1,51 @@
 <body>
   <article>
-    <body>
-      <article>
-        <br /><br />
-        <table class="table">
-          <thead>
-            <tr>
-              <th class="id">Id</th>
-              <th class="nom">Nom</th>
-              <th class="capacite">Capacité</th>
-              <th class="capitaine">Capitaine</th>
-              <th colspan="2">Modification</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let v of vaisseaux">
-              <td>{{ v.id }}</td>
-              <td>{{ v.nom }}</td>
-              <td>{{ v.capacite }}</td>
-              <td>{{ v.capitaine }}</td>
-              <td>
-                <a
-                  [routerLink]="['/vaisseau', 'edit', v.id]"
-                  routerLinkActive="active"
-                  class="btn btn-outline-primary"
-                  >Editer</a
-                >
-              </td>
-              <td>
-                <button
-                  class="btn btn-outline-danger"
-                  (click)="delete(v.id!)"
-                  *ngIf="!vaisseauUtilise(v)"
-                >
-                  Supprimer
-                </button>
-                <p *ngIf="vaisseauUtilise(v)">Vaisseau utilisé !</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="new">
-          <a
-            [routerLink]="['/vaisseau', 'edit']"
-            routerLinkActive="active"
-            class="btn btn-outline-info"
-            >Création nouveau vaisseau</a
-          >
-        </div>
-      </article>
-    </body>
+    <br /><br />
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="id">Id</th>
+          <th class="nom">Nom</th>
+          <th class="capacite">Capacité</th>
+          <th class="capitaine">Capitaine</th>
+          <th colspan="2">Modification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of vaisseaux">
+          <td>{{ v.id }}</td>
+          <td>{{ v.nom }}</td>
+          <td>{{ v.capacite }}</td>
+          <td>{{ v.capitaine }}</td>
+          <td>
+            <a
+              [routerLink]="['/vaisseau', 'edit', v.id]"
+              routerLinkActive="active"
+              class="btn btn-outline-primary"
+              >Editer</a
+            >
+          </td>
+          <td>
+            <button
+              class="btn btn-outline-danger"
+              (click)="delete(v.id!)"
+              *ngIf="!vaisseauUtilise(v)"
+            >
+              Supprimer
+            </button>
+            <p *ngIf="vaisseauUtilise(v)">Vaisseau utilisé !</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="new">
+      <a
+        [routerLink]="['/vaisseau', 'edit']"
+        routerLinkActive="active"
+        class="btn btn-outline-info"
+        >Création nouveau vaisseau</a
+      >
+    </div>
+    <br /><br />
   </article>
 </body>
