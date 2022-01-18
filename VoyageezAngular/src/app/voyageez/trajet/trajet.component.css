@@ -14,8 +14,8 @@ article {
 
 .position {
   position: relative;
-  right: 12%;
-  width: 124%;
+  right: 0%;
+  width: 100%;
 }
 
 table {
@@ -36,15 +36,15 @@ th.prix {
 }
 
 th.depart {
-  width: 8%;
+  width: 15%;
 }
 
 th.arrivee {
-  width: 8%;
+  width: 15%;
 }
 
 th.modif {
-  width: 15%;
+  width: 10%;
 }
 
 .new {
