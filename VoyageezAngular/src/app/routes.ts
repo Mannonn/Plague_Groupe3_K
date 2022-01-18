@@ -3,7 +3,6 @@ import { ActivitesComponent } from './FrontSite/activites/activites.component';
 import { HomeComponent } from './FrontSite/home/home.component';
 import { Routes } from '@angular/router';
 import { ConnaitreComponent } from './FrontSite/connaitre/connaitre.component';
-import { ConnexionComponent } from './FrontSite/connexion/connexion.component';
 import { ContactComponent } from './FrontSite/contact/contact.component';
 import { FaqComponent } from './FrontSite/faq/faq.component';
 import { InfosComponent } from './FrontSite/infos/infos.component';
@@ -44,7 +43,6 @@ export const routes: Routes = [
   { path: 'paiement', component: PaiementComponent },
   { path: 'missions', component: MissionsComponent },
   { path: 'contact', component: ContactComponent },
-  // { path: 'connexion', component: ConnexionComponent },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'menu_client', component: MenuClientComponent },
   { path: 'activites', component: ActivitesComponent },

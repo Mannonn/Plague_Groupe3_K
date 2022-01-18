@@ -1,6 +1,5 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Roles } from 'src/app/Roles';
 
 @Component({
   selector: 'app-banniere',
@@ -8,7 +7,10 @@ import { Roles } from 'src/app/Roles';
   styleUrls: ['./banniere.component.css'],
 })
 export class BanniereComponent implements OnInit {
-  public rrole = Roles;
+  get role(): string | null {
+    return localStorage.getItem('role');
+  }
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
