@@ -4,4 +4,7 @@ html {
 }
 body {
   background-image: url("/assets/espace.jpg");
+  height: auto;
+  min-height: 700px;
+  width: 100%;
 }

@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   width: 100%;
-  height: auto;
+  height: 60px;
   background-color: #5b9bd5;
   text-align: center;
   justify-content: space-around;
