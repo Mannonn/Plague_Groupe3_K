@@ -48,6 +48,7 @@ import { EditTrajetComponent } from './voyageez/trajet/edit-trajet/edit-trajet.c
 import { EditVaisseauComponent } from './voyageez/vaisseau/edit-vaisseau/edit-vaisseau.component';
 import { Roles } from './Roles';
 import { LoginComponent } from './voyageez/login/login.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +92,7 @@ import { LoginComponent } from './voyageez/login/login.component';
     EditTrajetComponent,
     EditVaisseauComponent,
     LoginComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,

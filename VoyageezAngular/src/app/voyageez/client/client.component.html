@@ -1,43 +1,49 @@
 <body>
   <article>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>login</th>
-          <th>password</th>
-          <th>enabled</th>
-          <th>nom</th>
-          <th>prenom</th>
-          <th>reservations</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let c of clients">
-          <td>{{ c.id }}</td>
-          <td>{{ c.login }}</td>
-          <td>{{ c.password }}</td>
-          <td>{{ c.enabled }}</td>
-          <td>{{ c.nom }}</td>
-          <td>{{ c.prenom }}</td>
-          <td>{{ c.reservations }}</td>
-          <td>
-            <a
-              [routerLink]="['/client', 'edit', c.id]"
-              routerLinkActive="active"
-              class="btn btn-outline-primary"
-              >editer</a
-            >
-          </td>
-          <td><button class="btn btn-outline-danger">supprimer</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <a
-      [routerLink]="['/client', 'edit']"
-      routerLinkActive="active"
-      class="btn btn-link"
-      >nouveau client</a
-    >
+    <br /><br />
+    <div class="position">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="id">id</th>
+            <th class="login">login</th>
+            <th class="password">password</th>
+            <th class="enabled">enabled</th>
+            <th class="nom">nom</th>
+            <th class="prenom">prenom</th>
+            <th class="resa">reservations</th>
+            <th colspan="2">Modification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of clients">
+            <td>{{ c.id }}</td>
+            <td>{{ c.login }}</td>
+            <td>{{ c.password }}</td>
+            <td>{{ c.enabled }}</td>
+            <td>{{ c.nom }}</td>
+            <td>{{ c.prenom }}</td>
+            <td>{{ c.reservations }}</td>
+            <td>
+              <a
+                [routerLink]="['/client', 'edit', c.id]"
+                routerLinkActive="active"
+                class="btn btn-outline-primary"
+                >editer</a
+              >
+            </td>
+            <td><button class="btn btn-outline-danger">supprimer</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="new">
+        <a
+          [routerLink]="['/client', 'edit']"
+          routerLinkActive="active"
+          class="btn btn-outline-info"
+          >Création client</a
+        >
+      </div>
+    </div>
   </article>
 </body>
