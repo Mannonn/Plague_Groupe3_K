@@ -1,3 +1,4 @@
+import { Compte } from 'src/app/model/compte';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
@@ -27,13 +28,16 @@ export class AuthenticationService implements CanActivate {
     return new HttpHeaders();
   }
 
-  public login(login: string, password: string): Observable<any> {
+  public login(login: string, password: string): Observable<Compte> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Basic ' + btoa(login + ':' + password),
     });
-    return this.http.get<any>('http://localhost:8080/voyageez/api/compte', {
-      headers: headers,
-    });
+    return this.http.get<any>(
+      'http://localhost:8080/voyageez/api/compte/connexion',
+      {
+        headers: headers,
+      }
+    );
   }
 }

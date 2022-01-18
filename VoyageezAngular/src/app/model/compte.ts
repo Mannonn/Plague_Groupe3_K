@@ -3,7 +3,8 @@ export class Compte {
     private _id?: number,
     private _login?: any,
     private _password?: any,
-    private _enabled?: boolean
+    private _enabled?: boolean,
+    private _role?: string
   ) {}
 
   public get id(): number | undefined {
@@ -36,5 +37,13 @@ export class Compte {
 
   public set enabled(value: boolean | undefined) {
     this._enabled = value;
+  }
+
+  public get role(): string | undefined {
+    return this._role;
+  }
+
+  public set role(value: string | undefined) {
+    this._role = value;
   }
 }

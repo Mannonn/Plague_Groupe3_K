@@ -35,6 +35,7 @@ export class ClientService {
       login: client.login,
       password: client.password,
       enabled: client.enabled,
+      role: client.role,
       nom: client.nom,
       prenom: client.prenom,
       reservation: client.reservations,

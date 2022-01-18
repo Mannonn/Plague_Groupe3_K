@@ -33,6 +33,7 @@ import { EditReservationComponent } from './voyageez/reservation/edit-reservatio
 import { EditTrajetComponent } from './voyageez/trajet/edit-trajet/edit-trajet.component';
 import { EditVaisseauComponent } from './voyageez/vaisseau/edit-vaisseau/edit-vaisseau.component';
 import { InscriptionComponent } from './voyageez/inscription/inscription.component';
+import { LoginComponent } from './voyageez/login/login.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -43,7 +44,7 @@ export const routes: Routes = [
   { path: 'paiement', component: PaiementComponent },
   { path: 'missions', component: MissionsComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'connexion', component: ConnexionComponent },
+  // { path: 'connexion', component: ConnexionComponent },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'menu_client', component: MenuClientComponent },
   { path: 'activites', component: ActivitesComponent },
@@ -59,6 +60,7 @@ export const routes: Routes = [
   { path: 'reservation', component: ReservationComponent },
   { path: 'trajet', component: TrajetComponent },
   { path: 'vaisseau', component: VaisseauComponent },
+  { path: 'login', component: LoginComponent },
   {
     path: 'planete/edit/:id',
     component: EditPlaneteComponent,

@@ -5,8 +5,9 @@ export class Admin extends Compte {
     _id?: number,
     _login?: any,
     _password?: any,
-    _enabled?: boolean
+    _enabled?: boolean,
+    _role?: 'admin'
   ) {
-    super(_id, _login, _password, _enabled);
+    super(_id, _login, _password, _enabled, 'admin');
   }
 }
