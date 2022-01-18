@@ -1,5 +1,6 @@
 body {
-  height: 700px;
+  height: auto;
+  min-height: 700px;
   width: 100%;
   padding-bottom: 2%;
 }
