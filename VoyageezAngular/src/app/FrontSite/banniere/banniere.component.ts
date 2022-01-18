@@ -8,7 +8,7 @@ import { Roles } from 'src/app/Roles';
   styleUrls: ['./banniere.component.css'],
 })
 export class BanniereComponent implements OnInit {
-  //public rrole = Roles;
+  public rrole = Roles;
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
