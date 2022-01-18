@@ -27,4 +27,8 @@ export class TrajetComponent implements OnInit {
       this.initTrajets();
     });
   }
+
+  contenu() {
+    console.log(this.trajets);
+  }
 }

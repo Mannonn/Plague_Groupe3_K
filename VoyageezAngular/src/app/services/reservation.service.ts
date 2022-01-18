@@ -40,7 +40,7 @@ export class ReservationService {
       passager: reservation.passager,
       aller: reservation.aller,
       retour: reservation.retour,
-      activite: reservation.activite,
+      activite: reservation.activites,
       client: reservation.client,
     };
     return this.http.post<Reservation>(ReservationService.URL, o, {

@@ -38,10 +38,8 @@ export class EditActiviteComponent implements OnInit {
   save() {
     if (!!this.activite.planete) {
       this.planete = this.activite.planete;
-      console.log('1');
     } else {
       this.planete = this.planetes[0];
-      console.log('2');
     }
 
     if (this.indicePlanete != -1) {
@@ -58,8 +56,5 @@ export class EditActiviteComponent implements OnInit {
         this.router.navigate(['/activite']);
       });
     }
-  }
-  contenu(activite: Activite) {
-    console.log(activite);
   }
 }

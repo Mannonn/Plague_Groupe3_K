@@ -1,45 +1,82 @@
 <div>
-  <h1>edition reservation</h1>
+  <h1>Edition des trajets</h1>
   <div>
     <div class="form-group">
       <label>id</label>
       <input [(ngModel)]="trajet.id" readonly class="form-control" />
     </div>
     <div class="form-group">
-      <label>date depart</label>
+      <label>Date départ</label>
+      <input [(ngModel)]="trajet.dateDepart" class="form-control" type="date" />
+    </div>
+    <div class="form-group">
+      <label>Heure départ</label>
       <input
-        [(ngModel)]="trajet.dateDepart"
+        [(ngModel)]="trajet.heureDepart"
         class="form-control"
-        class="form-control"
+        type="time"
       />
     </div>
     <div class="form-group">
-      <label>heure depart</label>
-      <input [(ngModel)]="trajet.heureDepart" class="form-control" />
+      <label>Date arrivée</label>
+      <input
+        [(ngModel)]="trajet.dateArrivee"
+        class="form-control"
+        type="date"
+      />
     </div>
     <div class="form-group">
-      <label>date arrivee</label>
-      <input [(ngModel)]="trajet.dateArrivee" class="form-control" />
+      <label>Heure arrivée</label>
+      <input
+        [(ngModel)]="trajet.heureArrivee"
+        class="form-control"
+        type="time"
+      />
     </div>
     <div class="form-group">
-      <label>heure arrivee</label>
-      <input [(ngModel)]="trajet.heureArrivee" class="form-control" />
-    </div>
-    <div class="form-group">
-      <label>prix</label>
+      <label>Prix (€)</label>
       <input [(ngModel)]="trajet.prix" class="form-control" />
     </div>
     <div class="form-group">
-      <label>planete depart</label>
-      <input [(ngModel)]="trajet.depart" class="form-control" />
+      <label>Planete départ</label>
+      <select class="form-control" [(ngModel)]="indicePlaneteDepart">
+        <option disabled>Selectionner une planete.</option>
+        <option *ngFor="let p of planetes; let i = index" [value]="i">
+          {{ p.nom }}
+        </option>
+      </select>
+      <p *ngIf="!!trajet.depart">
+        (Planète de départ actuelle: {{ trajet.depart!.nom }})
+      </p>
     </div>
     <div class="form-group">
-      <label>planete arrivee</label>
-      <input [(ngModel)]="trajet.arrivee" class="form-control" />
+      <label>Planète arrivée</label>
+      <select class="form-control" [(ngModel)]="indicePlaneteArrivee">
+        <option disabled>Selectionner une planete.</option>
+        <option *ngFor="let p of planetes; let i = index" [value]="i">
+          {{ p.nom }}
+        </option>
+      </select>
+      <p *ngIf="!!trajet.arrivee">
+        (Planète d'arrrivée actuelle: {{ trajet.arrivee!.nom }})
+      </p>
     </div>
     <div class="form-group">
-      <label>vaisseau</label>
-      <input [(ngModel)]="trajet.vaisseau" class="form-control" />
+      <label>Vaisseau</label>
+      <select class="form-control" [(ngModel)]="indiceVaisseau">
+        <option disabled>Selectionner un vaisseau.</option>
+        <option *ngFor="let v of vaisseaux; let i = index" [value]="i">
+          {{ v.nom }}
+        </option>
+      </select>
+      <p *ngIf="!!trajet.vaisseau">
+        (Vaisseau actuel: {{ trajet.vaisseau!.nom }})
+      </p>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-outline-primary" (click)="save()">
+        Enregistrer
+      </button>
     </div>
   </div>
 </div>

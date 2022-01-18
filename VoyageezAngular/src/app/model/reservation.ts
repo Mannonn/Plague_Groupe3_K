@@ -11,7 +11,7 @@ export class Reservation {
     private _passager?: Array<Passager>,
     private _aller?: Trajet,
     private _retour?: Trajet,
-    private _activite?: Array<Activite>,
+    private _activites?: Array<Activite>,
     private _client?: Client
   ) {}
 
@@ -55,12 +55,12 @@ export class Reservation {
     this._retour = value;
   }
 
-  public get activite(): Array<Activite> | undefined {
-    return this._activite;
+  public get activites(): Array<Activite> | undefined {
+    return this._activites;
   }
 
-  public set activite(value: Array<Activite> | undefined) {
-    this._activite = value;
+  public set activites(value: Array<Activite> | undefined) {
+    this._activites = value;
   }
 
   public get client(): Client | undefined {
