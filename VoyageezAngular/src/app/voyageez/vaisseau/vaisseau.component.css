@@ -1,5 +1,5 @@
 body {
-  height: min(auto, 1400px);
+  height: auto;
   width: 100%;
 }
 

@@ -31,7 +31,6 @@ import { EditPlaneteComponent } from './voyageez/planete/edit-planete/edit-plane
 import { ActiviteComponent } from './voyageez/activite/activite.component';
 import { AdminComponent } from './voyageez/admin/admin.component';
 import { ClientComponent } from './voyageez/client/client.component';
-import { CompteComponent } from './voyageez/compte/compte.component';
 import { PassagerComponent } from './voyageez/passager/passager.component';
 import { ReservationComponent } from './voyageez/reservation/reservation.component';
 import { TrajetComponent } from './voyageez/trajet/trajet.component';
@@ -70,7 +69,6 @@ import { LoginComponent } from './voyageez/login/login.component';
     ActiviteComponent,
     AdminComponent,
     ClientComponent,
-    CompteComponent,
     PassagerComponent,
     ReservationComponent,
     TrajetComponent,

@@ -1,7 +1,7 @@
 <nav id="toto">
   <ng-container *ngIf="!login || (!!login && role == 'client')">
     <a routerLink="/planetes" routerLinkActive="active"
-      ><button class="btn">Planetes</button></a
+      ><button class="btn">Planètes</button></a
     >
     <a routerLink="/vols" routerLinkActive="active"
       ><button class="btn">Vols</button></a
@@ -10,17 +10,20 @@
       ><button class="btn">Offres</button></a
     >
     <a routerLink="/activites" routerLinkActive="active"
-      ><button class="btn">Activites</button></a
+      ><button class="btn">Activités</button></a
     >
   </ng-container>
 
   <ng-container *ngIf="!!login && role == 'admin'">
-    <a routerLink="/planete" routerLinkActive="active" class="btn">Planetes</a>
+    <a routerLink="/planete" routerLinkActive="active" class="btn">Planètes</a>
     <a routerLink="/activite" routerLinkActive="active" class="btn"
-      >Activites</a
+      >Activités</a
     >
     <a routerLink="/vaisseau" routerLinkActive="active" class="btn"
       >Vaisseaux</a
+    >
+    <a routerLink="/reservation" routerLinkActive="active" class="btn"
+      >Réservations</a
     >
     <a routerLink="/trajet" routerLinkActive="active" class="btn">Trajets</a>
     <a routerLink="/client" routerLinkActive="active" class="btn">Clients</a>

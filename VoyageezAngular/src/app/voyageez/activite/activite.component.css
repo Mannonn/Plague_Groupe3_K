@@ -1,12 +1,21 @@
 body {
-  height: 700px;
+  height: auto;
   width: 100%;
   margin: 0px;
 }
-article {
+table {
   position: relative;
   margin-left: 10%;
   margin-right: 10%;
   color: white;
   text-align: justify;
+}
+.new {
+  position: relative;
+  margin-left: 38%;
+}
+
+th,
+td {
+  text-align: center;
 }
