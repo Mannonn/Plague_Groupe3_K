@@ -11,6 +11,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   error: boolean = false;
+
   constructor(private auth: AuthenticationService, private router: Router) {
     this.form = new FormGroup({
       login: new FormControl('', Validators.required),
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
         //authentifier
         localStorage.setItem('token', btoa(login + ':' + password));
         localStorage.setItem('login', login);
+        localStorage.setItem('role', ok.role!);
         this.router.navigate(['/home']);
       },
       (error) => {

@@ -17,7 +17,7 @@ import { FaqComponent } from './FrontSite/faq/faq.component';
 import { ConnaitreComponent } from './FrontSite/connaitre/connaitre.component';
 import { ActivitesComponent } from './FrontSite/activites/activites.component';
 import { BanniereComponent } from './FrontSite/banniere/banniere.component';
-import { ConnexionComponent } from './FrontSite/connexion/connexion.component';
+// import { ConnexionComponent } from './FrontSite/connexion/connexion.component';
 import { ContactComponent } from './FrontSite/contact/contact.component';
 import { InfosComponent } from './FrontSite/infos/infos.component';
 import { InscriptionComponent } from './FrontSite/inscription/inscription.component';
@@ -63,7 +63,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     ConnaitreComponent,
     ActivitesComponent,
     BanniereComponent,
-    ConnexionComponent,
+    // ConnexionComponent,
     ContactComponent,
     InfosComponent,
     InscriptionComponent,

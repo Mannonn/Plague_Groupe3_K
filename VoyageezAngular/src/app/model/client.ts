@@ -8,11 +8,12 @@ export class Client extends Compte {
     _login?: any,
     _password?: any,
     _enabled?: boolean,
+    _role?: 'client',
     private _nom?: string,
     private _prenom?: string,
     private _reservations?: Array<Reservation>
   ) {
-    super(_id, _login, _password, _enabled);
+    super(_id, _login, _password, _enabled, 'client');
   }
   public get nom(): string | undefined {
     return this._nom;

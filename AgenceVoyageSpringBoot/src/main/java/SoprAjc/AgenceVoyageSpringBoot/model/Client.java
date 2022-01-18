@@ -26,13 +26,14 @@ public class Client extends Compte {
 	private Set<Reservation> reservations;
 
 	public Client() {
-
+	setRole("client");
 	}
 
 	public Client(Long id, String login, String password, String nom, String prenom, boolean enabled) {
-		super(id, login, password, enabled);
+		super(id, login, password, enabled,"client");
 		this.nom = nom;
 		this.prenom = prenom;
+		setRole("client");
 	}
 
 	public Client(String login, String password, String nom, String prenom) {
@@ -40,6 +41,7 @@ public class Client extends Compte {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.enabled =true;
+		setRole("client");
 	}
 
 	public Client(String login, String password, String nom, String prenom, Set<Reservation> reservations) {
@@ -47,6 +49,7 @@ public class Client extends Compte {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.reservations = reservations;
+		setRole("client");
 	}
 
 	public String getNom() {
@@ -83,7 +86,10 @@ public class Client extends Compte {
 
 	@Override
 	public String toString() {
-		return "Client [nom=" + nom + ", prenom=" + prenom + ", reservations=" + reservations + "]";
+		return "Client [nom=" + nom + ", prenom=" + prenom + ", reservations=" + reservations + ", id=" + id
+				+ ", login=" + login + ", password=" + password + ", enabled=" + enabled + ", role=" + role + "]";
 	}
+
+
 
 }
