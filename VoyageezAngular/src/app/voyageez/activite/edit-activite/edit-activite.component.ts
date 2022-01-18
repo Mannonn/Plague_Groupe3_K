@@ -13,13 +13,12 @@ import { PlaneteService } from 'src/app/services/planete.service';
 export class EditActiviteComponent implements OnInit {
   activite: Activite = new Activite();
   planetes: Planete[] = [];
-  planetesNom: string[] = [];
-
+  indicePlanete: number = -1;
+  planete: Planete = new Planete();
   constructor(
     private activatedRoute: ActivatedRoute,
     private activiteService: ActiviteService,
     private planeteService: PlaneteService,
-    public planete: Planete,
     private router: Router
   ) {}
 
@@ -30,17 +29,26 @@ export class EditActiviteComponent implements OnInit {
           this.activite = result;
         });
       }
+      this.planeteService.getAll().subscribe((result) => {
+        this.planetes = result;
+      });
     });
-    this.planeteService.getAll().subscribe((result) => {
-      this.planetes = result;
-    });
-    for (let p of this.planetes) {
-      this.planetesNom.push(p.nom!);
-    }
-    console.log(this.planetes);
   }
 
   save() {
+    if (!!this.activite.planete) {
+      this.planete = this.activite.planete;
+      console.log('1');
+    } else {
+      this.planete = this.planetes[0];
+      console.log('2');
+    }
+
+    if (this.indicePlanete != -1) {
+      this.activite.planete = this.planetes[this.indicePlanete];
+    } else {
+      this.activite.planete = this.planete;
+    }
     if (!!this.activite.id) {
       this.activiteService.update(this.activite).subscribe((ok) => {
         this.router.navigate(['/activite']);
@@ -50,5 +58,8 @@ export class EditActiviteComponent implements OnInit {
         this.router.navigate(['/activite']);
       });
     }
+  }
+  contenu(activite: Activite) {
+    console.log(activite);
   }
 }

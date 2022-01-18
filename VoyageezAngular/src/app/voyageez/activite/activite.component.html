@@ -23,7 +23,11 @@
               >Editer</a
             >
           </td>
-          <td><button class="btn btn-outline-danger">Supprimer</button></td>
+          <td>
+            <button class="btn btn-outline-danger" (click)="delete(a.id!)">
+              Supprimer
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -33,10 +37,5 @@
       class="btn btn-link"
       >Nouvelle activité</a
     >
-    <div>
-      <button class="btn btn-outline-danger" (click)="contenu()">
-        Contenu
-      </button>
-    </div>
   </article>
 </body>
