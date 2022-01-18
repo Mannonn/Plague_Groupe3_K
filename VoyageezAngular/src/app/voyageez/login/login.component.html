@@ -1,26 +1,50 @@
-<body>
+<div id="texte">
+  <h2>
+    Faites confiance à nos<br />
+    pilotes d'exceptions<br />
+    Leur metier,<br />
+    notre fierte
+  </h2>
+  <br />
+  <img id="image1" src="./assets/logo_blanc.png" />
+</div>
+<div id="container">
   <article>
-    <div *ngIf="error">erreur authentification</div>
     <form (ngSubmit)="validate()" [formGroup]="form">
-      <div>
-        login:<input formControlName="login" />
-        <div
-          *ngIf="form.controls['login'].dirty && form.controls['login'].invalid"
-        >
-          login invalide
-        </div>
-      </div>
-      <div>
-        password:<input formControlName="password" type="password" />
-        <div
-          *ngIf="
-            form.controls['password'].dirty && form.controls['password'].invalid
-          "
-        >
-          password invalide
-        </div>
-      </div>
-      <div><button type="submit">connection</button></div>
+      <h2>Connexion</h2>
+      <br /><br />
+      <table border class="table table-bordered">
+        <tr *ngIf="error" coslpan="3">
+          erreur authentification
+        </tr>
+        <tr>
+          <td>login :</td>
+          <td><input formControlName="login" /></td>
+          <td
+            *ngIf="
+              form.controls['login'].dirty && form.controls['login'].invalid
+            "
+          >
+            login invalide
+          </td>
+        </tr>
+        <tr>
+          <td>password :</td>
+          <td><input formControlName="password" type="password" /></td>
+          <td
+            *ngIf="
+              form.controls['password'].dirty &&
+              form.controls['password'].invalid
+            "
+          >
+            password invalide
+          </td>
+        </tr>
+      </table>
+      <div><button type="submit">Se connecter</button></div>
     </form>
   </article>
-</body>
+  <div id="imageP">
+    <img id="imgCo" src="./assets/astronaute.png" alt="" />
+  </div>
+</div>
