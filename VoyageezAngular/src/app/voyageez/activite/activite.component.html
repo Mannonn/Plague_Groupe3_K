@@ -1,5 +1,6 @@
 <body>
   <article>
+    <br /><br />
     <table class="table">
       <thead>
         <tr>
@@ -31,16 +32,20 @@
             >
               Supprimer
             </button>
-            <p *ngIf="activiteUtilise(a)">Activité encore utilisée !</p>
+            <p *ngIf="activiteUtilise(a)">Activité utilisée !</p>
           </td>
         </tr>
       </tbody>
     </table>
-    <a
-      [routerLink]="['/activite', 'edit']"
-      routerLinkActive="active"
-      class="btn btn-link"
-      >Nouvelle activité</a
-    >
+    <div class="new">
+      <br />
+      <a
+        [routerLink]="['/activite', 'edit']"
+        routerLinkActive="active"
+        class="btn btn-outline-primary"
+        >Création d'une activite</a
+      >
+    </div>
+    <br /><br />
   </article>
 </body>
