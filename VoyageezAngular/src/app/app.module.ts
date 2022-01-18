@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './FrontSite/home/home.component';
 import { routes } from './routes';
 import { FooterComponent } from './FrontSite/footer/footer.component';
-import { HeaderComponent } from './header/header.component';
 import { MissionsComponent } from './FrontSite/missions/missions.component';
 import { FaqComponent } from './FrontSite/faq/faq.component';
 import { ConnaitreComponent } from './FrontSite/connaitre/connaitre.component';
@@ -50,7 +49,6 @@ import { LoginComponent } from './voyageez/login/login.component';
     AppComponent,
     HomeComponent,
     FooterComponent,
-    HeaderComponent,
     MissionsComponent,
     FaqComponent,
     ConnaitreComponent,
