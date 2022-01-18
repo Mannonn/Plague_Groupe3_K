@@ -1,6 +1,6 @@
 footer {
-  position: bottom;
-  height: auto;
+  position: relative;
+  height: 50px;
   background-color: #5b9bd5;
   text-align: center;
   margin-right: 0%;
