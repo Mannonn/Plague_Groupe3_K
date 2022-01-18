@@ -1,7 +1,19 @@
-<body>
+<div id="texte">
+  <h2>
+    Faites confiance à nos<br />
+    pilotes d'exceptions<br />
+    Leur metier,<br />
+    notre fierte
+  </h2>
+  <br />
+  <img id="image1" src="./assets/logo_blanc.png" />
+</div>
+<div id="container">
   <article>
     <form (ngSubmit)="validate()" [formGroup]="form">
-      <table>
+      <h2>Connexion</h2>
+      <br /><br />
+      <table border class="table table-bordered">
         <tr *ngIf="error" coslpan="3">
           erreur authentification
         </tr>
@@ -28,8 +40,11 @@
             password invalide
           </td>
         </tr>
-        <div><button type="submit">connection</button></div>
       </table>
+      <div><button type="submit">Se connecter</button></div>
     </form>
   </article>
-</body>
+  <div id="imageP">
+    <img id="imgCo" src="./assets/astronaute.png" alt="" />
+  </div>
+</div>
