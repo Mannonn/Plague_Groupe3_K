@@ -1,11 +1,12 @@
 body {
   padding-bottom: 2%;
+  background-image: url("/assets/espace.jpg");
 }
 
 p {
   color: white;
   text-align: center;
-  font-size: 24px;
+  font-size: 26px;
   padding-top: 2%;
 }
 
@@ -32,18 +33,13 @@ button {
 .vide1,
 .vide2 {
   width: 70px;
+  border: none;
 }
 
 .contenu {
-  visibility: var(affich);
-  background-color: white;
-  box-sizing: border-box;
-  height: auto;
-  width: 700px;
-  text-align: center;
-  border-radius: 10%;
+  border: none;
 }
 
-.ensemble {
+.table {
   padding-bottom: 2%;
 }
