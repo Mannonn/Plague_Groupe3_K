@@ -55,10 +55,29 @@ article {
   background-image: url("/assets/home_img4.jpg");
 }
 
-#numbertext {
+#numbertext1,
+#numbertext2,
+#numbertext3,
+#numbertext4 {
+  color: whitesmoke;
   position: relative;
-  bottom: 0;
-  color: white;
+  margin-top: 37.5%;
+}
+
+#numbertext1 {
+  margin-left: 13%;
+}
+
+#numbertext2 {
+  margin-left: 19%;
+}
+
+#numbertext3 {
+  margin-left: 19%;
+}
+
+#numbertext4 {
+  margin-left: 11%;
 }
 
 #text {
