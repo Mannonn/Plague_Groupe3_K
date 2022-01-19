@@ -44,6 +44,8 @@ export class TrajetComponent implements OnInit {
   filtrePlaneteArr: string = '';
   idArrivee: number = -1;
 
+  visible: boolean = false;
+
   constructor(
     private trajetService: TrajetService,
     private reservationService: ReservationService,
@@ -73,6 +75,10 @@ export class TrajetComponent implements OnInit {
     this.trajetService.getAll().subscribe((result) => {
       this.trajets = result;
     });
+  }
+
+  visibilite() {
+    this.visible = !this.visible;
   }
 
   initActivites() {
