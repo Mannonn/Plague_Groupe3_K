@@ -22,12 +22,9 @@ export class ClientService {
   }
 
   public update(compte: Client): Observable<Client> {
-    return this.http.put<Client>(
-      ClientService.URL + '/' + /*Client.id,*/ Client,
-      {
-        headers: this.auth.headers,
-      }
-    );
+    return this.http.put<Client>(ClientService.URL + '/' + compte.id, Client, {
+      headers: this.auth.headers,
+    });
   }
 
   private formatClientToJson(client: Client): Object {
