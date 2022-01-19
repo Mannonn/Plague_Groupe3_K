@@ -34,7 +34,7 @@ form {
   color: white;
 }
 
-td.couleur {
+.couleur {
   color: red;
   text-align: center;
 }
@@ -53,14 +53,6 @@ form {
   padding: 30px;
   border: 1px solid #003396;
   background: #003396;
-}
-
-input[type="text"],
-input[type="password"],
-textarea {
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
 }
 
 #image1 {

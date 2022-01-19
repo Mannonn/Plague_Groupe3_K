@@ -1,6 +1,5 @@
 body {
   width: 100%;
-  height: auto;
 }
 
 article {
@@ -9,10 +8,6 @@ article {
   margin-right: 10%;
   color: white;
   text-align: justify;
-}
-
-.text {
-  color: white;
 }
 
 #article1 {
@@ -26,9 +21,10 @@ article {
 #slideshow {
   overflow: hidden;
   width: 1000px;
-  height: 500px;
+  height: 400px;
   position: relative;
   margin: auto;
+  margin-bottom: 2%;
 }
 
 #slideshow-container {
@@ -38,7 +34,7 @@ article {
 
 #mySlides {
   float: left;
-  height: 500px;
+  height: 400px;
   width: 1000px;
   background-size: cover;
 }
@@ -59,8 +55,29 @@ article {
   background-image: url("/assets/home_img4.jpg");
 }
 
-#numbertext {
-  color: white;
+#numbertext1,
+#numbertext2,
+#numbertext3,
+#numbertext4 {
+  color: whitesmoke;
+  position: relative;
+  margin-top: 37.5%;
+}
+
+#numbertext1 {
+  margin-left: 13%;
+}
+
+#numbertext2 {
+  margin-left: 19%;
+}
+
+#numbertext3 {
+  margin-left: 19%;
+}
+
+#numbertext4 {
+  margin-left: 11%;
 }
 
 #text {

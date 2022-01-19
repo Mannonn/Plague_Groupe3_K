@@ -1,16 +1,69 @@
 <br /><br />
-<form (ngSubmit)="validate()" [formGroup]="form">
-  <div>
-    login:<input formControlName="login" />
-    <div *ngIf="form.controls['login'].dirty && form.controls['login'].invalid">
-      login invalide
-    </div>
-  </div>
-  <div formGroupName="passwordGroup">
-    <div>password:<input formControlName="password" /></div>
-    <div>confirmation:<input formControlName="confirm" /></div>
-    <div *ngIf="form.controls['passwordGroup'].invalid">invalide</div>
-  </div>
-  <div><button type="submit" [disabled]="form.invalid">valider</button></div>
-</form>
-<br /><br />
+<table>
+  <tr>
+    <td id="image">
+      <tr>
+        <h2>
+          Faîtes confiance à nos<br />
+          pilotes d'exception<br />
+          Leur métier,<br />
+          notre fierté
+        </h2>
+      </tr>
+      <tr>
+        <img id="image1" src="./assets/logo_blanc.png" />
+      </tr>
+    </td>
+    <td id="formulaire">
+      <form (ngSubmit)="validate()" [formGroup]="form">
+        <h2>Inscription</h2>
+        <br />
+        <table>
+          <tr>
+            <td class="login">login</td>
+            <td class="formulaire"><input formControlName="login" /></td>
+            <td
+              *ngIf="
+                form.controls['login'].dirty && form.controls['login'].invalid
+              "
+              class="couleur"
+            >
+              Invalide
+            </td>
+          </tr>
+          <tr>
+            <td class="login">password</td>
+            <td class="formulaire">
+              <input formControlName="password" type="password" />
+            </td>
+            <td *ngIf="form.controls['password'].invalid" class="couleur">
+              Invalide
+            </td>
+          </tr>
+          <tr>
+            <td class="login">confirmation</td>
+            <td class="formulaire">
+              <input formControlName="confirm" type="password" />
+            </td>
+            <td *ngIf="form.controls['confirm'].invalid" class="couleur">
+              Invalide
+            </td>
+          </tr>
+          <br />
+          <tr>
+            <button
+              class="btn btn-light"
+              type="submit"
+              [disabled]="form.invalid"
+            >
+              valider
+            </button>
+          </tr>
+        </table>
+      </form>
+    </td>
+    <td id="image2"><img src="\assets\astronaute.png" /></td>
+  </tr>
+
+  <br /><br />
+</table>
