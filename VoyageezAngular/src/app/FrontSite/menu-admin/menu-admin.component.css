@@ -3,24 +3,15 @@ body {
   height: auto;
   padding: 2%;
 }
-p {
-  color: white;
+
+h1,
+h2 {
+  color: whitesmoke;
   text-align: center;
-  font-size: 24px;
-  padding-top: 2%;
 }
 
-.tableau {
-  visibility: var(affich);
-  background-color: white;
-  height: auto;
-  width: 1100px;
+p,
+ul {
+  color: whitesmoke;
   text-align: center;
-  border-radius: 10%;
-}
-
-.ensemble {
-  padding-bottom: 2%;
-  display: flex;
-  justify-content: center;
 }
