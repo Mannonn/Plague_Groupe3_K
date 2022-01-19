@@ -1,31 +1,35 @@
 <body>
-  <table class="table">
-    <thead>
-      <tr>
-        <th class="login">Votre login:</th>
-        <th class="nom">nom</th>
-        <th class="prenom">prenom</th>
-        <th colspan="2">Modification</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{ client.login }}</td>
-        <td>{{ client.nom }}</td>
-        <td>{{ client.prenom }}</td>
-        <td>
-          <a
-            [routerLink]="['/client', 'edit', client.id]"
-            routerLinkActive="active"
-            class="btn btn-outline-primary"
-            >Editer</a
-          >
-        </td>
-        <td><button class="btn btn-outline-danger">Supprimer</button></td>
-      </tr>
-    </tbody>
-  </table>
-  <!-- <td>
-    <button class="btn btn-outline-danger" (click)="contenu()">contenu</button>
-  </td> -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="id">Votre id:</th>
+            <th class="login">Votre login:</th>
+            <th class="nom">nom</th>
+            <th class="prenom">prenom</th>
+          </tr>
+          <!-- <th colspan="2">Modification</th> -->
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ client.id }}</td>
+            <td>{{ client.login }}</td>
+            <td>{{ client.nom }}</td>
+            <td>{{ client.prenom }}</td>
+            <!-- <td>
+               <a
+                [routerLink]="['/client', 'edit', client.id]"
+                routerLinkActive="active"
+                class="btn btn-outline-primary"
+                >Editer</a
+              >
+            </td> -->
+            <!-- <td><button class="btn btn-outline-danger">Supprimer</button></td> -->
+          </tr>
+        </tbody>
+      </table>
+    <!-- <td>
+      <button class="btn btn-outline-danger" (click)="contenu()">
+        contenu
+      </button>
+    </td> -->
 </body>
