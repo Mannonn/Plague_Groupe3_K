@@ -2,9 +2,9 @@ body {
   margin: 0px;
 }
 article {
-  position: relative;
-  margin-left: 10%;
-  margin-right: 10%;
+  display: flex;
+  align-content: flex-start;
+
   color: rgb(39, 25, 25);
   text-align: justify;
 }
