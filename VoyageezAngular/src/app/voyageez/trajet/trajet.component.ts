@@ -1,4 +1,8 @@
+import { PassagerService } from './../../services/passager.service';
+import { Passager } from './../../model/passager';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Client } from 'src/app/model/client';
 import { Reservation } from 'src/app/model/reservation';
 import { Trajet } from 'src/app/model/trajet';
 import { ReservationService } from 'src/app/services/reservation.service';
@@ -12,10 +16,21 @@ import { TrajetService } from 'src/app/services/trajet.service';
 export class TrajetComponent implements OnInit {
   trajets: Trajet[] = [];
   reservations: Reservation[] = [];
+  passagers: Passager[] = [];
+  filtrePlaneteDep: string = '';
+  filtrePlaneteArr: string = '';
+  affichpassa: Boolean = false;
+  affichactivite: Boolean = false;
+  affichvalider: Boolean = false;
+  get role(): string | null {
+    return localStorage.getItem('role');
+  }
 
   constructor(
     private trajetService: TrajetService,
-    private reservationService: ReservationService
+    private reservationService: ReservationService,
+    private router: Router,
+    private passagerService: PassagerService
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +48,12 @@ export class TrajetComponent implements OnInit {
       this.reservations = result;
     });
   }
+  initpassagers() {
+    this.passagerService.getAll().subscribe((result) => {
+      this.passagers = result;
+    });
+  }
+
   trajetUtilise(trajet: Trajet): boolean {
     for (let r of this.reservations) {
       if (r.aller!.id == trajet.id) {
@@ -50,5 +71,59 @@ export class TrajetComponent implements OnInit {
     this.trajetService.delete(id).subscribe((ok) => {
       this.initTrajets();
     });
+  }
+
+  get login(): string | null {
+    return localStorage.getItem('login');
+  }
+
+  get loginID(): string | null {
+    return localStorage.getItem('id');
+  }
+
+  get planeteFiltre(): Trajet[] {
+    return this.trajets.filter((t) => {
+      if (
+        t.depart!.nom?.indexOf(this.filtrePlaneteDep) !== -1 ||
+        t.arrivee!.nom?.indexOf(this.filtrePlaneteDep) !== -1
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
+
+  affichPassagers() {
+    this.affichpassa = true;
+  }
+
+  affichActivite() {
+    this.affichactivite = true;
+  }
+
+  affichValider() {
+    this.affichvalider = true;
+  }
+
+  listPassagers() {
+    var list = new String('');
+    let depp: number = 0;
+    for (let passa of this.passagers) {
+      if (depp == 0) {
+        list = ' ' + passa.nom;
+        depp++;
+      } else {
+        list = list + ', ' + passa.nom;
+      }
+    }
+    if ((depp = 0)) {
+      list = 'Aucun passager';
+    }
+    return list;
+  }
+
+  validerFiltre() {
+    /* const maleDogs = dogs.filter((dog) => dog.gender === 'male') */
   }
 }

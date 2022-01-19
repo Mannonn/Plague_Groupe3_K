@@ -1,6 +1,25 @@
 <body>
   <article>
     <br /><br />
+    <div id="recherche">
+      <h2>Recherche de trajet</h2>
+      <form action="post">
+        <td>
+          <tr>
+            <label>Planete: </label>
+            <input [(ngModel)]="filtrePlaneteDep" name="pDepart" />
+            <!-- <label>Date de départ</label>
+            <input [(ngModel)]="filtreDate" />
+            <input type="date" name="dDate" /> -->
+          </tr>
+          <br />
+        </td>
+        <td class="vide"></td>
+        <br />
+      </form>
+    </div>
+    <br />
+
     <div class="position">
       <table class="table">
         <thead>
@@ -14,11 +33,16 @@
             <th class="depart">Planète départ</th>
             <th class="arrivee">Planète arrivée</th>
             <th class="vaisseau">Vaisseau</th>
-            <th colspan="2" class="modif">Modification</th>
+            <ng-container *ngIf="!!login && role == 'admin'"
+              ><th colspan="2" class="admin">Modification</th></ng-container
+            >
+            <ng-container *ngIf="!!login && role == 'client'"
+              ><th colspan="2" class="client">Reserver</th></ng-container
+            >
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let t of trajets">
+          <tr *ngFor="let t of planeteFiltre">
             <td>{{ t.id }}</td>
             <td>{{ t.dateDepart }}</td>
             <td>{{ t.heureDepart }}</td>
@@ -29,38 +53,69 @@
             <td>{{ t.arrivee!.nom }}</td>
             <td>{{ t.vaisseau!.nom }}</td>
 
-            <td>
-              <div>
+            <ng-container *ngIf="!!login && role == 'admin'">
+              <td>
                 <a
                   [routerLink]="['/trajet', 'edit', t.id]"
                   routerLinkActive="active"
                   class="btn btn-outline-primary"
-                  >Editer</a
+                  >Editer
+                </a>
+              </td>
+            </ng-container>
+
+            <ng-container *ngIf="!!login && role == 'client'">
+              <td>
+                <a class="btn btn-outline-primary" (click)="affichPassagers()">
+                  Reserver</a
                 >
-              </div>
-            </td>
-            <td>
-              <button
-                class="btn btn-outline-danger"
-                (click)="delete(t.id!)"
-                *ngIf="!trajetUtilise(t)"
-              >
-                Supprimer
-              </button>
-              <p *ngIf="trajetUtilise(t)">Trajet encore utilisé !</p>
-            </td>
+              </td>
+            </ng-container>
+            <br />
+
+            <ng-container *ngIf="!!login && role == 'admin'">
+              <td>
+                <button
+                  class="btn btn-outline-danger"
+                  (click)="delete(t.id!)"
+                  *ngIf="!trajetUtilise(t)"
+                >
+                  Supprimer
+                </button>
+                <p *ngIf="trajetUtilise(t)">Trajet encore utilisé !</p>
+              </td>
+            </ng-container>
           </tr>
         </tbody>
       </table>
-      <div class="new">
-        <a
-          [routerLink]="['/trajet', 'edit']"
-          routerLinkActive="active"
-          class="btn btn-outline-info"
-          >Création trajet</a
-        >
-      </div>
+      <ng-container *ngIf="!!login && role == 'admin'">
+        <div class="new">
+          <a
+            [routerLink]="['/trajet', 'edit']"
+            routerLinkActive="active"
+            class="btn btn-outline-info"
+            >Création trajet</a
+          >
+        </div>
+      </ng-container>
     </div>
+    <br />
+    <ng-container *ngIf="affichPassagers">
+      <p>
+        <!--         <select class="form-control">
+          <option
+            *ngFor="let passa of ; let i = index"
+            [value]="i"
+          >
+            {{ passa.nom }}
+          </option>
+        </select> -->
+      </p>
+    </ng-container>
+    <br />
+    <button type="submit" id="submit" (click)="validerFiltre()">
+      Valider reservation
+    </button>
     <br /><br />
   </article>
 </body>
