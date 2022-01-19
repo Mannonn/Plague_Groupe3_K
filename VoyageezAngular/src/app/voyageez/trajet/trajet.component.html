@@ -3,7 +3,6 @@
     <br /><br />
     <div id="recherche">
       <h2>Recherche de trajet par planète</h2>
-      <h2>{{ client.nom }} {{ client.prenom }} {{ client.id }}</h2>
       <form action="post">
         <input [(ngModel)]="filtrePlaneteDep" name="pDepart" />
       </form>
@@ -89,15 +88,13 @@
       </ng-container>
     </div>
     <br />
+
     <ng-container *ngIf="!!login && role == 'client' && affichPassaActi">
       <table>
         <td id="collo">
           <div id="testt">
-            <select class="form-control" [(ngModel)]="passagerTemp">
-              <option
-                *ngFor="let pass of passagers; let i = index"
-                [value]="pass"
-              >
+            <select class="form-control" [(ngModel)]="indexPassager">
+              <option *ngFor="let pass of passagers; let i = index" [value]="i">
                 {{ pass.prenom }} {{ pass.nom }}
               </option>
             </select>
@@ -110,10 +107,10 @@
             >
           </div>
           <div>
-            <select class="form-control" [(ngModel)]="activiteTemp">
+            <select class="form-control" [(ngModel)]="indexActivite">
               <option
-                *ngFor="let actt of activites; let i = index"
-                [value]="actt"
+                *ngFor="let actt of activitestris; let i = index"
+                [value]="i"
               >
                 {{ actt.nom }} {{ actt.prix }}
               </option>

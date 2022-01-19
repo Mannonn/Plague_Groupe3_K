@@ -1,3 +1,4 @@
+import { DatePipe, DATE_PIPE_DEFAULT_TIMEZONE } from '@angular/common';
 import { ActiviteService } from './../../services/activite.service';
 import { Planete } from './../../model/planete';
 import { PassagerService } from './../../services/passager.service';
@@ -9,7 +10,6 @@ import { Reservation } from 'src/app/model/reservation';
 import { Trajet } from 'src/app/model/trajet';
 import { ReservationService } from 'src/app/services/reservation.service';
 import { TrajetService } from 'src/app/services/trajet.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { ClientService } from 'src/app/services/client.service';
 import { Activite } from 'src/app/model/activite';
 
@@ -19,21 +19,30 @@ import { Activite } from 'src/app/model/activite';
   styleUrls: ['./trajet.component.css'],
 })
 export class TrajetComponent implements OnInit {
-  trajets: Trajet[] = [];
-  trajettemp: Trajet = new Trajet();
-  reservations: Reservation[] = [];
-  passagerTemp: Passager = new Passager();
-  activiteTemp: Activite = new Activite();
-  passagers: Passager[] = [];
-  passagersChoix: Passager[] = [];
   activites: Activite[] = [];
+  activitestris: Activite[] = [];
   activitesChoix: Activite[] = [];
+  indexActivite: number = -1;
+
   client: Client = new Client();
-  filtrePlaneteDep: string = '';
-  filtrePlaneteArr: string = '';
+
   affichPassaActi: Boolean = false;
   affichvalider: Boolean = false;
   resaPossible: Boolean = true;
+
+  trajets: Trajet[] = [];
+  trajet: Trajet = new Trajet();
+  idTrajet: number = -1;
+
+  reservations: Reservation[] = [];
+
+  indexPassager: number = -1;
+  passagers: Passager[] = [];
+  passagersChoix: Passager[] = [];
+
+  filtrePlaneteDep: string = '';
+  filtrePlaneteArr: string = '';
+  idArrivee: number = -1;
 
   constructor(
     private trajetService: TrajetService,
@@ -57,7 +66,6 @@ export class TrajetComponent implements OnInit {
 
   ngOnInit(): void {
     this.initTrajets();
-    this.initReservations();
     this.initClient();
     this.initActivites();
   }
@@ -66,30 +74,21 @@ export class TrajetComponent implements OnInit {
       this.trajets = result;
     });
   }
-  initReservations() {
-    this.reservationService.getAll().subscribe((result) => {
-      this.reservations = result;
-    });
-  }
+
   initActivites() {
     this.activiteService.getAll().subscribe((result) => {
       this.activites = result;
     });
   }
 
-  initpassagers() {
-    this.passagerService.getAll().subscribe((result) => {
-      this.passagers = result;
-    });
-  }
   initClient() {
     this.clientService
       .getById(+localStorage.getItem('id')!)
       .subscribe((result) => {
+        this.client = result;
         for (let reservation of result.reservations!) {
           this.reservations.push(reservation);
         }
-        this.client = result;
       });
   }
 
@@ -98,6 +97,11 @@ export class TrajetComponent implements OnInit {
     this.affichvalider = false;
     this.resaPossible = true;
     this.saveResa();
+    this.idTrajet = -1;
+    this.idArrivee = -1;
+    this.passagersChoix = [];
+    this.activitesChoix = [];
+    this.activitestris = [];
   }
   retour() {
     this.affichPassaActi = false;
@@ -105,11 +109,15 @@ export class TrajetComponent implements OnInit {
     this.resaPossible = true;
   }
   affichSuiteResa(trajett: Trajet) {
+    console.log(this.client);
+    this.trajet = trajett;
     this.affichPassaActi = true;
     this.affichvalider = true;
     this.resaPossible = false;
+    this.idArrivee = trajett.arrivee!.id!;
+    this.idTrajet = trajett.id!;
     this.listPassagers();
-    this.listactivitess(trajett.arrivee!);
+    this.listactivitess();
   }
 
   trajetUtilise(trajet: Trajet): boolean {
@@ -147,68 +155,41 @@ export class TrajetComponent implements OnInit {
   listPassagers() {
     for (let r of this.reservations) {
       for (let p of r.passagers!) {
-        if (p.client?.id == 3) {
-          this.passagers.push(p);
-          console.log(p);
-        }
+        this.passagers.push(p);
       }
     }
   }
 
-  listactivitess(plannete: Planete) {
+  listactivitess() {
     for (let actt of this.activites) {
-      if (actt.planete == plannete) {
-        this.activites.push(actt);
+      if (this.trajet.arrivee!.id == actt.planete!.id) {
+        this.activitestris.push(actt);
       }
     }
-    console.log(this.activites);
-  }
-
-  planeteUtilise(planete: Planete): boolean {
-    let utilise = false;
-    for (let t of this.trajets) {
-      console.log(t);
-      if (planete.nom == t.depart!.nom || planete.nom == t.arrivee!.nom) {
-        utilise = true;
-      }
-    }
-    console.log(utilise);
-    return utilise;
+    console.log(this.activitestris);
   }
 
   ajouterPass() {
-    this.passagersChoix.push(this.passagerTemp);
-    console.log(this.passagersChoix);
-    /* this.passagerTemp = new Passager(); */
+    this.passagersChoix.push(this.passagers[this.indexPassager]);
+    this.indexPassager = -1;
   }
 
   ajouterActi() {
-    this.activitesChoix.push(this.activiteTemp);
+    this.activitesChoix.push(this.activitestris[this.indexActivite]);
+    this.indexActivite = -1;
     console.log(this.activitesChoix);
   }
 
   saveResa() {
     var nouvelleResa: Reservation = new Reservation();
-    // recuperer id trajet choisis
-    // recuperer id passagers selectionnés selon client
-    // recuperer id actvites selon planete arrivee
-    // recuperer id client
-    // ==>creer une reservation
     nouvelleResa.client = this.client;
+    nouvelleResa.aller = this.trajet;
     nouvelleResa.activites = this.activitesChoix;
     nouvelleResa.passagers = this.passagersChoix;
-    /*  nouvelleResa.aller= this.trajjet;
-    nouvelleResa.dateReservation=date; */
     this.reservationService.create(nouvelleResa);
 
-    /*  if (!!this.planete.id) {
-      this.planeteService.update(this.planete).subscribe((ok) => {
-        this.router.navigate(['/planete']);
-      });
-    } else {
-      this.planeteService.create(this.planete).subscribe((ok) => {
-        this.router.navigate(['/planete']);
-      });
-    } */
+    this.reservationService.create(nouvelleResa).subscribe((ok) => {
+      this.router.navigate(['/menu_client']);
+    });
   }
 }
