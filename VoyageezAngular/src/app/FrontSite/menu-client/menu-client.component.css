@@ -1,11 +1,12 @@
 body {
   padding-bottom: 2%;
+  background-image: url("/assets/espace.jpg");
 }
 
 p {
   color: white;
   text-align: center;
-  font-size: 24px;
+  font-size: 26px;
   padding-top: 2%;
 }
 
@@ -36,10 +37,11 @@ button {
 
 .contenu {
   visibility: var(affich);
+  color: black;
   background-color: white;
   box-sizing: border-box;
   height: auto;
-  width: 700px;
+  width: 800px;
   text-align: center;
   border-radius: 10%;
 }

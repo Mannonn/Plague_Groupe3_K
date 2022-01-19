@@ -25,16 +25,17 @@
               login invalide
             </td>
           </tr>
-          <tr>
-            <td>password:</td>
-            <td colspan="2"><input formControlName="password" /></td>
-          </tr>
-          <tr>
-            <td>confirmation:</td>
-            <td><input formControlName="confirm" /></td>
-            <td *ngIf="form.controls['passwordGroup'].invalid">invalide</td>
-          </tr>
-          <!--           <div formGroupName="passwordGroup"> -->
+          <div formGroupName="passwordGroup">
+            <tr>
+              <td>password:</td>
+              <td colspan="2"><input formControlName="password" /></td>
+            </tr>
+            <tr>
+              <td>confirmation:</td>
+              <td><input formControlName="confirm" /></td>
+              <td *ngIf="form.controls['passwordGroup'].invalid">invalide</td>
+            </tr>
+          </div>
           <button type="submit" [disabled]="form.invalid">valider</button>
         </table>
       </form>
