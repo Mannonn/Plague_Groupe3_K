@@ -56,7 +56,7 @@ export const routes: Routes = [
   {
     path: 'menu_admin',
     component: MenuAdminComponent,
-    canActivate: [AuthenticationAdminService],
+    /*  canActivate: [AuthenticationAdminService], */
   },
   {
     path: 'planete',

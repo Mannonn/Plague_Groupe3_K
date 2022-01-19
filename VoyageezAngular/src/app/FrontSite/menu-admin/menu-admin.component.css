@@ -1,5 +1,7 @@
 body {
   background-image: url("/assets/espace.jpg");
+  height: auto;
+  padding: 2%;
 }
 p {
   color: white;
