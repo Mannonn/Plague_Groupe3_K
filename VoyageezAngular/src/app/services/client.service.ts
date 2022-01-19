@@ -58,4 +58,8 @@ export class ClientService {
       headers: this.auth.headers,
     });
   }
+
+  public check(login: string): Observable<boolean> {
+    return this.http.get<boolean>(ClientService.URL + '/check/' + login);
+  }
 }
