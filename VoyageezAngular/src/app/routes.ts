@@ -48,7 +48,7 @@ export const routes: Routes = [
   {
     path: 'menu_client',
     component: MenuClientComponent,
-    canActivate: [AuthenticationClientService],
+    //canActivate: [AuthenticationClientService],
   },
   { path: 'activites', component: ActivitesComponent },
   { path: 'planetes', component: PlanetesComponent },
@@ -132,12 +132,12 @@ export const routes: Routes = [
   {
     path: 'client/edit/:id',
     component: EditClientComponent,
-    canActivate: [AuthenticationClientService],
+    //canActivate: [AuthenticationClientService],
   },
   {
     path: 'client/edit',
     component: EditClientComponent,
-    canActivate: [AuthenticationClientService],
+    //canActivate: [AuthenticationClientService],
   },
   {
     path: 'passager/edit/:id',
