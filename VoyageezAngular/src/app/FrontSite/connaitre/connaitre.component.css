@@ -1,5 +1,6 @@
 body {
   background: calc();
+  background-image: url("/assets/espace.jpg");
   margin: 0px;
   padding-bottom: 2%;
 }

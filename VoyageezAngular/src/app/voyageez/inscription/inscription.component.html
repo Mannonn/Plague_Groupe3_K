@@ -1,16 +1,58 @@
-<br /><br />
-<form (ngSubmit)="validate()" [formGroup]="form">
-  <div>
-    login:<input formControlName="login" />
-    <div *ngIf="form.controls['login'].dirty && form.controls['login'].invalid">
-      login invalide
-    </div>
+<body>
+  <div id="texte">
+    <h2>
+      Faîtes confiance à nos<br />
+      pilotes d'exception<br />
+      Leur métier,<br />
+      notre fierté
+    </h2>
+    <br />
+    <img id="image1" src="./assets/logo_blanc.png" />
   </div>
-  <div formGroupName="passwordGroup">
-    <div>password:<input formControlName="password" /></div>
-    <div>confirmation:<input formControlName="confirm" /></div>
-    <div *ngIf="form.controls['passwordGroup'].invalid">invalide</div>
+  <div id="container">
+    <article>
+      <form (ngSubmit)="validate()" [formGroup]="form">
+        <h2>Inscription</h2>
+        <br />
+        <table>
+          <tr>
+            <td class="login">login:</td>
+            <td><input formControlName="login" /></td>
+            <td
+              *ngIf="
+                form.controls['login'].dirty && form.controls['login'].invalid
+              "
+            >
+              login invalide
+            </td>
+          </tr>
+        </table>
+        <table>
+          <div formGroupName="passwordGroup">
+            <tr>
+              <td>password:</td>
+              <td colspan="2"><input formControlName="password" /></td>
+            </tr>
+            <tr>
+              <td>confirmation:</td>
+              <td><input formControlName="confirm" /></td>
+              <td
+                class="couleur"
+                *ngIf="form.controls['passwordGroup'].invalid"
+              >
+                invalide
+              </td>
+            </tr>
+          </div>
+        </table>
+        <br />
+        <button class="btn btn-light" type="submit" [disabled]="form.invalid">
+          valider
+        </button>
+      </form>
+    </article>
   </div>
-  <div><button type="submit" [disabled]="form.invalid">valider</button></div>
-</form>
-<br /><br />
+  <div id="imageP">
+    <img id="imgCo" src="./assets/astronaute.png" alt="" />
+  </div>
+</body>
