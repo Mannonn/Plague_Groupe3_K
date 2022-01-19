@@ -1,37 +1,30 @@
 <div>
-  <h1>edition admin</h1>
+  <h1>Vos informations client</h1>
   <div>
     <div class="form-group">
-      <label>id</label>
+      <label>Id</label>
       <input [(ngModel)]="client.id" readonly class="form-control" />
     </div>
     <div class="form-group">
-      <label>login</label>
-      <input
-        [(ngModel)]="client.login"
-        class="form-control"
-        class="form-control"
-      />
+      <label>Votre login</label>
+      <input [(ngModel)]="client.login" class="form-control" />
     </div>
-    <div class="form-group">
+    <!--     <div class="form-group">
       <label>password</label>
       <input [(ngModel)]="client.password" class="form-control" />
-    </div>
+    </div> -->
     <div class="form-group">
-      <label>enabled</label>
-      <input [(ngModel)]="client.enabled" class="form-control" />
-    </div>
-    <div class="form-group">
-      <label>nom</label>
+      <label>Votre nom</label>
       <input [(ngModel)]="client.nom" class="form-control" />
     </div>
     <div class="form-group">
-      <label>prenom</label>
+      <label>Votre prénom</label>
       <input [(ngModel)]="client.prenom" class="form-control" />
     </div>
-    <div class="form-group">
-      <label>reservations</label>
-      <input [(ngModel)]="client.reservations" class="form-control" />
-    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-outline-primary" (click)="save()">
+      Enregistrer
+    </button>
   </div>
 </div>

@@ -16,32 +16,26 @@
           <tr>
             <td>{{ client.id }}</td>
             <td>{{ client.login }}</td>
-            <td>{{ client.password }}</td>
-            <td>{{ client.enabled }}</td>
             <td>{{ client.nom }}</td>
             <td>{{ client.prenom }}</td>
-            <td>{{ client.reservations }}</td>
             <td>
               <a
                 [routerLink]="['/client', 'edit', client.id]"
                 routerLinkActive="active"
                 class="btn btn-outline-primary"
-                >editer</a
+                >Editer</a
               >
             </td>
-            <td><button class="btn btn-outline-danger">supprimer</button></td>
+            <td><button class="btn btn-outline-danger">Supprimer</button></td>
           </tr>
         </tbody>
       </table>
-      <div class="new">
-        <a
-          [routerLink]="['/client', 'edit']"
-          routerLinkActive="active"
-          class="btn btn-outline-info"
-          >Création client</a
-        >
-      </div>
     </div>
     <br /><br />
+    <td>
+      <button class="btn btn-outline-danger" (click)="contenu()">
+        contenu
+      </button>
+    </td>
   </article>
 </body>

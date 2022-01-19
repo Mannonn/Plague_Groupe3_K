@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Reservation } from 'src/app/model/reservation';
 import { ReservationService } from 'src/app/services/reservation.service';
 import { min } from 'rxjs/operators';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-reservation',
@@ -13,11 +14,29 @@ import { min } from 'rxjs/operators';
 })
 export class ReservationComponent implements OnInit {
   reservations: Reservation[] = [];
+  client: Client = new Client();
 
-  constructor(private reservationService: ReservationService) {}
+  constructor(
+    private clientService: ClientService,
+    private reservationService: ReservationService
+  ) {}
 
   ngOnInit(): void {
-    this.initReservations();
+    this.initClient();
+  }
+
+  initClient() {
+    this.clientService
+      .getById(+localStorage.getItem('id')!)
+      .subscribe((result) => {
+        for (let reservation of result.reservations!) {
+          this.reservations.push(reservation);
+        }
+      });
+  }
+
+  contenu() {
+    console.log(this.client);
   }
 
   affichActivites(resa: Reservation) {
@@ -54,15 +73,9 @@ export class ReservationComponent implements OnInit {
     return list;
   }
 
-  initReservations() {
-    this.reservationService.getAll().subscribe((result) => {
-      this.reservations = result;
-    });
-  }
-
   delete(id: number) {
     this.reservationService.delete(id).subscribe((ok) => {
-      this.initReservations();
+      this.initClient();
     });
   }
 }

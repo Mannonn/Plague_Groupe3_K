@@ -15,7 +15,6 @@
             <th class="aller">Date d'arrivée</th>
             <th class="aller">Heure d'arrivée</th>
             <th class="activites">Liste des activités</th>
-            <th class="client">Client</th>
             <th colspan="2" class="modif">Modification</th>
           </tr>
         </thead>
@@ -51,27 +50,18 @@
               </select>
             </td>
             <!-- <td>{{ affichActivites(r) }} </td> -->
-            <td>{{ r.client!.nom }}</td>
             <td>
               <a
                 [routerLink]="['/reservation', 'edit', r.id]"
                 routerLinkActive="active"
                 class="btn btn-outline-primary"
-                >editer</a
+                >Changer passagers</a
               >
             </td>
-            <td><button class="btn btn-outline-danger">supprimer</button></td>
+            <td><button class="btn btn-outline-danger">Supprimer</button></td>
           </tr>
         </tbody>
       </table>
-      <div class="new">
-        <a
-          [routerLink]="['/reservation', 'edit']"
-          routerLinkActive="active"
-          class="btn btn-outline-info"
-          >Création réservation</a
-        >
-      </div>
     </div>
     <br /><br />
   </article>

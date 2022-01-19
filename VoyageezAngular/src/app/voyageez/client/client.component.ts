@@ -29,4 +29,7 @@ export class ClientComponent implements OnInit {
       this.initClient();
     });
   }
+  contenu() {
+    console.log(this.client);
+  }
 }

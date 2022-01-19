@@ -43,7 +43,7 @@ public class PassagerRestController {
 	}
 
 	@GetMapping("/{id}")
-	@JsonView(JsonViews.Passager.class)
+	@JsonView(JsonViews.Common.class)
 	private Passager getByIdBase(@PathVariable Long id) {
 		return passagerService.getById(id);
 	}
