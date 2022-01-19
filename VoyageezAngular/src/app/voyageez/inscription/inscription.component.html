@@ -13,9 +13,10 @@
     <article>
       <form (ngSubmit)="validate()" [formGroup]="form">
         <h2>Inscription</h2>
+        <br />
         <table>
           <tr>
-            <td>login:</td>
+            <td class="login">login:</td>
             <td><input formControlName="login" /></td>
             <td
               *ngIf="
@@ -25,6 +26,8 @@
               login invalide
             </td>
           </tr>
+        </table>
+        <table>
           <div formGroupName="passwordGroup">
             <tr>
               <td>password:</td>
@@ -33,12 +36,23 @@
             <tr>
               <td>confirmation:</td>
               <td><input formControlName="confirm" /></td>
-              <td *ngIf="form.controls['passwordGroup'].invalid">invalide</td>
+              <td
+                class="couleur"
+                *ngIf="form.controls['passwordGroup'].invalid"
+              >
+                invalide
+              </td>
             </tr>
           </div>
-          <button type="submit" [disabled]="form.invalid">valider</button>
         </table>
+        <br />
+        <button class="btn btn-light" type="submit" [disabled]="form.invalid">
+          valider
+        </button>
       </form>
     </article>
+  </div>
+  <div id="imageP">
+    <img id="imgCo" src="./assets/astronaute.png" alt="" />
   </div>
 </body>

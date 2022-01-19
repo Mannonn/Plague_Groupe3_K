@@ -29,6 +29,10 @@ form {
   border-radius: 10%;
 }
 
+td.login {
+  width: 33.3%;
+}
+
 #container h2 {
   text-align: center;
   color: white;
@@ -67,5 +71,5 @@ form {
 
 button {
   position: relative;
-  margin-left: 33.5%;
+  margin-left: 38%;
 }
