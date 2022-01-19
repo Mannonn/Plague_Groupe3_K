@@ -16,7 +16,6 @@ import { ActivitesComponent } from './FrontSite/activites/activites.component';
 import { BanniereComponent } from './FrontSite/banniere/banniere.component';
 import { ContactComponent } from './FrontSite/contact/contact.component';
 import { InfosComponent } from './FrontSite/infos/infos.component';
-import { InscriptionComponent } from './FrontSite/inscription/inscription.component';
 import { MenuAdminComponent } from './FrontSite/menu-admin/menu-admin.component';
 import { MenuClientComponent } from './FrontSite/menu-client/menu-client.component';
 import { OffresComponent } from './FrontSite/offres/offres.component';
@@ -42,6 +41,7 @@ import { EditReservationComponent } from './voyageez/reservation/edit-reservatio
 import { EditTrajetComponent } from './voyageez/trajet/edit-trajet/edit-trajet.component';
 import { EditVaisseauComponent } from './voyageez/vaisseau/edit-vaisseau/edit-vaisseau.component';
 import { LoginComponent } from './voyageez/login/login.component';
+import { InscriptionComponent } from './voyageez/inscription/inscription.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,6 @@ import { LoginComponent } from './voyageez/login/login.component';
     BanniereComponent,
     ContactComponent,
     InfosComponent,
-    InscriptionComponent,
     MenuAdminComponent,
     MenuClientComponent,
     OffresComponent,
@@ -80,6 +79,7 @@ import { LoginComponent } from './voyageez/login/login.component';
     EditTrajetComponent,
     EditVaisseauComponent,
     LoginComponent,
+    InscriptionComponent,
   ],
   imports: [
     BrowserModule,

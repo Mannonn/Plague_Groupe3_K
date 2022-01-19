@@ -1,5 +1,5 @@
 <br /><br />
-<form (ngSubmit)="validate()" formGroup="form">
+<form (ngSubmit)="validate()" [formGroup]="form">
   <div>
     login:<input formControlName="login" />
     <div *ngIf="form.controls['login'].dirty && form.controls['login'].invalid">

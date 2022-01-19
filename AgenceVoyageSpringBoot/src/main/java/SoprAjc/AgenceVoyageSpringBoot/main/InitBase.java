@@ -58,7 +58,7 @@ public class InitBase implements CommandLineRunner {
 
 	public void run(String... args)
 	{
-		initDataBase();
+//		initDataBase();
 	}
 	
 	

@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,7 +27,9 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import SoprAjc.AgenceVoyageSpringBoot.exception.ClientException;
 import SoprAjc.AgenceVoyageSpringBoot.model.Client;
+import SoprAjc.AgenceVoyageSpringBoot.model.Compte;
 import SoprAjc.AgenceVoyageSpringBoot.model.JsonViews;
+import SoprAjc.AgenceVoyageSpringBoot.repository.ClientRepository;
 import SoprAjc.AgenceVoyageSpringBoot.service.ClientService;
 
 @RestController
@@ -35,11 +38,19 @@ import SoprAjc.AgenceVoyageSpringBoot.service.ClientService;
 public class ClientRestController {
 	@Autowired
 	private ClientService clientService;
+	@Autowired
+	PasswordEncoder passwordEncoder;
+	@Autowired
+	private ClientRepository clientRepository;
 
 	@GetMapping("")
 	@JsonView(JsonViews.Common.class)
 	public List<Client> getAll() {
 		return clientService.getAll();
+	}
+	@GetMapping("/check/{login}")
+	public boolean checkLogin(@PathVariable String login) {
+		return clientRepository.findByLogin(login).isPresent();
 	}
 
 	@GetMapping("/{id}")
@@ -67,6 +78,16 @@ public class ClientRestController {
 		}
 		clientService.creation(client);
 		return client;
+	}
+	
+	@PostMapping("/inscription")
+	@ResponseStatus(code = HttpStatus.CREATED)
+	@JsonView(JsonViews.Common.class)
+	public Compte inscription(@RequestBody Client client) {
+			client.setPassword(passwordEncoder.encode(client.getPassword()));
+			client.setRole("client");
+			client.setEnabled(true);
+			return clientRepository.save(client);
 	}
 
 	@PutMapping("/{id}")
