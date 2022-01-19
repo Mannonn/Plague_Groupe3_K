@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -28,6 +29,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import SoprAjc.AgenceVoyageSpringBoot.exception.CompteException;
 import SoprAjc.AgenceVoyageSpringBoot.model.Compte;
 import SoprAjc.AgenceVoyageSpringBoot.model.JsonViews;
+import SoprAjc.AgenceVoyageSpringBoot.repository.CompteRepository;
 import SoprAjc.AgenceVoyageSpringBoot.service.CompteService;
 
 @RestController
@@ -36,6 +38,10 @@ import SoprAjc.AgenceVoyageSpringBoot.service.CompteService;
 public class CompteRestController {
 	@Autowired
 	private CompteService compteService;
+	@Autowired
+	private CompteRepository compteRepository;
+	@Autowired
+	PasswordEncoder passwordEncoder;
 
 	@GetMapping("")
 	@JsonView(JsonViews.Common.class)
@@ -48,7 +54,7 @@ public class CompteRestController {
 	public Compte connexion(@AuthenticationPrincipal Compte compte) {
 		return compte;
 	}
-
+	
 	@GetMapping("/{id}")
 	@JsonView(JsonViews.Compte.class)
 	private Compte getByIdBase(@PathVariable Long id) {
@@ -69,6 +75,7 @@ public class CompteRestController {
 		compteService.creation(compte);
 		return compte;
 	}
+	
 
 	@PutMapping("/{id}")
 	@JsonView(JsonViews.Compte.class)

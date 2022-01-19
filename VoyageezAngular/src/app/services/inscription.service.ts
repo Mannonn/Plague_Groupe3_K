@@ -8,10 +8,10 @@ import { Observable } from 'rxjs';
 export class InscriptionService {
   constructor(private http: HttpClient) {}
 
-  inscription(compte: any): Observable<any> {
+  inscription(client: any): Observable<any> {
     return this.http.post(
-      'http://localhost:8080/voyageez/api/compte/inscription',
-      compte
+      'http://localhost:8080/voyageez/api/client/inscription',
+      client
     );
   }
 }
