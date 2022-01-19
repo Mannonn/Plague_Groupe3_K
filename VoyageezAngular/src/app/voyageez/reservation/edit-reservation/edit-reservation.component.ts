@@ -18,10 +18,6 @@ export class EditReservationComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private reservationService: ReservationService,
-    public trajet: Trajet,
-    public activite: Activite,
-    public passager: Passager,
-    public client: Client,
     private router: Router
   ) {}
 
