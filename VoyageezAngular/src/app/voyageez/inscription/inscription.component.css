@@ -1,19 +1,23 @@
 body {
   margin: 0px;
 }
-article {
-  position: relative;
-  margin-left: 10%;
-  margin-right: 10%;
+
+h2 {
   color: white;
-  text-align: justify;
+  text-align: center;
 }
 
 form {
   background-color: #003396;
-  width: 50%;
+  color: white;
+  width: 35%;
   border-radius: 10%;
   display: flex;
   justify-content: center;
   margin-left: 25%;
+}
+
+.couleur {
+  color: red;
+  text-align: center;
 }
