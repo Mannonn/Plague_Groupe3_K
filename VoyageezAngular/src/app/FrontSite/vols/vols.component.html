@@ -33,5 +33,12 @@
         <button type="submit" id="submit">Valider ma sélection</button>
       </form>
     </div>
+    <ng-container *ngIf="!!login && role == 'client'">
+      <a routerLink="/menu_client" routerLinkActive="active"
+        ><button class="btn">Reserver</button></a
+      >
+    </ng-container>
+
+    <br /><br />
   </article>
 </body>

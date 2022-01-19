@@ -1,4 +1,5 @@
 import { Compte } from './compte';
+import { Passager } from './passager';
 
 import { Reservation } from './reservation';
 
@@ -11,7 +12,8 @@ export class Client extends Compte {
     _role?: 'client',
     private _nom?: string,
     private _prenom?: string,
-    private _reservations?: Array<Reservation>
+    private _reservations?: Array<Reservation>,
+    private _passagers?: Array<Passager>
   ) {
     super(_id, _login, _password, _enabled, 'client');
   }
@@ -37,5 +39,13 @@ export class Client extends Compte {
 
   public set reservations(value: Array<Reservation> | undefined) {
     this._reservations = value;
+  }
+
+  public get passagers(): Array<Passager> | undefined {
+    return this._passagers;
+  }
+
+  public set passagers(value: Array<Passager> | undefined) {
+    this._passagers = value;
   }
 }

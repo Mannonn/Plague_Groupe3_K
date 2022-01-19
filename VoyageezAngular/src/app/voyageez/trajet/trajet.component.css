@@ -1,6 +1,7 @@
 body {
   margin: 0px;
 }
+
 article {
   position: relative;
   margin-left: 10%;
@@ -15,6 +16,9 @@ article {
   width: 100%;
 }
 
+#recherche {
+  color: grey;
+}
 table {
   color: whitesmoke;
   max-width: 90%;
