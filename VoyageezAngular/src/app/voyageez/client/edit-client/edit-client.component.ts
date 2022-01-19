@@ -28,8 +28,12 @@ export class EditClientComponent implements OnInit {
     });
   }
 
+  contenu() {
+    console.log(this.client);
+  }
+
   save() {
-    this.clientService.update(this.client).subscribe((ok) => {
+    this.clientService.create(this.client).subscribe((ok) => {
       this.router.navigate(['/menu-client']);
     });
   }
