@@ -2,24 +2,12 @@
   <article>
     <br /><br />
     <div id="recherche">
-      <h2>Recherche de trajet</h2>
+      <h2>Recherche de trajet par planète</h2>
       <form action="post">
-        <td>
-          <tr>
-            <label>Planete: </label>
-            <input [(ngModel)]="filtrePlaneteDep" name="pDepart" />
-            <!-- <label>Date de départ</label>
-            <input [(ngModel)]="filtreDate" />
-            <input type="date" name="dDate" /> -->
-          </tr>
-          <br />
-        </td>
-        <td class="vide"></td>
-        <br />
+        <input [(ngModel)]="filtrePlaneteDep" name="pDepart" />
       </form>
     </div>
     <br />
-
     <div class="position">
       <table class="table">
         <thead>
@@ -64,9 +52,9 @@
               </td>
             </ng-container>
 
-            <ng-container *ngIf="!!login && role == 'client'">
+            <ng-container *ngIf="!!login && role == 'client' && resaPossible">
               <td>
-                <a class="btn btn-outline-primary" (click)="affichPassagers()">
+                <a class="btn btn-outline-primary" (click)="affichSuiteResa()">
                   Reserver</a
                 >
               </td>
@@ -100,7 +88,25 @@
       </ng-container>
     </div>
     <br />
-    <ng-container *ngIf="affichPassagers">
+    <ng-container *ngIf="!!login && role == 'client' && affichPassaActi">
+      <div>liste passager du client</div>
+      <div>liste activite planete arrivee</div>
+      <div>
+        <a
+          routerLink="/menu_client"
+          routerLinkActive="active"
+          class="btn btn-outline-info"
+          (click)="validerReservation()"
+          >Valider reservation</a
+        >
+        <a
+          routerLink="/trajet"
+          routerLinkActive="active"
+          class="btn btn-outline-info"
+          (click)="retour()"
+          >retour</a
+        >
+      </div>
       <p>
         <!--         <select class="form-control">
           <option
@@ -112,10 +118,6 @@
         </select> -->
       </p>
     </ng-container>
-    <br />
-    <button type="submit" id="submit" (click)="validerFiltre()">
-      Valider reservation
-    </button>
     <br /><br />
   </article>
 </body>

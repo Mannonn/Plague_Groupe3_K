@@ -19,9 +19,9 @@ export class TrajetComponent implements OnInit {
   passagers: Passager[] = [];
   filtrePlaneteDep: string = '';
   filtrePlaneteArr: string = '';
-  affichpassa: Boolean = false;
-  affichactivite: Boolean = false;
+  affichPassaActi: Boolean = false;
   affichvalider: Boolean = false;
+  resaPossible: Boolean = true;
   get role(): string | null {
     return localStorage.getItem('role');
   }
@@ -94,16 +94,10 @@ export class TrajetComponent implements OnInit {
     });
   }
 
-  affichPassagers() {
-    this.affichpassa = true;
-  }
-
-  affichActivite() {
-    this.affichactivite = true;
-  }
-
-  affichValider() {
+  affichSuiteResa() {
+    this.affichPassaActi = true;
     this.affichvalider = true;
+    this.resaPossible = false;
   }
 
   listPassagers() {
@@ -123,7 +117,15 @@ export class TrajetComponent implements OnInit {
     return list;
   }
 
-  validerFiltre() {
-    /* const maleDogs = dogs.filter((dog) => dog.gender === 'male') */
+  validerReservation() {
+    this.affichPassaActi = false;
+    this.affichvalider = false;
+    this.resaPossible = true;
+  }
+
+  retour() {
+    this.affichPassaActi = false;
+    this.affichvalider = false;
+    this.resaPossible = true;
   }
 }
