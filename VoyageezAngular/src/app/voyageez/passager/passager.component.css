@@ -9,7 +9,17 @@ article {
   text-align: justify;
 }
 
-.position {
+#cccc {
+  color: white;
+}
+
+table {
+  color: whitesmoke;
+  background-color: chocolate;
+  margin-left: 20px;
+}
+
+/* .position {
   position: relative;
   right: 12%;
   width: 124%;
@@ -17,8 +27,8 @@ article {
 
 table {
   color: whitesmoke;
-  max-width: 90%;
-  min-width: 100px;
+  background-color: chocolate;
+  margin-left: 20px;
 }
 
 th,
@@ -43,4 +53,4 @@ th.modif {
 .new {
   position: relative;
   margin-left: 42%;
-}
+} */

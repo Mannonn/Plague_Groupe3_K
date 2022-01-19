@@ -1,23 +1,29 @@
 <body>
   <article>
     <br /><br />
-    <table class="table">
-      <thead>
-        <tr>
-          <th class="id">id</th>
-          <th class="nom">nom</th>
-          <th clas="prenom">prenom</th>
-          <th class="client">client</th>
-          <th colspan="2" class="modif">Modification</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let p of passagers">
-          <td>{{ p.id }}</td>
-          <td>{{ p.nom }}</td>
-          <td>{{ p.prenom }}</td>
-          <td>{{ p.client!.nom }}</td>
-          <td>
+    <div>
+      <button class="btn" (click)="affichTableau()" id="cccc">
+        Afficher mes passsagers
+      </button>
+    </div>
+    <ng-container *ngIf="affichOK">
+      <table class="table">
+        <thead>
+          <tr>
+            <!-- <th class="id">id</th> -->
+            <th class="nom">Nom</th>
+            <th clas="prenom">Prenom</th>
+            <!--           <th class="client">client</th>
+          <th colspan="2" class="modif">Modification</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of passagers">
+            <!-- <td>{{ p.id }}</td> -->
+            <td>{{ p.nom }}</td>
+            <td>{{ p.prenom }}</td>
+
+            <!--           <td>
             <a
               [routerLink]="['/passager', 'edit', p.id]"
               routerLinkActive="active"
@@ -25,18 +31,19 @@
               >editer</a
             >
           </td>
-          <td><button class="btn btn-outline-danger">supprimer</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="new">
+          <td><button class="btn btn-outline-danger">supprimer</button></td> -->
+          </tr>
+        </tbody>
+      </table>
+      <!--     <div class="new">
       <a
         [routerLink]="['/passager', 'edit']"
         routerLinkActive="active"
         class="btn btn-outline-info"
         >Création passager</a
       >
-    </div>
+    </div> -->
+    </ng-container>
     <br /><br />
   </article>
 </body>
