@@ -28,6 +28,8 @@ export class InscriptionComponent implements OnInit {
     private router: Router
   ) {
     this.form = new FormGroup({
+      nom: new FormControl('', Validators.required),
+      prenom: new FormControl('', Validators.required),
       login: new FormControl('', Validators.required, this.checkLogin()),
       passwordGroup: new FormGroup(
         {
@@ -62,17 +64,13 @@ export class InscriptionComponent implements OnInit {
   validate() {
     let group = this.form.controls['passwordGroup'] as FormGroup;
     let client = {
+      nom: this.form.controls['nom'].value,
+      prenom: this.form.controls['prenom'].value,
       login: this.form.controls['login'].value,
       password: group.controls['password'].value,
     };
     this.inscriptionService.inscription(client).subscribe((ok) => {
       this.router.navigate(['/login']);
-    });
-  }
-
-  createClient() {
-    this.clientService.create(this.client).subscribe((ok) => {
-      this.router.navigate(['/client']);
     });
   }
 }
