@@ -8,3 +8,9 @@ article {
   color: white;
   text-align: justify;
 }
+
+.image {
+  position: relative;
+  margin-left: 46%;
+  width: 10%;
+}
