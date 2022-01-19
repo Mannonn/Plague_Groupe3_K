@@ -1,6 +1,8 @@
-<div>
-  <h1>Edition vaisseau</h1>
+<body>
+  <br />
+  <h1>Edition Vaisseau</h1>
   <div>
+    <br />
     <div class="form-group">
       <label>Id</label>
       <input [(ngModel)]="vaisseau.id" readonly class="form-control" />
@@ -18,9 +20,9 @@
       <input [(ngModel)]="vaisseau.capitaine" class="form-control" />
     </div>
   </div>
-  <div class="form-group">
-    <button class="btn btn-outline-primary" (click)="save()">
-      Enregistrer
-    </button>
+  <br />
+  <div id="btn" class="form-group">
+    <button class="btn btn-outline-primary" (click)="save()">Enregistrer</button
+    ><br />
   </div>
-</div>
+</body>
