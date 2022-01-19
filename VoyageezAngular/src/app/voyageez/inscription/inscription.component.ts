@@ -11,6 +11,7 @@ import {
 import { Component, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { ClientService } from 'src/app/services/client.service';
+import { Client } from 'src/app/model/client';
 
 @Component({
   selector: 'app-inscription',
@@ -19,6 +20,7 @@ import { ClientService } from 'src/app/services/client.service';
 })
 export class InscriptionComponent implements OnInit {
   form: FormGroup;
+  client: Client = new Client();
 
   constructor(
     private inscriptionService: InscriptionService,
@@ -65,6 +67,12 @@ export class InscriptionComponent implements OnInit {
     };
     this.inscriptionService.inscription(client).subscribe((ok) => {
       this.router.navigate(['/login']);
+    });
+  }
+
+  createClient() {
+    this.clientService.create(this.client).subscribe((ok) => {
+      this.router.navigate(['/client']);
     });
   }
 }
