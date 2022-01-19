@@ -1,52 +1,6 @@
-body {
-  margin: 0px;
-}
-article {
-  position: relative;
-  margin-left: 10%;
-  margin-right: 10%;
-  color: white;
-  text-align: justify;
-}
-
-.position {
-  position: relative;
-  right: 12%;
-  width: 124%;
-}
-
 table {
   color: whitesmoke;
-  max-width: 100%;
-  min-width: 100px;
-}
-
-th,
-td {
   text-align: center;
-}
-
-th.id {
-  width: 5%;
-}
-
-th.date {
-  width: 10%;
-}
-
-th.depart {
-  width: 8%;
-}
-
-th.arrivee {
-  width: 8%;
-}
-
-th.modif {
-  width: 5%;
-}
-
-.new {
   position: relative;
-  margin-left: 44%;
+  right: 5%;
 }
