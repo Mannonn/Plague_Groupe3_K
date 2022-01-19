@@ -36,3 +36,8 @@ th.type {
   position: relative;
   margin-left: 38%;
 }
+
+table.passaActi {
+  background-color: red;
+  border: salmon;
+}
