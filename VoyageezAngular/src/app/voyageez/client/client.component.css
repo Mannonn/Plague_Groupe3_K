@@ -1,44 +1,6 @@
-body {
-  margin: 0px;
-}
-article {
-  display: flex;
-  align-content: flex-start;
-
-  color: rgb(39, 25, 25);
-  text-align: justify;
-}
-
-.position {
-  position: relative;
-  right: 4.5%;
-  width: 110%;
-}
-
 table {
   color: whitesmoke;
-  max-width: 90%;
-  min-width: 100px;
-}
-
-th,
-td {
   text-align: center;
-}
-
-th.id {
-  width: 5%;
-}
-
-th.login {
-  width: 15%;
-}
-
-th.password {
-  width: 20%;
-}
-
-.new {
   position: relative;
-  margin-left: 43%;
+  right: 15%;
 }

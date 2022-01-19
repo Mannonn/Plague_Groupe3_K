@@ -91,7 +91,6 @@ export const routes: Routes = [
   {
     path: 'trajet',
     component: TrajetComponent,
-    canActivate: [AuthenticationAdminService],
   },
   {
     path: 'vaisseau',

@@ -1,46 +1,6 @@
-body {
-  margin: 0px;
-}
-article {
-  position: relative;
-  margin-left: 10%;
-  margin-right: 10%;
-  color: white;
-  text-align: justify;
-}
-
-.position {
-  position: relative;
-  right: 12%;
-  width: 124%;
-}
-
 table {
   color: whitesmoke;
-  max-width: 90%;
-  min-width: 100px;
-}
-
-th,
-td {
   text-align: center;
-}
-
-th.id {
-  width: 5%;
-}
-
-th.nom,
-th.prenom,
-th.client {
-  width: 25%;
-}
-
-th.modif {
-  width: 20%;
-}
-
-.new {
   position: relative;
-  margin-left: 42%;
+  right: 20%;
 }
