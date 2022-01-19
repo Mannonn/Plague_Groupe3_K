@@ -16,6 +16,16 @@
         <br />
         <table>
           <tr>
+            <td class="nom">Nom:</td>
+            <td><input [(ngModel)]="client.nom" class="form-control" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="prenom">Prenom:</td>
+            <td><input [(ngModel)]="client.prenom" class="form-control" /></td>
+            <td></td>
+          </tr>
+          <tr>
             <td class="login">login:</td>
             <td><input formControlName="login" /></td>
             <td
@@ -46,7 +56,12 @@
           </div>
         </table>
         <br />
-        <button class="btn btn-light" type="submit" [disabled]="form.invalid">
+        <button
+          class="btn btn-light"
+          type="submit"
+          [disabled]="form.invalid"
+          (click)="createClient()"
+        >
           valider
         </button>
       </form>
