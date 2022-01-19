@@ -8,6 +8,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthenticationService implements CanActivate {
+  /*  get role(): string | null {
+    return localStorage.getItem('role');
+  } */
   constructor(private http: HttpClient) {}
 
   canActivate(): boolean {
