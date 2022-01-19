@@ -1,5 +1,5 @@
 <body>
-  <p>BONJOUR JOHN DOE</p>
+  <p>Bienvenue {{ client.nom }} {{ client.prenom }}</p>
   <table classe="ensemble">
     <td class="vide1"></td>
     <td class="choix">
@@ -20,23 +20,9 @@
 
     <td class="contenu">
       <br />
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-      consequuntur ipsam rem perspiciatis ad, commodi, corporis pariatur neque
-      doloribus iste esse ut tempora optio nesciunt libero voluptas molestias?
-      Tenetur, nulla!
-      <br />
-      <br />
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-      consequuntur ipsam rem perspiciatis ad, commodi, corporis pariatur neque
-      doloribus iste esse ut tempora optio nesciunt libero voluptas molestias?
-      Tenetur, nulla!
-      <br />
-      <br />
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-      consequuntur ipsam rem perspiciatis ad, commodi, corporis pariatur neque
-      doloribus iste esse ut tempora optio nesciunt libero voluptas molestias?
-      Tenetur, nulla!
-      <br />
+      <app-client *ngIf="affichInfos"></app-client>
+      <app-passager *ngIf="affichPassagers"></app-passager>
+      <app-reservation *ngIf="affichReservations"></app-reservation>
     </td>
   </table>
 </body>

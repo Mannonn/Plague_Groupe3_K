@@ -43,7 +43,7 @@ public class ReservationRestController {
 	}
 
 	@GetMapping("/{id}")
-	@JsonView(JsonViews.Reservation.class)
+	@JsonView(JsonViews.Common.class)
 	private Reservation getByIdBase(@PathVariable Long id) {
 		return reservationService.getById(id);
 	}

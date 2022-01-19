@@ -47,7 +47,7 @@ public class Reservation implements Serializable {
 	@JoinTable(name = "reservation_activite", joinColumns = @JoinColumn(name = "id_reservation"), inverseJoinColumns = @JoinColumn(name = "id_activite"))
 	private Set<Activite> activites;
 
-	@JsonView(JsonViews.Common.class)
+	@JsonView(JsonViews.Reservation.class)
 	@JoinColumn(name = "client")
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Client client;

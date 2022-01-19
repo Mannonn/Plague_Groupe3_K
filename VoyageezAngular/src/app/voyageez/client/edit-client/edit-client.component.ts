@@ -15,7 +15,6 @@ export class EditClientComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private clientService: ClientService,
-    public reservations: Reservation,
     private router: Router
   ) {}
 
@@ -26,6 +25,12 @@ export class EditClientComponent implements OnInit {
           this.client = result;
         });
       }
+    });
+  }
+
+  save() {
+    this.clientService.update(this.client).subscribe((ok) => {
+      this.router.navigate(['/menu-client']);
     });
   }
 }
