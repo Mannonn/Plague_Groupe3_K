@@ -3,7 +3,8 @@
   background-image: url("/assets/espace.jpg");
 } */
 body {
+  /* background-image: url("/assets/espace.jpg"); */
   height: auto;
-  min-height: 500px;
+  min-height: 435px;
   width: 100%;
 }
