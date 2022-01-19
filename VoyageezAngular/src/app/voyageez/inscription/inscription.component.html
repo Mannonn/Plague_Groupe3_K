@@ -16,6 +16,16 @@
         <br />
         <table>
           <tr>
+            <td class="nom">Nom:</td>
+            <td><input formControlName="nom" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="prenom">Prenom:</td>
+            <td><input formControlName="prenom" /></td>
+            <td></td>
+          </tr>
+          <tr>
             <td class="login">login:</td>
             <td><input formControlName="login" /></td>
             <td
@@ -31,11 +41,13 @@
           <div formGroupName="passwordGroup">
             <tr>
               <td>password:</td>
-              <td colspan="2"><input formControlName="password" /></td>
+              <td colspan="2">
+                <input formControlName="password" type="password" />
+              </td>
             </tr>
             <tr>
               <td>confirmation:</td>
-              <td><input formControlName="confirm" /></td>
+              <td><input formControlName="confirm" type="password" /></td>
               <td
                 class="couleur"
                 *ngIf="form.controls['passwordGroup'].invalid"

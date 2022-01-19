@@ -1,5 +1,6 @@
 table {
   color: whitesmoke;
-  right: 50%;
   text-align: center;
+  position: relative;
+  right: 20%;
 }

@@ -11,6 +11,7 @@ import {
 import { Component, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { ClientService } from 'src/app/services/client.service';
+import { Client } from 'src/app/model/client';
 
 @Component({
   selector: 'app-inscription',
@@ -19,6 +20,7 @@ import { ClientService } from 'src/app/services/client.service';
 })
 export class InscriptionComponent implements OnInit {
   form: FormGroup;
+  client: Client = new Client();
 
   constructor(
     private inscriptionService: InscriptionService,
@@ -26,6 +28,8 @@ export class InscriptionComponent implements OnInit {
     private router: Router
   ) {
     this.form = new FormGroup({
+      nom: new FormControl('', Validators.required),
+      prenom: new FormControl('', Validators.required),
       login: new FormControl('', Validators.required, this.checkLogin()),
       passwordGroup: new FormGroup(
         {
@@ -60,6 +64,8 @@ export class InscriptionComponent implements OnInit {
   validate() {
     let group = this.form.controls['passwordGroup'] as FormGroup;
     let client = {
+      nom: this.form.controls['nom'].value,
+      prenom: this.form.controls['prenom'].value,
       login: this.form.controls['login'].value,
       password: group.controls['password'].value,
     };
