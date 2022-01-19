@@ -1,38 +1,57 @@
 <br /><br />
-<form (ngSubmit)="validate()" [formGroup]="form">
-  <table>
-    <tr>
-      <h2>Inscription</h2>
-    </tr>
-    <tr>
-      <td class="login">login</td>
-      <td class="formulaire"><input formControlName="login" /></td>
-      <td
-        *ngIf="form.controls['login'].dirty && form.controls['login'].invalid"
-        class="couleur"
-      >
-        Invalide
-      </td>
-    </tr>
-    <tr>
-      <td class="login">password</td>
-      <td class="formulaire">
-        <input formControlName="password" type="password" />
-      </td>
-      <td *ngIf="form.controls['password'].invalid" class="couleur">
-        Invalide
-      </td>
-    </tr>
-    <tr>
-      <td class="login">confirmation</td>
-      <td class="formulaire">
-        <input formControlName="confirm" type="password" />
-      </td>
-      <td *ngIf="form.controls['confirm'].invalid" class="couleur">Invalide</td>
-    </tr>
-    <tr>
-      <button type="submit" [disabled]="form.invalid">valider</button>
-    </tr>
-  </table>
-</form>
-<br /><br />
+<table>
+  <tr>
+    <td id="formulaire">
+      <form (ngSubmit)="validate()" [formGroup]="form">
+        <h2>Inscription</h2>
+        <br />
+        <table>
+          <tr>
+            <td class="login">login</td>
+            <td class="formulaire"><input formControlName="login" /></td>
+            <td
+              *ngIf="
+                form.controls['login'].dirty && form.controls['login'].invalid
+              "
+              class="couleur"
+            >
+              Invalide
+            </td>
+          </tr>
+          <tr>
+            <td class="login">password</td>
+            <td class="formulaire">
+              <input formControlName="password" type="password" />
+            </td>
+            <td *ngIf="form.controls['password'].invalid" class="couleur">
+              Invalide
+            </td>
+          </tr>
+          <tr>
+            <td class="login">confirmation</td>
+            <td class="formulaire">
+              <input formControlName="confirm" type="password" />
+            </td>
+            <td *ngIf="form.controls['confirm'].invalid" class="couleur">
+              Invalide
+            </td>
+          </tr>
+          <br />
+          <tr>
+            <button
+              class="btn btn-light"
+              type="submit"
+              [disabled]="form.invalid"
+            >
+              valider
+            </button>
+          </tr>
+        </table>
+      </form>
+      <!-- </td>
+    <td><img src="\assets\gif.gif" /></td> -->
+    </td>
+  </tr>
+
+  <br /><br />
+</table>

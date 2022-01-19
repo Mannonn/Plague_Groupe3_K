@@ -5,19 +5,32 @@ body {
 h2 {
   color: white;
   text-align: center;
+  padding-top: 5%;
+}
+
+button {
+  margin-left: 100%;
+  margin-bottom: 10%;
+}
+table {
+  margin: auto;
 }
 
 form {
   background-color: #003396;
   color: white;
-  width: 35%;
+  width: 110%;
+  padding-left: 5%;
   border-radius: 10%;
-  display: flex;
-  justify-content: center;
-  margin-left: 25%;
 }
 
 .couleur {
   color: red;
   text-align: center;
 }
+
+/* img {
+  width: 35%;
+  border: 2px solid black;
+  margin-left: 70%;
+} */
