@@ -47,3 +47,32 @@ img {
   display: flex;
   align-items: center;
 }
+
+#img2 {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  margin-left: -13%;
+}
+
+#img3 {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+}
+
+#img4 {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+}
+
+#img5 {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+}
