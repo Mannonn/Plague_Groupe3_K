@@ -4,7 +4,6 @@
       <tr>
         <th class="nom">nom</th>
         <th clas="prenom">prenom</th>
-        <th class="client">client</th>
         <th colspan="2" class="modif">Modification</th>
       </tr>
     </thead>
@@ -12,7 +11,6 @@
       <tr *ngFor="let p of passagers">
         <td>{{ p.nom }}</td>
         <td>{{ p.prenom }}</td>
-        <td>{{ p.client!.nom }}</td>
         <td>
           <a
             [routerLink]="['/passager', 'edit', p.id]"

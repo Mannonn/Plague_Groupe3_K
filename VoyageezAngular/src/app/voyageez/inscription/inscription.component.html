@@ -50,7 +50,10 @@
               <td><input formControlName="confirm" type="password" /></td>
               <td
                 class="couleur"
-                *ngIf="form.controls['passwordGroup'].invalid"
+                *ngIf="
+                  form.controls['passwordGroup'].dirty &&
+                  form.controls['passwordGroup'].invalid
+                "
               >
                 invalide
               </td>
