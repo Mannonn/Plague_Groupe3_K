@@ -4,3 +4,7 @@ table {
   position: relative;
   right: 20%;
 }
+
+.new {
+  margin-left: -20%;
+}
