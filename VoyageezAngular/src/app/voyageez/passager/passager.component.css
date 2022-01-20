@@ -1,56 +1,10 @@
-body {
-  margin: 0px;
-}
-article {
-  position: relative;
-  margin-left: 10%;
-  margin-right: 10%;
-  color: white;
-  text-align: justify;
-}
-
-#cccc {
-  color: white;
-}
-
 table {
   color: whitesmoke;
-  background-color: chocolate;
-  margin-left: 20px;
-}
-
-/* .position {
-  position: relative;
-  right: 12%;
-  width: 124%;
-}
-
-table {
-  color: whitesmoke;
-  background-color: chocolate;
-  margin-left: 20px;
-}
-
-th,
-td {
   text-align: center;
-}
-
-th.id {
-  width: 5%;
-}
-
-th.nom,
-th.prenom,
-th.client {
-  width: 25%;
-}
-
-th.modif {
-  width: 20%;
+  position: relative;
+  right: 20%;
 }
 
 .new {
-  position: relative;
-  margin-left: 42%;
-} */
+  margin-left: -20%;
+}

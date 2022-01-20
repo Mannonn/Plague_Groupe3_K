@@ -1,6 +1,7 @@
 <body>
   <article>
     <br /><br />
+
     <div id="recherche">
       <h2>Recherche de trajet par planète</h2>
       <form action="post">
@@ -76,6 +77,7 @@
           </tr>
         </tbody>
       </table>
+
       <ng-container *ngIf="!!login && role == 'admin'">
         <div class="new">
           <a
@@ -88,25 +90,40 @@
       </ng-container>
     </div>
     <br />
-
     <ng-container *ngIf="!!login && role == 'client' && affichPassaActi">
       <table>
-        <td id="collo">
-          <div id="testt">
+        <tr>
+          <td id="col1">
             <select class="form-control" [(ngModel)]="indexPassager">
               <option *ngFor="let pass of passagers; let i = index" [value]="i">
                 {{ pass.prenom }} {{ pass.nom }}
               </option>
             </select>
+          </td>
+          <td id="col2">
             <a
               routerLink="/trajet"
               routerLinkActive="active"
-              class="btn btn-outline-info"
+              class="btn btn-primary"
               (click)="ajouterPass()"
               >Ajouter passager</a
             >
-          </div>
-          <div>
+          </td>
+          <td id="col3"><p>Vos passagers :</p></td>
+          <td id="col4">
+            <select class="form-control" [(ngModel)]="passagersChoix">
+              <option
+                *ngFor="let pass of passagersChoix; let i = index"
+                [value]="pass"
+              >
+                {{ pass.prenom }} {{ pass.nom }}
+              </option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="col1">
             <select class="form-control" [(ngModel)]="indexActivite">
               <option
                 *ngFor="let actt of activitestris; let i = index"
@@ -115,65 +132,47 @@
                 {{ actt.nom }} {{ actt.prix }}
               </option>
             </select>
+          </td>
+          <td id="col2">
             <a
               routerLink="/trajet"
               routerLinkActive="active"
-              class="btn btn-outline-info"
+              class="btn btn-primary"
               (click)="ajouterActi()"
-              >Ajouter activite</a
+              >Ajouter activité</a
             >
-          </div>
-          <div id="esspace"></div>
-          <div>
-            <a
-              routerLink="/menu_client"
-              routerLinkActive="active"
-              class="btn btn-outline-info"
-              (click)="validerReservation()"
-              >Valider reservation</a
-            >
-            <a
-              routerLink="/trajet"
-              routerLinkActive="active"
-              class="btn btn-outline-info"
-              (click)="retour()"
-              >Retour</a
-            >
-          </div>
-        </td>
-
-        <td id="spaceee"><p>VOS PASSAGERS</p></td>
-        <td id="CHOIX">
-          <tr>
-            <div id="caca">
-              <select class="form-control" [(ngModel)]="passagersChoix">
-                <option
-                  *ngFor="let pass of passagersChoix; let i = index"
-                  [value]="pass"
-                >
-                  {{ pass.prenom }} {{ pass.nom }}
-                </option>
-              </select>
-            </div>
-          </tr>
-        </td>
-        <td id="spaceee"><p>VOS ACTIVITES</p></td>
-        <td id="CHOIX">
-          <tr>
-            <div id="caca">
-              <select class="form-control" [(ngModel)]="activitesChoix">
-                <option
-                  *ngFor="let act of activitesChoix; let i = index"
-                  [value]="act"
-                >
-                  {{ act.nom }} {{ act.prix }}
-                </option>
-              </select>
-            </div>
-          </tr>
-        </td>
+          </td>
+          <td id="col3"><p>Vos activités :</p></td>
+          <td id="col4">
+            <select class="form-control" [(ngModel)]="activitesChoix">
+              <option
+                *ngFor="let act of activitesChoix; let i = index"
+                [value]="act"
+              >
+                {{ act.nom }} {{ act.prix }}
+              </option>
+            </select>
+          </td>
+        </tr>
       </table>
+      <br />
+      <div class="reservation">
+        <a
+          routerLink="/menu_client"
+          routerLinkActive="active"
+          class="btn btn-outline-primary"
+          (click)="validerReservation()"
+          >Valider réservation:</a
+        >
+
+        <a
+          routerLink="/trajet"
+          routerLinkActive="active"
+          class="btn btn-primary"
+          (click)="retour()"
+          >Retour</a
+        >
+      </div>
     </ng-container>
-    <br /><br />
   </article>
 </body>

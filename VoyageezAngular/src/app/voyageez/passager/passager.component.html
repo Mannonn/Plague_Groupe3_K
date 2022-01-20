@@ -1,49 +1,40 @@
 <body>
-  <article>
-    <br /><br />
-    <div>
-      <button class="btn" (click)="affichTableau()" id="cccc">
-        Afficher mes passsagers
-      </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="nom">Nom</th>
+        <th clas="prenom">Prénom</th>
+        <th colspan="2" class="modif">Modification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of passagers">
+        <td>{{ p.nom }}</td>
+        <td>{{ p.prenom }}</td>
+        <td><button class="btn btn-outline-danger">Supprimer</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <td *ngIf="visible">
+    <button class="btn btn-outline-primary" (click)="visibilite()">
+      Ajouter un passager
+    </button>
+  </td>
+  <div *ngIf="!visible">
+    <div class="form-group">
+      <label>Nom</label>
+      <input
+        [(ngModel)]="passager.nom"
+        class="form-control"
+        class="form-control"
+      />
     </div>
-    <ng-container *ngIf="affichOK">
-      <table class="table">
-        <thead>
-          <tr>
-            <!-- <th class="id">id</th> -->
-            <th class="nom">Nom</th>
-            <th clas="prenom">Prenom</th>
-            <!--           <th class="client">client</th>
-          <th colspan="2" class="modif">Modification</th> -->
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let p of passagers">
-            <!-- <td>{{ p.id }}</td> -->
-            <td>{{ p.nom }}</td>
-            <td>{{ p.prenom }}</td>
-
-            <!--           <td>
-            <a
-              [routerLink]="['/passager', 'edit', p.id]"
-              routerLinkActive="active"
-              class="btn btn-outline-primary"
-              >editer</a
-            >
-          </td>
-          <td><button class="btn btn-outline-danger">supprimer</button></td> -->
-          </tr>
-        </tbody>
-      </table>
-      <!--     <div class="new">
-      <a
-        [routerLink]="['/passager', 'edit']"
-        routerLinkActive="active"
-        class="btn btn-outline-info"
-        >Création passager</a
-      >
-    </div> -->
-    </ng-container>
-    <br /><br />
-  </article>
+    <div class="form-group">
+      <label>Prénom</label>
+      <input [(ngModel)]="passager.prenom" class="form-control" />
+    </div>
+    <button class="btn btn-outline-primary" (click)="ajouter()">
+      Sauvegarder
+    </button>
+  </div>
 </body>

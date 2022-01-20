@@ -1,5 +1,7 @@
 body {
   background-image: url("/assets/espace.jpg");
+  height: 482px;
+  padding: 2.5%;
 }
 article {
   position: relative;
@@ -9,16 +11,15 @@ article {
   text-align: justify;
 }
 #placement {
-  position: absolute;
-  width: 100%;
-  align-content: center;
-  margin-top: 3%;
+  position: relative;
+  width: 60%;
+  margin-left: 26%;
+  margin-top: 0%;
   color: white;
 }
-#container {
-  align-content: center;
+h2 {
+  text-align: center;
 }
-
 #texte {
   position: absolute;
   text-align: center;
@@ -30,11 +31,11 @@ table {
   color: whitesmoke;
 }
 
-th.colonne {
+td.colonne {
   width: 5%;
 }
 
-th.largeur {
+td.largeur {
   width: 25%;
 }
 
@@ -57,19 +58,7 @@ textarea {
   /* box-sizing: border-box;*/
 }
 
-/* Set a style for all buttons */
 input[type="submit"] {
-  background-color: white;
-  color: black;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 69%;
-}
-
-input[type="submit"]:hover {
-  background-color: white;
-  color: #53af57;
-  border: 1px solid #53af57;
+  position: relative;
+  margin-left: 41%;
 }

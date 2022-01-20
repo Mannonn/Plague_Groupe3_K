@@ -1,0 +1,18 @@
+body {
+  background-image: url("/assets/espace.jpg");
+  color: white;
+  padding-bottom: 2%;
+}
+
+h1 {
+  margin-left: 2%;
+}
+
+.form-group {
+  width: 50%;
+  margin-left: 25%;
+}
+
+#btn {
+  margin-left: 67%;
+}

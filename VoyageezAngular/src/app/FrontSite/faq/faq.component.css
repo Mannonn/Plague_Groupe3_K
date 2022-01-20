@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   background-image: url("/assets/espace.jpg");
+  padding-bottom: 2%;
 }
 article {
   position: relative;
