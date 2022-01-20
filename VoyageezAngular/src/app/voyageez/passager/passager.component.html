@@ -2,9 +2,8 @@
   <table class="table">
     <thead>
       <tr>
-        <th class="nom">nom</th>
-        <th clas="prenom">prenom</th>
-        <th class="client">client</th>
+        <th class="nom">Nom</th>
+        <th clas="prenom">Prénom</th>
         <th colspan="2" class="modif">Modification</th>
       </tr>
     </thead>
@@ -12,25 +11,30 @@
       <tr *ngFor="let p of passagers">
         <td>{{ p.nom }}</td>
         <td>{{ p.prenom }}</td>
-        <td>{{ p.client!.nom }}</td>
-        <td>
-          <a
-            [routerLink]="['/passager', 'edit', p.id]"
-            routerLinkActive="active"
-            class="btn btn-outline-primary"
-            >editer</a
-          >
-        </td>
-        <td><button class="btn btn-outline-danger">supprimer</button></td>
+        <td><button class="btn btn-outline-danger">Supprimer</button></td>
       </tr>
     </tbody>
   </table>
-  <div class="new">
-    <a
-      [routerLink]="['/passager', 'edit']"
-      routerLinkActive="active"
-      class="btn btn-outline-info"
-      >Création passager</a
-    >
+  <td *ngIf="visible">
+    <button class="btn btn-outline-primary" (click)="visibilite()">
+      Ajouter un passager
+    </button>
+  </td>
+  <div *ngIf="!visible">
+    <div class="form-group">
+      <label>Nom</label>
+      <input
+        [(ngModel)]="passager.nom"
+        class="form-control"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label>Prénom</label>
+      <input [(ngModel)]="passager.prenom" class="form-control" />
+    </div>
+    <button class="btn btn-outline-primary" (click)="ajouter()">
+      Sauvegarder
+    </button>
   </div>
 </body>

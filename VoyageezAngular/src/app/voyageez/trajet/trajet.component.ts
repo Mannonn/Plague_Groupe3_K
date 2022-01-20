@@ -167,6 +167,7 @@ export class TrajetComponent implements OnInit {
   }
 
   listactivitess() {
+    console.log(this.activites);
     for (let actt of this.activites) {
       if (this.trajet.arrivee!.id == actt.planete!.id) {
         this.activitestris.push(actt);

@@ -21,7 +21,10 @@
     <td class="contenu">
       <br />
       <app-client *ngIf="affichInfos"></app-client>
-      <app-passager *ngIf="affichPassagers"></app-passager>
+      <app-passager
+        *ngIf="affichPassagers"
+        [clientEnvoi]="client"
+      ></app-passager>
       <app-reservation *ngIf="affichReservations"></app-reservation>
     </td>
   </table>
