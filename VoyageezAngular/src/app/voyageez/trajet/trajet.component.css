@@ -53,22 +53,22 @@ th.modif {
   margin-left: 44%;
 }
 
-#CHOIX {
-  width: 300px;
+#col1,
+#col4 {
+  width: 30%;
 }
 
-#spaceee {
-  width: 300px;
+#col2 {
+  width: 20%;
+  border-right: white;
 }
 
-#caca {
-  width: 400px;
-}
-#collo {
-  width: 400px;
+#col3 {
+  width: 18%;
+  text-align: right;
 }
 
-#esspace {
-  height: 30px;
-  width: 300px;
+.reservation {
+  position: relative;
+  margin-left: 40%;
 }

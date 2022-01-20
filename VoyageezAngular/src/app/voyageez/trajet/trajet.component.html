@@ -93,24 +93,24 @@
     <ng-container *ngIf="!!login && role == 'client' && affichPassaActi">
       <table>
         <tr>
-          <td id="collo">
+          <td id="col1">
             <select class="form-control" [(ngModel)]="indexPassager">
               <option *ngFor="let pass of passagers; let i = index" [value]="i">
                 {{ pass.prenom }} {{ pass.nom }}
               </option>
             </select>
           </td>
-          <td>
+          <td id="col2">
             <a
               routerLink="/trajet"
               routerLinkActive="active"
-              class="btn btn-outline-info"
+              class="btn btn-primary"
               (click)="ajouterPass()"
               >Ajouter passager</a
             >
           </td>
-          <td id="spaceee"><p>Vos passagers:</p></td>
-          <td>
+          <td id="col3"><p>Vos passagers :</p></td>
+          <td id="col4">
             <select class="form-control" [(ngModel)]="passagersChoix">
               <option
                 *ngFor="let pass of passagersChoix; let i = index"
@@ -123,7 +123,7 @@
         </tr>
 
         <tr>
-          <td>
+          <td id="col1">
             <select class="form-control" [(ngModel)]="indexActivite">
               <option
                 *ngFor="let actt of activitestris; let i = index"
@@ -133,17 +133,17 @@
               </option>
             </select>
           </td>
-          <td>
+          <td id="col2">
             <a
               routerLink="/trajet"
               routerLinkActive="active"
-              class="btn btn-outline-info"
+              class="btn btn-primary"
               (click)="ajouterActi()"
-              >Ajouter activité:</a
+              >Ajouter activité</a
             >
           </td>
-          <td id="spaceee"><p>Vos activités:</p></td>
-          <td id="CHOIX">
+          <td id="col3"><p>Vos activités :</p></td>
+          <td id="col4">
             <select class="form-control" [(ngModel)]="activitesChoix">
               <option
                 *ngFor="let act of activitesChoix; let i = index"
@@ -155,23 +155,24 @@
           </td>
         </tr>
       </table>
+      <br />
+      <div class="reservation">
+        <a
+          routerLink="/menu_client"
+          routerLinkActive="active"
+          class="btn btn-outline-primary"
+          (click)="validerReservation()"
+          >Valider réservation:</a
+        >
+
+        <a
+          routerLink="/trajet"
+          routerLinkActive="active"
+          class="btn btn-primary"
+          (click)="retour()"
+          >Retour</a
+        >
+      </div>
     </ng-container>
-    <div>
-      <a
-        routerLink="/menu_client"
-        routerLinkActive="active"
-        class="btn btn-outline-info"
-        (click)="validerReservation()"
-        >Valider réservation:</a
-      >
-      <a
-        routerLink="/trajet"
-        routerLinkActive="active"
-        class="btn btn-outline-info"
-        (click)="retour()"
-        >Retour</a
-      >
-    </div>
-    <br /><br />
   </article>
 </body>
