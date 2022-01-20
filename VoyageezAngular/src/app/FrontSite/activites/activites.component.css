@@ -20,7 +20,9 @@ table {
 
 .activite1,
 .activite2,
-.activite3 {
+.activite3,
+.activite4,
+.activite5 {
   background-color: white;
   height: 150px;
   border-radius: 10%;
@@ -48,12 +50,20 @@ img {
   align-items: center;
 }
 
+#img1 {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  margin-left: -2%;
+}
+
 #img2 {
   width: 130px;
   height: 130px;
   display: flex;
   align-items: center;
-  margin-left: -13%;
+  margin-left: -2%;
 }
 
 #img3 {
@@ -61,16 +71,10 @@ img {
   height: 130px;
   display: flex;
   align-items: center;
+  margin-left: 1%;
 }
 
 #img4 {
-  width: 130px;
-  height: 130px;
-  display: flex;
-  align-items: center;
-}
-
-#img5 {
   width: 130px;
   height: 130px;
   display: flex;
