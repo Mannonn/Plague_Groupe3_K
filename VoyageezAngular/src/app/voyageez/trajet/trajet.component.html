@@ -13,7 +13,6 @@
       <table class="table">
         <thead>
           <tr>
-            <th class="id">Id</th>
             <th class="ddepart">Date départ</th>
             <th class="hdepart">Heure départ</th>
             <th class="darrivee">Date arrivée</th>
@@ -32,7 +31,6 @@
         </thead>
         <tbody>
           <tr *ngFor="let t of planeteFiltre">
-            <td>{{ t.id }}</td>
             <td>{{ t.dateDepart }}</td>
             <td>{{ t.heureDepart }}</td>
             <td>{{ t.dateArrivee }}</td>
@@ -91,11 +89,15 @@
     </div>
     <br />
     <ng-container *ngIf="!!login && role == 'client' && affichPassaActi">
-      <table>
+      <table class="tableau">
         <tr>
           <td id="col1">
             <select class="form-control" [(ngModel)]="indexPassager">
-              <option *ngFor="let pass of passagers; let i = index" [value]="i">
+              <option
+                *ngFor="let pass of passagers; let i = index"
+                [value]="i"
+                value="test"
+              >
                 {{ pass.prenom }} {{ pass.nom }}
               </option>
             </select>
@@ -173,6 +175,7 @@
           >Retour</a
         >
       </div>
+      <br />
     </ng-container>
   </article>
 </body>

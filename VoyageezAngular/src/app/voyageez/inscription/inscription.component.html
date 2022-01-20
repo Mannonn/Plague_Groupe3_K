@@ -14,39 +14,39 @@
       <form (ngSubmit)="validate()" [formGroup]="form">
         <h2>Inscription</h2>
         <br />
-        <table>
+        <table id="tab1">
           <tr>
             <td class="nom">Nom:</td>
             <td><input formControlName="nom" /></td>
             <td></td>
           </tr>
           <tr>
-            <td class="prenom">Prenom:</td>
+            <td class="prenom">Prénom:</td>
             <td><input formControlName="prenom" /></td>
             <td></td>
           </tr>
           <tr>
-            <td class="login">login:</td>
+            <td class="login">Login:</td>
             <td><input formControlName="login" /></td>
             <td
               *ngIf="
                 form.controls['login'].dirty && form.controls['login'].invalid
               "
             >
-              login invalide
+              Login invalide
             </td>
           </tr>
         </table>
         <table>
           <div formGroupName="passwordGroup">
             <tr>
-              <td>password:</td>
+              <td>Password:</td>
               <td colspan="2">
                 <input formControlName="password" type="password" />
               </td>
             </tr>
             <tr>
-              <td>confirmation:</td>
+              <td>Confirmation:</td>
               <td><input formControlName="confirm" type="password" /></td>
               <td
                 class="couleur"
@@ -55,14 +55,14 @@
                   form.controls['passwordGroup'].invalid
                 "
               >
-                invalide
+                Invalide
               </td>
             </tr>
           </div>
         </table>
         <br />
         <button class="btn btn-light" type="submit" [disabled]="form.invalid">
-          valider
+          Valider
         </button>
       </form>
     </article>
